@@ -951,7 +951,7 @@
         ],
         "summary": "Get Diagnostics Categories",
         "description": "Description for Get Diagnostics Categories",
-        "operationId": "Diagnostics_ListSiteDiagnosticCategoriesSlot",
+        "operationId": "DiagnosticCategory_ListSiteDiagnosticCategoriesSlot",
         "parameters": [
           {
             "$ref": "#/parameters/resourceGroupNameParameter"
@@ -1011,7 +1011,7 @@
         ],
         "summary": "Get Diagnostics Category",
         "description": "Description for Get Diagnostics Category",
-        "operationId": "Diagnostics_GetSiteDiagnosticCategorySlot",
+        "operationId": "DiagnosticCategory_GetSiteDiagnosticCategorySlot",
         "parameters": [
           {
             "$ref": "#/parameters/resourceGroupNameParameter"
