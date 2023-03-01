@@ -394,6 +394,8 @@ CMAF
 Cmdkey
 cmdlet
 cmdlets
+cmek
+Cmek
 CMKDW
 CMKHS
 CMMI
@@ -412,6 +414,7 @@ commandshistory
 commitmentplans
 Compat
 compilationjobs
+compilefile
 compositeentities
 computervision
 CONCURRENTAPPEND
@@ -483,6 +486,7 @@ customprebuiltintents
 customprebuiltmodels
 customproviders
 customsearch
+customsubdomain
 customvision
 customvisionprediction
 customvisiontraining
@@ -704,6 +708,7 @@ errordetail
 errored
 ESDNI
 Español
+ESRP
 estaba
 Etag
 etags
@@ -721,6 +726,7 @@ eventroutes
 eventstream
 eventtime
 eventtypes
+evpn
 EWDG
 exceptiontype
 exfiltrate
@@ -743,9 +749,11 @@ faceapi
 facelists
 facetable
 Failback
+Failovers
 failover
 Fairplay
 Fanout
+fareast
 farmBeats
 FarmBeats
 fatherable
@@ -877,6 +885,7 @@ Groupby
 groupedby
 GRPC
 GSMT
+gshut
 GTFS
 guestconfiguration
 GUID
@@ -947,6 +956,7 @@ IDNS
 IDPs
 IDRG
 IKEV
+IISAKS
 ilearner
 illumos
 iloveyou
@@ -1052,6 +1062,7 @@ Kachin
 kafkarest
 Kaliningrad
 Kashubian
+Kata
 kbId
 Kbps
 KECA
@@ -1307,6 +1318,7 @@ mscv
 msdb
 MSGETACLSTATUS
 MSGETFILESTATUS
+Mshv
 msix
 MSIX
 msixpackage
@@ -1324,6 +1336,7 @@ Multinomial
 multipart
 multipoint
 multipoints
+multiregion
 Multiset
 multislot
 multispeaker
@@ -1375,6 +1388,7 @@ netbios
 netbsd
 netdev
 Netdev
+Netezza
 netfilter
 Netfilter
 networkinterfaces
@@ -1521,6 +1535,8 @@ PAYG
 Paypal
 PBIE
 PCIE
+PCMA
+PCMU
 PCNET
 PDFs
 peekonly
@@ -1551,6 +1567,7 @@ playready
 Plex
 PLREGON
 Pohlmann
+POIs
 policyassignments
 policycertificates
 policydefinitions
@@ -1917,6 +1934,7 @@ showonly
 signalr
 Signin
 Signup
+Silverlight
 SINGLEJSON
 siteextensions
 sitename
@@ -1940,6 +1958,7 @@ smallmoney
 SMBIOS
 snapshotrun
 snapshotsdr
+snapshotset
 snaptshot
 SNAT
 SNMP
@@ -1989,6 +2008,9 @@ SSISDB
 ssoadfs
 SSTP
 ssword
+STAC
+Stac
+stac
 standardasciifolding
 startlocalrun
 startpacketcapture
@@ -2014,6 +2036,7 @@ stopwords
 Stor
 storageaccount
 storageaccounts
+storagecache
 storagecontainers
 storagedatalake
 storageimportexport
@@ -2061,6 +2084,7 @@ subtree
 subtrees
 subvolume
 subvolumes
+subwoofer
 subword
 subwords
 suggesters
@@ -2118,6 +2142,7 @@ templeton
 temporarydisk
 tensorflow
 TEPCO's
+Tera
 teradata
 terminatejob
 Termlist
@@ -2142,6 +2167,7 @@ tilesetconfiguration
 tilesets
 timeasc
 timedesc
+Timedout
 timeframe
 timegrain
 timeseries
@@ -2237,6 +2263,7 @@ Unpublish
 unpatched
 Unregistering
 Unregisters
+Unrepaired
 unrestorable
 unsubstituted
 untagged
@@ -2326,6 +2353,7 @@ vmwarevSphere
 vmwarecollectors
 vmwaretools
 VMXNET
+VNET's
 vnet
 vnetid
 Vnets
@@ -2624,6 +2652,8 @@ logalertv1numresult
 logalertv1metricmeasurement
 activitylog
 budget
+actualcostbudget
+forecastedbudget
 syncsets
 Syncsets
 openshiftclusters
@@ -2644,3 +2674,49 @@ Dryrun
 dryrun
 Discoverability
 Precheck
+logbase
+Ueba
+hotpatching
+Offersby
+Versionswithin
+generatesastoken
+updation
+interactivequery
+tmpfs
+npipe
+Tmpfs
+widget's
+BGP
+DPDK
+IPVLAN
+MACVLAN
+SRIOV
+Uncordoned
+Uncordon
+uncordon
+MAC
+PXE
+SHA
+TPM
+Tcpdump
+tcpdump
+SATA
+CNI
+Traceroute
+Kubectl
+Numastat
+Numactl
+Virsh
+Lldp
+lldp
+Virtio
+virtio
+Mebibytes
+UTURN
+Isochrone
+Ochestrator
+remediatable
+Overprovisioning
+Unprepares
+Unpreparing
+
