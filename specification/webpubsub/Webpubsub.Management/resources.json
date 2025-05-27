@@ -1,0 +1,628 @@
+{
+  "Resources": {
+    "WebPubSubResource": [
+      {
+        "Name": "WebPubSubResource",
+        "GetOperation": {
+          "Name": "Get",
+          "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}",
+          "Method": "GET",
+          "OperationID": "WebPubSub_Get",
+          "IsLongRunning": false,
+          "PagingMetadata": null,
+          "Description": "Get the resource and its properties."
+        },
+        "CreateOperation": {
+          "Name": "CreateOrUpdate",
+          "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}",
+          "Method": "PUT",
+          "OperationID": "WebPubSub_CreateOrUpdate",
+          "IsLongRunning": true,
+          "PagingMetadata": null,
+          "Description": "Create or update a resource."
+        },
+        "UpdateOperation": {
+          "Name": "Update",
+          "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}",
+          "Method": "PATCH",
+          "OperationID": "WebPubSub_Update",
+          "IsLongRunning": true,
+          "PagingMetadata": null,
+          "Description": "Operation to update an exiting resource."
+        },
+        "DeleteOperation": {
+          "Name": "Delete",
+          "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}",
+          "Method": "DELETE",
+          "OperationID": "WebPubSub_Delete",
+          "IsLongRunning": true,
+          "PagingMetadata": null,
+          "Description": "Operation to delete a resource."
+        },
+        "ListOperations": [
+          {
+            "Name": "GetAll",
+            "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub",
+            "Method": "GET",
+            "OperationID": "WebPubSub_ListByResourceGroup",
+            "IsLongRunning": false,
+            "PagingMetadata": {
+              "Method": "ListByResourceGroup",
+              "ItemName": "value",
+              "NextLinkName": "nextLink"
+            },
+            "Description": "Handles requests to list all resources in a resource group."
+          }
+        ],
+        "OperationsFromResourceGroupExtension": [],
+        "OperationsFromSubscriptionExtension": [
+          {
+            "Name": "_",
+            "Path": "/subscriptions/{subscriptionId}/providers/Microsoft.SignalRService/webPubSub",
+            "Method": "GET",
+            "OperationID": "WebPubSub_ListBySubscription",
+            "IsLongRunning": false,
+            "PagingMetadata": {
+              "Method": "ListBySubscription",
+              "ItemName": "value",
+              "NextLinkName": "nextLink"
+            },
+            "Description": "Handles requests to list all resources in a subscription."
+          }
+        ],
+        "OperationsFromManagementGroupExtension": [],
+        "OperationsFromTenantExtension": [],
+        "OtherOperations": [
+          {
+            "Name": "ListKeys",
+            "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}/listKeys",
+            "Method": "POST",
+            "OperationID": "WebPubSub_ListKeys",
+            "IsLongRunning": false,
+            "PagingMetadata": null,
+            "Description": "Get the access keys of the resource."
+          },
+          {
+            "Name": "RegenerateKey",
+            "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}/regenerateKey",
+            "Method": "POST",
+            "OperationID": "WebPubSub_RegenerateKey",
+            "IsLongRunning": true,
+            "PagingMetadata": null,
+            "Description": "Regenerate the access key for the resource. PrimaryKey and SecondaryKey cannot be regenerated at the same time."
+          },
+          {
+            "Name": "Restart",
+            "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}/restart",
+            "Method": "POST",
+            "OperationID": "WebPubSub_Restart",
+            "IsLongRunning": true,
+            "PagingMetadata": null,
+            "Description": "Operation to restart a resource."
+          },
+          {
+            "Name": "ListSkus",
+            "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}/skus",
+            "Method": "GET",
+            "OperationID": "WebPubSub_ListSkus",
+            "IsLongRunning": false,
+            "PagingMetadata": {
+              "Method": "ListSkus",
+              "ItemName": "value",
+              "NextLinkName": "nextLink"
+            },
+            "Description": "List all available skus of the resource."
+          },
+          {
+            "Name": "List",
+            "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}/privateLinkResources",
+            "Method": "GET",
+            "OperationID": "WebPubSubPrivateLinkResources_List",
+            "IsLongRunning": false,
+            "PagingMetadata": {
+              "Method": "List",
+              "ItemName": "value",
+              "NextLinkName": "nextLink"
+            },
+            "Description": "Get the private link resources that need to be created for a resource."
+          }
+        ],
+        "Parents": [
+          "ResourceGroupResource"
+        ],
+        "SwaggerModelName": "WebPubSubResource",
+        "ResourceType": "Microsoft.SignalRService/webPubSub",
+        "ResourceKey": "resourceName",
+        "ResourceKeySegment": "webPubSub",
+        "IsTrackedResource": true,
+        "IsTenantResource": false,
+        "IsSubscriptionResource": false,
+        "IsManagementGroupResource": false,
+        "IsExtensionResource": false,
+        "IsSingletonResource": false
+      }
+    ],
+    "CustomCertificate": [
+      {
+        "Name": "CustomCertificate",
+        "GetOperation": {
+          "Name": "Get",
+          "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}/customCertificates/{certificateName}",
+          "Method": "GET",
+          "OperationID": "WebPubSubCustomCertificates_Get",
+          "IsLongRunning": false,
+          "PagingMetadata": null,
+          "Description": "Get a custom certificate."
+        },
+        "CreateOperation": {
+          "Name": "CreateOrUpdate",
+          "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}/customCertificates/{certificateName}",
+          "Method": "PUT",
+          "OperationID": "WebPubSubCustomCertificates_CreateOrUpdate",
+          "IsLongRunning": true,
+          "PagingMetadata": null,
+          "Description": "Create or update a custom certificate."
+        },
+        "UpdateOperation": {
+          "Name": "Update",
+          "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}/customCertificates/{certificateName}",
+          "Method": "PUT",
+          "OperationID": "WebPubSubCustomCertificates_CreateOrUpdate",
+          "IsLongRunning": true,
+          "PagingMetadata": null,
+          "Description": "Create or update a custom certificate."
+        },
+        "DeleteOperation": {
+          "Name": "Delete",
+          "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}/customCertificates/{certificateName}",
+          "Method": "DELETE",
+          "OperationID": "WebPubSubCustomCertificates_Delete",
+          "IsLongRunning": true,
+          "PagingMetadata": null,
+          "Description": "Delete a custom certificate."
+        },
+        "ListOperations": [
+          {
+            "Name": "GetAll",
+            "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}/customCertificates",
+            "Method": "GET",
+            "OperationID": "WebPubSubCustomCertificates_List",
+            "IsLongRunning": false,
+            "PagingMetadata": {
+              "Method": "List",
+              "ItemName": "value",
+              "NextLinkName": "nextLink"
+            },
+            "Description": "List all custom certificates."
+          }
+        ],
+        "OperationsFromResourceGroupExtension": [],
+        "OperationsFromSubscriptionExtension": [],
+        "OperationsFromManagementGroupExtension": [],
+        "OperationsFromTenantExtension": [],
+        "OtherOperations": [],
+        "Parents": [
+          "WebPubSubResource"
+        ],
+        "SwaggerModelName": "CustomCertificate",
+        "ResourceType": "Microsoft.SignalRService/webPubSub/customCertificates",
+        "ResourceKey": "certificateName",
+        "ResourceKeySegment": "customCertificates",
+        "IsTrackedResource": false,
+        "IsTenantResource": false,
+        "IsSubscriptionResource": false,
+        "IsManagementGroupResource": false,
+        "IsExtensionResource": false,
+        "IsSingletonResource": false
+      }
+    ],
+    "CustomDomain": [
+      {
+        "Name": "CustomDomain",
+        "GetOperation": {
+          "Name": "Get",
+          "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}/customDomains/{name}",
+          "Method": "GET",
+          "OperationID": "WebPubSubCustomDomains_Get",
+          "IsLongRunning": false,
+          "PagingMetadata": null,
+          "Description": "Get a custom domain."
+        },
+        "CreateOperation": {
+          "Name": "CreateOrUpdate",
+          "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}/customDomains/{name}",
+          "Method": "PUT",
+          "OperationID": "WebPubSubCustomDomains_CreateOrUpdate",
+          "IsLongRunning": true,
+          "PagingMetadata": null,
+          "Description": "Create or update a custom domain."
+        },
+        "UpdateOperation": {
+          "Name": "Update",
+          "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}/customDomains/{name}",
+          "Method": "PUT",
+          "OperationID": "WebPubSubCustomDomains_CreateOrUpdate",
+          "IsLongRunning": true,
+          "PagingMetadata": null,
+          "Description": "Create or update a custom domain."
+        },
+        "DeleteOperation": {
+          "Name": "Delete",
+          "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}/customDomains/{name}",
+          "Method": "DELETE",
+          "OperationID": "WebPubSubCustomDomains_Delete",
+          "IsLongRunning": true,
+          "PagingMetadata": null,
+          "Description": "Delete a custom domain."
+        },
+        "ListOperations": [
+          {
+            "Name": "GetAll",
+            "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}/customDomains",
+            "Method": "GET",
+            "OperationID": "WebPubSubCustomDomains_List",
+            "IsLongRunning": false,
+            "PagingMetadata": {
+              "Method": "List",
+              "ItemName": "value",
+              "NextLinkName": "nextLink"
+            },
+            "Description": "List all custom domains."
+          }
+        ],
+        "OperationsFromResourceGroupExtension": [],
+        "OperationsFromSubscriptionExtension": [],
+        "OperationsFromManagementGroupExtension": [],
+        "OperationsFromTenantExtension": [],
+        "OtherOperations": [],
+        "Parents": [
+          "WebPubSubResource"
+        ],
+        "SwaggerModelName": "CustomDomain",
+        "ResourceType": "Microsoft.SignalRService/webPubSub/customDomains",
+        "ResourceKey": "name",
+        "ResourceKeySegment": "customDomains",
+        "IsTrackedResource": false,
+        "IsTenantResource": false,
+        "IsSubscriptionResource": false,
+        "IsManagementGroupResource": false,
+        "IsExtensionResource": false,
+        "IsSingletonResource": false
+      }
+    ],
+    "WebPubSubHub": [
+      {
+        "Name": "WebPubSubHub",
+        "GetOperation": {
+          "Name": "Get",
+          "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}/hubs/{hubName}",
+          "Method": "GET",
+          "OperationID": "WebPubSubHubs_Get",
+          "IsLongRunning": false,
+          "PagingMetadata": null,
+          "Description": "Get a hub setting."
+        },
+        "CreateOperation": {
+          "Name": "CreateOrUpdate",
+          "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}/hubs/{hubName}",
+          "Method": "PUT",
+          "OperationID": "WebPubSubHubs_CreateOrUpdate",
+          "IsLongRunning": true,
+          "PagingMetadata": null,
+          "Description": "Create or update a hub setting."
+        },
+        "UpdateOperation": {
+          "Name": "Update",
+          "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}/hubs/{hubName}",
+          "Method": "PUT",
+          "OperationID": "WebPubSubHubs_CreateOrUpdate",
+          "IsLongRunning": true,
+          "PagingMetadata": null,
+          "Description": "Create or update a hub setting."
+        },
+        "DeleteOperation": {
+          "Name": "Delete",
+          "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}/hubs/{hubName}",
+          "Method": "DELETE",
+          "OperationID": "WebPubSubHubs_Delete",
+          "IsLongRunning": true,
+          "PagingMetadata": null,
+          "Description": "Delete a hub setting."
+        },
+        "ListOperations": [
+          {
+            "Name": "GetAll",
+            "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}/hubs",
+            "Method": "GET",
+            "OperationID": "WebPubSubHubs_List",
+            "IsLongRunning": false,
+            "PagingMetadata": {
+              "Method": "List",
+              "ItemName": "value",
+              "NextLinkName": "nextLink"
+            },
+            "Description": "List hub settings."
+          }
+        ],
+        "OperationsFromResourceGroupExtension": [],
+        "OperationsFromSubscriptionExtension": [],
+        "OperationsFromManagementGroupExtension": [],
+        "OperationsFromTenantExtension": [],
+        "OtherOperations": [],
+        "Parents": [
+          "WebPubSubResource"
+        ],
+        "SwaggerModelName": "WebPubSubHub",
+        "ResourceType": "Microsoft.SignalRService/webPubSub/hubs",
+        "ResourceKey": "hubName",
+        "ResourceKeySegment": "hubs",
+        "IsTrackedResource": false,
+        "IsTenantResource": false,
+        "IsSubscriptionResource": false,
+        "IsManagementGroupResource": false,
+        "IsExtensionResource": false,
+        "IsSingletonResource": false
+      }
+    ],
+    "PrivateEndpointConnection": [
+      {
+        "Name": "PrivateEndpointConnection",
+        "GetOperation": {
+          "Name": "Get",
+          "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}/privateEndpointConnections/{privateEndpointConnectionName}",
+          "Method": "GET",
+          "OperationID": "WebPubSubPrivateEndpointConnections_Get",
+          "IsLongRunning": false,
+          "PagingMetadata": null,
+          "Description": "Get the specified private endpoint connection"
+        },
+        "CreateOperation": {
+          "Name": "CreateOrUpdate",
+          "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}/privateEndpointConnections/{privateEndpointConnectionName}",
+          "Method": "PUT",
+          "OperationID": "WebPubSubPrivateEndpointConnections_Update",
+          "IsLongRunning": true,
+          "PagingMetadata": null,
+          "Description": "Update the state of specified private endpoint connection"
+        },
+        "UpdateOperation": {
+          "Name": "Update",
+          "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}/privateEndpointConnections/{privateEndpointConnectionName}",
+          "Method": "PUT",
+          "OperationID": "WebPubSubPrivateEndpointConnections_Update",
+          "IsLongRunning": true,
+          "PagingMetadata": null,
+          "Description": "Update the state of specified private endpoint connection"
+        },
+        "DeleteOperation": {
+          "Name": "Delete",
+          "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}/privateEndpointConnections/{privateEndpointConnectionName}",
+          "Method": "DELETE",
+          "OperationID": "WebPubSubPrivateEndpointConnections_Delete",
+          "IsLongRunning": true,
+          "PagingMetadata": null,
+          "Description": "Delete the specified private endpoint connection"
+        },
+        "ListOperations": [
+          {
+            "Name": "GetAll",
+            "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}/privateEndpointConnections",
+            "Method": "GET",
+            "OperationID": "WebPubSubPrivateEndpointConnections_List",
+            "IsLongRunning": false,
+            "PagingMetadata": {
+              "Method": "List",
+              "ItemName": "value",
+              "NextLinkName": "nextLink"
+            },
+            "Description": "List private endpoint connections"
+          }
+        ],
+        "OperationsFromResourceGroupExtension": [],
+        "OperationsFromSubscriptionExtension": [],
+        "OperationsFromManagementGroupExtension": [],
+        "OperationsFromTenantExtension": [],
+        "OtherOperations": [],
+        "Parents": [
+          "WebPubSubResource"
+        ],
+        "SwaggerModelName": "PrivateEndpointConnection",
+        "ResourceType": "Microsoft.SignalRService/webPubSub/privateEndpointConnections",
+        "ResourceKey": "privateEndpointConnectionName",
+        "ResourceKeySegment": "privateEndpointConnections",
+        "IsTrackedResource": false,
+        "IsTenantResource": false,
+        "IsSubscriptionResource": false,
+        "IsManagementGroupResource": false,
+        "IsExtensionResource": false,
+        "IsSingletonResource": false
+      }
+    ],
+    "Replica": [
+      {
+        "Name": "Replica",
+        "GetOperation": {
+          "Name": "Get",
+          "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}/replicas/{replicaName}",
+          "Method": "GET",
+          "OperationID": "WebPubSubReplicas_Get",
+          "IsLongRunning": false,
+          "PagingMetadata": null,
+          "Description": "Get the replica and its properties."
+        },
+        "CreateOperation": {
+          "Name": "CreateOrUpdate",
+          "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}/replicas/{replicaName}",
+          "Method": "PUT",
+          "OperationID": "WebPubSubReplicas_CreateOrUpdate",
+          "IsLongRunning": true,
+          "PagingMetadata": null,
+          "Description": "Create or update a replica."
+        },
+        "UpdateOperation": {
+          "Name": "Update",
+          "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}/replicas/{replicaName}",
+          "Method": "PATCH",
+          "OperationID": "WebPubSubReplicas_Update",
+          "IsLongRunning": true,
+          "PagingMetadata": null,
+          "Description": "Operation to update an exiting replica."
+        },
+        "DeleteOperation": {
+          "Name": "Delete",
+          "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}/replicas/{replicaName}",
+          "Method": "DELETE",
+          "OperationID": "WebPubSubReplicas_Delete",
+          "IsLongRunning": true,
+          "PagingMetadata": null,
+          "Description": "Operation to delete a replica."
+        },
+        "ListOperations": [
+          {
+            "Name": "GetAll",
+            "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}/replicas",
+            "Method": "GET",
+            "OperationID": "WebPubSubReplicas_List",
+            "IsLongRunning": false,
+            "PagingMetadata": {
+              "Method": "List",
+              "ItemName": "value",
+              "NextLinkName": "nextLink"
+            },
+            "Description": "List all replicas belong to this resource"
+          }
+        ],
+        "OperationsFromResourceGroupExtension": [],
+        "OperationsFromSubscriptionExtension": [],
+        "OperationsFromManagementGroupExtension": [],
+        "OperationsFromTenantExtension": [],
+        "OtherOperations": [
+          {
+            "Name": "ListReplicaSkus",
+            "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}/replicas/{replicaName}/skus",
+            "Method": "GET",
+            "OperationID": "WebPubSub_ListReplicaSkus",
+            "IsLongRunning": false,
+            "PagingMetadata": {
+              "Method": "ListReplicaSkus",
+              "ItemName": "value",
+              "NextLinkName": "nextLink"
+            },
+            "Description": "List all available skus of the replica resource."
+          },
+          {
+            "Name": "Restart",
+            "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}/replicas/{replicaName}/restart",
+            "Method": "POST",
+            "OperationID": "WebPubSubReplicas_Restart",
+            "IsLongRunning": true,
+            "PagingMetadata": null,
+            "Description": "Operation to restart a replica."
+          }
+        ],
+        "Parents": [
+          "WebPubSubResource"
+        ],
+        "SwaggerModelName": "Replica",
+        "ResourceType": "Microsoft.SignalRService/webPubSub/replicas",
+        "ResourceKey": "replicaName",
+        "ResourceKeySegment": "replicas",
+        "IsTrackedResource": true,
+        "IsTenantResource": false,
+        "IsSubscriptionResource": false,
+        "IsManagementGroupResource": false,
+        "IsExtensionResource": false,
+        "IsSingletonResource": false
+      }
+    ],
+    "SharedPrivateLinkResource": [
+      {
+        "Name": "SharedPrivateLinkResource",
+        "GetOperation": {
+          "Name": "Get",
+          "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}/replicas/{replicaName}/sharedPrivateLinkResources/{sharedPrivateLinkResourceName}",
+          "Method": "GET",
+          "OperationID": "WebPubSubReplicaSharedPrivateLinkResources_Get",
+          "IsLongRunning": false,
+          "PagingMetadata": null,
+          "Description": "Get the specified shared private link resource"
+        },
+        "CreateOperation": {
+          "Name": "CreateOrUpdate",
+          "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}/replicas/{replicaName}/sharedPrivateLinkResources/{sharedPrivateLinkResourceName}",
+          "Method": "PUT",
+          "OperationID": "WebPubSubReplicaSharedPrivateLinkResources_CreateOrUpdate",
+          "IsLongRunning": true,
+          "PagingMetadata": null,
+          "Description": "Create or update a shared private link resource"
+        },
+        "UpdateOperation": {
+          "Name": "Update",
+          "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}/replicas/{replicaName}/sharedPrivateLinkResources/{sharedPrivateLinkResourceName}",
+          "Method": "PUT",
+          "OperationID": "WebPubSubReplicaSharedPrivateLinkResources_CreateOrUpdate",
+          "IsLongRunning": true,
+          "PagingMetadata": null,
+          "Description": "Create or update a shared private link resource"
+        },
+        "ListOperations": [
+          {
+            "Name": "GetAll",
+            "Path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}/replicas/{replicaName}/sharedPrivateLinkResources",
+            "Method": "GET",
+            "OperationID": "WebPubSubReplicaSharedPrivateLinkResources_List",
+            "IsLongRunning": false,
+            "PagingMetadata": {
+              "Method": "List",
+              "ItemName": "value",
+              "NextLinkName": "nextLink"
+            },
+            "Description": "List shared private link resources"
+          }
+        ],
+        "OperationsFromResourceGroupExtension": [],
+        "OperationsFromSubscriptionExtension": [],
+        "OperationsFromManagementGroupExtension": [],
+        "OperationsFromTenantExtension": [],
+        "OtherOperations": [],
+        "Parents": [
+          "Replica"
+        ],
+        "SwaggerModelName": "SharedPrivateLinkResource",
+        "ResourceType": "Microsoft.SignalRService/webPubSub/replicas/sharedPrivateLinkResources",
+        "ResourceKey": "sharedPrivateLinkResourceName",
+        "ResourceKeySegment": "sharedPrivateLinkResources",
+        "IsTrackedResource": false,
+        "IsTenantResource": false,
+        "IsSubscriptionResource": false,
+        "IsManagementGroupResource": false,
+        "IsExtensionResource": false,
+        "IsSingletonResource": false
+      }
+    ],
+    "SharedPrivateLinkResourceFixMe": [
+      {
+        "Name": "SharedPrivateLinkResourceFixMe",
+        "ListOperations": [],
+        "OperationsFromResourceGroupExtension": [],
+        "OperationsFromSubscriptionExtension": [],
+        "OperationsFromManagementGroupExtension": [],
+        "OperationsFromTenantExtension": [],
+        "OtherOperations": [],
+        "Parents": [],
+        "SwaggerModelName": "",
+        "ResourceType": "",
+        "ResourceKey": "",
+        "ResourceKeySegment": "",
+        "IsTrackedResource": false,
+        "IsTenantResource": false,
+        "IsSubscriptionResource": false,
+        "IsManagementGroupResource": false,
+        "IsExtensionResource": false,
+        "IsSingletonResource": false
+      }
+    ]
+  },
+  "RenameMapping": {},
+  "OverrideOperationName": {}
+}
