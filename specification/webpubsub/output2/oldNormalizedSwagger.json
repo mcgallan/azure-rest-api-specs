@@ -3,12 +3,7 @@
   "info": {
     "title": "WebPubSubManagementClient",
     "version": "2024-10-01-preview",
-    "description": "REST API for Azure WebPubSub Service",
-    "x-typespec-generated": [
-      {
-        "emitter": "@azure-tools/typespec-autorest"
-      }
-    ]
+    "description": "REST API for Azure WebPubSub Service"
   },
   "produces": [
     "application/json"
@@ -25,7 +20,7 @@
           "200": {
             "description": "ignore",
             "schema": {
-              "$ref": "../../../../../common-types/resource-management/v5/types.json#/definitions/OperationListResult"
+              "$ref": "#/definitions/OperationList"
             }
           },
           "default": {
@@ -50,10 +45,13 @@
         "operationId": "WebPubSub_CheckNameAvailability",
         "parameters": [
           {
-            "$ref": "../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
+            "name": "location",
+            "in": "path",
+            "required": true,
+            "type": "string"
           },
           {
-            "name": "body",
+            "name": "parameters",
             "in": "body",
             "required": true,
             "schema": {
@@ -87,14 +85,17 @@
         "operationId": "Usages_List",
         "parameters": [
           {
-            "$ref": "../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
+            "name": "location",
+            "in": "path",
+            "required": true,
+            "type": "string"
           }
         ],
         "responses": {
           "200": {
             "description": "ignore",
             "schema": {
-              "$ref": "#/definitions/WebPubSubUsageList"
+              "$ref": "#/definitions/SignalRServiceUsageList"
             }
           },
           "default": {
@@ -208,6 +209,14 @@
         "operationId": "WebPubSub_CreateOrUpdate",
         "parameters": [
           {
+            "name": "parameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/WebPubSubResource"
+            }
+          },
+          {
             "name": "resourceName",
             "in": "path",
             "required": true,
@@ -215,14 +224,6 @@
             "minLength": 3,
             "maxLength": 63,
             "pattern": "^[a-zA-Z][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]$"
-          },
-          {
-            "name": "resource",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WebPubSubResource"
-            }
           }
         ],
         "responses": {
@@ -253,11 +254,22 @@
             "$ref": "./examples/WebPubSub_CreateOrUpdate.json"
           }
         },
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "azure-async-operation"
+        },
         "x-ms-long-running-operation": true
       },
       "patch": {
         "operationId": "WebPubSub_Update",
         "parameters": [
+          {
+            "name": "parameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/WebPubSubResource"
+            }
+          },
           {
             "name": "resourceName",
             "in": "path",
@@ -266,14 +278,6 @@
             "minLength": 3,
             "maxLength": 63,
             "pattern": "^[a-zA-Z][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]$"
-          },
-          {
-            "name": "properties",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WebPubSubResource"
-            }
           }
         ],
         "responses": {
@@ -393,8 +397,7 @@
             "name": "certificateName",
             "in": "path",
             "required": true,
-            "type": "string",
-            "pattern": "^[a-zA-Z0-9][-a-zA-Z0-9]{0,61}[a-zA-Z0-9]$"
+            "type": "string"
           }
         ],
         "responses": {
@@ -419,6 +422,10 @@
       },
       "put": {
         "operationId": "WebPubSubCustomCertificates_CreateOrUpdate",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
         "parameters": [
           {
             "name": "resourceName",
@@ -433,11 +440,10 @@
             "name": "certificateName",
             "in": "path",
             "required": true,
-            "type": "string",
-            "pattern": "^[a-zA-Z0-9][-a-zA-Z0-9]{0,61}[a-zA-Z0-9]$"
+            "type": "string"
           },
           {
-            "name": "resource",
+            "name": "parameters",
             "in": "body",
             "required": true,
             "schema": {
@@ -491,8 +497,7 @@
             "name": "certificateName",
             "in": "path",
             "required": true,
-            "type": "string",
-            "pattern": "^[a-zA-Z0-9][-a-zA-Z0-9]{0,61}[a-zA-Z0-9]$"
+            "type": "string"
           }
         ],
         "responses": {
@@ -571,8 +576,7 @@
             "name": "name",
             "in": "path",
             "required": true,
-            "type": "string",
-            "pattern": "^[a-zA-Z0-9][-a-zA-Z0-9]{0,61}[a-zA-Z0-9]$"
+            "type": "string"
           }
         ],
         "responses": {
@@ -597,6 +601,10 @@
       },
       "put": {
         "operationId": "WebPubSubCustomDomains_CreateOrUpdate",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
         "parameters": [
           {
             "name": "resourceName",
@@ -611,11 +619,10 @@
             "name": "name",
             "in": "path",
             "required": true,
-            "type": "string",
-            "pattern": "^[a-zA-Z0-9][-a-zA-Z0-9]{0,61}[a-zA-Z0-9]$"
+            "type": "string"
           },
           {
-            "name": "resource",
+            "name": "parameters",
             "in": "body",
             "required": true,
             "schema": {
@@ -643,7 +650,7 @@
           }
         },
         "x-ms-long-running-operation-options": {
-          "final-state-via": "original-uri"
+          "final-state-via": "azure-async-operation"
         },
         "x-ms-long-running-operation": true
       },
@@ -663,8 +670,7 @@
             "name": "name",
             "in": "path",
             "required": true,
-            "type": "string",
-            "pattern": "^[a-zA-Z0-9][-a-zA-Z0-9]{0,61}[a-zA-Z0-9]$"
+            "type": "string"
           }
         ],
         "responses": {
@@ -735,6 +741,12 @@
         "operationId": "WebPubSubHubs_Get",
         "parameters": [
           {
+            "name": "hubName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
             "name": "resourceName",
             "in": "path",
             "required": true,
@@ -742,12 +754,6 @@
             "minLength": 3,
             "maxLength": 63,
             "pattern": "^[a-zA-Z][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]$"
-          },
-          {
-            "name": "hubName",
-            "in": "path",
-            "required": true,
-            "type": "string"
           }
         ],
         "responses": {
@@ -774,6 +780,20 @@
         "operationId": "WebPubSubHubs_CreateOrUpdate",
         "parameters": [
           {
+            "name": "hubName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "parameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/WebPubSubHub"
+            }
+          },
+          {
             "name": "resourceName",
             "in": "path",
             "required": true,
@@ -781,20 +801,6 @@
             "minLength": 3,
             "maxLength": 63,
             "pattern": "^[a-zA-Z][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]$"
-          },
-          {
-            "name": "hubName",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "resource",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/WebPubSubHub"
-            }
           }
         ],
         "responses": {
@@ -831,6 +837,12 @@
         "operationId": "WebPubSubHubs_Delete",
         "parameters": [
           {
+            "name": "hubName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
             "name": "resourceName",
             "in": "path",
             "required": true,
@@ -838,12 +850,6 @@
             "minLength": 3,
             "maxLength": 63,
             "pattern": "^[a-zA-Z][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]$"
-          },
-          {
-            "name": "hubName",
-            "in": "path",
-            "required": true,
-            "type": "string"
           }
         ],
         "responses": {
@@ -949,6 +955,9 @@
         "operationId": "WebPubSubPrivateEndpointConnections_Get",
         "parameters": [
           {
+            "$ref": "../../../../../common-types/resource-management/v4/privatelinks.json#/parameters/PrivateEndpointConnectionName"
+          },
+          {
             "name": "resourceName",
             "in": "path",
             "required": true,
@@ -956,12 +965,6 @@
             "minLength": 3,
             "maxLength": 63,
             "pattern": "^[a-zA-Z][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]$"
-          },
-          {
-            "name": "privateEndpointConnectionName",
-            "in": "path",
-            "required": true,
-            "type": "string"
           }
         ],
         "responses": {
@@ -988,6 +991,17 @@
         "operationId": "WebPubSubPrivateEndpointConnections_Update",
         "parameters": [
           {
+            "$ref": "../../../../../common-types/resource-management/v4/privatelinks.json#/parameters/PrivateEndpointConnectionName"
+          },
+          {
+            "name": "parameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PrivateEndpointConnection"
+            }
+          },
+          {
             "name": "resourceName",
             "in": "path",
             "required": true,
@@ -995,20 +1009,6 @@
             "minLength": 3,
             "maxLength": 63,
             "pattern": "^[a-zA-Z][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]$"
-          },
-          {
-            "name": "privateEndpointConnectionName",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "resource",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/PrivateEndpointConnection"
-            }
           }
         ],
         "responses": {
@@ -1035,6 +1035,9 @@
         "operationId": "WebPubSubPrivateEndpointConnections_Delete",
         "parameters": [
           {
+            "$ref": "../../../../../common-types/resource-management/v4/privatelinks.json#/parameters/PrivateEndpointConnectionName"
+          },
+          {
             "name": "resourceName",
             "in": "path",
             "required": true,
@@ -1042,12 +1045,6 @@
             "minLength": 3,
             "maxLength": 63,
             "pattern": "^[a-zA-Z][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]$"
-          },
-          {
-            "name": "privateEndpointConnectionName",
-            "in": "path",
-            "required": true,
-            "type": "string"
           }
         ],
         "responses": {
@@ -1118,6 +1115,14 @@
         "operationId": "WebPubSub_RegenerateKey",
         "parameters": [
           {
+            "name": "parameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RegenerateKeyParameters"
+            }
+          },
+          {
             "name": "resourceName",
             "in": "path",
             "required": true,
@@ -1125,14 +1130,6 @@
             "minLength": 3,
             "maxLength": 63,
             "pattern": "^[a-zA-Z][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]$"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/RegenerateKeyParameters"
-            }
           }
         ],
         "responses": {
@@ -1143,7 +1140,10 @@
             }
           },
           "202": {
-            "description": "ignore"
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/WebPubSubKeys"
+            }
           },
           "default": {
             "description": "ignore",
@@ -1243,6 +1243,10 @@
       },
       "put": {
         "operationId": "WebPubSubReplicas_CreateOrUpdate",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
         "parameters": [
           {
             "name": "resourceName",
@@ -1263,7 +1267,7 @@
             "pattern": "^[a-zA-Z][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]$"
           },
           {
-            "name": "resource",
+            "name": "parameters",
             "in": "body",
             "required": true,
             "schema": {
@@ -1303,6 +1307,10 @@
       },
       "patch": {
         "operationId": "WebPubSubReplicas_Update",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
         "parameters": [
           {
             "name": "resourceName",
@@ -1323,7 +1331,7 @@
             "pattern": "^[a-zA-Z][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]$"
           },
           {
-            "name": "properties",
+            "name": "parameters",
             "in": "body",
             "required": true,
             "schema": {
@@ -1333,6 +1341,12 @@
         ],
         "responses": {
           "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/Replica"
+            }
+          },
+          "202": {
             "description": "ignore",
             "schema": {
               "$ref": "#/definitions/Replica"
@@ -1349,7 +1363,8 @@
           "WebPubSubReplicas_Update": {
             "$ref": "./examples/WebPubSubReplicas_Update.json"
           }
-        }
+        },
+        "x-ms-long-running-operation": true
       },
       "delete": {
         "operationId": "WebPubSubReplicas_Delete",
@@ -1540,6 +1555,10 @@
       },
       "put": {
         "operationId": "WebPubSubReplicaSharedPrivateLinkResources_CreateOrUpdate",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
         "parameters": [
           {
             "name": "resourceName",
@@ -1569,7 +1588,7 @@
             "pattern": "^[a-zA-Z][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]$"
           },
           {
-            "name": "resource",
+            "name": "parameters",
             "in": "body",
             "required": true,
             "schema": {
@@ -1604,53 +1623,6 @@
         },
         "x-ms-long-running-operation-options": {
           "final-state-via": "azure-async-operation"
-        },
-        "x-ms-long-running-operation": true
-      },
-      "delete": {
-        "operationId": "WebPubSubReplicaSharedPrivateLinkResources_Delete",
-        "parameters": [
-          {
-            "name": "resourceName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "minLength": 3,
-            "maxLength": 63,
-            "pattern": "^[a-zA-Z][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]$"
-          },
-          {
-            "name": "replicaName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "minLength": 3,
-            "maxLength": 63,
-            "pattern": "^[a-zA-Z][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]$"
-          },
-          {
-            "name": "sharedPrivateLinkResourceName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "minLength": 3,
-            "maxLength": 63,
-            "pattern": "^[a-zA-Z][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]$"
-          }
-        ],
-        "responses": {
-          "202": {
-            "description": "ignore"
-          },
-          "204": {
-            "description": "ignore"
-          },
-          "default": {
-            "description": "ignore",
-            "schema": {
-              "$ref": "../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
-            }
-          }
         },
         "x-ms-long-running-operation": true
       }
@@ -1829,6 +1801,14 @@
             "pattern": "^[a-zA-Z][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]$"
           },
           {
+            "name": "parameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SharedPrivateLinkResource"
+            }
+          },
+          {
             "name": "resourceName",
             "in": "path",
             "required": true,
@@ -1836,14 +1816,6 @@
             "minLength": 3,
             "maxLength": 63,
             "pattern": "^[a-zA-Z][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]$"
-          },
-          {
-            "name": "parameters",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/SharedPrivateLinkResource"
-            }
           }
         ],
         "responses": {
@@ -1859,9 +1831,6 @@
               "$ref": "#/definitions/SharedPrivateLinkResource"
             }
           },
-          "202": {
-            "description": "ignore"
-          },
           "default": {
             "description": "ignore",
             "schema": {
@@ -1873,7 +1842,11 @@
           "WebPubSubSharedPrivateLinkResources_CreateOrUpdate": {
             "$ref": "./examples/WebPubSubSharedPrivateLinkResources_CreateOrUpdate.json"
           }
-        }
+        },
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "azure-async-operation"
+        },
+        "x-ms-long-running-operation": true
       },
       "delete": {
         "operationId": "WebPubSubSharedPrivateLinkResources_Delete",
@@ -1918,7 +1891,8 @@
           "WebPubSubSharedPrivateLinkResources_Delete": {
             "$ref": "./examples/WebPubSubSharedPrivateLinkResources_Delete.json"
           }
-        }
+        },
+        "x-ms-long-running-operation": true
       }
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}/skus": {
@@ -1963,28 +1937,19 @@
       "properties": {
         "clientConnectionCountRules": {
           "type": "array",
+          "maxItems": 10,
           "items": {
             "$ref": "#/definitions/ClientConnectionCountRule"
           }
         },
         "clientTrafficControlRules": {
           "type": "array",
+          "maxItems": 10,
           "items": {
             "$ref": "#/definitions/ClientTrafficControlRule"
           }
         }
       }
-    },
-    "Azure.ResourceManager.ArmResponse<WebPubSubKeys>": {
-      "type": "object",
-      "properties": {
-        "body": {
-          "$ref": "#/definitions/WebPubSubKeys"
-        }
-      },
-      "required": [
-        "body"
-      ]
     },
     "ClientConnectionCountRule": {
       "type": "object",
@@ -2061,10 +2026,7 @@
           "format": "uri",
           "description": "[Placeholder] Discription for nextLink property"
         }
-      },
-      "required": [
-        "value"
-      ]
+      }
     },
     "CustomCertificateProperties": {
       "type": "object",
@@ -2148,10 +2110,7 @@
           "format": "uri",
           "description": "[Placeholder] Discription for nextLink property"
         }
-      },
-      "required": [
-        "value"
-      ]
+      }
     },
     "CustomDomainProperties": {
       "type": "object",
@@ -2186,6 +2145,23 @@
         "customCertificate",
         "domainName"
       ]
+    },
+    "Dimension": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "internalName": {
+          "type": "string"
+        },
+        "toBeExportedForShoebox": {
+          "type": "boolean"
+        }
+      }
     },
     "EventHandler": {
       "type": "object",
@@ -2352,6 +2328,17 @@
         }
       }
     },
+    "LogSpecification": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        }
+      }
+    },
     "ManagedIdentity": {
       "type": "object",
       "properties": {
@@ -2391,6 +2378,41 @@
         }
       }
     },
+    "MetricSpecification": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "displayDescription": {
+          "type": "string"
+        },
+        "unit": {
+          "type": "string"
+        },
+        "aggregationType": {
+          "type": "string"
+        },
+        "fillGapWithZero": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "dimensions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Dimension"
+          },
+          "x-ms-identifiers": [
+            "name"
+          ]
+        }
+      }
+    },
     "NameAvailability": {
       "type": "object",
       "properties": {
@@ -2420,7 +2442,7 @@
         "type"
       ]
     },
-    "NetworkAcl": {
+    "NetworkACL": {
       "type": "object",
       "properties": {
         "allow": {
@@ -2437,6 +2459,73 @@
         }
       }
     },
+    "Operation": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "isDataAction": {
+          "type": "boolean"
+        },
+        "display": {
+          "$ref": "#/definitions/OperationDisplay"
+        },
+        "origin": {
+          "type": "string"
+        },
+        "properties": {
+          "$ref": "#/definitions/OperationProperties",
+          "x-ms-client-flatten": false
+        }
+      }
+    },
+    "OperationDisplay": {
+      "type": "object",
+      "properties": {
+        "provider": {
+          "type": "string"
+        },
+        "resource": {
+          "type": "string"
+        },
+        "operation": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "OperationList": {
+      "type": "object",
+      "description": "[Placeholder] Discription for page model",
+      "properties": {
+        "value": {
+          "type": "array",
+          "description": "[Placeholder] Discription for value property",
+          "items": {
+            "$ref": "#/definitions/Operation"
+          },
+          "x-ms-identifiers": [
+            "name"
+          ]
+        },
+        "nextLink": {
+          "type": "string",
+          "format": "uri",
+          "description": "[Placeholder] Discription for nextLink property"
+        }
+      }
+    },
+    "OperationProperties": {
+      "type": "object",
+      "properties": {
+        "serviceSpecification": {
+          "$ref": "#/definitions/ServiceSpecification"
+        }
+      }
+    },
     "PrivateEndpoint": {
       "type": "object",
       "properties": {
@@ -2445,7 +2534,7 @@
         }
       }
     },
-    "PrivateEndpointAcl": {
+    "PrivateEndpointACL": {
       "type": "object",
       "properties": {
         "name": {
@@ -2457,7 +2546,7 @@
       ],
       "allOf": [
         {
-          "$ref": "#/definitions/NetworkAcl"
+          "$ref": "#/definitions/NetworkACL"
         }
       ]
     },
@@ -2491,10 +2580,7 @@
           "format": "uri",
           "description": "[Placeholder] Discription for nextLink property"
         }
-      },
-      "required": [
-        "value"
-      ]
+      }
     },
     "PrivateEndpointConnectionProperties": {
       "type": "object",
@@ -2563,10 +2649,7 @@
           "format": "uri",
           "description": "[Placeholder] Discription for nextLink property"
         }
-      },
-      "required": [
-        "value"
-      ]
+      }
     },
     "PrivateLinkResourceProperties": {
       "type": "object",
@@ -2638,12 +2721,12 @@
     "Replica": {
       "type": "object",
       "properties": {
+        "sku": {
+          "$ref": "#/definitions/ResourceSku"
+        },
         "properties": {
           "$ref": "#/definitions/ReplicaProperties",
           "x-ms-client-flatten": true
-        },
-        "sku": {
-          "$ref": "#/definitions/ResourceSku"
         }
       },
       "allOf": [
@@ -2668,10 +2751,7 @@
           "format": "uri",
           "description": "[Placeholder] Discription for nextLink property"
         }
-      },
-      "required": [
-        "value"
-      ]
+      }
     },
     "ReplicaProperties": {
       "type": "object",
@@ -2774,6 +2854,30 @@
         "name"
       ]
     },
+    "ServiceSpecification": {
+      "type": "object",
+      "properties": {
+        "metricSpecifications": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MetricSpecification"
+          },
+          "x-ms-identifiers": [
+            "name",
+            "unit"
+          ]
+        },
+        "logSpecifications": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LogSpecification"
+          },
+          "x-ms-identifiers": [
+            "name"
+          ]
+        }
+      }
+    },
     "ShareablePrivateLinkResourceProperties": {
       "type": "object",
       "properties": {
@@ -2829,10 +2933,7 @@
           "format": "uri",
           "description": "[Placeholder] Discription for nextLink property"
         }
-      },
-      "required": [
-        "value"
-      ]
+      }
     },
     "SharedPrivateLinkResourceProperties": {
       "type": "object",
@@ -2891,6 +2992,57 @@
         "groupId",
         "privateLinkResourceId"
       ]
+    },
+    "SignalRServiceUsage": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "currentValue": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "limit": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "$ref": "#/definitions/SignalRServiceUsageName"
+        },
+        "unit": {
+          "type": "string"
+        }
+      }
+    },
+    "SignalRServiceUsageList": {
+      "type": "object",
+      "description": "[Placeholder] Discription for page model",
+      "properties": {
+        "value": {
+          "type": "array",
+          "description": "[Placeholder] Discription for value property",
+          "items": {
+            "$ref": "#/definitions/SignalRServiceUsage"
+          }
+        },
+        "nextLink": {
+          "type": "string",
+          "format": "uri",
+          "description": "[Placeholder] Discription for nextLink property"
+        }
+      }
+    },
+    "SignalRServiceUsageName": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "localizedValue": {
+          "type": "string"
+        }
+      }
     },
     "Sku": {
       "type": "object",
@@ -3109,9 +3261,6 @@
       ],
       "x-ms-discriminator-value": "TrafficThrottleByUserIdRule"
     },
-    "TypeSpec.Http.NoContentResponse": {
-      "type": "object"
-    },
     "UpstreamAuthSettings": {
       "type": "object",
       "properties": {
@@ -3176,33 +3325,11 @@
           "format": "uri",
           "description": "[Placeholder] Discription for nextLink property"
         }
-      },
-      "required": [
-        "value"
-      ]
+      }
     },
     "WebPubSubHubProperties": {
       "type": "object",
       "properties": {
-        "provisioningState": {
-          "type": "string",
-          "enum": [
-            "Unknown",
-            "Succeeded",
-            "Failed",
-            "Canceled",
-            "Running",
-            "Creating",
-            "Updating",
-            "Deleting",
-            "Moving"
-          ],
-          "x-ms-enum": {
-            "name": "ProvisioningState",
-            "modelAsString": true
-          },
-          "readOnly": true
-        },
         "eventHandlers": {
           "type": "array",
           "items": {
@@ -3233,27 +3360,23 @@
       "properties": {
         "primaryKey": {
           "type": "string",
-          "format": "password",
           "x-ms-secret": true
         },
         "secondaryKey": {
           "type": "string",
-          "format": "password",
           "x-ms-secret": true
         },
         "primaryConnectionString": {
           "type": "string",
-          "format": "password",
           "x-ms-secret": true
         },
         "secondaryConnectionString": {
           "type": "string",
-          "format": "password",
           "x-ms-secret": true
         }
       }
     },
-    "WebPubSubNetworkAcls": {
+    "WebPubSubNetworkACLs": {
       "type": "object",
       "properties": {
         "defaultAction": {
@@ -3268,12 +3391,12 @@
           }
         },
         "publicNetwork": {
-          "$ref": "#/definitions/NetworkAcl"
+          "$ref": "#/definitions/NetworkACL"
         },
         "privateEndpoints": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/PrivateEndpointAcl"
+            "$ref": "#/definitions/PrivateEndpointACL"
           },
           "x-ms-identifiers": [
             "name"
@@ -3281,6 +3404,7 @@
         },
         "ipRules": {
           "type": "array",
+          "maxItems": 30,
           "items": {
             "$ref": "#/definitions/IPRule"
           }
@@ -3309,7 +3433,7 @@
           },
           "readOnly": true
         },
-        "externalIp": {
+        "externalIP": {
           "type": "string",
           "readOnly": true
         },
@@ -3358,8 +3482,8 @@
         "resourceLogConfiguration": {
           "$ref": "#/definitions/ResourceLogConfiguration"
         },
-        "networkAcls": {
-          "$ref": "#/definitions/WebPubSubNetworkAcls"
+        "networkACLs": {
+          "$ref": "#/definitions/WebPubSubNetworkACLs"
         },
         "applicationFirewall": {
           "$ref": "#/definitions/ApplicationFirewallSettings"
@@ -3384,20 +3508,20 @@
           "type": "string",
           "default": "false"
         },
-        "socketIo": {
-          "$ref": "#/definitions/WebPubSubSocketIoSettings"
+        "socketIO": {
+          "$ref": "#/definitions/WebPubSubSocketIOSettings"
         }
       }
     },
     "WebPubSubResource": {
       "type": "object",
       "properties": {
+        "sku": {
+          "$ref": "#/definitions/ResourceSku"
+        },
         "properties": {
           "$ref": "#/definitions/WebPubSubProperties",
           "x-ms-client-flatten": true
-        },
-        "sku": {
-          "$ref": "#/definitions/ResourceSku"
         },
         "kind": {
           "type": "string",
@@ -3440,12 +3564,9 @@
           "format": "uri",
           "description": "[Placeholder] Discription for nextLink property"
         }
-      },
-      "required": [
-        "value"
-      ]
+      }
     },
-    "WebPubSubSocketIoSettings": {
+    "WebPubSubSocketIOSettings": {
       "type": "object",
       "properties": {
         "serviceMode": {
@@ -3459,60 +3580,6 @@
         "clientCertEnabled": {
           "type": "boolean",
           "default": false
-        }
-      }
-    },
-    "WebPubSubUsage": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "currentValue": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "limit": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "name": {
-          "$ref": "#/definitions/WebPubSubUsageName"
-        },
-        "unit": {
-          "type": "string"
-        }
-      }
-    },
-    "WebPubSubUsageList": {
-      "type": "object",
-      "description": "[Placeholder] Discription for page model",
-      "properties": {
-        "value": {
-          "type": "array",
-          "description": "[Placeholder] Discription for value property",
-          "items": {
-            "$ref": "#/definitions/WebPubSubUsage"
-          }
-        },
-        "nextLink": {
-          "type": "string",
-          "format": "uri",
-          "description": "[Placeholder] Discription for nextLink property"
-        }
-      },
-      "required": [
-        "value"
-      ]
-    },
-    "WebPubSubUsageName": {
-      "type": "object",
-      "properties": {
-        "value": {
-          "type": "string"
-        },
-        "localizedValue": {
-          "type": "string"
         }
       }
     }

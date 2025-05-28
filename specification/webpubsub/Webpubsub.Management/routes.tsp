@@ -36,7 +36,7 @@ interface UsagesOperationGroup {
   @get
   @action("usages")
   list is ArmProviderActionSync<
-    Response = SignalRServiceUsageList,
+    Response = WebPubSubUsageList,
     Scope = SubscriptionActionScope,
     Parameters = LocationParameter
   >;
@@ -130,7 +130,11 @@ interface WebPubSubSharedPrivateLinkResourcesOperationGroup {
      */
     @bodyRoot
     parameters: SharedPrivateLinkResource,
-  ): ArmResponse<SharedPrivateLinkResource> | ArmCreatedResponse<SharedPrivateLinkResource> | ArmAcceptedResponse | ErrorResponse;
+  ):
+    | ArmResponse<SharedPrivateLinkResource>
+    | ArmCreatedResponse<SharedPrivateLinkResource>
+    | ArmAcceptedResponse
+    | ErrorResponse;
 
   /**
    * Delete the specified shared private link resource

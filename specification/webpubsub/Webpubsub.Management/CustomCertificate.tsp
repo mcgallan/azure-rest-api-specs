@@ -21,7 +21,7 @@ model CustomCertificate
     Resource = CustomCertificate,
     KeyName = "certificateName",
     SegmentName = "customCertificates",
-    NamePattern = ""
+    NamePattern = "^[a-zA-Z0-9][-a-zA-Z0-9]{0,61}[a-zA-Z0-9]$"
   >;
 }
 

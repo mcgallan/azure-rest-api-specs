@@ -94,7 +94,7 @@
           "200": {
             "description": "ignore",
             "schema": {
-              "$ref": "#/definitions/WebPubSubUsageList"
+              "$ref": "#/definitions/SignalRServiceUsageList"
             }
           },
           "default": {
@@ -2420,7 +2420,7 @@
         "type"
       ]
     },
-    "NetworkAcl": {
+    "NetworkACL": {
       "type": "object",
       "properties": {
         "allow": {
@@ -2445,7 +2445,7 @@
         }
       }
     },
-    "PrivateEndpointAcl": {
+    "PrivateEndpointACL": {
       "type": "object",
       "properties": {
         "name": {
@@ -2457,7 +2457,7 @@
       ],
       "allOf": [
         {
-          "$ref": "#/definitions/NetworkAcl"
+          "$ref": "#/definitions/NetworkACL"
         }
       ]
     },
@@ -2892,6 +2892,60 @@
         "privateLinkResourceId"
       ]
     },
+    "SignalRServiceUsage": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "currentValue": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "limit": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "$ref": "#/definitions/SignalRServiceUsageName"
+        },
+        "unit": {
+          "type": "string"
+        }
+      }
+    },
+    "SignalRServiceUsageList": {
+      "type": "object",
+      "description": "[Placeholder] Discription for page model",
+      "properties": {
+        "value": {
+          "type": "array",
+          "description": "[Placeholder] Discription for value property",
+          "items": {
+            "$ref": "#/definitions/SignalRServiceUsage"
+          }
+        },
+        "nextLink": {
+          "type": "string",
+          "format": "uri",
+          "description": "[Placeholder] Discription for nextLink property"
+        }
+      },
+      "required": [
+        "value"
+      ]
+    },
+    "SignalRServiceUsageName": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "localizedValue": {
+          "type": "string"
+        }
+      }
+    },
     "Sku": {
       "type": "object",
       "properties": {
@@ -3184,25 +3238,6 @@
     "WebPubSubHubProperties": {
       "type": "object",
       "properties": {
-        "provisioningState": {
-          "type": "string",
-          "enum": [
-            "Unknown",
-            "Succeeded",
-            "Failed",
-            "Canceled",
-            "Running",
-            "Creating",
-            "Updating",
-            "Deleting",
-            "Moving"
-          ],
-          "x-ms-enum": {
-            "name": "ProvisioningState",
-            "modelAsString": true
-          },
-          "readOnly": true
-        },
         "eventHandlers": {
           "type": "array",
           "items": {
@@ -3253,7 +3288,7 @@
         }
       }
     },
-    "WebPubSubNetworkAcls": {
+    "WebPubSubNetworkACLs": {
       "type": "object",
       "properties": {
         "defaultAction": {
@@ -3268,12 +3303,12 @@
           }
         },
         "publicNetwork": {
-          "$ref": "#/definitions/NetworkAcl"
+          "$ref": "#/definitions/NetworkACL"
         },
         "privateEndpoints": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/PrivateEndpointAcl"
+            "$ref": "#/definitions/PrivateEndpointACL"
           },
           "x-ms-identifiers": [
             "name"
@@ -3309,7 +3344,7 @@
           },
           "readOnly": true
         },
-        "externalIp": {
+        "externalIP": {
           "type": "string",
           "readOnly": true
         },
@@ -3358,8 +3393,8 @@
         "resourceLogConfiguration": {
           "$ref": "#/definitions/ResourceLogConfiguration"
         },
-        "networkAcls": {
-          "$ref": "#/definitions/WebPubSubNetworkAcls"
+        "networkACLs": {
+          "$ref": "#/definitions/WebPubSubNetworkACLs"
         },
         "applicationFirewall": {
           "$ref": "#/definitions/ApplicationFirewallSettings"
@@ -3384,8 +3419,8 @@
           "type": "string",
           "default": "false"
         },
-        "socketIo": {
-          "$ref": "#/definitions/WebPubSubSocketIoSettings"
+        "socketIO": {
+          "$ref": "#/definitions/WebPubSubSocketIOSettings"
         }
       }
     },
@@ -3445,7 +3480,7 @@
         "value"
       ]
     },
-    "WebPubSubSocketIoSettings": {
+    "WebPubSubSocketIOSettings": {
       "type": "object",
       "properties": {
         "serviceMode": {
@@ -3459,60 +3494,6 @@
         "clientCertEnabled": {
           "type": "boolean",
           "default": false
-        }
-      }
-    },
-    "WebPubSubUsage": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "currentValue": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "limit": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "name": {
-          "$ref": "#/definitions/WebPubSubUsageName"
-        },
-        "unit": {
-          "type": "string"
-        }
-      }
-    },
-    "WebPubSubUsageList": {
-      "type": "object",
-      "description": "[Placeholder] Discription for page model",
-      "properties": {
-        "value": {
-          "type": "array",
-          "description": "[Placeholder] Discription for value property",
-          "items": {
-            "$ref": "#/definitions/WebPubSubUsage"
-          }
-        },
-        "nextLink": {
-          "type": "string",
-          "format": "uri",
-          "description": "[Placeholder] Discription for nextLink property"
-        }
-      },
-      "required": [
-        "value"
-      ]
-    },
-    "WebPubSubUsageName": {
-      "type": "object",
-      "properties": {
-        "value": {
-          "type": "string"
-        },
-        "localizedValue": {
-          "type": "string"
         }
       }
     }

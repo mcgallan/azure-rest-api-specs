@@ -2,11 +2,13 @@ import "@typespec/rest";
 import "@typespec/http";
 import "@azure-tools/typespec-azure-core";
 import "@azure-tools/typespec-azure-resource-manager";
+import "@azure-tools/typespec-client-generator-core";
 
 using TypeSpec.Rest;
 using TypeSpec.Http;
 using Azure.ResourceManager;
 using Azure.ResourceManager.Foundations;
+using Azure.ClientGenerator.Core;
 
 namespace Microsoft.SignalRService;
 
@@ -17,9 +19,17 @@ namespace Microsoft.SignalRService;
  */
 union WebPubSubSkuTier {
   string,
+
+  /** Free tier with limited capabilities and scale */
   Free: "Free",
+
+  /** Basic tier (Deprecated: use Standard instead) */
   Basic: "Basic",
+
+  /** Standard tier with full set of features */
   Standard: "Standard",
+
+  /** Premium tier with enhanced performance and scale */
   Premium: "Premium",
 }
 
@@ -28,14 +38,32 @@ union WebPubSubSkuTier {
  */
 union ProvisioningState {
   string,
+
+  /** State could not be determined */
   Unknown: "Unknown",
+
+  /** Resource provisioning has succeeded */
   Succeeded: "Succeeded",
+
+  /** Resource provisioning has failed */
   Failed: "Failed",
+
+  /** Resource provisioning was canceled */
   Canceled: "Canceled",
+
+  /** Resource is currently running */
   Running: "Running",
+
+  /** Resource is in the process of being created */
   Creating: "Creating",
+
+  /** Resource is in the process of being updated */
   Updating: "Updating",
+
+  /** Resource is in the process of being deleted */
   Deleting: "Deleting",
+
+  /** Resource is in the process of being moved */
   Moving: "Moving",
 }
 
@@ -44,9 +72,17 @@ union ProvisioningState {
  */
 union PrivateLinkServiceConnectionStatus {
   string,
+
+  /** Connection is pending approval from the owner */
   Pending: "Pending",
+
+  /** Connection has been approved by the owner */
   Approved: "Approved",
+
+  /** Connection has been rejected by the owner */
   Rejected: "Rejected",
+
+  /** Connection has been removed by the owner */
   Disconnected: "Disconnected",
 }
 
@@ -55,9 +91,17 @@ union PrivateLinkServiceConnectionStatus {
  */
 union CreatedByType {
   string,
+
+  /** Resource was created by a user */
   User: "User",
+
+  /** Resource was created by an application */
   Application: "Application",
+
+  /** Resource was created by a managed identity */
   ManagedIdentity: "ManagedIdentity",
+
+  /** Resource was created using an access key */
   Key: "Key",
 }
 
@@ -66,10 +110,20 @@ union CreatedByType {
  */
 union SharedPrivateLinkResourceStatus {
   string,
+
+  /** The shared private link resource request is pending approval */
   Pending: "Pending",
+
+  /** The shared private link resource has been approved */
   Approved: "Approved",
+
+  /** The shared private link resource has been rejected */
   Rejected: "Rejected",
+
+  /** The shared private link resource has been disconnected */
   Disconnected: "Disconnected",
+
+  /** The shared private link resource request has timed out */
   Timeout: "Timeout",
 }
 
@@ -78,7 +132,11 @@ union SharedPrivateLinkResourceStatus {
  */
 union ACLAction {
   string,
+
+  /** Allow the network request */
   Allow: "Allow",
+
+  /** Deny the network request */
   Deny: "Deny",
 }
 
@@ -87,23 +145,49 @@ union ACLAction {
  */
 union WebPubSubRequestType {
   string,
+
+  /** Connection from a client */
   ClientConnection: "ClientConnection",
+
+  /** Connection from a server */
   ServerConnection: "ServerConnection",
+
+  /** Request through REST API */
   RESTAPI: "RESTAPI",
+
+  /** Trace or diagnostic request */
   Trace: "Trace",
 }
 
+/**
+ * Discriminator for client connection count throttling rules
+ */
 union ClientConnectionCountRuleDiscriminator {
   string,
+
+  /** Throttle by JWT signature */
   ThrottleByJwtSignatureRule: "ThrottleByJwtSignatureRule",
+
+  /** Throttle by user ID */
   ThrottleByUserIdRule: "ThrottleByUserIdRule",
+
+  /** Throttle by JWT custom claim */
   ThrottleByJwtCustomClaimRule: "ThrottleByJwtCustomClaimRule",
 }
 
+/**
+ * Discriminator for client traffic control throttling rules
+ */
 union ClientTrafficControlRuleDiscriminator {
   string,
+
+  /** Traffic throttle by JWT signature */
   TrafficThrottleByJwtSignatureRule: "TrafficThrottleByJwtSignatureRule",
+
+  /** Traffic throttle by user ID */
   TrafficThrottleByUserIdRule: "TrafficThrottleByUserIdRule",
+
+  /** Traffic throttle by JWT custom claim */
   TrafficThrottleByJwtCustomClaimRule: "TrafficThrottleByJwtCustomClaimRule",
 }
 
@@ -112,7 +196,11 @@ union ClientTrafficControlRuleDiscriminator {
  */
 union ServiceKind {
   string,
+
+  /** WebPubSub service using Azure WebPubSub protocol */
   WebPubSub: "WebPubSub",
+
+  /** WebPubSub service using Socket.IO protocol */
   SocketIO: "SocketIO",
 }
 
@@ -121,8 +209,14 @@ union ServiceKind {
  */
 union ManagedIdentityType {
   string,
+
+  /** No managed identity is assigned */
   None: "None",
+
+  /** System assigned managed identity is enabled */
   SystemAssigned: "SystemAssigned",
+
+  /** User assigned managed identity is enabled */
   UserAssigned: "UserAssigned",
 }
 
@@ -131,17 +225,31 @@ union ManagedIdentityType {
  */
 union UpstreamAuthType {
   string,
+
+  /** No authentication is used */
   None: "None",
+
+  /** Managed identity is used for authentication */
   ManagedIdentity: "ManagedIdentity",
 }
 
+/**
+ * Discriminator for event listener filters
+ */
 union EventListenerFilterDiscriminator {
   string,
+
+  /** Filter by event name */
   EventName: "EventName",
 }
 
+/**
+ * Discriminator for event listener endpoints
+ */
 union EventListenerEndpointDiscriminator {
   string,
+
+  /** Event Hub endpoint */
   EventHub: "EventHub",
 }
 
@@ -150,8 +258,14 @@ union EventListenerEndpointDiscriminator {
  */
 union KeyType {
   string,
+
+  /** Primary access key */
   Primary: "Primary",
+
+  /** Secondary access key */
   Secondary: "Secondary",
+
+  /** Salt key for authentication */
   Salt: "Salt",
 }
 
@@ -160,8 +274,14 @@ union KeyType {
  */
 union ScaleType {
   string,
+
+  /** No scaling */
   None: "None",
+
+  /** Manual scaling controlled by user */
   Manual: "Manual",
+
+  /** Automatic scaling based on load */
   Automatic: "Automatic",
 }
 
@@ -414,12 +534,14 @@ model NameAvailability {
 /**
  * Object that includes an array of the resource usages and a possible link for next set.
  */
-model SignalRServiceUsageList is Azure.Core.Page<SignalRServiceUsage>;
+@clientName("SignalRServiceUsageList", "csharp")
+model WebPubSubUsageList is Azure.Core.Page<WebPubSubUsage>;
 
 /**
  * Object that describes a specific usage of the resources.
  */
-model SignalRServiceUsage {
+@clientName("SignalRServiceUsage", "csharp")
+model WebPubSubUsage {
   /**
    * Fully qualified ARM resource id
    */
@@ -438,7 +560,7 @@ model SignalRServiceUsage {
   /**
    * Localizable String object containing the name and a localized value.
    */
-  name?: SignalRServiceUsageName;
+  name?: WebPubSubUsageName;
 
   /**
    * Representing the units of the usage quota. Possible values are: Count, Bytes, Seconds, Percent, CountPerSecond, BytesPerSecond.
@@ -449,7 +571,8 @@ model SignalRServiceUsage {
 /**
  * Localizable String object containing the name and a localized value.
  */
-model SignalRServiceUsageName {
+@clientName("SignalRServiceUsageName", "csharp")
+model WebPubSubUsageName {
   /**
    * The identifier of the usage.
    */
@@ -523,7 +646,8 @@ model WebPubSubProperties {
    * The publicly accessible IP of the resource.
    */
   @visibility(Lifecycle.Read)
-  externalIP?: string;
+  @clientName("externalIP", "csharp")
+  externalIp?: string;
 
   /**
    * FQDN of the service instance.
@@ -587,7 +711,8 @@ model WebPubSubProperties {
   /**
    * Network ACLs for the resource
    */
-  networkACLs?: WebPubSubNetworkACLs;
+  @clientName("networkACLs", "csharp")
+  networkAcls?: WebPubSubNetworkAcls;
 
   /**
    * Application firewall settings for the resource
@@ -606,14 +731,14 @@ model WebPubSubProperties {
    * Enable or disable local auth with AccessKey
    * When set as true, connection with AccessKey=xxx won't work.
    */
-  disableLocalAuth?: boolean;
+  disableLocalAuth?: boolean = false;
 
   /**
    * DisableLocalAuth
    * Enable or disable aad auth
    * When set as true, connection with AuthType=aad won't work.
    */
-  disableAadAuth?: boolean;
+  disableAadAuth?: boolean = false;
 
   /**
    * Enable or disable the regional endpoint. Default to "Enabled".
@@ -632,7 +757,8 @@ model WebPubSubProperties {
   /**
    * SocketIO settings for the resource
    */
-  socketIO?: WebPubSubSocketIOSettings;
+  @clientName("socketIO", "csharp")
+  socketIo?: WebPubSubSocketIoSettings;
 }
 
 /**
@@ -738,7 +864,7 @@ model WebPubSubTlsSettings {
   /**
    * Request client certificate during TLS handshake if enabled. Not supported for free tier. Any input will be ignored for free tier.
    */
-  clientCertEnabled?: boolean;
+  clientCertEnabled?: boolean = false;
 }
 
 /**
@@ -813,7 +939,11 @@ model ResourceLogCategory {
 /**
  * Network ACLs for the resource
  */
-model WebPubSubNetworkACLs {
+/**
+ * Network access control settings for Azure Web PubSub
+ */
+@clientName("WebPubSubNetworkACLs", "csharp")
+model WebPubSubNetworkAcls {
   /**
    * Azure Networking ACL Action.
    */
@@ -822,13 +952,13 @@ model WebPubSubNetworkACLs {
   /**
    * Network ACL
    */
-  publicNetwork?: NetworkACL;
+  publicNetwork?: NetworkAcl;
 
   /**
    * ACLs for requests from private endpoints
    */
   @OpenAPI.extension("x-ms-identifiers", #["name"])
-  privateEndpoints?: PrivateEndpointACL[];
+  privateEndpoints?: PrivateEndpointAcl[];
 
   /**
    * IP rules for filtering public traffic
@@ -840,7 +970,11 @@ model WebPubSubNetworkACLs {
 /**
  * Network ACL
  */
-model NetworkACL {
+/**
+ * Network access control list for request types
+ */
+@clientName("NetworkACL", "csharp")
+model NetworkAcl {
   /**
    * Allowed request types. The value can be one or more of: ClientConnection, ServerConnection, RESTAPI.
    */
@@ -857,8 +991,12 @@ model NetworkACL {
 /**
  * ACL for a private endpoint
  */
+/**
+ * Network access control list for a private endpoint
+ */
 #suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "For backward compatibility"
-model PrivateEndpointACL extends NetworkACL {
+@clientName("PrivateEndpointACL", "csharp")
+model PrivateEndpointAcl extends NetworkAcl {
   /**
    * Name of the private endpoint connection
    */
@@ -916,7 +1054,11 @@ model ClientTrafficControlRule {
 /**
  * SocketIO settings for the resource
  */
-model WebPubSubSocketIOSettings {
+/**
+ * Settings for Socket.IO protocol support
+ */
+@clientName("WebPubSubSocketIOSettings", "csharp")
+model WebPubSubSocketIoSettings {
   /**
    * The service mode of Web PubSub for Socket.IO. Values allowed:
    * "Default": have your own backend Socket.IO server
@@ -935,8 +1077,10 @@ model ManagedIdentity {
   type?: ManagedIdentityType;
 
   /**
-   * Get or set the user assigned identities
+   * Get or set the user assigned identities. This should be a dictionary mapping
+   * ARM resource IDs to user assigned identity properties.
    */
+  @OpenAPI.extension("x-ms-identifiers", #[])
   userAssignedIdentities?: Record<UserAssignedIdentityProperty>;
 
   /**
@@ -969,6 +1113,18 @@ model UserAssignedIdentityProperty {
    */
   @visibility(Lifecycle.Read)
   clientId?: string;
+}
+
+/**
+ * A dictionary of user assigned identities
+ */
+@doc("A dictionary of user assigned managed identities")
+model UserAssignedIdentityMap {
+  /**
+   * The dictionary keys are ARM resource IDs in the form:
+   * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}
+   */
+  properties?: Record<UserAssignedIdentityProperty>;
 }
 
 /**
@@ -1050,6 +1206,12 @@ model WebPubSubHubList is Azure.Core.Page<WebPubSubHub>;
  * Properties of a hub.
  */
 model WebPubSubHubProperties {
+  /**
+   * Provisioning state of the hub.
+   */
+  @visibility(Lifecycle.Read)
+  provisioningState?: ProvisioningState;
+
   /**
    * Event handler of a hub.
    */
@@ -1175,21 +1337,25 @@ model WebPubSubKeys {
   /**
    * The primary access key.
    */
+  @secret
   primaryKey?: string;
 
   /**
    * The secondary access key.
    */
+  @secret
   secondaryKey?: string;
 
   /**
    * Connection string constructed via the primaryKey
    */
+  @secret
   primaryConnectionString?: string;
 
   /**
    * Connection string constructed via the secondaryKey
    */
+  @secret
   secondaryConnectionString?: string;
 }
 
@@ -1291,6 +1457,9 @@ model RegenerateKeyParameters {
 
 model ReplicaList is Azure.Core.Page<Replica>;
 
+/**
+ * Properties of a WebPubSub replica resource.
+ */
 model ReplicaProperties {
   /**
    * Provisioning state of the resource.
@@ -1452,6 +1621,7 @@ model ThrottleByJwtCustomClaimRule extends ClientConnectionCountRule {
    * Maximum connection count allowed for the same Jwt claim value. Clients with the same Jwt claim will get rejected if the connection count exceeds this value. Default value is 20.
    */
   @maxValue(2147483647)
+  @minValue(0)
   maxCount?: int32 = 20;
 
   type: "ThrottleByJwtCustomClaimRule";
@@ -1465,6 +1635,7 @@ model ThrottleByJwtSignatureRule extends ClientConnectionCountRule {
    * Maximum connection count allowed for the same JWT signature. Clients with the same JWT signature will get rejected if the connection count exceeds this value. Default value is 20.
    */
   @maxValue(2147483647)
+  @minValue(0)
   maxCount?: int32 = 20;
 
   type: "ThrottleByJwtSignatureRule";
@@ -1478,6 +1649,7 @@ model ThrottleByUserIdRule extends ClientConnectionCountRule {
    * Maximum connection count allowed for the same user ID. Clients with the same user ID will get rejected if the connection count exceeds this value. Default value is 20.
    */
   @maxValue(2147483647)
+  @minValue(0)
   maxCount?: int32 = 20;
 
   type: "ThrottleByUserIdRule";
@@ -1495,6 +1667,7 @@ model TrafficThrottleByJwtCustomClaimRule extends ClientTrafficControlRule {
   /**
    * Maximum accumulated inbound message bytes allowed for the same JWT signature within a time window. Clients with the same JWT claim will get disconnected if the message bytes exceeds this value. Default value is 1GB.
    */
+  @minValue(0)
   maxInboundMessageBytes?: int64;
 
   /**
@@ -1514,6 +1687,7 @@ model TrafficThrottleByJwtSignatureRule extends ClientTrafficControlRule {
   /**
    * Maximum accumulated inbound message bytes allowed for the same JWT signature within a time window. Clients with the same JWT signature will get disconnected if the message bytes exceeds this value. Default value is 1GB.
    */
+  @minValue(0)
   maxInboundMessageBytes?: int64;
 
   /**
@@ -1533,6 +1707,7 @@ model TrafficThrottleByUserIdRule extends ClientTrafficControlRule {
   /**
    * Maximum accumulated inbound message bytes allowed for the same user ID within a time window. Clients with the same user ID will get disconnected if the message bytes exceeds this value. Default value is 1GB.
    */
+  @minValue(0)
   maxInboundMessageBytes?: int64;
 
   /**

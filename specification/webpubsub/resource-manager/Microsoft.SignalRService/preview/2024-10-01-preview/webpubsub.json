@@ -165,7 +165,7 @@
           "200": {
             "description": "The request has succeeded.",
             "schema": {
-              "$ref": "#/definitions/SignalRServiceUsageList"
+              "$ref": "#/definitions/WebPubSubUsageList"
             }
           },
           "default": {
@@ -625,7 +625,8 @@
             "in": "path",
             "description": "Custom certificate name",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9][-a-zA-Z0-9]{0,61}[a-zA-Z0-9]$"
           }
         ],
         "responses": {
@@ -679,7 +680,8 @@
             "in": "path",
             "description": "Custom certificate name",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9][-a-zA-Z0-9]{0,61}[a-zA-Z0-9]$"
           },
           {
             "name": "resource",
@@ -763,7 +765,8 @@
             "in": "path",
             "description": "Custom certificate name",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9][-a-zA-Z0-9]{0,61}[a-zA-Z0-9]$"
           }
         ],
         "responses": {
@@ -871,7 +874,8 @@
             "in": "path",
             "description": "Custom domain name.",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9][-a-zA-Z0-9]{0,61}[a-zA-Z0-9]$"
           }
         ],
         "responses": {
@@ -925,7 +929,8 @@
             "in": "path",
             "description": "Custom domain name.",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9][-a-zA-Z0-9]{0,61}[a-zA-Z0-9]$"
           },
           {
             "name": "resource",
@@ -999,7 +1004,8 @@
             "in": "path",
             "description": "Custom domain name.",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9][-a-zA-Z0-9]{0,61}[a-zA-Z0-9]$"
           }
         ],
         "responses": {
@@ -2867,11 +2873,13 @@
         "values": [
           {
             "name": "Allow",
-            "value": "Allow"
+            "value": "Allow",
+            "description": "Allow the network request"
           },
           {
             "name": "Deny",
-            "value": "Deny"
+            "value": "Deny",
+            "description": "Deny the network request"
           }
         ]
       }
@@ -2926,6 +2934,7 @@
     },
     "ClientConnectionCountRuleDiscriminator": {
       "type": "string",
+      "description": "Discriminator for client connection count throttling rules",
       "enum": [
         "ThrottleByJwtSignatureRule",
         "ThrottleByUserIdRule",
@@ -2937,15 +2946,18 @@
         "values": [
           {
             "name": "ThrottleByJwtSignatureRule",
-            "value": "ThrottleByJwtSignatureRule"
+            "value": "ThrottleByJwtSignatureRule",
+            "description": "Throttle by JWT signature"
           },
           {
             "name": "ThrottleByUserIdRule",
-            "value": "ThrottleByUserIdRule"
+            "value": "ThrottleByUserIdRule",
+            "description": "Throttle by user ID"
           },
           {
             "name": "ThrottleByJwtCustomClaimRule",
-            "value": "ThrottleByJwtCustomClaimRule"
+            "value": "ThrottleByJwtCustomClaimRule",
+            "description": "Throttle by JWT custom claim"
           }
         ]
       }
@@ -2965,6 +2977,7 @@
     },
     "ClientTrafficControlRuleDiscriminator": {
       "type": "string",
+      "description": "Discriminator for client traffic control throttling rules",
       "enum": [
         "TrafficThrottleByJwtSignatureRule",
         "TrafficThrottleByUserIdRule",
@@ -2976,15 +2989,18 @@
         "values": [
           {
             "name": "TrafficThrottleByJwtSignatureRule",
-            "value": "TrafficThrottleByJwtSignatureRule"
+            "value": "TrafficThrottleByJwtSignatureRule",
+            "description": "Traffic throttle by JWT signature"
           },
           {
             "name": "TrafficThrottleByUserIdRule",
-            "value": "TrafficThrottleByUserIdRule"
+            "value": "TrafficThrottleByUserIdRule",
+            "description": "Traffic throttle by user ID"
           },
           {
             "name": "TrafficThrottleByJwtCustomClaimRule",
-            "value": "TrafficThrottleByJwtCustomClaimRule"
+            "value": "TrafficThrottleByJwtCustomClaimRule",
+            "description": "Traffic throttle by JWT custom claim"
           }
         ]
       }
@@ -2995,7 +3011,8 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/CustomCertificateProperties",
-          "description": "Custom certificate properties."
+          "description": "Custom certificate properties.",
+          "x-ms-client-flatten": true
         }
       },
       "required": [
@@ -3073,7 +3090,8 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/CustomDomainProperties",
-          "description": "Properties of a custom domain."
+          "description": "Properties of a custom domain.",
+          "x-ms-client-flatten": true
         }
       },
       "required": [
@@ -3215,6 +3233,7 @@
     },
     "EventListenerEndpointDiscriminator": {
       "type": "string",
+      "description": "Discriminator for event listener endpoints",
       "enum": [
         "EventHub"
       ],
@@ -3224,7 +3243,8 @@
         "values": [
           {
             "name": "EventHub",
-            "value": "EventHub"
+            "value": "EventHub",
+            "description": "Event Hub endpoint"
           }
         ]
       }
@@ -3244,6 +3264,7 @@
     },
     "EventListenerFilterDiscriminator": {
       "type": "string",
+      "description": "Discriminator for event listener filters",
       "enum": [
         "EventName"
       ],
@@ -3253,7 +3274,8 @@
         "values": [
           {
             "name": "EventName",
-            "value": "EventName"
+            "value": "EventName",
+            "description": "Filter by event name"
           }
         ]
       }
@@ -3310,15 +3332,18 @@
         "values": [
           {
             "name": "Primary",
-            "value": "Primary"
+            "value": "Primary",
+            "description": "Primary access key"
           },
           {
             "name": "Secondary",
-            "value": "Secondary"
+            "value": "Secondary",
+            "description": "Secondary access key"
           },
           {
             "name": "Salt",
-            "value": "Salt"
+            "value": "Salt",
+            "description": "Salt key for authentication"
           }
         ]
       }
@@ -3368,10 +3393,11 @@
         },
         "userAssignedIdentities": {
           "type": "object",
-          "description": "Get or set the user assigned identities",
+          "description": "Get or set the user assigned identities. This should be a dictionary mapping \nARM resource IDs to user assigned identity properties.",
           "additionalProperties": {
             "$ref": "#/definitions/UserAssignedIdentityProperty"
-          }
+          },
+          "x-ms-identifiers": []
         },
         "principalId": {
           "type": "string",
@@ -3409,15 +3435,18 @@
         "values": [
           {
             "name": "None",
-            "value": "None"
+            "value": "None",
+            "description": "No managed identity is assigned"
           },
           {
             "name": "SystemAssigned",
-            "value": "SystemAssigned"
+            "value": "SystemAssigned",
+            "description": "System assigned managed identity is enabled"
           },
           {
             "name": "UserAssigned",
-            "value": "UserAssigned"
+            "value": "UserAssigned",
+            "description": "User assigned managed identity is enabled"
           }
         ]
       }
@@ -3458,9 +3487,9 @@
         "name"
       ]
     },
-    "NetworkACL": {
+    "NetworkAcl": {
       "type": "object",
-      "description": "Network ACL",
+      "description": "Network ACLNetwork access control list for request types",
       "properties": {
         "allow": {
           "type": "array",
@@ -3490,9 +3519,9 @@
         }
       }
     },
-    "PrivateEndpointACL": {
+    "PrivateEndpointAcl": {
       "type": "object",
-      "description": "ACL for a private endpoint",
+      "description": "ACL for a private endpointNetwork access control list for a private endpoint",
       "properties": {
         "name": {
           "type": "string",
@@ -3504,7 +3533,7 @@
       ],
       "allOf": [
         {
-          "$ref": "#/definitions/NetworkACL"
+          "$ref": "#/definitions/NetworkAcl"
         }
       ]
     },
@@ -3514,7 +3543,8 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/PrivateEndpointConnectionProperties",
-          "description": "Private endpoint connection properties"
+          "description": "Private endpoint connection properties",
+          "x-ms-client-flatten": true
         }
       },
       "allOf": [
@@ -3578,7 +3608,8 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/PrivateLinkResourceProperties",
-          "description": "Private link resource properties"
+          "description": "Private link resource properties",
+          "x-ms-client-flatten": true
         }
       },
       "allOf": [
@@ -3675,19 +3706,23 @@
         "values": [
           {
             "name": "Pending",
-            "value": "Pending"
+            "value": "Pending",
+            "description": "Connection is pending approval from the owner"
           },
           {
             "name": "Approved",
-            "value": "Approved"
+            "value": "Approved",
+            "description": "Connection has been approved by the owner"
           },
           {
             "name": "Rejected",
-            "value": "Rejected"
+            "value": "Rejected",
+            "description": "Connection has been rejected by the owner"
           },
           {
             "name": "Disconnected",
-            "value": "Disconnected"
+            "value": "Disconnected",
+            "description": "Connection has been removed by the owner"
           }
         ]
       }
@@ -3712,39 +3747,48 @@
         "values": [
           {
             "name": "Unknown",
-            "value": "Unknown"
+            "value": "Unknown",
+            "description": "State could not be determined"
           },
           {
             "name": "Succeeded",
-            "value": "Succeeded"
+            "value": "Succeeded",
+            "description": "Resource provisioning has succeeded"
           },
           {
             "name": "Failed",
-            "value": "Failed"
+            "value": "Failed",
+            "description": "Resource provisioning has failed"
           },
           {
             "name": "Canceled",
-            "value": "Canceled"
+            "value": "Canceled",
+            "description": "Resource provisioning was canceled"
           },
           {
             "name": "Running",
-            "value": "Running"
+            "value": "Running",
+            "description": "Resource is currently running"
           },
           {
             "name": "Creating",
-            "value": "Creating"
+            "value": "Creating",
+            "description": "Resource is in the process of being created"
           },
           {
             "name": "Updating",
-            "value": "Updating"
+            "value": "Updating",
+            "description": "Resource is in the process of being updated"
           },
           {
             "name": "Deleting",
-            "value": "Deleting"
+            "value": "Deleting",
+            "description": "Resource is in the process of being deleted"
           },
           {
             "name": "Moving",
-            "value": "Moving"
+            "value": "Moving",
+            "description": "Resource is in the process of being moved"
           }
         ]
       }
@@ -3764,7 +3808,8 @@
       "description": "A class represent a replica resource.",
       "properties": {
         "properties": {
-          "$ref": "#/definitions/ReplicaProperties"
+          "$ref": "#/definitions/ReplicaProperties",
+          "x-ms-client-flatten": true
         },
         "sku": {
           "$ref": "#/definitions/ResourceSku",
@@ -3800,6 +3845,7 @@
     },
     "ReplicaProperties": {
       "type": "object",
+      "description": "Properties of a WebPubSub replica resource.",
       "properties": {
         "provisioningState": {
           "$ref": "#/definitions/ProvisioningState",
@@ -3904,15 +3950,18 @@
         "values": [
           {
             "name": "None",
-            "value": "None"
+            "value": "None",
+            "description": "No scaling"
           },
           {
             "name": "Manual",
-            "value": "Manual"
+            "value": "Manual",
+            "description": "Manual scaling controlled by user"
           },
           {
             "name": "Automatic",
-            "value": "Automatic"
+            "value": "Automatic",
+            "description": "Automatic scaling based on load"
           }
         ]
       }
@@ -3930,11 +3979,13 @@
         "values": [
           {
             "name": "WebPubSub",
-            "value": "WebPubSub"
+            "value": "WebPubSub",
+            "description": "WebPubSub service using Azure WebPubSub protocol"
           },
           {
             "name": "SocketIO",
-            "value": "SocketIO"
+            "value": "SocketIO",
+            "description": "WebPubSub service using Socket.IO protocol"
           }
         ]
       }
@@ -3977,7 +4028,8 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/SharedPrivateLinkResourceProperties",
-          "description": "Describes the properties of an existing Shared Private Link Resource"
+          "description": "Describes the properties of an existing Shared Private Link Resource",
+          "x-ms-client-flatten": true
         }
       },
       "allOf": [
@@ -4063,88 +4115,30 @@
         "values": [
           {
             "name": "Pending",
-            "value": "Pending"
+            "value": "Pending",
+            "description": "The shared private link resource request is pending approval"
           },
           {
             "name": "Approved",
-            "value": "Approved"
+            "value": "Approved",
+            "description": "The shared private link resource has been approved"
           },
           {
             "name": "Rejected",
-            "value": "Rejected"
+            "value": "Rejected",
+            "description": "The shared private link resource has been rejected"
           },
           {
             "name": "Disconnected",
-            "value": "Disconnected"
+            "value": "Disconnected",
+            "description": "The shared private link resource has been disconnected"
           },
           {
             "name": "Timeout",
-            "value": "Timeout"
+            "value": "Timeout",
+            "description": "The shared private link resource request has timed out"
           }
         ]
-      }
-    },
-    "SignalRServiceUsage": {
-      "type": "object",
-      "description": "Object that describes a specific usage of the resources.",
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "Fully qualified ARM resource id"
-        },
-        "currentValue": {
-          "type": "integer",
-          "format": "int64",
-          "description": "Current value for the usage quota."
-        },
-        "limit": {
-          "type": "integer",
-          "format": "int64",
-          "description": "The maximum permitted value for the usage quota. If there is no limit, this value will be -1."
-        },
-        "name": {
-          "$ref": "#/definitions/SignalRServiceUsageName",
-          "description": "Localizable String object containing the name and a localized value."
-        },
-        "unit": {
-          "type": "string",
-          "description": "Representing the units of the usage quota. Possible values are: Count, Bytes, Seconds, Percent, CountPerSecond, BytesPerSecond."
-        }
-      }
-    },
-    "SignalRServiceUsageList": {
-      "type": "object",
-      "description": "Object that includes an array of the resource usages and a possible link for next set.",
-      "properties": {
-        "value": {
-          "type": "array",
-          "description": "The SignalRServiceUsage items on this page",
-          "items": {
-            "$ref": "#/definitions/SignalRServiceUsage"
-          }
-        },
-        "nextLink": {
-          "type": "string",
-          "format": "uri",
-          "description": "The link to the next page of items"
-        }
-      },
-      "required": [
-        "value"
-      ]
-    },
-    "SignalRServiceUsageName": {
-      "type": "object",
-      "description": "Localizable String object containing the name and a localized value.",
-      "properties": {
-        "value": {
-          "type": "string",
-          "description": "The identifier of the usage."
-        },
-        "localizedValue": {
-          "type": "string",
-          "description": "Localized name of the usage."
-        }
       }
     },
     "Sku": {
@@ -4244,6 +4238,7 @@
           "format": "int32",
           "description": "Maximum connection count allowed for the same Jwt claim value. Clients with the same Jwt claim will get rejected if the connection count exceeds this value. Default value is 20.",
           "default": 20,
+          "minimum": 0,
           "maximum": 2147483647
         }
       },
@@ -4266,6 +4261,7 @@
           "format": "int32",
           "description": "Maximum connection count allowed for the same JWT signature. Clients with the same JWT signature will get rejected if the connection count exceeds this value. Default value is 20.",
           "default": 20,
+          "minimum": 0,
           "maximum": 2147483647
         }
       },
@@ -4285,6 +4281,7 @@
           "format": "int32",
           "description": "Maximum connection count allowed for the same user ID. Clients with the same user ID will get rejected if the connection count exceeds this value. Default value is 20.",
           "default": 20,
+          "minimum": 0,
           "maximum": 2147483647
         }
       },
@@ -4306,7 +4303,8 @@
         "maxInboundMessageBytes": {
           "type": "integer",
           "format": "int64",
-          "description": "Maximum accumulated inbound message bytes allowed for the same JWT signature within a time window. Clients with the same JWT claim will get disconnected if the message bytes exceeds this value. Default value is 1GB."
+          "description": "Maximum accumulated inbound message bytes allowed for the same JWT signature within a time window. Clients with the same JWT claim will get disconnected if the message bytes exceeds this value. Default value is 1GB.",
+          "minimum": 0
         },
         "aggregationWindowInSeconds": {
           "type": "integer",
@@ -4334,7 +4332,8 @@
         "maxInboundMessageBytes": {
           "type": "integer",
           "format": "int64",
-          "description": "Maximum accumulated inbound message bytes allowed for the same JWT signature within a time window. Clients with the same JWT signature will get disconnected if the message bytes exceeds this value. Default value is 1GB."
+          "description": "Maximum accumulated inbound message bytes allowed for the same JWT signature within a time window. Clients with the same JWT signature will get disconnected if the message bytes exceeds this value. Default value is 1GB.",
+          "minimum": 0
         },
         "aggregationWindowInSeconds": {
           "type": "integer",
@@ -4359,7 +4358,8 @@
         "maxInboundMessageBytes": {
           "type": "integer",
           "format": "int64",
-          "description": "Maximum accumulated inbound message bytes allowed for the same user ID within a time window. Clients with the same user ID will get disconnected if the message bytes exceeds this value. Default value is 1GB."
+          "description": "Maximum accumulated inbound message bytes allowed for the same user ID within a time window. Clients with the same user ID will get disconnected if the message bytes exceeds this value. Default value is 1GB.",
+          "minimum": 0
         },
         "aggregationWindowInSeconds": {
           "type": "integer",
@@ -4408,11 +4408,13 @@
         "values": [
           {
             "name": "None",
-            "value": "None"
+            "value": "None",
+            "description": "No authentication is used"
           },
           {
             "name": "ManagedIdentity",
-            "value": "ManagedIdentity"
+            "value": "ManagedIdentity",
+            "description": "Managed identity is used for authentication"
           }
         ]
       }
@@ -4476,6 +4478,11 @@
       "type": "object",
       "description": "Properties of a hub.",
       "properties": {
+        "provisioningState": {
+          "$ref": "#/definitions/ProvisioningState",
+          "description": "Provisioning state of the hub.",
+          "readOnly": true
+        },
         "eventHandlers": {
           "type": "array",
           "description": "Event handler of a hub.",
@@ -4513,39 +4520,47 @@
       "properties": {
         "primaryKey": {
           "type": "string",
-          "description": "The primary access key."
+          "format": "password",
+          "description": "The primary access key.",
+          "x-ms-secret": true
         },
         "secondaryKey": {
           "type": "string",
-          "description": "The secondary access key."
+          "format": "password",
+          "description": "The secondary access key.",
+          "x-ms-secret": true
         },
         "primaryConnectionString": {
           "type": "string",
-          "description": "Connection string constructed via the primaryKey"
+          "format": "password",
+          "description": "Connection string constructed via the primaryKey",
+          "x-ms-secret": true
         },
         "secondaryConnectionString": {
           "type": "string",
-          "description": "Connection string constructed via the secondaryKey"
+          "format": "password",
+          "description": "Connection string constructed via the secondaryKey",
+          "x-ms-secret": true
         }
       }
     },
-    "WebPubSubNetworkACLs": {
+    "WebPubSubNetworkAcls": {
       "type": "object",
-      "description": "Network ACLs for the resource",
+      "description": "Network ACLs for the resourceNetwork access control settings for Azure Web PubSub",
       "properties": {
         "defaultAction": {
           "$ref": "#/definitions/ACLAction",
           "description": "Azure Networking ACL Action."
         },
         "publicNetwork": {
-          "$ref": "#/definitions/NetworkACL",
+          "$ref": "#/definitions/NetworkAcl",
           "description": "Network ACL"
         },
         "privateEndpoints": {
           "type": "array",
           "description": "ACLs for requests from private endpoints",
           "items": {
-            "$ref": "#/definitions/PrivateEndpointACL"
+            "$ref": "#/definitions/PrivateEndpointAcl"
           },
           "x-ms-identifiers": [
             "name"
@@ -4570,7 +4585,7 @@
           "description": "Provisioning state of the resource.",
           "readOnly": true
         },
-        "externalIP": {
+        "externalIp": {
           "type": "string",
           "description": "The publicly accessible IP of the resource.",
           "readOnly": true
@@ -4632,8 +4647,8 @@
           "$ref": "#/definitions/ResourceLogConfiguration",
           "description": "Resource log configuration of a Microsoft.SignalRService resource."
         },
-        "networkACLs": {
-          "$ref": "#/definitions/WebPubSubNetworkACLs",
+        "networkAcls": {
+          "$ref": "#/definitions/WebPubSubNetworkAcls",
           "description": "Network ACLs for the resource"
         },
         "applicationFirewall": {
@@ -4647,11 +4662,13 @@
         },
         "disableLocalAuth": {
           "type": "boolean",
-          "description": "DisableLocalAuth\nEnable or disable local auth with AccessKey\nWhen set as true, connection with AccessKey=xxx won't work."
+          "description": "DisableLocalAuth\nEnable or disable local auth with AccessKey\nWhen set as true, connection with AccessKey=xxx won't work.",
+          "default": false
         },
         "disableAadAuth": {
           "type": "boolean",
-          "description": "DisableLocalAuth\nEnable or disable aad auth\nWhen set as true, connection with AuthType=aad won't work."
+          "description": "DisableLocalAuth\nEnable or disable aad auth\nWhen set as true, connection with AuthType=aad won't work.",
+          "default": false
         },
         "regionEndpointEnabled": {
           "type": "string",
@@ -4663,8 +4680,8 @@
           "description": "Stop or start the resource.  Default to \"False\".\nWhen it's true, the data plane of the resource is shutdown.\nWhen it's false, the data plane of the resource is started.",
           "default": "false"
         },
-        "socketIO": {
-          "$ref": "#/definitions/WebPubSubSocketIOSettings",
+        "socketIo": {
+          "$ref": "#/definitions/WebPubSubSocketIoSettings",
           "description": "SocketIO settings for the resource"
         }
       }
@@ -4684,19 +4701,23 @@
         "values": [
           {
             "name": "ClientConnection",
-            "value": "ClientConnection"
+            "value": "ClientConnection",
+            "description": "Connection from a client"
           },
           {
             "name": "ServerConnection",
-            "value": "ServerConnection"
+            "value": "ServerConnection",
+            "description": "Connection from a server"
           },
           {
             "name": "RESTAPI",
-            "value": "RESTAPI"
+            "value": "RESTAPI",
+            "description": "Request through REST API"
           },
           {
             "name": "Trace",
-            "value": "Trace"
+            "value": "Trace",
+            "description": "Trace or diagnostic request"
           }
         ]
       }
@@ -4707,7 +4728,8 @@
       "properties": {
         "properties": {
           "$ref": "#/definitions/WebPubSubProperties",
-          "description": "A class that describes the properties of the resource"
+          "description": "A class that describes the properties of the resource",
+          "x-ms-client-flatten": true
         },
         "sku": {
           "$ref": "#/definitions/ResourceSku",
@@ -4768,26 +4790,30 @@
         "values": [
           {
             "name": "Free",
-            "value": "Free"
+            "value": "Free",
+            "description": "Free tier with limited capabilities and scale"
           },
           {
             "name": "Basic",
-            "value": "Basic"
+            "value": "Basic",
+            "description": "Basic tier (Deprecated: use Standard instead)"
           },
           {
             "name": "Standard",
-            "value": "Standard"
+            "value": "Standard",
+            "description": "Standard tier with full set of features"
           },
           {
             "name": "Premium",
-            "value": "Premium"
+            "value": "Premium",
+            "description": "Premium tier with enhanced performance and scale"
           }
         ]
       }
     },
-    "WebPubSubSocketIOSettings": {
+    "WebPubSubSocketIoSettings": {
       "type": "object",
-      "description": "SocketIO settings for the resource",
+      "description": "SocketIO settings for the resourceSettings for Socket.IO protocol support",
       "properties": {
         "serviceMode": {
           "type": "string",
@@ -4801,7 +4827,71 @@
       "properties": {
         "clientCertEnabled": {
           "type": "boolean",
-          "description": "Request client certificate during TLS handshake if enabled. Not supported for free tier. Any input will be ignored for free tier."
+          "description": "Request client certificate during TLS handshake if enabled. Not supported for free tier. Any input will be ignored for free tier.",
+          "default": false
+        }
+      }
+    },
+    "WebPubSubUsage": {
+      "type": "object",
+      "description": "Object that describes a specific usage of the resources.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Fully qualified ARM resource id"
+        },
+        "currentValue": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Current value for the usage quota."
+        },
+        "limit": {
+          "type": "integer",
+          "format": "int64",
+          "description": "The maximum permitted value for the usage quota. If there is no limit, this value will be -1."
+        },
+        "name": {
+          "$ref": "#/definitions/WebPubSubUsageName",
+          "description": "Localizable String object containing the name and a localized value."
+        },
+        "unit": {
+          "type": "string",
+          "description": "Representing the units of the usage quota. Possible values are: Count, Bytes, Seconds, Percent, CountPerSecond, BytesPerSecond."
+        }
+      }
+    },
+    "WebPubSubUsageList": {
+      "type": "object",
+      "description": "Object that includes an array of the resource usages and a possible link for next set.",
+      "properties": {
+        "value": {
+          "type": "array",
+          "description": "The WebPubSubUsage items on this page",
+          "items": {
+            "$ref": "#/definitions/WebPubSubUsage"
+          }
+        },
+        "nextLink": {
+          "type": "string",
+          "format": "uri",
+          "description": "The link to the next page of items"
+        }
+      },
+      "required": [
+        "value"
+      ]
+    },
+    "WebPubSubUsageName": {
+      "type": "object",
+      "description": "Localizable String object containing the name and a localized value.",
+      "properties": {
+        "value": {
+          "type": "string",
+          "description": "The identifier of the usage."
+        },
+        "localizedValue": {
+          "type": "string",
+          "description": "Localized name of the usage."
         }
       }
     }
