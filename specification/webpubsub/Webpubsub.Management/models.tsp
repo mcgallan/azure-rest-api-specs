@@ -363,6 +363,7 @@ model OperationList {
   /**
    * URL to get the next set of operation list results (if there are any).
    */
+  @nextLink
   nextLink?: string;
 }
 
@@ -534,14 +535,12 @@ model NameAvailability {
 /**
  * Object that includes an array of the resource usages and a possible link for next set.
  */
-@clientName("SignalRServiceUsageList", "csharp")
-model WebPubSubUsageList is Azure.Core.Page<WebPubSubUsage>;
+model SignalRServiceUsageList is Azure.Core.Page<SignalRServiceUsage>;
 
 /**
  * Object that describes a specific usage of the resources.
  */
-@clientName("SignalRServiceUsage", "csharp")
-model WebPubSubUsage {
+model SignalRServiceUsage {
   /**
    * Fully qualified ARM resource id
    */
@@ -560,7 +559,7 @@ model WebPubSubUsage {
   /**
    * Localizable String object containing the name and a localized value.
    */
-  name?: WebPubSubUsageName;
+  name?: SignalRServiceUsageName;
 
   /**
    * Representing the units of the usage quota. Possible values are: Count, Bytes, Seconds, Percent, CountPerSecond, BytesPerSecond.
@@ -571,8 +570,7 @@ model WebPubSubUsage {
 /**
  * Localizable String object containing the name and a localized value.
  */
-@clientName("SignalRServiceUsageName", "csharp")
-model WebPubSubUsageName {
+model SignalRServiceUsageName {
   /**
    * The identifier of the usage.
    */

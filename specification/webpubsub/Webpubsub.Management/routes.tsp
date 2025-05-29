@@ -36,7 +36,7 @@ interface UsagesOperationGroup {
   @get
   @action("usages")
   list is ArmProviderActionSync<
-    Response = WebPubSubUsageList,
+    Response = SignalRServiceUsageList,
     Scope = SubscriptionActionScope,
     Parameters = LocationParameter
   >;

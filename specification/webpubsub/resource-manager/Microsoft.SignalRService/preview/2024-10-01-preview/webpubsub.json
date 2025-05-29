@@ -81,7 +81,7 @@
           "200": {
             "description": "Azure operation completed successfully.",
             "schema": {
-              "$ref": "../../../../../common-types/resource-management/v5/types.json#/definitions/OperationListResult"
+              "$ref": "#/definitions/OperationList"
             }
           },
           "default": {
@@ -95,9 +95,6 @@
           "Operations_List": {
             "$ref": "./examples/Operations_List.json"
           }
-        },
-        "x-ms-pageable": {
-          "nextLinkName": "nextLink"
         }
       }
     },
@@ -116,7 +113,7 @@
             "$ref": "../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
           },
           {
-            "name": "body",
+            "name": "parameters",
             "in": "body",
             "description": "The request body",
             "required": true,
@@ -165,7 +162,7 @@
           "200": {
             "description": "The request has succeeded.",
             "schema": {
-              "$ref": "#/definitions/WebPubSubUsageList"
+              "$ref": "#/definitions/SignalRServiceUsageList"
             }
           },
           "default": {
@@ -341,7 +338,7 @@
             "pattern": "^[a-zA-Z][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]$"
           },
           {
-            "name": "resource",
+            "name": "parameters",
             "in": "body",
             "description": "Parameters for the create or update operation",
             "required": true,
@@ -428,7 +425,7 @@
             "pattern": "^[a-zA-Z][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]$"
           },
           {
-            "name": "properties",
+            "name": "parameters",
             "in": "body",
             "description": "Parameters for the update operation",
             "required": true,
@@ -626,7 +623,7 @@
             "description": "Custom certificate name",
             "required": true,
             "type": "string",
-            "pattern": "^[a-zA-Z0-9][-a-zA-Z0-9]{0,61}[a-zA-Z0-9]$"
+            "pattern": "^[a-zA-Z0-9-]{3,24}$"
           }
         ],
         "responses": {
@@ -681,7 +678,7 @@
             "description": "Custom certificate name",
             "required": true,
             "type": "string",
-            "pattern": "^[a-zA-Z0-9][-a-zA-Z0-9]{0,61}[a-zA-Z0-9]$"
+            "pattern": "^[a-zA-Z0-9-]{3,24}$"
           },
           {
             "name": "resource",
@@ -766,7 +763,7 @@
             "description": "Custom certificate name",
             "required": true,
             "type": "string",
-            "pattern": "^[a-zA-Z0-9][-a-zA-Z0-9]{0,61}[a-zA-Z0-9]$"
+            "pattern": "^[a-zA-Z0-9-]{3,24}$"
           }
         ],
         "responses": {
@@ -3147,6 +3144,24 @@
         "customCertificate"
       ]
     },
+    "Dimension": {
+      "type": "object",
+      "description": "Dimension of a metric",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the dimension"
+        },
+        "displayName": {
+          "type": "string",
+          "description": "Display name of the dimension"
+        },
+        "internal": {
+          "type": "boolean",
+          "description": "Description of the dimension"
+        }
+      }
+    },
     "EventHandler": {
       "type": "object",
       "description": "Properties of event handler.",
@@ -3383,6 +3398,24 @@
         }
       }
     },
+    "LogSpecification": {
+      "type": "object",
+      "description": "Log specification of operation",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the log"
+        },
+        "displayName": {
+          "type": "string",
+          "description": "Display name of the log"
+        },
+        "blobDuration": {
+          "type": "string",
+          "description": "Blob duration of the log"
+        }
+      }
+    },
     "ManagedIdentity": {
       "type": "object",
       "description": "A class represent managed identities used for request and response",
@@ -3393,7 +3426,7 @@
         },
         "userAssignedIdentities": {
           "type": "object",
-          "description": "Get or set the user assigned identities. This should be a dictionary mapping \nARM resource IDs to user assigned identity properties.",
+          "description": "Get or set the user assigned identities. This should be a dictionary mapping\nARM resource IDs to user assigned identity properties.",
           "additionalProperties": {
             "$ref": "#/definitions/UserAssignedIdentityProperty"
           },
@@ -3451,6 +3484,78 @@
         ]
       }
     },
+    "MetricSpecification": {
+      "type": "object",
+      "description": "Specifications of the Metrics for Azure Monitoring",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the metric"
+        },
+        "displayName": {
+          "type": "string",
+          "description": "Display name of the metric"
+        },
+        "displayDescription": {
+          "type": "string",
+          "description": "Display description of the metric"
+        },
+        "unit": {
+          "type": "string",
+          "description": "Unit that makes sense for the metric"
+        },
+        "aggregationType": {
+          "type": "string",
+          "description": "Name of the aggregation type. The names of the metrics themselves still need to be passed to the API."
+        },
+        "dimensions": {
+          "type": "array",
+          "description": "List of dimensions of the metrics",
+          "items": {
+            "$ref": "#/definitions/Dimension"
+          },
+          "x-ms-identifiers": []
+        },
+        "supportedTimeGrainTypes": {
+          "type": "array",
+          "description": "List of time grain types supported for the metric",
+          "items": {
+            "type": "string"
+          }
+        },
+        "supportedAggregationTypes": {
+          "type": "array",
+          "description": "List of time grain names supported for the metric",
+          "items": {
+            "type": "string"
+          }
+        },
+        "enableRegionalMdmAccount": {
+          "type": "boolean",
+          "description": "The connection string for metrics of a specific resource"
+        },
+        "sourceMdmAccount": {
+          "type": "string",
+          "description": "The connection string for metrics of a specific resource"
+        },
+        "sourceMdmNamespace": {
+          "type": "string",
+          "description": "The connection string for metrics of a specific resource"
+        },
+        "metricFilterPattern": {
+          "type": "string",
+          "description": "The resource IDs with which the current resource shares the metrics"
+        },
+        "fillGapWithZero": {
+          "type": "boolean",
+          "description": "Indicates whether or not the metric supports the feature to filter by resource."
+        },
+        "internalMetricName": {
+          "type": "string",
+          "description": "Indicates whether or not the resource supports alerting."
+        }
+      }
+    },
     "NameAvailability": {
       "type": "object",
       "description": "Result of the request to check name availability. It contains a flag and possible reason of failure.",
@@ -3506,6 +3611,89 @@
             "$ref": "#/definitions/WebPubSubRequestType"
           },
           "x-ms-identifiers": []
+        }
+      }
+    },
+    "Operation": {
+      "type": "object",
+      "description": "REST API operation",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Operation name: {provider}/{resource}/{operation}"
+        },
+        "display": {
+          "$ref": "#/definitions/OperationDisplay",
+          "description": "The display object."
+        },
+        "properties": {
+          "$ref": "#/definitions/OperationProperties",
+          "description": "Properties of the operation"
+        },
+        "origin": {
+          "type": "string",
+          "description": "Origin of the operation"
+        },
+        "isDataAction": {
+          "type": "boolean",
+          "description": "Is the operation asynchronous"
+        }
+      },
+      "discriminator": "name",
+      "required": [
+        "name"
+      ]
+    },
+    "OperationDisplay": {
+      "type": "object",
+      "description": "The object that represents the operation.",
+      "properties": {
+        "provider": {
+          "type": "string",
+          "description": "Service provider: Microsoft.SignalRService"
+        },
+        "resource": {
+          "type": "string",
+          "description": "Resource on which the operation is performed: SignalR, etc."
+        },
+        "operation": {
+          "type": "string",
+          "description": "Operation type: read, write, delete, etc."
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the operation."
+        }
+      }
+    },
+    "OperationList": {
+      "type": "object",
+      "description": "A list of REST API operations supported by an Azure Resource Provider. It contains an URL link to get the next set of results.",
+      "properties": {
+        "value": {
+          "type": "array",
+          "description": "List of operations supported by the resource provider",
+          "items": {
+            "$ref": "#/definitions/Operation"
+          },
+          "x-ms-identifiers": []
+        },
+        "nextLink": {
+          "type": "string",
+          "description": "URL to get the next set of operation list results (if there are any)."
+        }
+      },
+      "required": [
+        "value"
+      ]
+    },
+    "OperationProperties": {
+      "type": "object",
+      "description": "Properties of the operation",
+      "properties": {
+        "serviceSpecification": {
+          "$ref": "#/definitions/ServiceSpecification",
+          "description": "Service specification of the operation"
         }
       }
     },
@@ -3990,6 +4178,28 @@
         ]
       }
     },
+    "ServiceSpecification": {
+      "type": "object",
+      "description": "Service specification of operation",
+      "properties": {
+        "logSpecifications": {
+          "type": "array",
+          "description": "Log specifications of operation",
+          "items": {
+            "$ref": "#/definitions/LogSpecification"
+          },
+          "x-ms-identifiers": []
+        },
+        "metricSpecifications": {
+          "type": "array",
+          "description": "Metric specifications of operation",
+          "items": {
+            "$ref": "#/definitions/MetricSpecification"
+          },
+          "x-ms-identifiers": []
+        }
+      }
+    },
     "ShareablePrivateLinkResourceProperties": {
       "type": "object",
       "description": "Describes the properties of a resource type that has been onboarded to private link service",
@@ -4139,6 +4349,69 @@
             "description": "The shared private link resource request has timed out"
           }
         ]
+      }
+    },
+    "SignalRServiceUsage": {
+      "type": "object",
+      "description": "Object that describes a specific usage of the resources.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Fully qualified ARM resource id"
+        },
+        "currentValue": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Current value for the usage quota."
+        },
+        "limit": {
+          "type": "integer",
+          "format": "int64",
+          "description": "The maximum permitted value for the usage quota. If there is no limit, this value will be -1."
+        },
+        "name": {
+          "$ref": "#/definitions/SignalRServiceUsageName",
+          "description": "Localizable String object containing the name and a localized value."
+        },
+        "unit": {
+          "type": "string",
+          "description": "Representing the units of the usage quota. Possible values are: Count, Bytes, Seconds, Percent, CountPerSecond, BytesPerSecond."
+        }
+      }
+    },
+    "SignalRServiceUsageList": {
+      "type": "object",
+      "description": "Object that includes an array of the resource usages and a possible link for next set.",
+      "properties": {
+        "value": {
+          "type": "array",
+          "description": "The SignalRServiceUsage items on this page",
+          "items": {
+            "$ref": "#/definitions/SignalRServiceUsage"
+          }
+        },
+        "nextLink": {
+          "type": "string",
+          "format": "uri",
+          "description": "The link to the next page of items"
+        }
+      },
+      "required": [
+        "value"
+      ]
+    },
+    "SignalRServiceUsageName": {
+      "type": "object",
+      "description": "Localizable String object containing the name and a localized value.",
+      "properties": {
+        "value": {
+          "type": "string",
+          "description": "The identifier of the usage."
+        },
+        "localizedValue": {
+          "type": "string",
+          "description": "Localized name of the usage."
+        }
       }
     },
     "Sku": {
@@ -4829,69 +5102,6 @@
           "type": "boolean",
           "description": "Request client certificate during TLS handshake if enabled. Not supported for free tier. Any input will be ignored for free tier.",
           "default": false
-        }
-      }
-    },
-    "WebPubSubUsage": {
-      "type": "object",
-      "description": "Object that describes a specific usage of the resources.",
-      "properties": {
-        "id": {
-          "type": "string",
-          "description": "Fully qualified ARM resource id"
-        },
-        "currentValue": {
-          "type": "integer",
-          "format": "int64",
-          "description": "Current value for the usage quota."
-        },
-        "limit": {
-          "type": "integer",
-          "format": "int64",
-          "description": "The maximum permitted value for the usage quota. If there is no limit, this value will be -1."
-        },
-        "name": {
-          "$ref": "#/definitions/WebPubSubUsageName",
-          "description": "Localizable String object containing the name and a localized value."
-        },
-        "unit": {
-          "type": "string",
-          "description": "Representing the units of the usage quota. Possible values are: Count, Bytes, Seconds, Percent, CountPerSecond, BytesPerSecond."
-        }
-      }
-    },
-    "WebPubSubUsageList": {
-      "type": "object",
-      "description": "Object that includes an array of the resource usages and a possible link for next set.",
-      "properties": {
-        "value": {
-          "type": "array",
-          "description": "The WebPubSubUsage items on this page",
-          "items": {
-            "$ref": "#/definitions/WebPubSubUsage"
-          }
-        },
-        "nextLink": {
-          "type": "string",
-          "format": "uri",
-          "description": "The link to the next page of items"
-        }
-      },
-      "required": [
-        "value"
-      ]
-    },
-    "WebPubSubUsageName": {
-      "type": "object",
-      "description": "Localizable String object containing the name and a localized value.",
-      "properties": {
-        "value": {
-          "type": "string",
-          "description": "The identifier of the usage."
-        },
-        "localizedValue": {
-          "type": "string",
-          "description": "Localized name of the usage."
         }
       }
     }

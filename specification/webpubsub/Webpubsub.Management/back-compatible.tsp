@@ -10,7 +10,6 @@ import "./SharedPrivateLinkResource.tsp";
 using Azure.ClientGenerator.Core;
 using Microsoft.SignalRService;
 
-// 为生成合适的客户端代码，需要平铺这些资源的属性
 @@flattenProperty(Microsoft.SignalRService.CustomCertificate.properties);
 @@flattenProperty(Microsoft.SignalRService.CustomDomain.properties);
 @@flattenProperty(Microsoft.SignalRService.PrivateEndpointConnection.properties
@@ -21,7 +20,6 @@ using Microsoft.SignalRService;
 );
 @@flattenProperty(Microsoft.SignalRService.WebPubSubResource.properties);
 
-// 添加 @minValue 和 @secret 装饰器
 @@minValue(Microsoft.SignalRService.ThrottleByJwtCustomClaimRule.maxCount, 0);
 @@minValue(Microsoft.SignalRService.ThrottleByJwtSignatureRule.maxCount, 0);
 @@minValue(Microsoft.SignalRService.ThrottleByUserIdRule.maxCount, 0);
@@ -38,3 +36,21 @@ using Microsoft.SignalRService;
 @@secret(Microsoft.SignalRService.WebPubSubKeys.secondaryKey);
 @@secret(Microsoft.SignalRService.WebPubSubKeys.primaryConnectionString);
 @@secret(Microsoft.SignalRService.WebPubSubKeys.secondaryConnectionString);
+@@clientName(WebPubSubOperationGroup.checkNameAvailability::parameters.body,
+  "parameters"
+);
+@@clientName(WebPubSubResources.createOrUpdate::parameters.resource,
+  "parameters"
+);
+@@clientName(WebPubSubResources.update::parameters.properties, "parameters");
+@@clientName(CustomCertificates.createOrUpdate::parameters.resource,
+  "parameters"
+);
+@@clientName(CustomDomains.createOrUpdate::parameters.resource, "parameters");
+@@clientName(PrivateEndpointConnections.update::parameters.resource,
+  "parameters"
+);
+@@clientName(WebPubSubResources.regenerateKey::parameters.body, "parameters");
+@@clientName(SharedPrivateLinkResources.createOrUpdate::parameters.resource,
+  "parameters"
+);

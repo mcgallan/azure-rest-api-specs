@@ -20,7 +20,7 @@ import "./PrivateEndpointConnection.tsp";
 import "./Replica.tsp";
 import "./SharedPrivateLinkResource.tsp";
 import "./routes.tsp";
-import "./client.tsp";
+import "./back-compatible.tsp";
 
 using TypeSpec.Rest;
 using TypeSpec.Http;
@@ -49,4 +49,18 @@ enum Versions {
   v2024_10_01_preview: "2024-10-01-preview",
 }
 
-interface Operations extends Azure.ResourceManager.Operations {}
+interface Operations {
+  @tag("Operations")
+  @autoRoute
+  @doc("List the operations for the provider")
+  @segment("operations")
+  @get
+  list(
+    ...ApiVersionParameter,
+
+    @path
+    @segment("providers")
+    @doc("The provider namespace (this parameter will not show up in operations).")
+    provider: "Microsoft.ThisWillBeReplaced",
+  ): ArmResponse<OperationList> | ErrorResponse;
+}

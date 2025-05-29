@@ -47,12 +47,6 @@ interface SharedPrivateLinkResources {
     SharedPrivateLinkResource,
     Response = ArmResponse<SharedPrivateLinkResourceList>
   >;
-
-  /**
-   * Delete the specified shared private link resource
-   */
-  @operationId("WebPubSubReplicaSharedPrivateLinkResources_Delete")
-  delete is ArmResourceDeleteWithoutOkAsync<SharedPrivateLinkResource>;
 }
 
 @@maxLength(SharedPrivateLinkResource.name, 63);

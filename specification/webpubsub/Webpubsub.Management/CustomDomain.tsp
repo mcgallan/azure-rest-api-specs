@@ -20,8 +20,7 @@ model CustomDomain
   ...ResourceNameParameter<
     Resource = CustomDomain,
     KeyName = "name",
-    SegmentName = "customDomains",
-    NamePattern = "^[a-zA-Z0-9][-a-zA-Z0-9]{0,61}[a-zA-Z0-9]$"
+    SegmentName = "customDomains"
   >;
 }
 
@@ -39,7 +38,10 @@ interface CustomDomains {
   @operationId("WebPubSubCustomDomains_CreateOrUpdate")
   createOrUpdate is ArmResourceCreateOrReplaceAsync<
     CustomDomain,
-    Response = ArmResourceCreatedResponse<CustomDomain>
+    Response = ArmResourceCreatedResponse<
+      CustomDomain,
+      LroHeaders = ArmAsyncOperationHeader<FinalResult = CustomDomain>
+    >
   >;
 
   /**

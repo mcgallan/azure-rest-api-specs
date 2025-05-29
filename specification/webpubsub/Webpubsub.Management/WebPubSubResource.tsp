@@ -53,7 +53,10 @@ interface WebPubSubResources {
   @operationId("WebPubSub_CreateOrUpdate")
   createOrUpdate is ArmResourceCreateOrReplaceAsync<
     WebPubSubResource,
-    Response = ArmResourceUpdatedResponse<WebPubSubResource> | ArmResourceCreatedResponse<WebPubSubResource> | ArmAcceptedLroResponse
+    Response = ArmResourceUpdatedResponse<WebPubSubResource> | ArmResourceCreatedResponse<
+      WebPubSubResource,
+      LroHeaders = ArmAsyncOperationHeader<FinalResult = WebPubSubResource>
+    > | ArmAcceptedLroResponse
   >;
 
   /**
@@ -110,7 +113,10 @@ interface WebPubSubResources {
   regenerateKey is ArmResourceActionAsync<
     WebPubSubResource,
     RegenerateKeyParameters,
-    ArmResponse<WebPubSubKeys>
+    Response = ArmResponse<WebPubSubKeys> | (ArmAcceptedLroResponse<LroHeaders = ArmAsyncOperationHeader<FinalResult = WebPubSubKeys>> & {
+      @bodyRoot
+      _: WebPubSubKeys;
+    })
   >;
 
   /**

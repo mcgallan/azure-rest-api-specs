@@ -9,15 +9,8 @@
   "paths": {
     "/providers/Microsoft.SignalRService/operations": {
       "get": {
-        "responses": {
-          "200": {
-            "schema": {
-              "$ref": {
-                "__old": "#/definitions/OperationList",
-                "__new": "../../../../../common-types/resource-management/v5/types.json#/definitions/OperationListResult"
-              }
-            }
-          }
+        "x-ms-pageable__deleted": {
+          "nextLinkName": "nextLink"
         }
       }
     },
@@ -35,13 +28,7 @@
             }
           ],
           [
-            "~",
-            {
-              "name": {
-                "__old": "parameters",
-                "__new": "body"
-              }
-            }
+            " "
           ]
         ]
       }
@@ -59,17 +46,7 @@
               "$ref__added": "../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
             }
           ]
-        ],
-        "responses": {
-          "200": {
-            "schema": {
-              "$ref": {
-                "__old": "#/definitions/SignalRServiceUsageList",
-                "__new": "#/definitions/WebPubSubUsageList"
-              }
-            }
-          }
-        }
+        ]
       }
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SignalRService/webPubSub/{resourceName}": {
@@ -91,13 +68,7 @@
             }
           ],
           [
-            "~",
-            {
-              "name": {
-                "__old": "parameters",
-                "__new": "resource"
-              }
-            }
+            " "
           ],
           [
             "-",
@@ -128,13 +99,7 @@
             }
           ],
           [
-            "~",
-            {
-              "name": {
-                "__old": "parameters",
-                "__new": "properties"
-              }
-            }
+            " "
           ],
           [
             "-",
@@ -160,7 +125,7 @@
           [
             "~",
             {
-              "pattern__added": "^[a-zA-Z0-9][-a-zA-Z0-9]{0,61}[a-zA-Z0-9]$"
+              "pattern__added": "^[a-zA-Z0-9-]{3,24}$"
             }
           ]
         ]
@@ -177,7 +142,7 @@
           [
             "~",
             {
-              "pattern__added": "^[a-zA-Z0-9][-a-zA-Z0-9]{0,61}[a-zA-Z0-9]$"
+              "pattern__added": "^[a-zA-Z0-9-]{3,24}$"
             }
           ],
           [
@@ -199,7 +164,7 @@
           [
             "~",
             {
-              "pattern__added": "^[a-zA-Z0-9][-a-zA-Z0-9]{0,61}[a-zA-Z0-9]$"
+              "pattern__added": "^[a-zA-Z0-9-]{3,24}$"
             }
           ]
         ]
@@ -695,69 +660,6 @@
     }
   },
   "definitions": {
-    "Dimension__deleted": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string"
-        },
-        "displayName": {
-          "type": "string"
-        },
-        "internalName": {
-          "type": "string"
-        },
-        "toBeExportedForShoebox": {
-          "type": "boolean"
-        }
-      }
-    },
-    "LogSpecification__deleted": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string"
-        },
-        "displayName": {
-          "type": "string"
-        }
-      }
-    },
-    "MetricSpecification__deleted": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string"
-        },
-        "displayName": {
-          "type": "string"
-        },
-        "displayDescription": {
-          "type": "string"
-        },
-        "unit": {
-          "type": "string"
-        },
-        "aggregationType": {
-          "type": "string"
-        },
-        "fillGapWithZero": {
-          "type": "string"
-        },
-        "category": {
-          "type": "string"
-        },
-        "dimensions": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Dimension"
-          },
-          "x-ms-identifiers": [
-            "name"
-          ]
-        }
-      }
-    },
     "NetworkACL__deleted": {
       "type": "object",
       "properties": {
@@ -772,73 +674,6 @@
           "items": {
             "$ref": "#/definitions/WebPubSubRequestType"
           }
-        }
-      }
-    },
-    "Operation__deleted": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string"
-        },
-        "isDataAction": {
-          "type": "boolean"
-        },
-        "display": {
-          "$ref": "#/definitions/OperationDisplay"
-        },
-        "origin": {
-          "type": "string"
-        },
-        "properties": {
-          "$ref": "#/definitions/OperationProperties",
-          "x-ms-client-flatten": false
-        }
-      }
-    },
-    "OperationDisplay__deleted": {
-      "type": "object",
-      "properties": {
-        "provider": {
-          "type": "string"
-        },
-        "resource": {
-          "type": "string"
-        },
-        "operation": {
-          "type": "string"
-        },
-        "description": {
-          "type": "string"
-        }
-      }
-    },
-    "OperationList__deleted": {
-      "type": "object",
-      "description": "[Placeholder] Discription for page model",
-      "properties": {
-        "value": {
-          "type": "array",
-          "description": "[Placeholder] Discription for value property",
-          "items": {
-            "$ref": "#/definitions/Operation"
-          },
-          "x-ms-identifiers": [
-            "name"
-          ]
-        },
-        "nextLink": {
-          "type": "string",
-          "format": "uri",
-          "description": "[Placeholder] Discription for nextLink property"
-        }
-      }
-    },
-    "OperationProperties__deleted": {
-      "type": "object",
-      "properties": {
-        "serviceSpecification": {
-          "$ref": "#/definitions/ServiceSpecification"
         }
       }
     },
@@ -857,81 +692,6 @@
           "$ref": "#/definitions/NetworkACL"
         }
       ]
-    },
-    "ServiceSpecification__deleted": {
-      "type": "object",
-      "properties": {
-        "metricSpecifications": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/MetricSpecification"
-          },
-          "x-ms-identifiers": [
-            "name",
-            "unit"
-          ]
-        },
-        "logSpecifications": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/LogSpecification"
-          },
-          "x-ms-identifiers": [
-            "name"
-          ]
-        }
-      }
-    },
-    "SignalRServiceUsage__deleted": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "currentValue": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "limit": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "name": {
-          "$ref": "#/definitions/SignalRServiceUsageName"
-        },
-        "unit": {
-          "type": "string"
-        }
-      }
-    },
-    "SignalRServiceUsageList__deleted": {
-      "type": "object",
-      "description": "[Placeholder] Discription for page model",
-      "properties": {
-        "value": {
-          "type": "array",
-          "description": "[Placeholder] Discription for value property",
-          "items": {
-            "$ref": "#/definitions/SignalRServiceUsage"
-          }
-        },
-        "nextLink": {
-          "type": "string",
-          "format": "uri",
-          "description": "[Placeholder] Discription for nextLink property"
-        }
-      }
-    },
-    "SignalRServiceUsageName__deleted": {
-      "type": "object",
-      "properties": {
-        "value": {
-          "type": "string"
-        },
-        "localizedValue": {
-          "type": "string"
-        }
-      }
     },
     "WebPubSubNetworkACLs__deleted": {
       "type": "object",
@@ -1065,60 +825,6 @@
         }
       }
     },
-    "WebPubSubUsage__added": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "currentValue": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "limit": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "name": {
-          "$ref": "#/definitions/WebPubSubUsageName"
-        },
-        "unit": {
-          "type": "string"
-        }
-      }
-    },
-    "WebPubSubUsageList__added": {
-      "type": "object",
-      "description": "[Placeholder] Discription for page model",
-      "properties": {
-        "value": {
-          "type": "array",
-          "description": "[Placeholder] Discription for value property",
-          "items": {
-            "$ref": "#/definitions/WebPubSubUsage"
-          }
-        },
-        "nextLink": {
-          "type": "string",
-          "format": "uri",
-          "description": "[Placeholder] Discription for nextLink property"
-        }
-      },
-      "required": [
-        "value"
-      ]
-    },
-    "WebPubSubUsageName__added": {
-      "type": "object",
-      "properties": {
-        "value": {
-          "type": "string"
-        },
-        "localizedValue": {
-          "type": "string"
-        }
-      }
-    },
     "ApplicationFirewallSettings": {
       "properties": {
         "clientConnectionCountRules": {
@@ -1139,6 +845,94 @@
         "value"
       ]
     },
+    "Dimension": {
+      "properties": {
+        "internalName__deleted": {
+          "type": "string"
+        },
+        "toBeExportedForShoebox__deleted": {
+          "type": "boolean"
+        },
+        "internal__added": {
+          "type": "boolean"
+        }
+      }
+    },
+    "LogSpecification": {
+      "properties": {
+        "blobDuration__added": {
+          "type": "string"
+        }
+      }
+    },
+    "MetricSpecification": {
+      "properties": {
+        "category__deleted": {
+          "type": "string"
+        },
+        "supportedTimeGrainTypes__added": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "supportedAggregationTypes__added": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "enableRegionalMdmAccount__added": {
+          "type": "boolean"
+        },
+        "sourceMdmAccount__added": {
+          "type": "string"
+        },
+        "sourceMdmNamespace__added": {
+          "type": "string"
+        },
+        "metricFilterPattern__added": {
+          "type": "string"
+        },
+        "internalMetricName__added": {
+          "type": "string"
+        },
+        "fillGapWithZero": {
+          "type": {
+            "__old": "string",
+            "__new": "boolean"
+          }
+        },
+        "dimensions": {
+          "x-ms-identifiers__deleted": [
+            "name"
+          ]
+        }
+      }
+    },
+    "Operation": {
+      "discriminator__added": "name",
+      "required__added": [
+        "name"
+      ],
+      "properties": {
+        "properties": {
+          "x-ms-client-flatten__deleted": false
+        }
+      }
+    },
+    "OperationList": {
+      "required__added": [
+        "value"
+      ],
+      "properties": {
+        "value": {
+          "x-ms-identifiers__deleted": [
+            "name"
+          ]
+        }
+      }
+    },
     "PrivateEndpointConnectionList": {
       "required__added": [
         "value"
@@ -1154,7 +948,27 @@
         "value"
       ]
     },
+    "ServiceSpecification": {
+      "properties": {
+        "metricSpecifications": {
+          "x-ms-identifiers__deleted": [
+            "name",
+            "unit"
+          ]
+        },
+        "logSpecifications": {
+          "x-ms-identifiers__deleted": [
+            "name"
+          ]
+        }
+      }
+    },
     "SharedPrivateLinkResourceList": {
+      "required__added": [
+        "value"
+      ]
+    },
+    "SignalRServiceUsageList": {
       "required__added": [
         "value"
       ]
