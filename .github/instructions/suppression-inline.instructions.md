@@ -24,14 +24,17 @@ If the user does not provide this information, be sure to ask. Use this informat
 2. **Check the disable section in the tspconfig.yaml file**
    - Look for all configurations under `disable:`, for example:
     ```yaml
-    disable:
-    "@azure-tools/typespec-azure-core/no-nullable": "backward-compatibility"
+    linter:
+      extends:
+        - "@azure-tools/typespec-azure-rulesets/resource-manager"
+      disable:
+        "@azure-tools/typespec-azure-core/no-nullable": "backward-compatibility"
     ```
    - These configurations represent global suppressions that you need to convert to inline suppressions.
 
 ## Step 2: Migrate global suppressions to inline suppressions
 
-1. Remove the `disable:` section from the `tspconfig.yaml` file.
+1. Remove the `disable:` section from the `tspconfig.yaml` file and remember all the warning types that were suppressed by the removed global suppressions.
 
 2. Recompile the tsp files to generate new Swagger files while reproducing the warnings that were previously globally suppressed.
 
@@ -40,7 +43,7 @@ cd {TypeSpec-folder}
 npx tsp compile .
 ```
 
-3. For all warnings that appear during the compilation process, you need to add inline suppressions in the corresponding TypeSpec files. The format for inline suppressions is as follows:
+3. For warnings that appear during the compilation process, you need to categorize the warnings according to the warning types from the previously removed global suppressions and add inline suppressions in the corresponding TypeSpec files. The format for inline suppressions is as follows:
 
 ```typespec
 #suppress "@azure-tools/typespec-azure-core/no-openapi" "For backward compatibility with existing API"
