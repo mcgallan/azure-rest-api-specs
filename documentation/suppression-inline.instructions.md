@@ -46,7 +46,43 @@ npx tsp compile .
 @operationId("WebPubSubCustomDomains_Get")
 get is ArmResourceRead<CustomDomain>;
 ```
-需要注意的是，内联抑制需要放在相关代码的上方，并且需要提供清晰的理由说明，示例中的理由说明为 "For backward compatibility with existing API"就是一个很好的理由说明。
+需要注意的是，内联抑制需要放在相关代码的上方，尤其是需要位于所有装饰器之上，不能#suppress与装饰器穿插使用，会导致TypeSpec Valication无法通过，并且需要提供清晰的理由说明，示例中的理由说明为 "For backward compatibility with existing API"就是一个很好的理由说明。但是我希望你能根据具体情况提供更详细，更贴切的理由说明，而不是一味的使用"For backward compatibility"For backward compatibility"。
+以下是一些常用的理由模板，您可以根据实际情况进行调整或者结合warning的具体情况选择更加合适的理由：
+
+#### 常用理由模板
+
+1. **向后兼容性**
+   - `"For backward compatibility with existing API"`
+   - `"Can not change existing operationId for backward compatibility"`
+   - `"Can not change existing response codes for backward compatibility"`
+
+2. **计划修复**
+   - `"MUST CHANGE ON NEXT UPDATE"`
+   - `"Will be fixed in next API version"`
+   - `"MUST REMOVE AT NEXT API VERSION UPDATE"`
+
+3. **设计决策**
+   - `"Existing service design, non-conforming operation"`
+   - `"This is an existing service pattern"`
+   - `"Required for this specific use case"`
+
+4. **技术限制**
+   - `"This requires a breaking change in runtime API"`
+   - `"Breaking change required for proper fix"`
+
+4.在添加完所有的内联抑制之后，你需要检查所有的内联抑制是否都拥有一个清晰的理由说明。 需要注意比较常见的错误格式是以下两种
+1.缺少理由
+
+```typespec
+#suppress "@azure-tools/typespec-azure-core/no-openapi" // 这是一个错误的示例，缺少理由说明
+```
+2.理由为空
+
+```typespec
+#suppress "@azure-tools/typespec-azure-core/no-openapi" "" // 这是一个错误的示例，理由为空
+```
+
+你可以使用"findstr /s /n "#suppress" *.tsp"命令来查找所有的内联抑制，并检查它们是否有理由说明。也可以使用更加详细的命令来查找所有的内联抑制并检查理由说明是否为空或者缺失，并对其进行修正，确保每个内联抑制都有一个清晰且有意义的理由说明。
 
 ## 步骤 3：验证和测试
 1. **验证内联抑制**：
