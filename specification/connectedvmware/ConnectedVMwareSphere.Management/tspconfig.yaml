@@ -34,7 +34,6 @@ options:
     typespec-title-map:
       ConnectedVMwarevSphereClient: "AzureArcVMwareManagementServiceAPI"
     flavor: "azure"
-    compatibility-lro: true
     experimental-extensible-enums: true
     package-details:
       name: "@azure/arm-connectedvmware"
