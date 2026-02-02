@@ -28,13 +28,13 @@
           "200": {
             "description": "ignore",
             "schema": {
-              "$ref": "./common.json/definitions/OperationListResult"
+              "$ref": "#/definitions/OperationListResult"
             }
           },
           "default": {
             "description": "ignore",
             "schema": {
-              "$ref": "./common.json/definitions/CloudError"
+              "$ref": "./common.json#/definitions/CloudError"
             }
           }
         },
@@ -152,7 +152,7 @@
           "type": "string"
         },
         "display": {
-          "$ref": "./common.json/definitions/OperationDisplay"
+          "$ref": "#/definitions/OperationDisplay"
         },
         "origin": {
           "type": "string"
@@ -163,11 +163,66 @@
         }
       }
     },
+    "OperationDisplay": {
+      "type": "object",
+      "properties": {
+        "provider": {
+          "type": "string"
+        },
+        "resource": {
+          "type": "string"
+        },
+        "operation": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "OperationListResult": {
+      "type": "object",
+      "description": "[Placeholder] Discription for page model",
+      "properties": {
+        "value": {
+          "type": "array",
+          "description": "[Placeholder] Discription for value property",
+          "items": {
+            "$ref": "#/definitions/Operation"
+          }
+        },
+        "nextLink": {
+          "type": "string",
+          "format": "uri",
+          "description": "[Placeholder] Discription for nextLink property"
+        }
+      },
+      "required": [
+        "value"
+      ]
+    },
     "OperationPropertiesFormat": {
       "type": "object",
       "properties": {
         "serviceSpecification": {
-          "$ref": "./common.json/definitions/OperationPropertiesFormatServiceSpecification"
+          "$ref": "#/definitions/OperationPropertiesFormatServiceSpecification"
+        }
+      }
+    },
+    "OperationPropertiesFormatServiceSpecification": {
+      "type": "object",
+      "properties": {
+        "metricSpecifications": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MetricSpecification"
+          }
+        },
+        "logSpecifications": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LogSpecification"
+          }
         }
       }
     }

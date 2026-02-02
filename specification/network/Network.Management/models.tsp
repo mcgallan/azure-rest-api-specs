@@ -17153,6 +17153,8 @@ model NetworkManagerProperties {
 /**
  * Scope of Network Manager.
  */
+#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+@Azure.ResourceManager.Legacy.feature(Features.networkManager)
 model NetworkManagerPropertiesNetworkManagerScopes {
   /**
    * List of management groups.
@@ -17472,6 +17474,8 @@ model Hub {
 /**
  * Collection of additional settings to enhance specific topology behaviors of the connectivity configuration resource.
  */
+#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+@Azure.ResourceManager.Legacy.feature(Features.networkManager)
 model ConnectivityConfigurationPropertiesConnectivityCapabilities {
   /**
    * Option indicating the scale of private endpoints allowed in the connected group of the connectivity configuration.
@@ -22010,6 +22014,8 @@ model Operation {
 /**
  * Display metadata associated with the operation.
  */
+#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+@Azure.ResourceManager.Legacy.feature(Features.networkingOperations)
 model OperationDisplay {
   /**
    * Service provider: Microsoft Network.
@@ -22051,6 +22057,8 @@ model OperationPropertiesFormat {
 /**
  * Specification of the service.
  */
+#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+@Azure.ResourceManager.Legacy.feature(Features.networkingOperations)
 model OperationPropertiesFormatServiceSpecification {
   /**
    * Operation service specification.
@@ -29390,6 +29398,8 @@ model LoadBalancerLoadBalancingRuleListResult
 @Azure.ResourceManager.Legacy.feature(Features.virtualNetwork)
 model NetworkInterfaceLoadBalancerListResult is Azure.Core.Page<LoadBalancer>;
 
+#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+@Azure.ResourceManager.Legacy.feature(Features.networkManager)
 model AdminRuleListResult is Azure.Core.Page<BaseAdminRule>;
 
 model NspAssociationsListResult is Azure.Core.Page<NspAssociation>;

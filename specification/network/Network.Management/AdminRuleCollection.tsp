@@ -37,6 +37,8 @@ model AdminRuleCollection extends ChildResource {
   systemData?: Azure.ResourceManager.Foundations.SystemData;
 }
 
+#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+@Azure.ResourceManager.Legacy.feature(Features.networkManager)
 @armResourceOperations
 interface AdminRuleCollections {
   /**

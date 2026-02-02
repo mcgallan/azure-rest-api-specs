@@ -21,19 +21,11 @@
           "Operations"
         ],
         "responses": {
-          "200": {
-            "schema": {
-              "$ref": {
-                "__old": "#/definitions/OperationListResult",
-                "__new": "./common.json/definitions/OperationListResult"
-              }
-            }
-          },
           "default": {
             "schema": {
               "$ref": {
                 "__old": "./network.json#/definitions/CloudError",
-                "__new": "./common.json/definitions/CloudError"
+                "__new": "./common.json#/definitions/CloudError"
               }
             }
           }
@@ -42,21 +34,37 @@
     }
   },
   "definitions": {
-    "OperationListResult__deleted": {
+    "OperationDisplay__added": {
       "type": "object",
-      "description": "[Placeholder] Discription for page model",
       "properties": {
-        "value": {
+        "provider": {
+          "type": "string"
+        },
+        "resource": {
+          "type": "string"
+        },
+        "operation": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "OperationPropertiesFormatServiceSpecification__added": {
+      "type": "object",
+      "properties": {
+        "metricSpecifications": {
           "type": "array",
-          "description": "[Placeholder] Discription for value property",
           "items": {
-            "$ref": "#/definitions/Operation"
+            "$ref": "#/definitions/MetricSpecification"
           }
         },
-        "nextLink": {
-          "type": "string",
-          "format": "uri",
-          "description": "[Placeholder] Discription for nextLink property"
+        "logSpecifications": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LogSpecification"
+          }
         }
       }
     },
@@ -82,9 +90,14 @@
               "description": "Description of the operation."
             }
           },
-          "$ref__added": "./common.json/definitions/OperationDisplay"
+          "$ref__added": "#/definitions/OperationDisplay"
         }
       }
+    },
+    "OperationListResult": {
+      "required__added": [
+        "value"
+      ]
     },
     "OperationPropertiesFormat": {
       "properties": {
@@ -106,7 +119,7 @@
               }
             }
           },
-          "$ref__added": "./common.json/definitions/OperationPropertiesFormatServiceSpecification"
+          "$ref__added": "#/definitions/OperationPropertiesFormatServiceSpecification"
         }
       }
     }

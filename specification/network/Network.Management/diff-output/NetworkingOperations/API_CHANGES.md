@@ -7,11 +7,17 @@
 | `paths['/providers/microsoft.Network/operations'].get.tags__added` | added | `["Operations"]` |
 | `tags__added` | added | `[{"name":"Operations"}]` |
 
-### Changes for `OperationListResult`
+### Changes for `OperationDisplay`
 
 | Path | Change Type | Value |
 |------|------------|-------|
-| `definitions.OperationListResult__deleted` | deleted | `{"type":"object","description":"[Placeholder] Discription for page model","properties":{"value":{"ty...` |
+| `definitions.OperationDisplay__added` | added | `{"type":"object","properties":{"provider":{"type":"string"},"resource":{"type":"string"},"operation"...` |
+
+### Changes for `OperationPropertiesFormatServiceSpecification`
+
+| Path | Change Type | Value |
+|------|------------|-------|
+| `definitions.OperationPropertiesFormatServiceSpecification__added` | added | `{"type":"object","properties":{"metricSpecifications":{"type":"array","items":{"$ref":"#/definitions...` |
 
 ### Changes for `type`
 
@@ -31,8 +37,14 @@
 
 | Path | Change Type | Value |
 |------|------------|-------|
-| `definitions.Operation.properties.display.$ref__added` | added | `./common.json/definitions/OperationDisplay` |
-| `definitions.OperationPropertiesFormat.properties.serviceSpecification.$ref__added` | added | `./common.json/definitions/OperationPropertiesFormatServiceSpecification` |
+| `definitions.Operation.properties.display.$ref__added` | added | `#/definitions/OperationDisplay` |
+| `definitions.OperationPropertiesFormat.properties.serviceSpecification.$ref__added` | added | `#/definitions/OperationPropertiesFormatServiceSpecification` |
+
+### Changes for `required`
+
+| Path | Change Type | Value |
+|------|------------|-------|
+| `definitions.OperationListResult.required__added` | added | `["value"]` |
 
 ## Modified Values
 
@@ -40,6 +52,5 @@
 |------|-----------|----------|
 | `info.description` | `The Microsoft Azure Network management API provides a RESTful set of web services that interact with Microsoft Azure Networks service to manage your network resources. The API has entities that capture the relationship between an end user and the Microsoft Azure Networks service.` | `APIs to manage web application firewall rules.` |
 | `info.title` | `NetworkManagementClient` | `WebApplicationFirewallManagement` |
-| `paths['/providers/microsoft.Network/operations'].get.responses.200.schema.$ref` | `#/definitions/OperationListResult` | `./common.json/definitions/OperationListResult` |
-| `paths['/providers/microsoft.Network/operations'].get.responses.default.schema.$ref` | `./network.json#/definitions/CloudError` | `./common.json/definitions/CloudError` |
+| `paths['/providers/microsoft.Network/operations'].get.responses.default.schema.$ref` | `./network.json#/definitions/CloudError` | `./common.json#/definitions/CloudError` |
 
