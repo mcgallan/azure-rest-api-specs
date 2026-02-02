@@ -19083,6 +19083,8 @@ model NspLoggingConfigurationProperties {
 /**
  * Result of the request to list NSP service tags.
  */
+#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+@Azure.ResourceManager.Legacy.feature(Features.networkSecurityPerimeter)
 model NspServiceTagsListResult is Azure.Core.Page<NspServiceTagsResource>;
 
 /**
@@ -29350,6 +29352,8 @@ alias ExpressRouteFailoverAllTestDetails = ExpressRouteFailoverTestDetails[];
  */
 alias ExpressRouteFailoverSingleTestDetailsObject = ExpressRouteFailoverSingleTestDetails[];
 
+#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+@Azure.ResourceManager.Legacy.feature(Features.networkSecurityPerimeter)
 model PerimeterAssociableResourcesListResult
   is Azure.Core.Page<PerimeterAssociableResource>;
 
@@ -29402,6 +29406,8 @@ model NetworkInterfaceLoadBalancerListResult is Azure.Core.Page<LoadBalancer>;
 @Azure.ResourceManager.Legacy.feature(Features.networkManager)
 model AdminRuleListResult is Azure.Core.Page<BaseAdminRule>;
 
+#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+@Azure.ResourceManager.Legacy.feature(Features.networkSecurityPerimeter)
 model NspAssociationsListResult is Azure.Core.Page<NspAssociation>;
 
 #suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"

@@ -352,6 +352,8 @@ interface LoadBalancersOperationGroup {
 }
 
 #suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-interface-requires-decorator" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+@Azure.ResourceManager.Legacy.feature(Features.networkSecurityPerimeter)
 interface NetworkSecurityPerimeterAssociableResourceTypesOperationGroup {
   /**
    * Gets the list of resources that are onboarded with NSP. These resources can be associated with a network security perimeter
@@ -371,6 +373,8 @@ interface NetworkSecurityPerimeterAssociableResourceTypesOperationGroup {
 }
 
 #suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-interface-requires-decorator" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+@Azure.ResourceManager.Legacy.feature(Features.networkSecurityPerimeter)
 interface NetworkSecurityPerimeterOperationStatusesOperationGroup {
   /**
    * Gets the operation status for the given operation id.
@@ -393,6 +397,8 @@ interface NetworkSecurityPerimeterOperationStatusesOperationGroup {
 }
 
 #suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-interface-requires-decorator" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+@Azure.ResourceManager.Legacy.feature(Features.networkSecurityPerimeter)
 interface NetworkSecurityPerimeterServiceTagsOperationGroup {
   /**
    * Gets the list of service tags supported by NSP. These service tags can be used to create access rules in NSP.
