@@ -3,6 +3,9 @@ import "@azure-tools/typespec-client-generator-core";
 
 using Azure.ClientGenerator.Core;
 using Microsoft.Network;
+using TypeSpec.Http;
+using Azure.ResourceManager;
+using TypeSpec.Rest;
 
 @@clientName(Microsoft.Network,
   "FrontDoorManagementClient",
@@ -39,3 +42,33 @@ using Microsoft.Network;
   "java"
 );
 @@clientName(GetTimeseriesParameters.endDateTimeUTC, "endDateTimeUtc", "java");
+
+@@clientName(MinimumTLSVersion.`1.0`, "One0", "go");
+@@clientName(MinimumTLSVersion.`1.2`, "One2", "go");
+
+#suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+#suppress "@azure-tools/typespec-azure-resource-manager/arm-put-operation-response-codes" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+#suppress "@azure-tools/typespec-azure-resource-manager/no-response-body" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+op replaceCreateOrUpdate(
+  ...ApiVersionParameter,
+  ...SubscriptionIdParameter,
+  profileName: string,
+  ...ResourceGroupParameter,
+  provider: "Microsoft.Network",
+  parameters: ProfileUpdateModel,
+  resource: Microsoft.Network.Profile,
+): ArmResourceCreateOrReplaceAsync<
+  Microsoft.Network.Profile,
+  Response = ArmResourceUpdatedResponse<Microsoft.Network.Profile> |
+    ArmResourceCreatedResponse<
+      Microsoft.Network.Profile,
+      ArmLroLocationHeader<FinalResult = Microsoft.Network.Profile> &
+        Azure.Core.Foundations.RetryAfterHeader
+    > | (ArmAcceptedLroResponse & {
+      @bodyRoot
+      _: Microsoft.Network.Profile;
+    }),
+  Error = Microsoft.Network.ErrorResponse
+>;
+
+@@override(Profiles.createOrUpdate, replaceCreateOrUpdate, "go");
