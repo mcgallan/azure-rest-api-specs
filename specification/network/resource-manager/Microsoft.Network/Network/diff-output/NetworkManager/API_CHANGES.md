@@ -96,19 +96,19 @@ Change Type: deleted
 
 | Path | Change Type | Value |
 |------|------------|-------|
-| `paths['/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkManagers/{networkManagerName}/routingConfigurations/{configurationName}/ruleCollections/{ruleCollectionName}__deleted']` | deleted | `{"parameters":[{"$ref":"../../../../../common-types/resource-management/v5/types.json#/parameters/Ap...` |
+| `paths['/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkManagers/{networkManagerName}/routingConfigurations/{configurationName}/ruleCollections/{ruleCollectionName}__deleted']` | deleted | `{"parameters":[{"$ref":"../../../../../../common-types/resource-management/v5/types.json#/parameters/Ap...` |
 
 ### Changes for `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkManagers/{networkManagerName}/routingConfigurations/{configurationName}/ruleCollections/{ruleCollectionName}/rules`
 
 | Path | Change Type | Value |
 |------|------------|-------|
-| `paths['/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkManagers/{networkManagerName}/routingConfigurations/{configurationName}/ruleCollections/{ruleCollectionName}/rules__deleted']` | deleted | `{"parameters":[{"$ref":"../../../../../common-types/resource-management/v5/types.json#/parameters/Ap...` |
+| `paths['/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkManagers/{networkManagerName}/routingConfigurations/{configurationName}/ruleCollections/{ruleCollectionName}/rules__deleted']` | deleted | `{"parameters":[{"$ref":"../../../../../../common-types/resource-management/v5/types.json#/parameters/Ap...` |
 
 ### Changes for `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkManagers/{networkManagerName}/routingConfigurations/{configurationName}/ruleCollections/{ruleCollectionName}/rules/{ruleName}`
 
 | Path | Change Type | Value |
 |------|------------|-------|
-| `paths['/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkManagers/{networkManagerName}/routingConfigurations/{configurationName}/ruleCollections/{ruleCollectionName}/rules/{ruleName}__deleted']` | deleted | `{"parameters":[{"$ref":"../../../../../common-types/resource-management/v5/types.json#/parameters/Ap...` |
+| `paths['/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkManagers/{networkManagerName}/routingConfigurations/{configurationName}/ruleCollections/{ruleCollectionName}/rules/{ruleName}__deleted']` | deleted | `{"parameters":[{"$ref":"../../../../../../common-types/resource-management/v5/types.json#/parameters/Ap...` |
 
 ### Changes for `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkManagers/{networkManagerName}/securityAdminConfigurations/{configurationName}/ruleCollections`
 
@@ -144,19 +144,19 @@ Change Type: deleted
 
 | Path | Change Type | Value |
 |------|------------|-------|
-| `paths['/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkManagers/{networkManagerName}/securityUserConfigurations/{configurationName}/ruleCollections/{ruleCollectionName}__deleted']` | deleted | `{"parameters":[{"$ref":"../../../../../common-types/resource-management/v5/types.json#/parameters/Ap...` |
+| `paths['/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkManagers/{networkManagerName}/securityUserConfigurations/{configurationName}/ruleCollections/{ruleCollectionName}__deleted']` | deleted | `{"parameters":[{"$ref":"../../../../../../common-types/resource-management/v5/types.json#/parameters/Ap...` |
 
 ### Changes for `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkManagers/{networkManagerName}/securityUserConfigurations/{configurationName}/ruleCollections/{ruleCollectionName}/rules`
 
 | Path | Change Type | Value |
 |------|------------|-------|
-| `paths['/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkManagers/{networkManagerName}/securityUserConfigurations/{configurationName}/ruleCollections/{ruleCollectionName}/rules__deleted']` | deleted | `{"parameters":[{"$ref":"../../../../../common-types/resource-management/v5/types.json#/parameters/Ap...` |
+| `paths['/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkManagers/{networkManagerName}/securityUserConfigurations/{configurationName}/ruleCollections/{ruleCollectionName}/rules__deleted']` | deleted | `{"parameters":[{"$ref":"../../../../../../common-types/resource-management/v5/types.json#/parameters/Ap...` |
 
 ### Changes for `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkManagers/{networkManagerName}/securityUserConfigurations/{configurationName}/ruleCollections/{ruleCollectionName}/rules/{ruleName}`
 
 | Path | Change Type | Value |
 |------|------------|-------|
-| `paths['/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkManagers/{networkManagerName}/securityUserConfigurations/{configurationName}/ruleCollections/{ruleCollectionName}/rules/{ruleName}__deleted']` | deleted | `{"parameters":[{"$ref":"../../../../../common-types/resource-management/v5/types.json#/parameters/Ap...` |
+| `paths['/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkManagers/{networkManagerName}/securityUserConfigurations/{configurationName}/ruleCollections/{ruleCollectionName}/rules/{ruleName}__deleted']` | deleted | `{"parameters":[{"$ref":"../../../../../../common-types/resource-management/v5/types.json#/parameters/Ap...` |
 
 ### Changes for `$ref`
 
@@ -298,10 +298,10 @@ Change Type: deleted
 | `paths['/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkManagers/{networkManagerName}/listActiveSecurityAdminRules'].parameters__deleted` | deleted | `[{"$ref":"./network.json#/parameters/ApiVersionParameter"},{"$ref":"./network.json#/parameters/Subsc...` |
 | `paths['/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkManagers/{networkManagerName}/listDeploymentStatus'].parameters__deleted` | deleted | `[{"$ref":"./network.json#/parameters/SubscriptionIdParameter"},{"$ref":"#/parameters/ResourceGroupNa...` |
 | `paths['/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkManagers/{networkManagerName}/networkGroups/{networkGroupName}'].parameters__deleted` | deleted | `[{"$ref":"./network.json#/parameters/SubscriptionIdParameter"},{"$ref":"#/parameters/ResourceGroupNa...` |
-| `paths['/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkManagers/{networkManagerName}/routingConfigurations/{configurationName}'].parameters__deleted` | deleted | `[{"$ref":"../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParame...` |
+| `paths['/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkManagers/{networkManagerName}/routingConfigurations/{configurationName}'].parameters__deleted` | deleted | `[{"$ref":"../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParame...` |
 | `paths['/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkManagers/{networkManagerName}/scopeConnections/{scopeConnectionName}'].parameters__deleted` | deleted | `[{"$ref":"./network.json#/parameters/SubscriptionIdParameter"},{"$ref":"./networkManager.json#/param...` |
 | `paths['/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkManagers/{networkManagerName}/securityAdminConfigurations/{configurationName}'].parameters__deleted` | deleted | `[{"$ref":"./network.json#/parameters/ApiVersionParameter"},{"$ref":"./network.json#/parameters/Subsc...` |
-| `paths['/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkManagers/{networkManagerName}/securityUserConfigurations/{configurationName}'].parameters__deleted` | deleted | `[{"$ref":"../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParame...` |
+| `paths['/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkManagers/{networkManagerName}/securityUserConfigurations/{configurationName}'].parameters__deleted` | deleted | `[{"$ref":"../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParame...` |
 | `paths['/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualNetworks/{virtualNetworkName}/listNetworkManagerEffectiveConnectivityConfigurations'].parameters__deleted` | deleted | `[{"$ref":"./network.json#/parameters/SubscriptionIdParameter"},{"$ref":"#/parameters/ResourceGroupNa...` |
 | `paths['/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualNetworks/{virtualNetworkName}/listNetworkManagerEffectiveSecurityAdminRules'].parameters__deleted` | deleted | `[{"$ref":"./network.json#/parameters/SubscriptionIdParameter"},{"$ref":"#/parameters/ResourceGroupNa...` |
 
@@ -552,30 +552,30 @@ Change Type: deleted
 | `definitions.ActiveConnectivityConfigurationsListResult.properties.value.items.$ref` | `#/definitions/ActiveConnectivityConfiguration` | `./common.json/definitions/ActiveConnectivityConfiguration` |
 | `definitions.ConfigurationGroup.properties.properties.$ref` | `./networkManagerGroup.json#/definitions/NetworkGroupProperties` | `#/definitions/NetworkGroupProperties` |
 | `definitions.ConnectivityConfiguration.allOf[0].$ref` | `./network.json#/definitions/ChildResource` | `./common.json/definitions/ChildResource` |
-| `definitions.ConnectivityConfiguration.properties.systemData.$ref` | `./network.json#/definitions/SystemData` | `../../../../../common-types/resource-management/v5/types.json#/definitions/systemData` |
+| `definitions.ConnectivityConfiguration.properties.systemData.$ref` | `./network.json#/definitions/SystemData` | `../../../../../../common-types/resource-management/v5/types.json#/definitions/systemData` |
 | `definitions.ConnectivityConfigurationProperties.properties.provisioningState.$ref` | `./network.json#/definitions/ProvisioningState` | `./common.json/definitions/NetworkProvisioningState` |
 | `definitions.EffectiveBaseSecurityAdminRule.properties.ruleCollectionAppliesToGroups.items.$ref` | `./networkManagerSecurityAdminConfiguration.json#/definitions/NetworkManagerSecurityGroupItem` | `#/definitions/NetworkManagerSecurityGroupItem` |
 | `definitions.EffectiveConnectivityConfiguration.properties.properties.$ref` | `./networkManagerConnectivityConfiguration.json#/definitions/ConnectivityConfigurationProperties` | `#/definitions/ConnectivityConfigurationProperties` |
 | `definitions.NetworkGroup.allOf[0].$ref` | `./network.json#/definitions/ChildResource` | `./common.json/definitions/ChildResource` |
-| `definitions.NetworkGroup.properties.systemData.$ref` | `./network.json#/definitions/SystemData` | `../../../../../common-types/resource-management/v5/types.json#/definitions/systemData` |
+| `definitions.NetworkGroup.properties.systemData.$ref` | `./network.json#/definitions/SystemData` | `../../../../../../common-types/resource-management/v5/types.json#/definitions/systemData` |
 | `definitions.NetworkGroupProperties.properties.provisioningState.$ref` | `./network.json#/definitions/ProvisioningState` | `./common.json/definitions/NetworkProvisioningState` |
 | `definitions.NetworkManager.allOf[0].$ref` | `./network.json#/definitions/Resource` | `./common.json/definitions/Resource` |
-| `definitions.NetworkManager.properties.systemData.$ref` | `./network.json#/definitions/SystemData` | `../../../../../common-types/resource-management/v5/types.json#/definitions/systemData` |
+| `definitions.NetworkManager.properties.systemData.$ref` | `./network.json#/definitions/SystemData` | `../../../../../../common-types/resource-management/v5/types.json#/definitions/systemData` |
 | `definitions.NetworkManagerConnection.allOf[0].$ref` | `./network.json#/definitions/ChildResource` | `./common.json/definitions/ChildResource` |
-| `definitions.NetworkManagerConnection.properties.systemData.$ref` | `./network.json#/definitions/SystemData` | `../../../../../common-types/resource-management/v5/types.json#/definitions/systemData` |
+| `definitions.NetworkManagerConnection.properties.systemData.$ref` | `./network.json#/definitions/SystemData` | `../../../../../../common-types/resource-management/v5/types.json#/definitions/systemData` |
 | `definitions.NetworkManagerConnectionProperties.properties.connectionState.$ref` | `./networkManagerScopeConnection.json#/definitions/ConnectionState` | `./common.json/definitions/ScopeConnectionState` |
 | `definitions.NetworkManagerProperties.properties.provisioningState.$ref` | `./network.json#/definitions/ProvisioningState` | `./common.json/definitions/NetworkProvisioningState` |
 | `definitions.NetworkManagerRoutingConfiguration.allOf[0].$ref` | `./network.json#/definitions/ChildResource` | `./common.json/definitions/ChildResource` |
-| `definitions.NetworkManagerRoutingConfiguration.properties.systemData.$ref` | `./network.json#/definitions/SystemData` | `../../../../../common-types/resource-management/v5/types.json#/definitions/systemData` |
+| `definitions.NetworkManagerRoutingConfiguration.properties.systemData.$ref` | `./network.json#/definitions/SystemData` | `../../../../../../common-types/resource-management/v5/types.json#/definitions/systemData` |
 | `definitions.NetworkManagerRoutingConfigurationPropertiesFormat.properties.provisioningState.$ref` | `./network.json#/definitions/ProvisioningState` | `./common.json/definitions/NetworkProvisioningState` |
 | `definitions.RoutingRuleCollectionPropertiesFormat.properties.provisioningState.$ref` | `./network.json#/definitions/ProvisioningState` | `./common.json/definitions/NetworkProvisioningState` |
 | `definitions.RoutingRulePropertiesFormat.properties.provisioningState.$ref` | `./network.json#/definitions/ProvisioningState` | `./common.json/definitions/NetworkProvisioningState` |
 | `definitions.ScopeConnection.allOf[0].$ref` | `./network.json#/definitions/ChildResource` | `./common.json/definitions/ChildResource` |
-| `definitions.ScopeConnection.properties.systemData.$ref` | `./network.json#/definitions/SystemData` | `../../../../../common-types/resource-management/v5/types.json#/definitions/systemData` |
+| `definitions.ScopeConnection.properties.systemData.$ref` | `./network.json#/definitions/SystemData` | `../../../../../../common-types/resource-management/v5/types.json#/definitions/systemData` |
 | `definitions.SecurityAdminConfiguration.allOf[0].$ref` | `./network.json#/definitions/ChildResource` | `./common.json/definitions/ChildResource` |
-| `definitions.SecurityAdminConfiguration.properties.systemData.$ref` | `./network.json#/definitions/SystemData` | `../../../../../common-types/resource-management/v5/types.json#/definitions/systemData` |
+| `definitions.SecurityAdminConfiguration.properties.systemData.$ref` | `./network.json#/definitions/SystemData` | `../../../../../../common-types/resource-management/v5/types.json#/definitions/systemData` |
 | `definitions.SecurityUserConfiguration.allOf[0].$ref` | `./network.json#/definitions/ChildResource` | `./common.json/definitions/ChildResource` |
-| `definitions.SecurityUserConfiguration.properties.systemData.$ref` | `./network.json#/definitions/SystemData` | `../../../../../common-types/resource-management/v5/types.json#/definitions/systemData` |
+| `definitions.SecurityUserConfiguration.properties.systemData.$ref` | `./network.json#/definitions/SystemData` | `../../../../../../common-types/resource-management/v5/types.json#/definitions/systemData` |
 | `definitions.SecurityUserConfigurationPropertiesFormat.properties.provisioningState.$ref` | `./network.json#/definitions/ProvisioningState` | `./common.json/definitions/NetworkProvisioningState` |
 | `definitions.SecurityUserRuleCollectionPropertiesFormat.properties.provisioningState.$ref` | `./network.json#/definitions/ProvisioningState` | `./common.json/definitions/NetworkProvisioningState` |
 | `definitions.SecurityUserRulePropertiesFormat.properties.destinations.items.$ref` | `./networkManagerSecurityAdminConfiguration.json#/definitions/AddressPrefixItem` | `#/definitions/AddressPrefixItem` |

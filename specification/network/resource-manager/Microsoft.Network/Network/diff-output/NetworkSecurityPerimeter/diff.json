@@ -1658,7 +1658,7 @@
           "~",
           {
             "$ref": {
-              "__old": "../../../../../common-types/resource-management/v6/types.json#/definitions/TrackedResource",
+              "__old": "../../../../../../common-types/resource-management/v6/types.json#/definitions/TrackedResource",
               "__new": "./common.json/definitions/CommonTrackedResource"
             }
           }

@@ -84,7 +84,7 @@
 | `definitions.OutboundRulePropertiesFormat.properties.protocol.$ref__added` | added | `./common.json#/definitions/LoadBalancerOutboundRuleProtocol` |
 | `definitions.ProbePropertiesFormat.properties.noHealthyBackendsBehavior.$ref__added` | added | `./common.json#/definitions/ProbeNoHealthyBackendsBehavior` |
 | `definitions.ProbePropertiesFormat.properties.protocol.$ref__added` | added | `./common.json#/definitions/ProbeProtocol` |
-| `paths['/subscriptions/{subscriptionId}/providers/microsoft.Network/locations/{location}/setLoadBalancerFrontendPublicIpAddresses'].post.parameters[0].$ref__added` | added | `../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter` |
+| `paths['/subscriptions/{subscriptionId}/providers/microsoft.Network/locations/{location}/setLoadBalancerFrontendPublicIpAddresses'].post.parameters[0].$ref__added` | added | `../../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter` |
 
 ### Changes for `headers`
 

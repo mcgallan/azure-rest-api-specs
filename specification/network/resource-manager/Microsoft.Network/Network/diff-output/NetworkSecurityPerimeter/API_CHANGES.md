@@ -338,7 +338,7 @@ Change Type: deleted
 
 | Path | Old Value | New Value |
 |------|-----------|----------|
-| `definitions.NetworkSecurityPerimeter.allOf[0].$ref` | `../../../../../common-types/resource-management/v6/types.json#/definitions/TrackedResource` | `./common.json/definitions/CommonTrackedResource` |
+| `definitions.NetworkSecurityPerimeter.allOf[0].$ref` | `../../../../../../common-types/resource-management/v6/types.json#/definitions/TrackedResource` | `./common.json/definitions/CommonTrackedResource` |
 | `definitions.NspAssociationProperties.properties.privateLinkResource.$ref` | `./network.json#/definitions/SubResource` | `./common.json/definitions/SubResource` |
 | `definitions.NspAssociationProperties.properties.profile.$ref` | `./network.json#/definitions/SubResource` | `./common.json/definitions/SubResource` |
 | `info.description` | `The Network Security Perimeter API provides a RESTful set of web services that interact with network security perimeter resource.` | `APIs to manage web application firewall rules.` |

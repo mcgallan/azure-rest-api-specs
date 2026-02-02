@@ -60,7 +60,7 @@
               "in__deleted": "path",
               "required__deleted": true,
               "type__deleted": "string",
-              "$ref__added": "../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
+              "$ref__added": "../../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
             }
           ],
           [

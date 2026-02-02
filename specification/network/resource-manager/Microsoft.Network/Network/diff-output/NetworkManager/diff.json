@@ -3664,7 +3664,7 @@
         "systemData": {
           "$ref": {
             "__old": "./network.json#/definitions/SystemData",
-            "__new": "../../../../../common-types/resource-management/v5/types.json#/definitions/systemData"
+            "__new": "../../../../../../common-types/resource-management/v5/types.json#/definitions/systemData"
           }
         }
       },
@@ -3911,7 +3911,7 @@
         "systemData": {
           "$ref": {
             "__old": "./network.json#/definitions/SystemData",
-            "__new": "../../../../../common-types/resource-management/v5/types.json#/definitions/systemData"
+            "__new": "../../../../../../common-types/resource-management/v5/types.json#/definitions/systemData"
           }
         }
       },
@@ -3959,7 +3959,7 @@
         "systemData": {
           "$ref": {
             "__old": "./network.json#/definitions/SystemData",
-            "__new": "../../../../../common-types/resource-management/v5/types.json#/definitions/systemData"
+            "__new": "../../../../../../common-types/resource-management/v5/types.json#/definitions/systemData"
           }
         }
       },
@@ -4002,7 +4002,7 @@
         "systemData": {
           "$ref": {
             "__old": "./network.json#/definitions/SystemData",
-            "__new": "../../../../../common-types/resource-management/v5/types.json#/definitions/systemData"
+            "__new": "../../../../../../common-types/resource-management/v5/types.json#/definitions/systemData"
           }
         }
       },
@@ -4151,7 +4151,7 @@
         "systemData": {
           "$ref": {
             "__old": "./network.json#/definitions/SystemData",
-            "__new": "../../../../../common-types/resource-management/v5/types.json#/definitions/systemData"
+            "__new": "../../../../../../common-types/resource-management/v5/types.json#/definitions/systemData"
           }
         }
       },
@@ -4254,7 +4254,7 @@
         "systemData": {
           "$ref": {
             "__old": "./network.json#/definitions/SystemData",
-            "__new": "../../../../../common-types/resource-management/v5/types.json#/definitions/systemData"
+            "__new": "../../../../../../common-types/resource-management/v5/types.json#/definitions/systemData"
           }
         }
       },
@@ -4299,7 +4299,7 @@
         "systemData": {
           "$ref": {
             "__old": "./network.json#/definitions/SystemData",
-            "__new": "../../../../../common-types/resource-management/v5/types.json#/definitions/systemData"
+            "__new": "../../../../../../common-types/resource-management/v5/types.json#/definitions/systemData"
           }
         }
       },
@@ -4372,7 +4372,7 @@
         "systemData": {
           "$ref": {
             "__old": "./network.json#/definitions/SystemData",
-            "__new": "../../../../../common-types/resource-management/v5/types.json#/definitions/systemData"
+            "__new": "../../../../../../common-types/resource-management/v5/types.json#/definitions/systemData"
           }
         }
       },

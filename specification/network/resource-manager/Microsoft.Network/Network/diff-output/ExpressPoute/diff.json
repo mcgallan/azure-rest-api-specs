@@ -1372,7 +1372,7 @@
             "schema": {
               "$ref": {
                 "__old": "./network.json#/definitions/CloudError",
-                "__new": "../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
+                "__new": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
               }
             }
           }

@@ -2891,7 +2891,7 @@
               "in__deleted": "path",
               "required__deleted": true,
               "type__deleted": "string",
-              "$ref__added": "../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
+              "$ref__added": "../../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
             }
           ]
         ],
@@ -2917,7 +2917,7 @@
               "in__deleted": "path",
               "required__deleted": true,
               "type__deleted": "string",
-              "$ref__added": "../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
+              "$ref__added": "../../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
             }
           ]
         ],
@@ -2943,7 +2943,7 @@
               "in__deleted": "path",
               "required__deleted": true,
               "type__deleted": "string",
-              "$ref__added": "../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
+              "$ref__added": "../../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
             }
           ],
           [
@@ -2972,7 +2972,7 @@
               "in__deleted": "path",
               "required__deleted": true,
               "type__deleted": "string",
-              "$ref__added": "../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
+              "$ref__added": "../../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
             }
           ],
           [
@@ -3004,7 +3004,7 @@
               "in__deleted": "path",
               "required__deleted": true,
               "type__deleted": "string",
-              "$ref__added": "../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
+              "$ref__added": "../../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
             }
           ]
         ],
@@ -3034,7 +3034,7 @@
               "required__deleted": true,
               "type__deleted": "string",
               "pattern__deleted": "^[-\\w\\._ ]+$",
-              "$ref__added": "../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
+              "$ref__added": "../../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
             }
           ]
         ],
@@ -3060,7 +3060,7 @@
               "in__deleted": "path",
               "required__deleted": true,
               "type__deleted": "string",
-              "$ref__added": "../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
+              "$ref__added": "../../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
             }
           ]
         ],
@@ -4485,7 +4485,7 @@
               "in__deleted": "path",
               "required__deleted": true,
               "type__deleted": "string",
-              "$ref__added": "../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
+              "$ref__added": "../../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
             }
           ]
         ],
@@ -9525,7 +9525,7 @@
         "systemData": {
           "$ref": {
             "__old": "./network.json#/definitions/SystemData",
-            "__new": "../../../../../common-types/resource-management/v5/types.json#/definitions/systemData"
+            "__new": "../../../../../../common-types/resource-management/v5/types.json#/definitions/systemData"
           }
         }
       },
@@ -9571,7 +9571,7 @@
         "systemData": {
           "$ref": {
             "__old": "./network.json#/definitions/SystemData",
-            "__new": "../../../../../common-types/resource-management/v5/types.json#/definitions/systemData"
+            "__new": "../../../../../../common-types/resource-management/v5/types.json#/definitions/systemData"
           }
         }
       },
@@ -10206,7 +10206,7 @@
         "systemData": {
           "$ref": {
             "__old": "./network.json#/definitions/SystemData",
-            "__new": "../../../../../common-types/resource-management/v5/types.json#/definitions/systemData"
+            "__new": "../../../../../../common-types/resource-management/v5/types.json#/definitions/systemData"
           }
         }
       },
