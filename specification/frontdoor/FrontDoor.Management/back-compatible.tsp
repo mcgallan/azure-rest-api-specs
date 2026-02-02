@@ -110,3 +110,6 @@ using Microsoft.Network;
 @@clientLocation(FrontDoorNameAvailabilityWithSubscriptionOperationGroup.check,
   "FrontDoorNameAvailabilityWithSubscription"
 );
+
+@@clientName(MinimumTLSVersion.`1.0`, "One0", "go");
+@@clientName(MinimumTLSVersion.`1.2`, "One2", "go");
