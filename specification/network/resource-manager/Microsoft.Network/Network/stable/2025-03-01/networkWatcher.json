@@ -41,6 +41,12 @@
   "tags": [
     {
       "name": "NetworkWatchers"
+    },
+    {
+      "name": "ConnectionMonitorResults"
+    },
+    {
+      "name": "FlowLogs"
     }
   ],
   "paths": {
@@ -573,6 +579,397 @@
         "x-ms-long-running-operation": true
       }
     },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/connectionMonitors": {
+      "get": {
+        "operationId": "ConnectionMonitors_List",
+        "tags": [
+          "ConnectionMonitorResults"
+        ],
+        "description": "Lists all connection monitors for the specified Network Watcher.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "networkWatcherName",
+            "in": "path",
+            "description": "The name of the network watcher.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Azure operation completed successfully.",
+            "schema": {
+              "$ref": "#/definitions/ConnectionMonitorListResult"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "List connection monitors": {
+            "$ref": "./examples/NetworkWatcherConnectionMonitorList.json"
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/connectionMonitors/{connectionMonitorName}": {
+      "get": {
+        "operationId": "ConnectionMonitors_Get",
+        "tags": [
+          "ConnectionMonitorResults"
+        ],
+        "description": "Gets a connection monitor by name.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "networkWatcherName",
+            "in": "path",
+            "description": "The name of the network watcher.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "connectionMonitorName",
+            "in": "path",
+            "description": "The name of the connection monitor.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Azure operation completed successfully.",
+            "schema": {
+              "$ref": "#/definitions/ConnectionMonitorResult"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Get connection monitor": {
+            "$ref": "./examples/NetworkWatcherConnectionMonitorGet.json"
+          }
+        }
+      },
+      "put": {
+        "operationId": "ConnectionMonitors_CreateOrUpdate",
+        "tags": [
+          "ConnectionMonitorResults"
+        ],
+        "description": "Create or update a connection monitor.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "networkWatcherName",
+            "in": "path",
+            "description": "The name of the network watcher.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "connectionMonitorName",
+            "in": "path",
+            "description": "The name of the connection monitor.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "migrate",
+            "in": "query",
+            "description": "Value indicating whether connection monitor V1 should be migrated to V2 format.",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "parameters",
+            "in": "body",
+            "description": "Parameters that define the operation to create a connection monitor.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ConnectionMonitor"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Resource 'ConnectionMonitorResult' update operation succeeded",
+            "schema": {
+              "$ref": "#/definitions/ConnectionMonitorResult"
+            }
+          },
+          "201": {
+            "description": "Resource 'ConnectionMonitorResult' create operation succeeded",
+            "schema": {
+              "$ref": "#/definitions/ConnectionMonitorResult"
+            },
+            "headers": {
+              "Azure-AsyncOperation": {
+                "type": "string",
+                "description": "A link to the status monitor"
+              },
+              "Retry-After": {
+                "type": "integer",
+                "format": "int32",
+                "description": "The Retry-After header can indicate how long the client should wait before polling the operation status."
+              }
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Create connection monitor V1": {
+            "$ref": "./examples/NetworkWatcherConnectionMonitorCreate.json"
+          },
+          "Create connection monitor V2": {
+            "$ref": "./examples/NetworkWatcherConnectionMonitorV2Create.json"
+          },
+          "Create connection monitor with Arc Network": {
+            "$ref": "./examples/NetworkWatcherConnectionMonitorCreateWithArcNetwork.json"
+          }
+        },
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "azure-async-operation",
+          "final-state-schema": "#/definitions/ConnectionMonitorResult"
+        },
+        "x-ms-long-running-operation": true
+      },
+      "patch": {
+        "operationId": "ConnectionMonitors_UpdateTags",
+        "tags": [
+          "ConnectionMonitorResults"
+        ],
+        "description": "Update tags of the specified connection monitor.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "networkWatcherName",
+            "in": "path",
+            "description": "The name of the network watcher.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "connectionMonitorName",
+            "in": "path",
+            "description": "The name of the connection monitor.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "parameters",
+            "in": "body",
+            "description": "Parameters supplied to update connection monitor tags.",
+            "required": true,
+            "schema": {
+              "$ref": "./common.json#/definitions/TagsObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Azure operation completed successfully.",
+            "schema": {
+              "$ref": "#/definitions/ConnectionMonitorResult"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Update connection monitor tags": {
+            "$ref": "./examples/NetworkWatcherConnectionMonitorUpdateTags.json"
+          }
+        }
+      },
+      "delete": {
+        "operationId": "ConnectionMonitors_Delete",
+        "tags": [
+          "ConnectionMonitorResults"
+        ],
+        "description": "Deletes the specified connection monitor.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "networkWatcherName",
+            "in": "path",
+            "description": "The name of the network watcher.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "connectionMonitorName",
+            "in": "path",
+            "description": "The name of the connection monitor.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Resource deletion accepted.",
+            "headers": {
+              "Location": {
+                "type": "string",
+                "description": "The Location header contains the URL where the status of the long running operation can be checked."
+              },
+              "Retry-After": {
+                "type": "integer",
+                "format": "int32",
+                "description": "The Retry-After header can indicate how long the client should wait before polling the operation status."
+              }
+            }
+          },
+          "204": {
+            "description": "Resource does not exist."
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Delete connection monitor": {
+            "$ref": "./examples/NetworkWatcherConnectionMonitorDelete.json"
+          }
+        },
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "location"
+        },
+        "x-ms-long-running-operation": true
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/connectionMonitors/{connectionMonitorName}/stop": {
+      "post": {
+        "operationId": "ConnectionMonitors_Stop",
+        "tags": [
+          "ConnectionMonitorResults"
+        ],
+        "description": "Stops the specified connection monitor.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "networkWatcherName",
+            "in": "path",
+            "description": "The name of the network watcher.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "connectionMonitorName",
+            "in": "path",
+            "description": "The name of the connection monitor.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Azure operation completed successfully."
+          },
+          "202": {
+            "description": "Resource operation accepted.",
+            "headers": {
+              "Location": {
+                "type": "string",
+                "description": "The Location header contains the URL where the status of the long running operation can be checked."
+              },
+              "Retry-After": {
+                "type": "integer",
+                "format": "int32",
+                "description": "The Retry-After header can indicate how long the client should wait before polling the operation status."
+              }
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Stop connection monitor": {
+            "$ref": "./examples/NetworkWatcherConnectionMonitorStop.json"
+          }
+        },
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "location"
+        },
+        "x-ms-long-running-operation": true
+      }
+    },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/connectivityCheck": {
       "post": {
         "operationId": "NetworkWatchers_CheckConnectivity",
@@ -646,6 +1043,316 @@
         "x-ms-long-running-operation-options": {
           "final-state-via": "location",
           "final-state-schema": "#/definitions/ConnectivityInformation"
+        },
+        "x-ms-long-running-operation": true
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/flowLogs": {
+      "get": {
+        "operationId": "FlowLogs_List",
+        "tags": [
+          "FlowLogs"
+        ],
+        "description": "Lists all flow log resources for the specified Network Watcher.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "networkWatcherName",
+            "in": "path",
+            "description": "The name of the network watcher.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Azure operation completed successfully.",
+            "schema": {
+              "$ref": "#/definitions/FlowLogListResult"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "List connection monitors": {
+            "$ref": "./examples/NetworkWatcherFlowLogList.json"
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/flowLogs/{flowLogName}": {
+      "get": {
+        "operationId": "FlowLogs_Get",
+        "tags": [
+          "FlowLogs"
+        ],
+        "description": "Gets a flow log resource by name.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "networkWatcherName",
+            "in": "path",
+            "description": "The name of the network watcher.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "flowLogName",
+            "in": "path",
+            "description": "The name of the flow log resource.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Azure operation completed successfully.",
+            "schema": {
+              "$ref": "#/definitions/FlowLog"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Get flow log": {
+            "$ref": "./examples/NetworkWatcherFlowLogGet.json"
+          }
+        }
+      },
+      "put": {
+        "operationId": "FlowLogs_CreateOrUpdate",
+        "tags": [
+          "FlowLogs"
+        ],
+        "description": "Create or update a flow log for the specified network security group.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "networkWatcherName",
+            "in": "path",
+            "description": "The name of the network watcher.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "flowLogName",
+            "in": "path",
+            "description": "The name of the flow log resource.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "parameters",
+            "in": "body",
+            "description": "Parameters that define the create or update flow log resource.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/FlowLog"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Resource 'FlowLog' update operation succeeded",
+            "schema": {
+              "$ref": "#/definitions/FlowLog"
+            }
+          },
+          "201": {
+            "description": "Resource 'FlowLog' create operation succeeded",
+            "schema": {
+              "$ref": "#/definitions/FlowLog"
+            },
+            "headers": {
+              "Azure-AsyncOperation": {
+                "type": "string",
+                "description": "A link to the status monitor"
+              },
+              "Retry-After": {
+                "type": "integer",
+                "format": "int32",
+                "description": "The Retry-After header can indicate how long the client should wait before polling the operation status."
+              }
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Create or update flow log": {
+            "$ref": "./examples/NetworkWatcherFlowLogCreate.json"
+          }
+        },
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "azure-async-operation",
+          "final-state-schema": "#/definitions/FlowLog"
+        },
+        "x-ms-long-running-operation": true
+      },
+      "patch": {
+        "operationId": "FlowLogs_UpdateTags",
+        "tags": [
+          "FlowLogs"
+        ],
+        "description": "Update tags of the specified flow log.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "networkWatcherName",
+            "in": "path",
+            "description": "The name of the network watcher.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "flowLogName",
+            "in": "path",
+            "description": "The name of the flow log resource.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "parameters",
+            "in": "body",
+            "description": "Parameters supplied to update flow log tags.",
+            "required": true,
+            "schema": {
+              "$ref": "./common.json#/definitions/TagsObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Azure operation completed successfully.",
+            "schema": {
+              "$ref": "#/definitions/FlowLog"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Update flow log tags": {
+            "$ref": "./examples/NetworkWatcherFlowLogUpdateTags.json"
+          }
+        }
+      },
+      "delete": {
+        "operationId": "FlowLogs_Delete",
+        "tags": [
+          "FlowLogs"
+        ],
+        "description": "Deletes the specified flow log resource.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "networkWatcherName",
+            "in": "path",
+            "description": "The name of the network watcher.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "flowLogName",
+            "in": "path",
+            "description": "The name of the flow log resource.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Resource deletion accepted.",
+            "headers": {
+              "Location": {
+                "type": "string",
+                "description": "The Location header contains the URL where the status of the long running operation can be checked."
+              },
+              "Retry-After": {
+                "type": "integer",
+                "format": "int32",
+                "description": "The Retry-After header can indicate how long the client should wait before polling the operation status."
+              }
+            }
+          },
+          "204": {
+            "description": "Resource does not exist."
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Delete flow log": {
+            "$ref": "./examples/NetworkWatcherFlowLogDelete.json"
+          }
+        },
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "location"
         },
         "x-ms-long-running-operation": true
       }

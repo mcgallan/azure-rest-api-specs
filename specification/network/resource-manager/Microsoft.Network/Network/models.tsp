@@ -26371,12 +26371,16 @@ model VpnClientConnectionHealth {
 /**
  * Result of the request to list all VpnServerConfigurations. It contains a list of VpnServerConfigurations and a URL nextLink to get the next set of results.
  */
+#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+@Azure.ResourceManager.Legacy.feature(Features.virtualWAN)
 model ListVpnServerConfigurationsResult
   is Azure.Core.Page<VpnServerConfiguration>;
 
 /**
  * Result of the request to list VpnServerConfigurationPolicyGroups. It contains a list of VpnServerConfigurationPolicyGroups and a URL nextLink to get the next set of results.
  */
+#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+@Azure.ResourceManager.Legacy.feature(Features.virtualWAN)
 model ListVpnServerConfigurationPolicyGroupsResult
   is Azure.Core.Page<VpnServerConfigurationPolicyGroup>;
 
@@ -26827,6 +26831,8 @@ model HubVirtualNetworkConnectionProperties {
 /**
  * List of HubVirtualNetworkConnections and a URL nextLink to get the next set of results.
  */
+#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+@Azure.ResourceManager.Legacy.feature(Features.virtualWAN)
 model ListHubVirtualNetworkConnectionsResult
   is Azure.Core.Page<HubVirtualNetworkConnection>;
 
@@ -27228,6 +27234,8 @@ model VpnGatewayPacketCaptureStopParameters {
 /**
  * The list of shared keys for the vpn link connection. It should only contain one shared key for each vpn link connection.
  */
+#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+@Azure.ResourceManager.Legacy.feature(Features.virtualWAN)
 model ConnectionSharedKeyResultList
   is Azure.Core.Page<ConnectionSharedKeyResult>;
 
@@ -27308,6 +27316,8 @@ model ListVpnConnectionsResult is Azure.Core.Page<VpnConnection>;
 /**
  * Result of the request to list all vpn connections to a virtual wan vpn gateway. It contains a list of Vpn Connections and a URL nextLink to get the next set of results.
  */
+#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+@Azure.ResourceManager.Legacy.feature(Features.virtualWAN)
 model ListVpnSiteLinkConnectionsResult
   is Azure.Core.Page<VpnSiteLinkConnection>;
 
@@ -27415,6 +27425,8 @@ model VirtualWanVpnProfileParameters {
  * List of VirtualHubRouteTableV2s and a URL nextLink to get the next set of results.
  */
 #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+@Azure.ResourceManager.Legacy.feature(Features.virtualWAN)
 model ListVirtualHubRouteTableV2SResult
   is Azure.Core.Page<VirtualHubRouteTableV2>;
 
@@ -27467,6 +27479,8 @@ model ExpressRouteGatewayProperties {
 /**
  * Configuration for auto scaling.
  */
+#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+@Azure.ResourceManager.Legacy.feature(Features.virtualWAN)
 model ExpressRouteGatewayPropertiesAutoScaleConfiguration {
   /**
    * Minimum and maximum number of scale units to deploy.
@@ -27477,6 +27491,8 @@ model ExpressRouteGatewayPropertiesAutoScaleConfiguration {
 /**
  * Minimum and maximum number of scale units to deploy.
  */
+#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+@Azure.ResourceManager.Legacy.feature(Features.virtualWAN)
 model ExpressRouteGatewayPropertiesAutoScaleConfigurationBounds {
   /**
    * Minimum number of scale units deployed for ExpressRoute gateway.
@@ -27661,6 +27677,8 @@ model NetworkVirtualApplianceConnectionProperties {
 /**
  * NetworkVirtualApplianceConnection list.
  */
+#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+@Azure.ResourceManager.Legacy.feature(Features.virtualWAN)
 model NetworkVirtualApplianceConnectionList
   is Azure.Core.Page<NetworkVirtualApplianceConnection>;
 
@@ -27801,6 +27819,8 @@ model HubIPConfigurationPropertiesFormat {
 /**
  * VirtualHubIpConfigurations list.
  */
+#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+@Azure.ResourceManager.Legacy.feature(Features.virtualWAN)
 model ListVirtualHubIpConfigurationResults
   is Azure.Core.Page<HubIpConfiguration>;
 
@@ -29169,8 +29189,6 @@ model DefaultAdminRule extends BaseAdminRule {
  * Connection state snapshot.
  */
 #suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-@Azure.ResourceManager.Legacy.feature(Features.networkWatcher)
 @Azure.ResourceManager.Legacy.feature(Features.networkWatcher)
 model ConnectionStateSnapshot {
   /**
@@ -29236,8 +29254,6 @@ model ConnectionStateSnapshot {
  * List of connection states snapshots.
  */
 #suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-@Azure.ResourceManager.Legacy.feature(Features.networkWatcher)
 @Azure.ResourceManager.Legacy.feature(Features.networkWatcher)
 model ConnectionMonitorQueryResult {
   /**

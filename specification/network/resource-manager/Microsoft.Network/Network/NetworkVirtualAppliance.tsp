@@ -65,109 +65,9 @@ alias NetworkVirtualApplianceNetworkVirtualApplianceOps = Azure.ResourceManager.
 >;
 
 #suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-@Azure.ResourceManager.Legacy.feature(Features.virtualNetwork)
+@Azure.ResourceManager.Legacy.feature(Features.virtualWAN)
 @armResourceOperations(#{ allowStaticRoutes: true })
-interface NetworkVirtualAppliances {
-  /**
-   * Gets the specified Network Virtual Appliance.
-   */
-  @autoRoute
-  get is ArmResourceRead<
-    NetworkVirtualAppliance,
-    Parameters = {
-      /**
-       * Expands referenced resources.
-       */
-      @query("$expand")
-      $expand?: string;
-    },
-    Error = CloudError
-  >;
-
-  /**
-   * Creates or updates the specified Network Virtual Appliance.
-   */
-  @Azure.Core.useFinalStateVia("azure-async-operation")
-  @autoRoute
-  createOrUpdate is ArmResourceCreateOrReplaceAsync<
-    NetworkVirtualAppliance,
-    LroHeaders = ArmCombinedLroHeaders<FinalResult = NetworkVirtualAppliance> &
-      Azure.Core.Foundations.RetryAfterHeader,
-    Error = CloudError
-  >;
-
-  /**
-   * Updates a Network Virtual Appliance.
-   */
-  @patch(#{ implicitOptionality: false })
-  @autoRoute
-  updateTags is ArmCustomPatchSync<
-    NetworkVirtualAppliance,
-    PatchModel = TagsObject,
-    Error = CloudError
-  >;
-
-  /**
-   * Deletes the specified Network Virtual Appliance.
-   */
-  #suppress "@azure-tools/typespec-azure-resource-manager/arm-delete-operation-response-codes" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @autoRoute
-  delete is ArmResourceDeleteWithoutOkAsync<
-    NetworkVirtualAppliance,
-    Response = ArmDeletedResponse | ArmDeleteAcceptedLroResponse | ArmDeletedNoContentResponse,
-    Error = CloudError
-  >;
-
-  /**
-   * Lists all Network Virtual Appliances in a resource group.
-   */
-  @autoRoute
-  listByResourceGroup is ArmResourceListByParent<
-    NetworkVirtualAppliance,
-    Error = CloudError
-  >;
-
-  /**
-   * Gets all Network Virtual Appliances in a subscription.
-   */
-  @autoRoute
-  list is ArmListBySubscription<NetworkVirtualAppliance, Error = CloudError>;
-
-  /**
-   * Restarts one or more VMs belonging to the specified Network Virtual Appliance.
-   */
-  @autoRoute
-  restart is ArmResourceActionAsync<
-    NetworkVirtualAppliance,
-    NetworkVirtualApplianceInstanceIds,
-    NetworkVirtualApplianceInstanceIds,
-    OptionalRequestBody = true,
-    Error = CloudError
-  >;
-
-  /**
-   * Reimages one VM belonging to the specified Network Virtual Appliance.
-   */
-  @autoRoute
-  reimage is ArmResourceActionAsync<
-    NetworkVirtualAppliance,
-    NetworkVirtualApplianceInstanceIds,
-    NetworkVirtualApplianceInstanceIds,
-    OptionalRequestBody = true,
-    Error = CloudError
-  >;
-
-  /**
-   * Retrieves the boot diagnostic logs for a VM instance belonging to the specified Network Virtual Appliance.
-   */
-  @autoRoute
-  getBootDiagnosticLogs is ArmResourceActionAsync<
-    NetworkVirtualAppliance,
-    NetworkVirtualApplianceBootDiagnosticParameters,
-    NetworkVirtualApplianceInstanceId,
-    Error = CloudError
-  >;
-
+interface NetworkVirtualApplianceConnections {
   /**
    * Creates a connection to Network Virtual Appliance, if it doesn't exist else updates the existing NVA connection'
    */
@@ -235,6 +135,102 @@ interface NetworkVirtualAppliances {
   >;
 }
 
+#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+@Azure.ResourceManager.Legacy.feature(Features.virtualNetwork)
+@armResourceOperations
+interface NetworkVirtualAppliances {
+  /**
+   * Gets the specified Network Virtual Appliance.
+   */
+  get is ArmResourceRead<
+    NetworkVirtualAppliance,
+    Parameters = {
+      /**
+       * Expands referenced resources.
+       */
+      @query("$expand")
+      $expand?: string;
+    },
+    Error = CloudError
+  >;
+
+  /**
+   * Creates or updates the specified Network Virtual Appliance.
+   */
+  @Azure.Core.useFinalStateVia("azure-async-operation")
+  createOrUpdate is ArmResourceCreateOrReplaceAsync<
+    NetworkVirtualAppliance,
+    LroHeaders = ArmCombinedLroHeaders<FinalResult = NetworkVirtualAppliance> &
+      Azure.Core.Foundations.RetryAfterHeader,
+    Error = CloudError
+  >;
+
+  /**
+   * Updates a Network Virtual Appliance.
+   */
+  @patch(#{ implicitOptionality: false })
+  updateTags is ArmCustomPatchSync<
+    NetworkVirtualAppliance,
+    PatchModel = TagsObject,
+    Error = CloudError
+  >;
+
+  /**
+   * Deletes the specified Network Virtual Appliance.
+   */
+  #suppress "@azure-tools/typespec-azure-resource-manager/arm-delete-operation-response-codes" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  delete is ArmResourceDeleteWithoutOkAsync<
+    NetworkVirtualAppliance,
+    Response = ArmDeletedResponse | ArmDeleteAcceptedLroResponse | ArmDeletedNoContentResponse,
+    Error = CloudError
+  >;
+
+  /**
+   * Lists all Network Virtual Appliances in a resource group.
+   */
+  listByResourceGroup is ArmResourceListByParent<
+    NetworkVirtualAppliance,
+    Error = CloudError
+  >;
+
+  /**
+   * Gets all Network Virtual Appliances in a subscription.
+   */
+  list is ArmListBySubscription<NetworkVirtualAppliance, Error = CloudError>;
+
+  /**
+   * Restarts one or more VMs belonging to the specified Network Virtual Appliance.
+   */
+  restart is ArmResourceActionAsync<
+    NetworkVirtualAppliance,
+    NetworkVirtualApplianceInstanceIds,
+    NetworkVirtualApplianceInstanceIds,
+    OptionalRequestBody = true,
+    Error = CloudError
+  >;
+
+  /**
+   * Reimages one VM belonging to the specified Network Virtual Appliance.
+   */
+  reimage is ArmResourceActionAsync<
+    NetworkVirtualAppliance,
+    NetworkVirtualApplianceInstanceIds,
+    NetworkVirtualApplianceInstanceIds,
+    OptionalRequestBody = true,
+    Error = CloudError
+  >;
+
+  /**
+   * Retrieves the boot diagnostic logs for a VM instance belonging to the specified Network Virtual Appliance.
+   */
+  getBootDiagnosticLogs is ArmResourceActionAsync<
+    NetworkVirtualAppliance,
+    NetworkVirtualApplianceBootDiagnosticParameters,
+    NetworkVirtualApplianceInstanceId,
+    Error = CloudError
+  >;
+}
+
 @@doc(NetworkVirtualAppliance.name, "The name of Network Virtual Appliance.");
 @@doc(NetworkVirtualAppliance.properties,
   "Properties of the Network Virtual Appliance."
@@ -254,6 +250,6 @@ interface NetworkVirtualAppliances {
 @@doc(NetworkVirtualAppliances.getBootDiagnosticLogs::parameters.body,
   "Parameters supplied to retrieve boot diagnostic logs for a NVA VM instance"
 );
-@@doc(NetworkVirtualAppliances.networkVirtualApplianceConnectionsCreateOrUpdate::parameters.body,
+@@doc(NetworkVirtualApplianceConnections.networkVirtualApplianceConnectionsCreateOrUpdate::parameters.body,
   "Parameters supplied in an NetworkVirtualApplianceConnection PUT operation."
 );
