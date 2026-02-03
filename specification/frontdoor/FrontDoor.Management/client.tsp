@@ -45,3 +45,23 @@ using TypeSpec.Rest;
 
 @@clientName(MinimumTLSVersion.`1.0`, "One0", "go");
 @@clientName(MinimumTLSVersion.`1.2`, "One2", "go");
+
+#suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+#suppress "@azure-tools/typespec-azure-resource-manager/arm-put-operation-response-codes" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+#suppress "@azure-tools/typespec-azure-resource-manager/no-response-body" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+op replaceCreateOrUpdate(
+  ...ApiVersionParameter,
+  ...SubscriptionIdParameter,
+  profileName: string,
+  ...ResourceGroupParameter,
+  provider: "Microsoft.Network",
+  parameters: Microsoft.Network.Profile,
+): ArmResourceUpdatedResponse<Profile> | ArmResourceCreatedResponse<
+  Profile,
+  ArmLroLocationHeader<FinalResult = Profile> &
+    Azure.Core.Foundations.RetryAfterHeader
+> | (ArmAcceptedLroResponse & {
+  @bodyRoot
+  _: Profile;
+});
+@@override(Profiles.createOrUpdate, replaceCreateOrUpdate, "go");
