@@ -4,13 +4,9 @@
 
 | Path | Change Type | Value |
 |------|------------|-------|
-| `paths['/subscriptions/{subscriptionId}/providers/microsoft.Network/applicationGatewayAvailableRequestHeaders'].get.tags__deleted` | deleted | `["ApplicationGateways"]` |
-| `paths['/subscriptions/{subscriptionId}/providers/microsoft.Network/applicationGatewayAvailableResponseHeaders'].get.tags__deleted` | deleted | `["ApplicationGateways"]` |
-| `paths['/subscriptions/{subscriptionId}/providers/microsoft.Network/applicationGatewayAvailableServerVariables'].get.tags__deleted` | deleted | `["ApplicationGateways"]` |
-| `paths['/subscriptions/{subscriptionId}/providers/microsoft.Network/applicationGatewayAvailableWafRuleSets'].get.tags__deleted` | deleted | `["ApplicationGateways"]` |
-| `paths['/subscriptions/{subscriptionId}/providers/microsoft.Network/locations/{location}/applicationGatewayWafDynamicManifests'].get.tags__added` | added | `["ApplicationGatewayWafDynamicManifestResults"]` |
-| `paths['/subscriptions/{subscriptionId}/providers/microsoft.Network/locations/{location}/applicationGatewayWafDynamicManifests/dafault'].get.tags__added` | added | `["ApplicationGatewayWafDynamicManifestResults"]` |
-| `tags__added` | added | `[{"name":"ApplicationGateways"},{"name":"ApplicationGatewayAvailableSslOptionsOperationGroup"},{"nam...` |
+| `paths['/subscriptions/{subscriptionId}/providers/microsoft.Network/locations/{location}/applicationGatewayWafDynamicManifests'].get.tags__added` | added | `["ApplicationGateways"]` |
+| `paths['/subscriptions/{subscriptionId}/providers/microsoft.Network/locations/{location}/applicationGatewayWafDynamicManifests/dafault'].get.tags__added` | added | `["ApplicationGateways"]` |
+| `tags__added` | added | `[{"name":"ApplicationGateways"},{"name":"ApplicationGatewayPrivateLinkResources"},{"name":"Applicati...` |
 
 ### Changes for `$ref`
 

@@ -43,13 +43,10 @@
       "name": "ApplicationGateways"
     },
     {
-      "name": "ApplicationGatewayAvailableSslOptionsOperationGroup"
+      "name": "ApplicationGatewayPrivateLinkResources"
     },
     {
       "name": "ApplicationGatewayPrivateEndpointConnections"
-    },
-    {
-      "name": "ApplicationGatewayWafDynamicManifestResults"
     },
     {
       "name": "WebApplicationFirewallPolicies"
@@ -98,6 +95,9 @@
     "/subscriptions/{subscriptionId}/providers/Microsoft.Network/applicationGatewayAvailableRequestHeaders": {
       "get": {
         "operationId": "ApplicationGateways_ListAvailableRequestHeaders",
+        "tags": [
+          "ApplicationGateways"
+        ],
         "description": "Lists all available request headers.",
         "parameters": [
           {
@@ -134,6 +134,9 @@
     "/subscriptions/{subscriptionId}/providers/Microsoft.Network/applicationGatewayAvailableResponseHeaders": {
       "get": {
         "operationId": "ApplicationGateways_ListAvailableResponseHeaders",
+        "tags": [
+          "ApplicationGateways"
+        ],
         "description": "Lists all available response headers.",
         "parameters": [
           {
@@ -170,6 +173,9 @@
     "/subscriptions/{subscriptionId}/providers/Microsoft.Network/applicationGatewayAvailableServerVariables": {
       "get": {
         "operationId": "ApplicationGateways_ListAvailableServerVariables",
+        "tags": [
+          "ApplicationGateways"
+        ],
         "description": "Lists all available server variables.",
         "parameters": [
           {
@@ -207,7 +213,7 @@
       "get": {
         "operationId": "ApplicationGateways_ListAvailableSslOptions",
         "tags": [
-          "ApplicationGatewayAvailableSslOptionsOperationGroup"
+          "ApplicationGateways"
         ],
         "description": "Lists available Ssl options for configuring Ssl policy.",
         "parameters": [
@@ -243,7 +249,7 @@
       "get": {
         "operationId": "ApplicationGateways_ListAvailableSslPredefinedPolicies",
         "tags": [
-          "ApplicationGatewayAvailableSslOptionsOperationGroup"
+          "ApplicationGateways"
         ],
         "description": "Lists all SSL predefined policies for configuring Ssl policy.",
         "parameters": [
@@ -282,7 +288,7 @@
       "get": {
         "operationId": "ApplicationGateways_GetSslPredefinedPolicy",
         "tags": [
-          "ApplicationGatewayAvailableSslOptionsOperationGroup"
+          "ApplicationGateways"
         ],
         "description": "Gets Ssl predefined policy with the specified policy name.",
         "parameters": [
@@ -324,6 +330,9 @@
     "/subscriptions/{subscriptionId}/providers/Microsoft.Network/applicationGatewayAvailableWafRuleSets": {
       "get": {
         "operationId": "ApplicationGateways_ListAvailableWafRuleSets",
+        "tags": [
+          "ApplicationGateways"
+        ],
         "description": "Lists all available web application firewall rule sets.",
         "parameters": [
           {
@@ -397,7 +406,7 @@
       "get": {
         "operationId": "ApplicationGatewayWafDynamicManifests_Get",
         "tags": [
-          "ApplicationGatewayWafDynamicManifestResults"
+          "ApplicationGateways"
         ],
         "description": "Gets the regional application gateway waf manifest.",
         "parameters": [
@@ -443,7 +452,7 @@
       "get": {
         "operationId": "ApplicationGatewayWafDynamicManifestsDefault_Get",
         "tags": [
-          "ApplicationGatewayWafDynamicManifestResults"
+          "ApplicationGateways"
         ],
         "description": "Gets the regional application gateway waf manifest.",
         "parameters": [
@@ -1379,7 +1388,7 @@
       "get": {
         "operationId": "ApplicationGatewayPrivateLinkResources_List",
         "tags": [
-          "ApplicationGateways"
+          "ApplicationGatewayPrivateLinkResources"
         ],
         "description": "Lists all private link resources on an application gateway.",
         "parameters": [

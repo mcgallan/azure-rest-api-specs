@@ -21,6 +21,7 @@ interface ApplicationGatewaysOperationGroup {
    * Lists all available server variables.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("ApplicationGateways")
   @operationId("ApplicationGateways_ListAvailableServerVariables")
   @autoRoute
   @get
@@ -35,6 +36,7 @@ interface ApplicationGatewaysOperationGroup {
    * Lists all available request headers.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("ApplicationGateways")
   @operationId("ApplicationGateways_ListAvailableRequestHeaders")
   @autoRoute
   @get
@@ -49,6 +51,7 @@ interface ApplicationGatewaysOperationGroup {
    * Lists all available response headers.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("ApplicationGateways")
   @operationId("ApplicationGateways_ListAvailableResponseHeaders")
   @autoRoute
   @get
@@ -63,6 +66,7 @@ interface ApplicationGatewaysOperationGroup {
    * Lists all available web application firewall rule sets.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("ApplicationGateways")
   @operationId("ApplicationGateways_ListAvailableWafRuleSets")
   @autoRoute
   @get
@@ -334,6 +338,8 @@ interface ExpressRouteServiceProvidersOperationGroup {
 }
 
 #suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-interface-requires-decorator" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+#suppress "@azure-tools/typespec-azure-core/no-private-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 @Azure.ResourceManager.Legacy.feature(Features.loadBalancer)
 @Http.Private.includeInapplicableMetadataInPayload(false)
 interface LoadBalancersOperationGroup {
