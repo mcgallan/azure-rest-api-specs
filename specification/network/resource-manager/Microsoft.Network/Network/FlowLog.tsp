@@ -42,6 +42,8 @@ model FlowLog extends Resource {
   identity?: ManagedServiceIdentity;
 }
 
+#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+@Azure.ResourceManager.Legacy.feature(Features.networkWatcher)
 @armResourceOperations
 interface FlowLogs {
   /**
