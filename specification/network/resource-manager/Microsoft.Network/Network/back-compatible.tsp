@@ -1078,7 +1078,7 @@ using Microsoft.Network;
   "request"
 );
 @@clientLocation(NetworkVirtualApplianceConnections.networkVirtualApplianceConnectionsCreateOrUpdate,
-  "NetworkVirtualApplianceConnections"
+  NetworkVirtualApplianceConnections
 );
 @@clientName(NetworkVirtualApplianceConnections.networkVirtualApplianceConnectionsCreateOrUpdate,
   "CreateOrUpdate"
@@ -1087,19 +1087,19 @@ using Microsoft.Network;
   "NetworkVirtualApplianceConnectionParameters"
 );
 @@clientLocation(NetworkVirtualApplianceConnections.networkVirtualApplianceConnectionsGet,
-  "NetworkVirtualApplianceConnections"
+  NetworkVirtualApplianceConnections
 );
 @@clientName(NetworkVirtualApplianceConnections.networkVirtualApplianceConnectionsGet,
   "Get"
 );
 @@clientLocation(NetworkVirtualApplianceConnections.networkVirtualApplianceConnectionsDelete,
-  "NetworkVirtualApplianceConnections"
+  NetworkVirtualApplianceConnections
 );
 @@clientName(NetworkVirtualApplianceConnections.networkVirtualApplianceConnectionsDelete,
   "Delete"
 );
 @@clientLocation(NetworkVirtualApplianceConnections.networkVirtualApplianceConnectionsList,
-  "NetworkVirtualApplianceConnections"
+  NetworkVirtualApplianceConnections
 );
 @@clientName(NetworkVirtualApplianceConnections.networkVirtualApplianceConnectionsList,
   "List"
