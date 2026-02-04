@@ -39,6 +39,8 @@ model NetworkInterfaceTapConfiguration extends SubResourceModel {
   etag?: string;
 }
 
+#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+@Azure.ResourceManager.Legacy.feature(Features.virtualNetwork)
 @armResourceOperations
 interface NetworkInterfaceTapConfigurations {
   /**

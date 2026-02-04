@@ -42,6 +42,8 @@ model Subnet extends SubResourceModel {
   "The name of the resource that is unique within a resource group. This name can be used to access the resource."
 );
 
+#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+@Azure.ResourceManager.Legacy.feature(Features.virtualNetwork)
 @armResourceOperations
 interface Subnets {
   /**

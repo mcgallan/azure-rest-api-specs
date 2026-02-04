@@ -61,10 +61,22 @@
       "name": "NatGateways"
     },
     {
+      "name": "NetworkInterfaceIPConfigurations"
+    },
+    {
+      "name": "NetworkInterfaceTapConfigurations"
+    },
+    {
       "name": "NetworkProfiles"
     },
     {
       "name": "NetworkSecurityGroups"
+    },
+    {
+      "name": "SecurityRules"
+    },
+    {
+      "name": "DefaultSecurityRules"
     },
     {
       "name": "ReachabilityAnalysisIntents"
@@ -73,10 +85,25 @@
       "name": "VerifierWorkspaces"
     },
     {
+      "name": "ReachabilityAnalysisRuns"
+    },
+    {
       "name": "NetworkVirtualAppliances"
     },
     {
+      "name": "VirtualApplianceSites"
+    },
+    {
+      "name": "NetworkVirtualApplianceSkus"
+    },
+    {
+      "name": "InboundSecurityRuleOperationGroup"
+    },
+    {
       "name": "PrivateEndpoints"
+    },
+    {
+      "name": "PrivateLinkServices"
     },
     {
       "name": "PrivateEndpointConnections"
@@ -88,13 +115,25 @@
       "name": "RouteTables"
     },
     {
+      "name": "Routes"
+    },
+    {
       "name": "SecurityPartnerProviders"
     },
     {
       "name": "VirtualNetworks"
     },
     {
+      "name": "Subnets"
+    },
+    {
+      "name": "VirtualNetworkPeerings"
+    },
+    {
       "name": "VirtualRouters"
+    },
+    {
+      "name": "VirtualRouterPeerings"
     }
   ],
   "paths": {
@@ -315,6 +354,38 @@
         }
       }
     },
+    "/subscriptions/{subscriptionId}/providers/microsoft.Network/locations/{location}/autoApprovedPrivateLinkServices": {
+      "get": {
+        "operationId": "PrivateLinkServices_ListAutoApprovedPrivateLinkServices",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/AutoApprovedPrivateLinkServicesResult"
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Get list of private link service id that can be linked to a private end point with auto approved": {
+            "$ref": "./examples/AutoApprovedPrivateLinkServicesGet.json"
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
     "/subscriptions/{subscriptionId}/providers/microsoft.Network/locations/{location}/availableDelegations": {
       "get": {
         "operationId": "AvailableDelegations_List",
@@ -340,6 +411,38 @@
         "x-ms-examples": {
           "Get available delegations": {
             "$ref": "./examples/AvailableDelegationsSubscriptionGet.json"
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/providers/microsoft.Network/locations/{location}/availablePrivateEndpointTypes": {
+      "get": {
+        "operationId": "AvailablePrivateEndpointTypes_List",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/AvailablePrivateEndpointTypesResult"
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Get available PrivateEndpoint types": {
+            "$ref": "./examples/AvailablePrivateEndpointTypesGet.json"
           }
         },
         "x-ms-pageable": {
@@ -412,6 +515,53 @@
             "$ref": "./examples/CheckDnsNameAvailability.json"
           }
         }
+      }
+    },
+    "/subscriptions/{subscriptionId}/providers/microsoft.Network/locations/{location}/checkPrivateLinkServiceVisibility": {
+      "post": {
+        "operationId": "PrivateLinkServices_CheckPrivateLinkServiceVisibility",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
+          },
+          {
+            "name": "parameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CheckPrivateLinkServiceVisibilityRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/PrivateLinkServiceVisibility"
+            }
+          },
+          "202": {
+            "description": "ignore",
+            "headers": {
+              "Location": {
+                "type": "string",
+                "description": "The Location header contains the URL where the status of the long running operation can be checked."
+              }
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Check private link service visibility": {
+            "$ref": "./examples/CheckPrivateLinkServiceVisibility.json"
+          }
+        },
+        "x-ms-long-running-operation": true
       }
     },
     "/subscriptions/{subscriptionId}/providers/microsoft.Network/locations/{location}/serviceTagDetails": {
@@ -682,6 +832,72 @@
         }
       }
     },
+    "/subscriptions/{subscriptionId}/providers/microsoft.Network/networkVirtualApplianceSkus": {
+      "get": {
+        "operationId": "VirtualApplianceSkus_List",
+        "tags": [
+          "NetworkVirtualApplianceSkus"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/NetworkVirtualApplianceSkuListResult"
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "NetworkVirtualApplianceSkuListResult": {
+            "$ref": "./examples/NetworkVirtualApplianceSkuList.json"
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/providers/microsoft.Network/networkVirtualApplianceSkus/{skuName}": {
+      "get": {
+        "operationId": "VirtualApplianceSkus_Get",
+        "tags": [
+          "NetworkVirtualApplianceSkus"
+        ],
+        "parameters": [
+          {
+            "name": "skuName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/NetworkVirtualApplianceSku"
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "NetworkVirtualApplianceSkuGet": {
+            "$ref": "./examples/NetworkVirtualApplianceSkuGet.json"
+          }
+        }
+      }
+    },
     "/subscriptions/{subscriptionId}/providers/microsoft.Network/networkVirtualAppliances": {
       "get": {
         "operationId": "NetworkVirtualAppliances_List",
@@ -737,6 +953,37 @@
         "x-ms-examples": {
           "List all private endpoints": {
             "$ref": "./examples/PrivateEndpointListAll.json"
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/providers/microsoft.Network/privateLinkServices": {
+      "get": {
+        "operationId": "PrivateLinkServices_ListBySubscription",
+        "tags": [
+          "PrivateLinkServices"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/PrivateLinkServiceListResult"
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/Error"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "List all private list service": {
+            "$ref": "./examples/PrivateLinkServiceListAll.json"
           }
         },
         "x-ms-pageable": {
@@ -3305,6 +3552,102 @@
         "x-ms-long-running-operation": true
       }
     },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/locations/{location}/autoApprovedPrivateLinkServices": {
+      "get": {
+        "operationId": "PrivateLinkServices_ListAutoApprovedPrivateLinkServicesByResourceGroup",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/AutoApprovedPrivateLinkServicesResult"
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Get list of private link service id that can be linked to a private end point with auto approved": {
+            "$ref": "./examples/AutoApprovedPrivateLinkServicesResourceGroupGet.json"
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/locations/{location}/availableDelegations": {
+      "get": {
+        "operationId": "AvailableResourceGroupDelegations_List",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/AvailableDelegationsResult"
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Get available delegations in the resource group": {
+            "$ref": "./examples/AvailableDelegationsResourceGroupGet.json"
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/locations/{location}/availablePrivateEndpointTypes": {
+      "get": {
+        "operationId": "AvailablePrivateEndpointTypes_ListByResourceGroup",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/AvailablePrivateEndpointTypesResult"
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Get available PrivateEndpoint types in the resource group": {
+            "$ref": "./examples/AvailablePrivateEndpointTypesResourceGroupGet.json"
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/locations/{location}/availableServiceAliases": {
       "get": {
         "operationId": "AvailableServiceAliases_ListByResourceGroup",
@@ -3335,6 +3678,53 @@
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/locations/{location}/checkPrivateLinkServiceVisibility": {
+      "post": {
+        "operationId": "PrivateLinkServices_CheckPrivateLinkServiceVisibilityByResourceGroup",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
+          },
+          {
+            "name": "parameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CheckPrivateLinkServiceVisibilityRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/PrivateLinkServiceVisibility"
+            }
+          },
+          "202": {
+            "description": "ignore",
+            "headers": {
+              "Location": {
+                "type": "string",
+                "description": "The Location header contains the URL where the status of the long running operation can be checked."
+              }
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Check private link service visibility": {
+            "$ref": "./examples/CheckPrivateLinkServiceVisibilityByResourceGroup.json"
+          }
+        },
+        "x-ms-long-running-operation": true
       }
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/natGateways": {
@@ -3868,6 +4258,85 @@
         "x-ms-long-running-operation": true
       }
     },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkInterfaces/{networkInterfaceName}/ipConfigurations": {
+      "get": {
+        "operationId": "NetworkInterfaceIPConfigurations_List",
+        "tags": [
+          "NetworkInterfaceIPConfigurations"
+        ],
+        "parameters": [
+          {
+            "name": "networkInterfaceName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/NetworkInterfaceIPConfigurationListResult"
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "NetworkInterfaceIPConfigurationList": {
+            "$ref": "./examples/NetworkInterfaceIPConfigurationList.json"
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkInterfaces/{networkInterfaceName}/ipConfigurations/{ipConfigurationName}": {
+      "get": {
+        "operationId": "NetworkInterfaceIPConfigurations_Get",
+        "tags": [
+          "NetworkInterfaceIPConfigurations"
+        ],
+        "parameters": [
+          {
+            "name": "networkInterfaceName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "ipConfigurationName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/NetworkInterfaceIPConfiguration"
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "NetworkInterfaceIPConfigurationGet": {
+            "$ref": "./examples/NetworkInterfaceIPConfigurationGet.json"
+          }
+        }
+      }
+    },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkInterfaces/{networkInterfaceName}/loadBalancers": {
       "get": {
         "operationId": "NetworkInterfaceLoadBalancers_List",
@@ -3904,6 +4373,198 @@
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkInterfaces/{networkInterfaceName}/tapConfigurations": {
+      "get": {
+        "operationId": "NetworkInterfaceTapConfigurations_List",
+        "tags": [
+          "NetworkInterfaceTapConfigurations"
+        ],
+        "parameters": [
+          {
+            "name": "networkInterfaceName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/NetworkInterfaceTapConfigurationListResult"
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "List virtual network tap configurations": {
+            "$ref": "./examples/NetworkInterfaceTapConfigurationList.json"
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkInterfaces/{networkInterfaceName}/tapConfigurations/{tapConfigurationName}": {
+      "get": {
+        "operationId": "NetworkInterfaceTapConfigurations_Get",
+        "tags": [
+          "NetworkInterfaceTapConfigurations"
+        ],
+        "parameters": [
+          {
+            "name": "networkInterfaceName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "tapConfigurationName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/NetworkInterfaceTapConfiguration"
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Get Network Interface Tap Configurations": {
+            "$ref": "./examples/NetworkInterfaceTapConfigurationGet.json"
+          }
+        }
+      },
+      "put": {
+        "operationId": "NetworkInterfaceTapConfigurations_CreateOrUpdate",
+        "tags": [
+          "NetworkInterfaceTapConfigurations"
+        ],
+        "parameters": [
+          {
+            "name": "networkInterfaceName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "tapConfigurationName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "tapConfigurationParameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/NetworkInterfaceTapConfiguration"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/NetworkInterfaceTapConfiguration"
+            }
+          },
+          "201": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/NetworkInterfaceTapConfiguration"
+            },
+            "headers": {
+              "Azure-AsyncOperation": {
+                "type": "string",
+                "description": "A link to the status monitor"
+              }
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Create Network Interface Tap Configurations": {
+            "$ref": "./examples/NetworkInterfaceTapConfigurationCreate.json"
+          }
+        },
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "azure-async-operation",
+          "final-state-schema": "#/definitions/NetworkInterfaceTapConfiguration"
+        },
+        "x-ms-long-running-operation": true
+      },
+      "delete": {
+        "operationId": "NetworkInterfaceTapConfigurations_Delete",
+        "tags": [
+          "NetworkInterfaceTapConfigurations"
+        ],
+        "parameters": [
+          {
+            "name": "networkInterfaceName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "tapConfigurationName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore"
+          },
+          "202": {
+            "description": "ignore",
+            "headers": {
+              "Location": {
+                "type": "string",
+                "description": "The Location header contains the URL where the status of the long running operation can be checked."
+              }
+            }
+          },
+          "204": {
+            "description": "ignore"
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Delete tap configuration": {
+            "$ref": "./examples/NetworkInterfaceTapConfigurationDelete.json"
+          }
+        },
+        "x-ms-long-running-operation": true
       }
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkManagers/{networkManagerName}/ipamPools": {
@@ -5036,6 +5697,248 @@
         }
       }
     },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkManagers/{networkManagerName}/verifierWorkspaces/{workspaceName}/reachabilityAnalysisRuns": {
+      "get": {
+        "operationId": "ReachabilityAnalysisRuns_List",
+        "tags": [
+          "ReachabilityAnalysisRuns"
+        ],
+        "parameters": [
+          {
+            "name": "networkManagerName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "pattern": "^[0-9a-zA-Z]([0-9a-zA-Z_.-]{0,62}[0-9a-zA-Z_])?$"
+          },
+          {
+            "name": "workspaceName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "pattern": "^[0-9a-zA-Z]([0-9a-zA-Z_.-]{0,62}[0-9a-zA-Z_])?$"
+          },
+          {
+            "name": "skipToken",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "type": "integer",
+            "format": "int32",
+            "default": 0
+          },
+          {
+            "name": "top",
+            "in": "query",
+            "type": "integer",
+            "format": "int32",
+            "default": 50
+          },
+          {
+            "name": "sortKey",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "sortValue",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/ReachabilityAnalysisRunListResult"
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CommonErrorResponse"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "ReachabilityAnalysisRunList": {
+            "$ref": "./examples/ReachabilityAnalysisRunList.json"
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkManagers/{networkManagerName}/verifierWorkspaces/{workspaceName}/reachabilityAnalysisRuns/{reachabilityAnalysisRunName}": {
+      "get": {
+        "operationId": "ReachabilityAnalysisRuns_Get",
+        "tags": [
+          "ReachabilityAnalysisRuns"
+        ],
+        "parameters": [
+          {
+            "name": "networkManagerName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "pattern": "^[0-9a-zA-Z]([0-9a-zA-Z_.-]{0,62}[0-9a-zA-Z_])?$"
+          },
+          {
+            "name": "workspaceName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "pattern": "^[0-9a-zA-Z]([0-9a-zA-Z_.-]{0,62}[0-9a-zA-Z_])?$"
+          },
+          {
+            "name": "reachabilityAnalysisRunName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "pattern": "^[0-9a-zA-Z]([0-9a-zA-Z_.-]{0,62}[0-9a-zA-Z_])?$"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/ReachabilityAnalysisRun"
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CommonErrorResponse"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "ReachabilityAnalysisRunGet": {
+            "$ref": "./examples/ReachabilityAnalysisRunGet.json"
+          }
+        }
+      },
+      "put": {
+        "operationId": "ReachabilityAnalysisRuns_Create",
+        "tags": [
+          "ReachabilityAnalysisRuns"
+        ],
+        "parameters": [
+          {
+            "name": "networkManagerName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "pattern": "^[0-9a-zA-Z]([0-9a-zA-Z_.-]{0,62}[0-9a-zA-Z_])?$"
+          },
+          {
+            "name": "workspaceName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "pattern": "^[0-9a-zA-Z]([0-9a-zA-Z_.-]{0,62}[0-9a-zA-Z_])?$"
+          },
+          {
+            "name": "reachabilityAnalysisRunName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "pattern": "^[0-9a-zA-Z]([0-9a-zA-Z_.-]{0,62}[0-9a-zA-Z_])?$"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ReachabilityAnalysisRun"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/ReachabilityAnalysisRun"
+            }
+          },
+          "201": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/ReachabilityAnalysisRun"
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CommonErrorResponse"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "ReachabilityAnalysisRunCreate": {
+            "$ref": "./examples/ReachabilityAnalysisRunPut.json"
+          }
+        }
+      },
+      "delete": {
+        "operationId": "ReachabilityAnalysisRuns_Delete",
+        "tags": [
+          "ReachabilityAnalysisRuns"
+        ],
+        "parameters": [
+          {
+            "name": "networkManagerName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "pattern": "^[0-9a-zA-Z]([0-9a-zA-Z_.-]{0,62}[0-9a-zA-Z_])?$"
+          },
+          {
+            "name": "workspaceName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "pattern": "^[0-9a-zA-Z]([0-9a-zA-Z_.-]{0,62}[0-9a-zA-Z_])?$"
+          },
+          {
+            "name": "reachabilityAnalysisRunName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "pattern": "^[0-9a-zA-Z]([0-9a-zA-Z_.-]{0,62}[0-9a-zA-Z_])?$"
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "ignore",
+            "headers": {
+              "Location": {
+                "type": "string",
+                "description": "The Location header contains the URL where the status of the long running operation can be checked."
+              }
+            }
+          },
+          "204": {
+            "description": "ignore"
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CommonErrorResponse"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "ReachabilityAnalysisRunDelete": {
+            "$ref": "./examples/ReachabilityAnalysisRunDelete.json"
+          }
+        },
+        "x-ms-long-running-operation": true
+      }
+    },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkProfiles": {
       "get": {
         "operationId": "NetworkProfiles_List",
@@ -5457,6 +6360,277 @@
         "x-ms-long-running-operation": true
       }
     },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkSecurityGroups/{networkSecurityGroupName}/defaultSecurityRules": {
+      "get": {
+        "operationId": "DefaultSecurityRules_List",
+        "tags": [
+          "DefaultSecurityRules"
+        ],
+        "parameters": [
+          {
+            "name": "networkSecurityGroupName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/SecurityRuleListResult"
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "DefaultSecurityRuleList": {
+            "$ref": "./examples/DefaultSecurityRuleList.json"
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkSecurityGroups/{networkSecurityGroupName}/defaultSecurityRules/{defaultSecurityRuleName}": {
+      "get": {
+        "operationId": "DefaultSecurityRules_Get",
+        "tags": [
+          "DefaultSecurityRules"
+        ],
+        "parameters": [
+          {
+            "name": "networkSecurityGroupName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "defaultSecurityRuleName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/SecurityRule"
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "DefaultSecurityRuleGet": {
+            "$ref": "./examples/DefaultSecurityRuleGet.json"
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkSecurityGroups/{networkSecurityGroupName}/securityRules": {
+      "get": {
+        "operationId": "SecurityRules_List",
+        "tags": [
+          "SecurityRules"
+        ],
+        "parameters": [
+          {
+            "name": "networkSecurityGroupName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/SecurityRuleListResult"
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "List network security rules in network security group": {
+            "$ref": "./examples/NetworkSecurityGroupRuleList.json"
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkSecurityGroups/{networkSecurityGroupName}/securityRules/{securityRuleName}": {
+      "get": {
+        "operationId": "SecurityRules_Get",
+        "tags": [
+          "SecurityRules"
+        ],
+        "parameters": [
+          {
+            "name": "networkSecurityGroupName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "securityRuleName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/SecurityRule"
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Get network security rule in network security group": {
+            "$ref": "./examples/NetworkSecurityGroupRuleGet.json"
+          }
+        }
+      },
+      "put": {
+        "operationId": "SecurityRules_CreateOrUpdate",
+        "tags": [
+          "SecurityRules"
+        ],
+        "parameters": [
+          {
+            "name": "networkSecurityGroupName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "securityRuleName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "securityRuleParameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SecurityRule"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/SecurityRule"
+            }
+          },
+          "201": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/SecurityRule"
+            },
+            "headers": {
+              "Azure-AsyncOperation": {
+                "type": "string",
+                "description": "A link to the status monitor"
+              }
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Create security rule": {
+            "$ref": "./examples/NetworkSecurityGroupRuleCreate.json"
+          }
+        },
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "azure-async-operation",
+          "final-state-schema": "#/definitions/SecurityRule"
+        },
+        "x-ms-long-running-operation": true
+      },
+      "delete": {
+        "operationId": "SecurityRules_Delete",
+        "tags": [
+          "SecurityRules"
+        ],
+        "parameters": [
+          {
+            "name": "networkSecurityGroupName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "securityRuleName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore"
+          },
+          "202": {
+            "description": "ignore",
+            "headers": {
+              "Location": {
+                "type": "string",
+                "description": "The Location header contains the URL where the status of the long running operation can be checked."
+              }
+            }
+          },
+          "204": {
+            "description": "ignore"
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Delete network security rule from network security group": {
+            "$ref": "./examples/NetworkSecurityGroupRuleDelete.json"
+          }
+        },
+        "x-ms-long-running-operation": true
+      }
+    },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkVirtualAppliances": {
       "get": {
         "operationId": "NetworkVirtualAppliances_ListByResourceGroup",
@@ -5746,15 +6920,21 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkVirtualAppliances/{networkVirtualApplianceName}/networkVirtualApplianceConnections": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkVirtualAppliances/{networkVirtualApplianceName}/inboundSecurityRules/{ruleCollectionName}": {
       "get": {
-        "operationId": "NetworkVirtualApplianceConnections_List",
+        "operationId": "InboundSecurityRule_Get",
         "tags": [
-          "NetworkVirtualAppliances"
+          "InboundSecurityRuleOperationGroup"
         ],
         "parameters": [
           {
             "name": "networkVirtualApplianceName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "ruleCollectionName",
             "in": "path",
             "required": true,
             "type": "string"
@@ -5764,7 +6944,7 @@
           "200": {
             "description": "ignore",
             "schema": {
-              "$ref": "./common.json#/definitions/NetworkVirtualApplianceConnectionList"
+              "$ref": "#/definitions/InboundSecurityRule"
             }
           },
           "default": {
@@ -5775,59 +6955,15 @@
           }
         },
         "x-ms-examples": {
-          "NetworkVirtualApplianceConnectionList": {
-            "$ref": "./examples/NetworkVirtualApplianceConnectionList.json"
-          }
-        },
-        "x-ms-pageable": {
-          "nextLinkName": "nextLink"
-        }
-      }
-    },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkVirtualAppliances/{networkVirtualApplianceName}/networkVirtualApplianceConnections/{connectionName}": {
-      "get": {
-        "operationId": "NetworkVirtualApplianceConnections_Get",
-        "tags": [
-          "NetworkVirtualAppliances"
-        ],
-        "parameters": [
-          {
-            "name": "networkVirtualApplianceName",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "connectionName",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "ignore",
-            "schema": {
-              "$ref": "./common.json#/definitions/NetworkVirtualApplianceConnection"
-            }
-          },
-          "default": {
-            "description": "ignore",
-            "schema": {
-              "$ref": "./common.json#/definitions/CloudError"
-            }
-          }
-        },
-        "x-ms-examples": {
-          "NetworkVirtualApplianceConnectionGet": {
-            "$ref": "./examples/NetworkVirtualApplianceConnectionGet.json"
+          "Create Network Virtual Appliance Inbound Security Rules": {
+            "$ref": "./examples/InboundSecurityRuleGet.json"
           }
         }
       },
       "put": {
-        "operationId": "NetworkVirtualApplianceConnections_CreateOrUpdate",
+        "operationId": "InboundSecurityRule_CreateOrUpdate",
         "tags": [
-          "NetworkVirtualAppliances"
+          "InboundSecurityRuleOperationGroup"
         ],
         "parameters": [
           {
@@ -5837,17 +6973,17 @@
             "type": "string"
           },
           {
-            "name": "connectionName",
+            "name": "ruleCollectionName",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "NetworkVirtualApplianceConnectionParameters",
+            "name": "parameters",
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "./common.json#/definitions/NetworkVirtualApplianceConnection"
+              "$ref": "#/definitions/InboundSecurityRule"
             }
           }
         ],
@@ -5855,13 +6991,13 @@
           "200": {
             "description": "ignore",
             "schema": {
-              "$ref": "./common.json#/definitions/NetworkVirtualApplianceConnection"
+              "$ref": "#/definitions/InboundSecurityRule"
             }
           },
           "201": {
             "description": "ignore",
             "schema": {
-              "$ref": "./common.json#/definitions/NetworkVirtualApplianceConnection"
+              "$ref": "#/definitions/InboundSecurityRule"
             },
             "headers": {
               "Azure-AsyncOperation": {
@@ -5878,62 +7014,13 @@
           }
         },
         "x-ms-examples": {
-          "NetworkVirtualApplianceConnectionPut": {
-            "$ref": "./examples/NetworkVirtualApplianceConnectionPut.json"
+          "Create Network Virtual Appliance Inbound Security Rules": {
+            "$ref": "./examples/InboundSecurityRulePut.json"
           }
         },
         "x-ms-long-running-operation-options": {
           "final-state-via": "azure-async-operation",
-          "final-state-schema": "./common.json#/definitions/NetworkVirtualApplianceConnection"
-        },
-        "x-ms-long-running-operation": true
-      },
-      "delete": {
-        "operationId": "NetworkVirtualApplianceConnections_Delete",
-        "tags": [
-          "NetworkVirtualAppliances"
-        ],
-        "parameters": [
-          {
-            "name": "networkVirtualApplianceName",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "connectionName",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "ignore"
-          },
-          "202": {
-            "description": "ignore",
-            "headers": {
-              "Location": {
-                "type": "string",
-                "description": "The Location header contains the URL where the status of the long running operation can be checked."
-              }
-            }
-          },
-          "204": {
-            "description": "ignore"
-          },
-          "default": {
-            "description": "ignore",
-            "schema": {
-              "$ref": "./common.json#/definitions/CloudError"
-            }
-          }
-        },
-        "x-ms-examples": {
-          "NetworkVirtualApplianceConnectionDelete": {
-            "$ref": "./examples/NetworkVirtualApplianceConnectionDelete.json"
-          }
+          "final-state-schema": "#/definitions/InboundSecurityRule"
         },
         "x-ms-long-running-operation": true
       }
@@ -6040,6 +7127,198 @@
           },
           "Restart Specific NetworkVirtualAppliance VMs in VM Scale Set": {
             "$ref": "./examples/NetworkVirtualApplianceSpecificRestart.json"
+          }
+        },
+        "x-ms-long-running-operation": true
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkVirtualAppliances/{networkVirtualApplianceName}/virtualApplianceSites": {
+      "get": {
+        "operationId": "VirtualApplianceSites_List",
+        "tags": [
+          "VirtualApplianceSites"
+        ],
+        "parameters": [
+          {
+            "name": "networkVirtualApplianceName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/NetworkVirtualApplianceSiteListResult"
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "List all Network Virtual Appliance sites for a given Network Virtual Appliance": {
+            "$ref": "./examples/NetworkVirtualApplianceSiteList.json"
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkVirtualAppliances/{networkVirtualApplianceName}/virtualApplianceSites/{siteName}": {
+      "get": {
+        "operationId": "VirtualApplianceSites_Get",
+        "tags": [
+          "VirtualApplianceSites"
+        ],
+        "parameters": [
+          {
+            "name": "networkVirtualApplianceName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "siteName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/VirtualApplianceSite"
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "GetNetwork Virtual Appliance Site": {
+            "$ref": "./examples/NetworkVirtualApplianceSiteGet.json"
+          }
+        }
+      },
+      "put": {
+        "operationId": "VirtualApplianceSites_CreateOrUpdate",
+        "tags": [
+          "VirtualApplianceSites"
+        ],
+        "parameters": [
+          {
+            "name": "networkVirtualApplianceName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "siteName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "parameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/VirtualApplianceSite"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/VirtualApplianceSite"
+            }
+          },
+          "201": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/VirtualApplianceSite"
+            },
+            "headers": {
+              "Azure-AsyncOperation": {
+                "type": "string",
+                "description": "A link to the status monitor"
+              }
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Create Network Virtual Appliance Site": {
+            "$ref": "./examples/NetworkVirtualApplianceSitePut.json"
+          }
+        },
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "azure-async-operation",
+          "final-state-schema": "#/definitions/VirtualApplianceSite"
+        },
+        "x-ms-long-running-operation": true
+      },
+      "delete": {
+        "operationId": "VirtualApplianceSites_Delete",
+        "tags": [
+          "VirtualApplianceSites"
+        ],
+        "parameters": [
+          {
+            "name": "networkVirtualApplianceName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "siteName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore"
+          },
+          "202": {
+            "description": "ignore",
+            "headers": {
+              "Location": {
+                "type": "string",
+                "description": "The Location header contains the URL where the status of the long running operation can be checked."
+              }
+            }
+          },
+          "204": {
+            "description": "ignore"
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Delete Network Virtual Appliance Site": {
+            "$ref": "./examples/NetworkVirtualApplianceSiteDelete.json"
           }
         },
         "x-ms-long-running-operation": true
@@ -6247,7 +7526,7 @@
           "200": {
             "description": "ignore",
             "schema": {
-              "$ref": "./common.json#/definitions/PrivateDnsZoneGroupListResult"
+              "$ref": "#/definitions/PrivateDnsZoneGroupListResult"
             }
           },
           "default": {
@@ -6416,6 +7695,178 @@
         "x-ms-examples": {
           "Delete private dns zone group": {
             "$ref": "./examples/PrivateEndpointDnsZoneGroupDelete.json"
+          }
+        },
+        "x-ms-long-running-operation": true
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/privateLinkServices": {
+      "get": {
+        "operationId": "PrivateLinkServices_List",
+        "tags": [
+          "PrivateLinkServices"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/PrivateLinkServiceListResult"
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/Error"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "List private link service in resource group": {
+            "$ref": "./examples/PrivateLinkServiceList.json"
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/privateLinkServices/{serviceName}": {
+      "get": {
+        "operationId": "PrivateLinkServices_Get",
+        "tags": [
+          "PrivateLinkServices"
+        ],
+        "parameters": [
+          {
+            "name": "serviceName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/PrivateLinkService"
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/Error"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Get private link service": {
+            "$ref": "./examples/PrivateLinkServiceGet.json"
+          }
+        }
+      },
+      "put": {
+        "operationId": "PrivateLinkServices_CreateOrUpdate",
+        "tags": [
+          "PrivateLinkServices"
+        ],
+        "parameters": [
+          {
+            "name": "serviceName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "parameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PrivateLinkService"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/PrivateLinkService"
+            }
+          },
+          "201": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/PrivateLinkService"
+            },
+            "headers": {
+              "Azure-AsyncOperation": {
+                "type": "string",
+                "description": "A link to the status monitor"
+              }
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/Error"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Create private link service": {
+            "$ref": "./examples/PrivateLinkServiceCreate.json"
+          }
+        },
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "azure-async-operation",
+          "final-state-schema": "#/definitions/PrivateLinkService"
+        },
+        "x-ms-long-running-operation": true
+      },
+      "delete": {
+        "operationId": "PrivateLinkServices_Delete",
+        "tags": [
+          "PrivateLinkServices"
+        ],
+        "parameters": [
+          {
+            "name": "serviceName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore"
+          },
+          "202": {
+            "description": "ignore",
+            "headers": {
+              "Location": {
+                "type": "string",
+                "description": "The Location header contains the URL where the status of the long running operation can be checked."
+              }
+            }
+          },
+          "204": {
+            "description": "ignore"
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/Error"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Delete private link service": {
+            "$ref": "./examples/PrivateLinkServiceDelete.json"
           }
         },
         "x-ms-long-running-operation": true
@@ -7424,6 +8875,198 @@
         "x-ms-long-running-operation": true
       }
     },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/routeTables/{routeTableName}/routes": {
+      "get": {
+        "operationId": "Routes_List",
+        "tags": [
+          "Routes"
+        ],
+        "parameters": [
+          {
+            "name": "routeTableName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/RouteListResult"
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "List routes": {
+            "$ref": "./examples/RouteTableRouteList.json"
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/routeTables/{routeTableName}/routes/{routeName}": {
+      "get": {
+        "operationId": "Routes_Get",
+        "tags": [
+          "Routes"
+        ],
+        "parameters": [
+          {
+            "name": "routeTableName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "routeName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/Route"
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Get route": {
+            "$ref": "./examples/RouteTableRouteGet.json"
+          }
+        }
+      },
+      "put": {
+        "operationId": "Routes_CreateOrUpdate",
+        "tags": [
+          "Routes"
+        ],
+        "parameters": [
+          {
+            "name": "routeTableName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "routeName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "routeParameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Route"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/Route"
+            }
+          },
+          "201": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/Route"
+            },
+            "headers": {
+              "Azure-AsyncOperation": {
+                "type": "string",
+                "description": "A link to the status monitor"
+              }
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Create route": {
+            "$ref": "./examples/RouteTableRouteCreate.json"
+          }
+        },
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "azure-async-operation",
+          "final-state-schema": "#/definitions/Route"
+        },
+        "x-ms-long-running-operation": true
+      },
+      "delete": {
+        "operationId": "Routes_Delete",
+        "tags": [
+          "Routes"
+        ],
+        "parameters": [
+          {
+            "name": "routeTableName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "routeName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore"
+          },
+          "202": {
+            "description": "ignore",
+            "headers": {
+              "Location": {
+                "type": "string",
+                "description": "The Location header contains the URL where the status of the long running operation can be checked."
+              }
+            }
+          },
+          "204": {
+            "description": "ignore"
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Delete route": {
+            "$ref": "./examples/RouteTableRouteDelete.json"
+          }
+        },
+        "x-ms-long-running-operation": true
+      }
+    },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/securityPartnerProviders": {
       "get": {
         "operationId": "SecurityPartnerProviders_ListByResourceGroup",
@@ -7975,6 +9618,415 @@
         }
       }
     },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualNetworks/{virtualNetworkName}/subnets": {
+      "get": {
+        "operationId": "Subnets_List",
+        "tags": [
+          "Subnets"
+        ],
+        "parameters": [
+          {
+            "name": "virtualNetworkName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/SubnetListResult"
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "List subnets": {
+            "$ref": "./examples/SubnetList.json"
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualNetworks/{virtualNetworkName}/subnets/{subnetName}": {
+      "get": {
+        "operationId": "Subnets_Get",
+        "tags": [
+          "Subnets"
+        ],
+        "parameters": [
+          {
+            "name": "virtualNetworkName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "subnetName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/Subnet"
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Get subnet": {
+            "$ref": "./examples/SubnetGet.json"
+          },
+          "Get subnet with a delegation": {
+            "$ref": "./examples/SubnetGetWithDelegation.json"
+          },
+          "Get subnet with sharing scope": {
+            "$ref": "./examples/SubnetGetWithSharingScope.json"
+          }
+        }
+      },
+      "put": {
+        "operationId": "Subnets_CreateOrUpdate",
+        "tags": [
+          "Subnets"
+        ],
+        "parameters": [
+          {
+            "name": "virtualNetworkName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "subnetName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "subnetParameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Subnet"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/Subnet"
+            }
+          },
+          "201": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/Subnet"
+            },
+            "headers": {
+              "Azure-AsyncOperation": {
+                "type": "string",
+                "description": "A link to the status monitor"
+              }
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Create subnet": {
+            "$ref": "./examples/SubnetCreate.json"
+          },
+          "Create subnet with a delegation": {
+            "$ref": "./examples/SubnetCreateWithDelegation.json"
+          },
+          "Create subnet with service endpoints": {
+            "$ref": "./examples/SubnetCreateServiceEndpoint.json"
+          },
+          "Create subnet with service endpoints with network identifier": {
+            "$ref": "./examples/SubnetCreateServiceEndpointNetworkIdentifier.json"
+          },
+          "Create subnet with sharing scope": {
+            "$ref": "./examples/SubnetCreateWithSharingScope.json"
+          }
+        },
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "azure-async-operation",
+          "final-state-schema": "#/definitions/Subnet"
+        },
+        "x-ms-long-running-operation": true
+      },
+      "delete": {
+        "operationId": "Subnets_Delete",
+        "tags": [
+          "Subnets"
+        ],
+        "parameters": [
+          {
+            "name": "virtualNetworkName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "subnetName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore"
+          },
+          "202": {
+            "description": "ignore",
+            "headers": {
+              "Location": {
+                "type": "string",
+                "description": "The Location header contains the URL where the status of the long running operation can be checked."
+              }
+            }
+          },
+          "204": {
+            "description": "ignore"
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Delete subnet": {
+            "$ref": "./examples/SubnetDelete.json"
+          }
+        },
+        "x-ms-long-running-operation": true
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualNetworks/{virtualNetworkName}/subnets/{subnetName}/prepareNetworkPolicies": {
+      "post": {
+        "operationId": "Subnets_PrepareNetworkPolicies",
+        "tags": [
+          "Subnets"
+        ],
+        "parameters": [
+          {
+            "name": "virtualNetworkName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "subnetName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "prepareNetworkPoliciesRequestParameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PrepareNetworkPoliciesRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore"
+          },
+          "202": {
+            "description": "ignore",
+            "headers": {
+              "Location": {
+                "type": "string",
+                "description": "The Location header contains the URL where the status of the long running operation can be checked."
+              }
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Prepare Network Policies": {
+            "$ref": "./examples/SubnetPrepareNetworkPolicies.json"
+          }
+        },
+        "x-ms-long-running-operation": true
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualNetworks/{virtualNetworkName}/subnets/{subnetName}/resourceNavigationLinks": {
+      "get": {
+        "operationId": "ResourceNavigationLinks_List",
+        "tags": [
+          "Subnets"
+        ],
+        "parameters": [
+          {
+            "name": "virtualNetworkName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "subnetName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/ResourceNavigationLinksListResult"
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Get Resource Navigation Links": {
+            "$ref": "./examples/VirtualNetworkGetResourceNavigationLinks.json"
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualNetworks/{virtualNetworkName}/subnets/{subnetName}/serviceAssociationLinks": {
+      "get": {
+        "operationId": "ServiceAssociationLinks_List",
+        "tags": [
+          "Subnets"
+        ],
+        "parameters": [
+          {
+            "name": "virtualNetworkName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "subnetName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/ServiceAssociationLinksListResult"
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Get Service Association Links": {
+            "$ref": "./examples/VirtualNetworkGetServiceAssociationLinks.json"
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualNetworks/{virtualNetworkName}/subnets/{subnetName}/unprepareNetworkPolicies": {
+      "post": {
+        "operationId": "Subnets_UnprepareNetworkPolicies",
+        "tags": [
+          "Subnets"
+        ],
+        "parameters": [
+          {
+            "name": "virtualNetworkName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "subnetName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "unprepareNetworkPoliciesRequestParameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UnprepareNetworkPoliciesRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore"
+          },
+          "202": {
+            "description": "ignore",
+            "headers": {
+              "Location": {
+                "type": "string",
+                "description": "The Location header contains the URL where the status of the long running operation can be checked."
+              }
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Unprepare Network Policies": {
+            "$ref": "./examples/SubnetUnprepareNetworkPolicies.json"
+          }
+        },
+        "x-ms-long-running-operation": true
+      }
+    },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualNetworks/{virtualNetworkName}/usages": {
       "get": {
         "operationId": "VirtualNetworks_ListUsage",
@@ -8011,6 +10063,240 @@
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualNetworks/{virtualNetworkName}/virtualNetworkPeerings": {
+      "get": {
+        "operationId": "VirtualNetworkPeerings_List",
+        "tags": [
+          "VirtualNetworkPeerings"
+        ],
+        "parameters": [
+          {
+            "name": "virtualNetworkName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/VirtualNetworkPeeringListResult"
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "List peerings": {
+            "$ref": "./examples/VirtualNetworkPeeringList.json"
+          },
+          "List peerings with remote virtual network encryption": {
+            "$ref": "./examples/VirtualNetworkPeeringListWithRemoteVirtualNetworkEncryption.json"
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualNetworks/{virtualNetworkName}/virtualNetworkPeerings/{virtualNetworkPeeringName}": {
+      "get": {
+        "operationId": "VirtualNetworkPeerings_Get",
+        "tags": [
+          "VirtualNetworkPeerings"
+        ],
+        "parameters": [
+          {
+            "name": "virtualNetworkName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "virtualNetworkPeeringName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/VirtualNetworkPeering"
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Get V6 subnet peering": {
+            "$ref": "./examples/VirtualNetworkV6SubnetPeeringGet.json"
+          },
+          "Get peering": {
+            "$ref": "./examples/VirtualNetworkPeeringGet.json"
+          },
+          "Get peering with remote virtual network encryption": {
+            "$ref": "./examples/VirtualNetworkPeeringGetWithRemoteVirtualNetworkEncryption.json"
+          },
+          "Get subnet peering": {
+            "$ref": "./examples/VirtualNetworkSubnetPeeringGet.json"
+          }
+        }
+      },
+      "put": {
+        "operationId": "VirtualNetworkPeerings_CreateOrUpdate",
+        "tags": [
+          "VirtualNetworkPeerings"
+        ],
+        "parameters": [
+          {
+            "name": "virtualNetworkName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "virtualNetworkPeeringName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "syncRemoteAddressSpace",
+            "in": "query",
+            "type": "string",
+            "enum": [
+              "true"
+            ],
+            "x-ms-enum": {
+              "name": "SyncRemoteAddressSpace",
+              "modelAsString": true
+            }
+          },
+          {
+            "name": "VirtualNetworkPeeringParameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/VirtualNetworkPeering"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/VirtualNetworkPeering"
+            }
+          },
+          "201": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/VirtualNetworkPeering"
+            },
+            "headers": {
+              "Azure-AsyncOperation": {
+                "type": "string",
+                "description": "A link to the status monitor"
+              }
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Create V6 Subnet peering": {
+            "$ref": "./examples/VirtualNetworkV6SubnetPeeringCreate.json"
+          },
+          "Create peering": {
+            "$ref": "./examples/VirtualNetworkPeeringCreate.json"
+          },
+          "Create peering with remote virtual network encryption": {
+            "$ref": "./examples/VirtualNetworkPeeringCreateWithRemoteVirtualNetworkEncryption.json"
+          },
+          "Create subnet peering": {
+            "$ref": "./examples/VirtualNetworkSubnetPeeringCreate.json"
+          },
+          "Sync Peering": {
+            "$ref": "./examples/VirtualNetworkPeeringSync.json"
+          },
+          "Sync V6 Subnet Peering": {
+            "$ref": "./examples/VirtualNetworkV6SubnetPeeringSync.json"
+          },
+          "Sync subnet Peering": {
+            "$ref": "./examples/VirtualNetworkSubnetPeeringSync.json"
+          }
+        },
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "azure-async-operation",
+          "final-state-schema": "#/definitions/VirtualNetworkPeering"
+        },
+        "x-ms-long-running-operation": true
+      },
+      "delete": {
+        "operationId": "VirtualNetworkPeerings_Delete",
+        "tags": [
+          "VirtualNetworkPeerings"
+        ],
+        "parameters": [
+          {
+            "name": "virtualNetworkName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "virtualNetworkPeeringName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore"
+          },
+          "202": {
+            "description": "ignore",
+            "headers": {
+              "Location": {
+                "type": "string",
+                "description": "The Location header contains the URL where the status of the long running operation can be checked."
+              }
+            }
+          },
+          "204": {
+            "description": "ignore"
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Delete peering": {
+            "$ref": "./examples/VirtualNetworkPeeringDelete.json"
+          }
+        },
+        "x-ms-long-running-operation": true
       }
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualRouters": {
@@ -8180,6 +10466,198 @@
         "x-ms-examples": {
           "Delete VirtualRouter": {
             "$ref": "./examples/VirtualRouterDelete.json"
+          }
+        },
+        "x-ms-long-running-operation": true
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualRouters/{virtualRouterName}/peerings": {
+      "get": {
+        "operationId": "VirtualRouterPeerings_List",
+        "tags": [
+          "VirtualRouterPeerings"
+        ],
+        "parameters": [
+          {
+            "name": "virtualRouterName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/VirtualRouterPeeringListResult"
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/Error"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "List all Virtual Router Peerings for a given Virtual Router": {
+            "$ref": "./examples/VirtualRouterPeeringList.json"
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualRouters/{virtualRouterName}/peerings/{peeringName}": {
+      "get": {
+        "operationId": "VirtualRouterPeerings_Get",
+        "tags": [
+          "VirtualRouterPeerings"
+        ],
+        "parameters": [
+          {
+            "name": "virtualRouterName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "peeringName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/VirtualRouterPeering"
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/Error"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Get Virtual Router Peering": {
+            "$ref": "./examples/VirtualRouterPeeringGet.json"
+          }
+        }
+      },
+      "put": {
+        "operationId": "VirtualRouterPeerings_CreateOrUpdate",
+        "tags": [
+          "VirtualRouterPeerings"
+        ],
+        "parameters": [
+          {
+            "name": "virtualRouterName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "peeringName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "parameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/VirtualRouterPeering"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/VirtualRouterPeering"
+            }
+          },
+          "201": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/VirtualRouterPeering"
+            },
+            "headers": {
+              "Azure-AsyncOperation": {
+                "type": "string",
+                "description": "A link to the status monitor"
+              }
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/Error"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Create Virtual Router Peering": {
+            "$ref": "./examples/VirtualRouterPeeringPut.json"
+          }
+        },
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "azure-async-operation",
+          "final-state-schema": "#/definitions/VirtualRouterPeering"
+        },
+        "x-ms-long-running-operation": true
+      },
+      "delete": {
+        "operationId": "VirtualRouterPeerings_Delete",
+        "tags": [
+          "VirtualRouterPeerings"
+        ],
+        "parameters": [
+          {
+            "name": "virtualRouterName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "peeringName",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore"
+          },
+          "202": {
+            "description": "ignore",
+            "headers": {
+              "Location": {
+                "type": "string",
+                "description": "The Location header contains the URL where the status of the long running operation can be checked."
+              }
+            }
+          },
+          "204": {
+            "description": "ignore"
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./common.json#/definitions/Error"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Delete VirtualRouterPeering": {
+            "$ref": "./examples/VirtualRouterPeeringDelete.json"
           }
         },
         "x-ms-long-running-operation": true
@@ -8588,7 +11066,7 @@
           "$ref": "./common.json#/definitions/SubResource"
         },
         "networkAcls": {
-          "$ref": "./common.json#/definitions/BastionHostPropertiesFormatNetworkAcls"
+          "$ref": "#/definitions/BastionHostPropertiesFormatNetworkAcls"
         },
         "provisioningState": {
           "$ref": "./common.json#/definitions/NetworkProvisioningState",
@@ -8631,6 +11109,17 @@
         "enablePrivateOnlyBastion": {
           "type": "boolean",
           "default": false
+        }
+      }
+    },
+    "BastionHostPropertiesFormatNetworkAcls": {
+      "type": "object",
+      "properties": {
+        "ipRules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/IPRule"
+          }
         }
       }
     },
@@ -8824,7 +11313,7 @@
         "ipConfigurations": {
           "type": "array",
           "items": {
-            "$ref": "./common.json#/definitions/IPConfigurationProfile"
+            "$ref": "#/definitions/IPConfigurationProfile"
           }
         },
         "containerNetworkInterfaces": {
@@ -9615,6 +12104,31 @@
         }
       ]
     },
+    "IPConfigurationProfile": {
+      "type": "object",
+      "properties": {
+        "properties": {
+          "$ref": "#/definitions/IPConfigurationProfilePropertiesFormat",
+          "x-ms-client-flatten": true
+        },
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "readOnly": true
+        },
+        "etag": {
+          "type": "string",
+          "readOnly": true
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "./common.json#/definitions/SubResource"
+        }
+      ]
+    },
     "IPConfigurationProfilePropertiesFormat": {
       "type": "object",
       "properties": {
@@ -10016,7 +12530,7 @@
       "type": "object",
       "properties": {
         "pool": {
-          "$ref": "./common.json#/definitions/IpamPoolPrefixAllocationPool",
+          "$ref": "#/definitions/IpamPoolPrefixAllocationPool",
           "x-ms-client-flatten": true
         },
         "numberOfIpAddresses": {
@@ -10028,6 +12542,15 @@
             "type": "string"
           },
           "readOnly": true
+        }
+      }
+    },
+    "IpamPoolPrefixAllocationPool": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "arm-id"
         }
       }
     },
@@ -10352,13 +12875,13 @@
         "loadBalancerBackendAddressPools": {
           "type": "array",
           "items": {
-            "$ref": "./common.json#/definitions/BackendAddressPool"
+            "$ref": "./loadBalancer.json#/definitions/BackendAddressPool"
           }
         },
         "loadBalancerInboundNatRules": {
           "type": "array",
           "items": {
-            "$ref": "./common.json#/definitions/InboundNatRule"
+            "$ref": "./loadBalancer.json#/definitions/InboundNatRule"
           }
         },
         "privateIPAddress": {
@@ -10729,7 +13252,7 @@
         "flowLogs": {
           "type": "array",
           "items": {
-            "$ref": "./common.json#/definitions/FlowLog"
+            "$ref": "./networkWatcher.json#/definitions/FlowLog"
           },
           "readOnly": true
         },
@@ -10867,7 +13390,7 @@
           "readOnly": true
         },
         "networkProfile": {
-          "$ref": "./common.json#/definitions/NetworkVirtualAppliancePropertiesFormatNetworkProfile"
+          "$ref": "#/definitions/NetworkVirtualAppliancePropertiesFormatNetworkProfile"
         },
         "additionalNics": {
           "type": "array",
@@ -10926,6 +13449,17 @@
         "privateIpAddress": {
           "type": "string",
           "readOnly": true
+        }
+      }
+    },
+    "NetworkVirtualAppliancePropertiesFormatNetworkProfile": {
+      "type": "object",
+      "properties": {
+        "networkInterfaceConfigurations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/VirtualApplianceNetworkInterfaceConfiguration"
+          }
         }
       }
     },
@@ -11288,6 +13822,27 @@
         {
           "$ref": "./common.json#/definitions/SubResource"
         }
+      ]
+    },
+    "PrivateDnsZoneGroupListResult": {
+      "type": "object",
+      "description": "[Placeholder] Discription for page model",
+      "properties": {
+        "value": {
+          "type": "array",
+          "description": "[Placeholder] Discription for value property",
+          "items": {
+            "$ref": "#/definitions/PrivateDnsZoneGroup"
+          }
+        },
+        "nextLink": {
+          "type": "string",
+          "format": "uri",
+          "description": "[Placeholder] Discription for nextLink property"
+        }
+      },
+      "required": [
+        "value"
       ]
     },
     "PrivateDnsZoneGroupPropertiesFormat": {
@@ -11684,7 +14239,7 @@
         "loadBalancerFrontendIpConfigurations": {
           "type": "array",
           "items": {
-            "$ref": "./common.json#/definitions/FrontendIPConfiguration"
+            "$ref": "./loadBalancer.json#/definitions/FrontendIPConfiguration"
           }
         },
         "ipConfigurations": {
@@ -13054,7 +15609,7 @@
         "ipConfigurationProfiles": {
           "type": "array",
           "items": {
-            "$ref": "./common.json#/definitions/IPConfigurationProfile"
+            "$ref": "#/definitions/IPConfigurationProfile"
           },
           "readOnly": true
         },
@@ -13747,7 +16302,7 @@
         "flowLogs": {
           "type": "array",
           "items": {
-            "$ref": "./common.json#/definitions/FlowLog"
+            "$ref": "./networkWatcher.json#/definitions/FlowLog"
           },
           "readOnly": true
         },

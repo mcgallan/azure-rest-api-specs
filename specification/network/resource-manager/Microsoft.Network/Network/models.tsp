@@ -9922,6 +9922,8 @@ model IpamPoolPrefixAllocation {
 }
 
 #suppress "@azure-tools/typespec-azure-core/documentation-required" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+@Azure.ResourceManager.Legacy.feature(Features.virtualNetwork)
 model IpamPoolPrefixAllocationPool {
   /**
    * Resource id of the associated Azure IpamPool resource.
@@ -13274,6 +13276,8 @@ model BastionHostIPConfigurationPropertiesFormat {
 }
 
 #suppress "@azure-tools/typespec-azure-core/documentation-required" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+@Azure.ResourceManager.Legacy.feature(Features.virtualNetwork)
 model BastionHostPropertiesFormatNetworkAcls {
   /**
    * Sets the IP ACL rules for Developer Bastion Host.
@@ -19451,6 +19455,8 @@ model VirtualApplianceNicProperties {
 /**
  * Network Profile containing configurations for Public and Private NIC.
  */
+#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+@Azure.ResourceManager.Legacy.feature(Features.virtualNetwork)
 model NetworkVirtualAppliancePropertiesFormatNetworkProfile {
   #suppress "@azure-tools/typespec-azure-core/documentation-required" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   @identifiers(#[])

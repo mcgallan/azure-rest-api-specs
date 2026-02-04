@@ -96,6 +96,8 @@ interface AvailableDelegationsOperationGroup {
 }
 
 #suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-interface-requires-decorator" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+@Azure.ResourceManager.Legacy.feature(Features.virtualNetwork)
 interface AvailableResourceGroupDelegationsOperationGroup {
   /**
    * Gets all of the available subnet delegations for this resource group in this region.
@@ -418,6 +420,8 @@ interface NetworkSecurityPerimeterServiceTagsOperationGroup {
 }
 
 #suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-interface-requires-decorator" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+@Azure.ResourceManager.Legacy.feature(Features.virtualNetwork)
 interface AvailablePrivateEndpointTypesOperationGroup {
   /**
    * Returns all of the resource types that can be linked to a Private Endpoint in this subscription in this region.
@@ -452,6 +456,8 @@ interface AvailablePrivateEndpointTypesOperationGroup {
 }
 
 #suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-interface-requires-decorator" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+@Azure.ResourceManager.Legacy.feature(Features.virtualNetwork)
 interface PrivateLinkServicesOperationGroup {
   /**
    * Checks whether the subscription is visible to private link service.
