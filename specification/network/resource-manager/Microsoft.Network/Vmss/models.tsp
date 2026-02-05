@@ -2845,6 +2845,7 @@ model ApplicationGatewayBackendAddressPoolPropertiesFormat {
   /**
    * Backend addresses.
    */
+  #suppress "@azure-tools/typespec-azure-resource-manager/missing-x-ms-identifiers" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   backendAddresses?: ApplicationGatewayBackendAddress[];
 
