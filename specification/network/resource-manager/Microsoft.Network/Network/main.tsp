@@ -131,6 +131,8 @@ import "./HubRouteTable.tsp";
 import "./RoutingIntent.tsp";
 import "./WebApplicationFirewallPolicy.tsp";
 import "./routes.tsp";
+import "./VirtualNetworkAppliance.tsp";
+import "./ServiceGateway.tsp";
 
 using TypeSpec.Rest;
 using TypeSpec.Http;
