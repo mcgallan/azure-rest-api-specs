@@ -47,16 +47,18 @@ model ApplicationGateway extends Resource {
 
 #suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 @Azure.ResourceManager.Legacy.feature(Features.applicationGateway)
-@armResourceOperations
+@armResourceOperations(#{omitTags: true})
 interface ApplicationGateways {
   /**
    * Gets the specified application gateway.
    */
+  @tag("ApplicationGateways")
   get is ArmResourceRead<ApplicationGateway, Error = CloudError>;
 
   /**
    * Creates or updates the specified application gateway.
    */
+  @tag("ApplicationGateways")
   createOrUpdate is ArmResourceCreateOrReplaceAsync<
     ApplicationGateway,
     Error = CloudError
@@ -65,6 +67,7 @@ interface ApplicationGateways {
   /**
    * Updates the specified application gateway tags.
    */
+  @tag("ApplicationGateways")
   @patch(#{ implicitOptionality: false })
   updateTags is ArmCustomPatchSync<
     ApplicationGateway,
@@ -76,6 +79,7 @@ interface ApplicationGateways {
    * Deletes the specified application gateway.
    */
   #suppress "@azure-tools/typespec-azure-resource-manager/arm-delete-operation-response-codes" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("ApplicationGateways")
   delete is ArmResourceDeleteWithoutOkAsync<
     ApplicationGateway,
     Response = ArmDeletedResponse | ArmDeleteAcceptedLroResponse | ArmDeletedNoContentResponse,
@@ -85,16 +89,19 @@ interface ApplicationGateways {
   /**
    * Lists all application gateways in a resource group.
    */
+  @tag("ApplicationGateways")
   list is ArmResourceListByParent<ApplicationGateway, Error = CloudError>;
 
   /**
    * Gets all the application gateways in a subscription.
    */
+  @tag("ApplicationGateways")
   listAll is ArmListBySubscription<ApplicationGateway, Error = CloudError>;
 
   /**
    * Starts the specified application gateway.
    */
+  @tag("ApplicationGateways")
   start is ArmResourceActionAsync<
     ApplicationGateway,
     void,
@@ -107,6 +114,7 @@ interface ApplicationGateways {
   /**
    * Stops the specified application gateway in a resource group.
    */
+  @tag("ApplicationGateways")
   stop is ArmResourceActionAsync<
     ApplicationGateway,
     void,
@@ -119,6 +127,7 @@ interface ApplicationGateways {
   /**
    * Gets the backend health of the specified application gateway in a resource group.
    */
+  @tag("ApplicationGateways")
   @action("backendhealth")
   backendHealth is ArmResourceActionAsync<
     ApplicationGateway,
@@ -137,6 +146,7 @@ interface ApplicationGateways {
   /**
    * Gets the backend health for given combination of backend pool and http setting of the specified application gateway in a resource group.
    */
+  @tag("ApplicationGateways")
   @action("getBackendHealthOnDemand")
   backendHealthOnDemand is ArmResourceActionAsync<
     ApplicationGateway,
@@ -157,6 +167,7 @@ interface ApplicationGateways {
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   @operationId("ApplicationGatewayPrivateLinkResources_List")
+  @tag("ApplicationGatewayPrivateLinkResources")
   @list
   @get
   @action("privateLinkResources")

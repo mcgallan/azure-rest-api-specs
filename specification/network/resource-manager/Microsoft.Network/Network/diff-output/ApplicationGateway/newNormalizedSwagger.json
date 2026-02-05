@@ -16,13 +16,10 @@
       "name": "ApplicationGateways"
     },
     {
-      "name": "ApplicationGatewayAvailableSslOptionsOperationGroup"
+      "name": "ApplicationGatewayPrivateLinkResources"
     },
     {
       "name": "ApplicationGatewayPrivateEndpointConnections"
-    },
-    {
-      "name": "ApplicationGatewayWafDynamicManifestResults"
     },
     {
       "name": "WebApplicationFirewallPolicies"
@@ -32,6 +29,9 @@
     "/subscriptions/{subscriptionId}/providers/microsoft.Network/applicationGatewayAvailableRequestHeaders": {
       "get": {
         "operationId": "ApplicationGateways_ListAvailableRequestHeaders",
+        "tags": [
+          "ApplicationGateways"
+        ],
         "parameters": [],
         "responses": {
           "200": {
@@ -60,6 +60,9 @@
     "/subscriptions/{subscriptionId}/providers/microsoft.Network/applicationGatewayAvailableResponseHeaders": {
       "get": {
         "operationId": "ApplicationGateways_ListAvailableResponseHeaders",
+        "tags": [
+          "ApplicationGateways"
+        ],
         "parameters": [],
         "responses": {
           "200": {
@@ -88,6 +91,9 @@
     "/subscriptions/{subscriptionId}/providers/microsoft.Network/applicationGatewayAvailableServerVariables": {
       "get": {
         "operationId": "ApplicationGateways_ListAvailableServerVariables",
+        "tags": [
+          "ApplicationGateways"
+        ],
         "parameters": [],
         "responses": {
           "200": {
@@ -117,7 +123,7 @@
       "get": {
         "operationId": "ApplicationGateways_ListAvailableSslOptions",
         "tags": [
-          "ApplicationGatewayAvailableSslOptionsOperationGroup"
+          "ApplicationGateways"
         ],
         "parameters": [],
         "responses": {
@@ -145,7 +151,7 @@
       "get": {
         "operationId": "ApplicationGateways_ListAvailableSslPredefinedPolicies",
         "tags": [
-          "ApplicationGatewayAvailableSslOptionsOperationGroup"
+          "ApplicationGateways"
         ],
         "parameters": [],
         "responses": {
@@ -176,7 +182,7 @@
       "get": {
         "operationId": "ApplicationGateways_GetSslPredefinedPolicy",
         "tags": [
-          "ApplicationGatewayAvailableSslOptionsOperationGroup"
+          "ApplicationGateways"
         ],
         "parameters": [
           {
@@ -210,6 +216,9 @@
     "/subscriptions/{subscriptionId}/providers/microsoft.Network/applicationGatewayAvailableWafRuleSets": {
       "get": {
         "operationId": "ApplicationGateways_ListAvailableWafRuleSets",
+        "tags": [
+          "ApplicationGateways"
+        ],
         "parameters": [],
         "responses": {
           "200": {
@@ -298,7 +307,7 @@
       "get": {
         "operationId": "ApplicationGatewayWafDynamicManifests_Get",
         "tags": [
-          "ApplicationGatewayWafDynamicManifestResults"
+          "ApplicationGateways"
         ],
         "parameters": [
           {
@@ -336,7 +345,7 @@
       "get": {
         "operationId": "ApplicationGatewayWafDynamicManifestsDefault_Get",
         "tags": [
-          "ApplicationGatewayWafDynamicManifestResults"
+          "ApplicationGateways"
         ],
         "parameters": [
           {
@@ -1035,7 +1044,7 @@
       "get": {
         "operationId": "ApplicationGatewayPrivateLinkResources_List",
         "tags": [
-          "ApplicationGateways"
+          "ApplicationGatewayPrivateLinkResources"
         ],
         "parameters": [
           {

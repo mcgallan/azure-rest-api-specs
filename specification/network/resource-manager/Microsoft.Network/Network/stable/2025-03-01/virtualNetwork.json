@@ -88,10 +88,22 @@
       "name": "NatGateways"
     },
     {
+      "name": "NetworkInterfaceIPConfigurations"
+    },
+    {
+      "name": "NetworkInterfaceTapConfigurations"
+    },
+    {
       "name": "NetworkProfiles"
     },
     {
       "name": "NetworkSecurityGroups"
+    },
+    {
+      "name": "SecurityRules"
+    },
+    {
+      "name": "DefaultSecurityRules"
     },
     {
       "name": "ReachabilityAnalysisIntents"
@@ -100,10 +112,25 @@
       "name": "VerifierWorkspaces"
     },
     {
+      "name": "ReachabilityAnalysisRuns"
+    },
+    {
       "name": "NetworkVirtualAppliances"
     },
     {
+      "name": "VirtualApplianceSites"
+    },
+    {
+      "name": "NetworkVirtualApplianceSkus"
+    },
+    {
+      "name": "InboundSecurityRuleOperationGroup"
+    },
+    {
       "name": "PrivateEndpoints"
+    },
+    {
+      "name": "PrivateLinkServices"
     },
     {
       "name": "PrivateEndpointConnections"
@@ -115,13 +142,25 @@
       "name": "RouteTables"
     },
     {
+      "name": "Routes"
+    },
+    {
       "name": "SecurityPartnerProviders"
     },
     {
       "name": "VirtualNetworks"
     },
     {
+      "name": "Subnets"
+    },
+    {
+      "name": "VirtualNetworkPeerings"
+    },
+    {
       "name": "VirtualRouters"
+    },
+    {
+      "name": "VirtualRouterPeerings"
     }
   ],
   "paths": {
@@ -398,6 +437,45 @@
         }
       }
     },
+    "/subscriptions/{subscriptionId}/providers/Microsoft.Network/locations/{location}/autoApprovedPrivateLinkServices": {
+      "get": {
+        "operationId": "PrivateLinkServices_ListAutoApprovedPrivateLinkServices",
+        "description": "Returns all of the private link service ids that can be linked to a Private Endpoint with auto approved in this subscription in this region.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The request has succeeded.",
+            "schema": {
+              "$ref": "#/definitions/AutoApprovedPrivateLinkServicesResult"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Get list of private link service id that can be linked to a private end point with auto approved": {
+            "$ref": "./examples/AutoApprovedPrivateLinkServicesGet.json"
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
     "/subscriptions/{subscriptionId}/providers/Microsoft.Network/locations/{location}/availableDelegations": {
       "get": {
         "operationId": "AvailableDelegations_List",
@@ -430,6 +508,45 @@
         "x-ms-examples": {
           "Get available delegations": {
             "$ref": "./examples/AvailableDelegationsSubscriptionGet.json"
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/providers/Microsoft.Network/locations/{location}/availablePrivateEndpointTypes": {
+      "get": {
+        "operationId": "AvailablePrivateEndpointTypes_List",
+        "description": "Returns all of the resource types that can be linked to a Private Endpoint in this subscription in this region.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The request has succeeded.",
+            "schema": {
+              "$ref": "#/definitions/AvailablePrivateEndpointTypesResult"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Get available PrivateEndpoint types": {
+            "$ref": "./examples/AvailablePrivateEndpointTypesGet.json"
           }
         },
         "x-ms-pageable": {
@@ -517,6 +634,70 @@
             "$ref": "./examples/CheckDnsNameAvailability.json"
           }
         }
+      }
+    },
+    "/subscriptions/{subscriptionId}/providers/Microsoft.Network/locations/{location}/checkPrivateLinkServiceVisibility": {
+      "post": {
+        "operationId": "PrivateLinkServices_CheckPrivateLinkServiceVisibility",
+        "description": "Checks whether the subscription is visible to private link service.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
+          },
+          {
+            "name": "parameters",
+            "in": "body",
+            "description": "The request body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CheckPrivateLinkServiceVisibilityRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The request has succeeded.",
+            "schema": {
+              "$ref": "#/definitions/PrivateLinkServiceVisibility"
+            }
+          },
+          "202": {
+            "description": "Resource operation accepted.",
+            "headers": {
+              "Location": {
+                "type": "string",
+                "description": "The Location header contains the URL where the status of the long running operation can be checked."
+              },
+              "Retry-After": {
+                "type": "integer",
+                "format": "int32",
+                "description": "The Retry-After header can indicate how long the client should wait before polling the operation status."
+              }
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Check private link service visibility": {
+            "$ref": "./examples/CheckPrivateLinkServiceVisibility.json"
+          }
+        },
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "location",
+          "final-state-schema": "#/definitions/PrivateLinkServiceVisibility"
+        },
+        "x-ms-long-running-operation": true
       }
     },
     "/subscriptions/{subscriptionId}/providers/Microsoft.Network/locations/{location}/serviceTagDetails": {
@@ -851,6 +1032,88 @@
         }
       }
     },
+    "/subscriptions/{subscriptionId}/providers/Microsoft.Network/networkVirtualApplianceSkus": {
+      "get": {
+        "operationId": "VirtualApplianceSkus_List",
+        "tags": [
+          "NetworkVirtualApplianceSkus"
+        ],
+        "description": "List all SKUs available for a virtual appliance.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Azure operation completed successfully.",
+            "schema": {
+              "$ref": "#/definitions/NetworkVirtualApplianceSkuListResult"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "NetworkVirtualApplianceSkuListResult": {
+            "$ref": "./examples/NetworkVirtualApplianceSkuList.json"
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/providers/Microsoft.Network/networkVirtualApplianceSkus/{skuName}": {
+      "get": {
+        "operationId": "VirtualApplianceSkus_Get",
+        "tags": [
+          "NetworkVirtualApplianceSkus"
+        ],
+        "description": "Retrieves a single available sku for network virtual appliance.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "name": "skuName",
+            "in": "path",
+            "description": "Name of the Sku.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Azure operation completed successfully.",
+            "schema": {
+              "$ref": "#/definitions/NetworkVirtualApplianceSku"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "NetworkVirtualApplianceSkuGet": {
+            "$ref": "./examples/NetworkVirtualApplianceSkuGet.json"
+          }
+        }
+      }
+    },
     "/subscriptions/{subscriptionId}/providers/Microsoft.Network/networkVirtualAppliances": {
       "get": {
         "operationId": "NetworkVirtualAppliances_List",
@@ -922,6 +1185,45 @@
         "x-ms-examples": {
           "List all private endpoints": {
             "$ref": "./examples/PrivateEndpointListAll.json"
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/providers/Microsoft.Network/privateLinkServices": {
+      "get": {
+        "operationId": "PrivateLinkServices_ListBySubscription",
+        "tags": [
+          "PrivateLinkServices"
+        ],
+        "description": "Gets all private link service in a subscription.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Azure operation completed successfully.",
+            "schema": {
+              "$ref": "#/definitions/PrivateLinkServiceListResult"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/Error"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "List all private list service": {
+            "$ref": "./examples/PrivateLinkServiceListAll.json"
           }
         },
         "x-ms-pageable": {
@@ -3751,6 +4053,132 @@
         "x-ms-long-running-operation": true
       }
     },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/locations/{location}/autoApprovedPrivateLinkServices": {
+      "get": {
+        "operationId": "PrivateLinkServices_ListAutoApprovedPrivateLinkServicesByResourceGroup",
+        "description": "Returns all of the private link service ids that can be linked to a Private Endpoint with auto approved in this subscription in this region.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The request has succeeded.",
+            "schema": {
+              "$ref": "#/definitions/AutoApprovedPrivateLinkServicesResult"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Get list of private link service id that can be linked to a private end point with auto approved": {
+            "$ref": "./examples/AutoApprovedPrivateLinkServicesResourceGroupGet.json"
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/locations/{location}/availableDelegations": {
+      "get": {
+        "operationId": "AvailableResourceGroupDelegations_List",
+        "description": "Gets all of the available subnet delegations for this resource group in this region.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The request has succeeded.",
+            "schema": {
+              "$ref": "#/definitions/AvailableDelegationsResult"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Get available delegations in the resource group": {
+            "$ref": "./examples/AvailableDelegationsResourceGroupGet.json"
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/locations/{location}/availablePrivateEndpointTypes": {
+      "get": {
+        "operationId": "AvailablePrivateEndpointTypes_ListByResourceGroup",
+        "description": "Returns all of the resource types that can be linked to a Private Endpoint in this subscription in this region.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The request has succeeded.",
+            "schema": {
+              "$ref": "#/definitions/AvailablePrivateEndpointTypesResult"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Get available PrivateEndpoint types in the resource group": {
+            "$ref": "./examples/AvailablePrivateEndpointTypesResourceGroupGet.json"
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/locations/{location}/availableServiceAliases": {
       "get": {
         "operationId": "AvailableServiceAliases_ListByResourceGroup",
@@ -3791,6 +4219,73 @@
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/locations/{location}/checkPrivateLinkServiceVisibility": {
+      "post": {
+        "operationId": "PrivateLinkServices_CheckPrivateLinkServiceVisibilityByResourceGroup",
+        "description": "Checks whether the subscription is visible to private link service in the specified resource group.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
+          },
+          {
+            "name": "parameters",
+            "in": "body",
+            "description": "The request body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CheckPrivateLinkServiceVisibilityRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The request has succeeded.",
+            "schema": {
+              "$ref": "#/definitions/PrivateLinkServiceVisibility"
+            }
+          },
+          "202": {
+            "description": "Resource operation accepted.",
+            "headers": {
+              "Location": {
+                "type": "string",
+                "description": "The Location header contains the URL where the status of the long running operation can be checked."
+              },
+              "Retry-After": {
+                "type": "integer",
+                "format": "int32",
+                "description": "The Retry-After header can indicate how long the client should wait before polling the operation status."
+              }
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Check private link service visibility": {
+            "$ref": "./examples/CheckPrivateLinkServiceVisibilityByResourceGroup.json"
+          }
+        },
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "location",
+          "final-state-schema": "#/definitions/PrivateLinkServiceVisibility"
+        },
+        "x-ms-long-running-operation": true
       }
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/natGateways": {
@@ -4515,6 +5010,108 @@
         "x-ms-long-running-operation": true
       }
     },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkInterfaces/{networkInterfaceName}/ipConfigurations": {
+      "get": {
+        "operationId": "NetworkInterfaceIPConfigurations_List",
+        "tags": [
+          "NetworkInterfaceIPConfigurations"
+        ],
+        "description": "Get all ip configurations in a network interface.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "networkInterfaceName",
+            "in": "path",
+            "description": "The name of the network interface.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Azure operation completed successfully.",
+            "schema": {
+              "$ref": "#/definitions/NetworkInterfaceIPConfigurationListResult"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "NetworkInterfaceIPConfigurationList": {
+            "$ref": "./examples/NetworkInterfaceIPConfigurationList.json"
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkInterfaces/{networkInterfaceName}/ipConfigurations/{ipConfigurationName}": {
+      "get": {
+        "operationId": "NetworkInterfaceIPConfigurations_Get",
+        "tags": [
+          "NetworkInterfaceIPConfigurations"
+        ],
+        "description": "Gets the specified network interface ip configuration.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "networkInterfaceName",
+            "in": "path",
+            "description": "The name of the network interface.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "ipConfigurationName",
+            "in": "path",
+            "description": "The name of the ip configuration name.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Azure operation completed successfully.",
+            "schema": {
+              "$ref": "#/definitions/NetworkInterfaceIPConfiguration"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "NetworkInterfaceIPConfigurationGet": {
+            "$ref": "./examples/NetworkInterfaceIPConfigurationGet.json"
+          }
+        }
+      }
+    },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkInterfaces/{networkInterfaceName}/loadBalancers": {
       "get": {
         "operationId": "NetworkInterfaceLoadBalancers_List",
@@ -4562,6 +5159,259 @@
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkInterfaces/{networkInterfaceName}/tapConfigurations": {
+      "get": {
+        "operationId": "NetworkInterfaceTapConfigurations_List",
+        "tags": [
+          "NetworkInterfaceTapConfigurations"
+        ],
+        "description": "Get all Tap configurations in a network interface.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "networkInterfaceName",
+            "in": "path",
+            "description": "The name of the network interface.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Azure operation completed successfully.",
+            "schema": {
+              "$ref": "#/definitions/NetworkInterfaceTapConfigurationListResult"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "List virtual network tap configurations": {
+            "$ref": "./examples/NetworkInterfaceTapConfigurationList.json"
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkInterfaces/{networkInterfaceName}/tapConfigurations/{tapConfigurationName}": {
+      "get": {
+        "operationId": "NetworkInterfaceTapConfigurations_Get",
+        "tags": [
+          "NetworkInterfaceTapConfigurations"
+        ],
+        "description": "Get the specified tap configuration on a network interface.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "networkInterfaceName",
+            "in": "path",
+            "description": "The name of the network interface.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "tapConfigurationName",
+            "in": "path",
+            "description": "The name of the resource that is unique within a resource group. This name can be used to access the resource.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Azure operation completed successfully.",
+            "schema": {
+              "$ref": "#/definitions/NetworkInterfaceTapConfiguration"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Get Network Interface Tap Configurations": {
+            "$ref": "./examples/NetworkInterfaceTapConfigurationGet.json"
+          }
+        }
+      },
+      "put": {
+        "operationId": "NetworkInterfaceTapConfigurations_CreateOrUpdate",
+        "tags": [
+          "NetworkInterfaceTapConfigurations"
+        ],
+        "description": "Creates or updates a Tap configuration in the specified NetworkInterface.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "networkInterfaceName",
+            "in": "path",
+            "description": "The name of the network interface.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "tapConfigurationName",
+            "in": "path",
+            "description": "The name of the resource that is unique within a resource group. This name can be used to access the resource.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "tapConfigurationParameters",
+            "in": "body",
+            "description": "Parameters supplied to the create or update tap configuration operation.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/NetworkInterfaceTapConfiguration"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Resource 'NetworkInterfaceTapConfiguration' update operation succeeded",
+            "schema": {
+              "$ref": "#/definitions/NetworkInterfaceTapConfiguration"
+            }
+          },
+          "201": {
+            "description": "Resource 'NetworkInterfaceTapConfiguration' create operation succeeded",
+            "schema": {
+              "$ref": "#/definitions/NetworkInterfaceTapConfiguration"
+            },
+            "headers": {
+              "Azure-AsyncOperation": {
+                "type": "string",
+                "description": "A link to the status monitor"
+              },
+              "Retry-After": {
+                "type": "integer",
+                "format": "int32",
+                "description": "The Retry-After header can indicate how long the client should wait before polling the operation status."
+              }
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Create Network Interface Tap Configurations": {
+            "$ref": "./examples/NetworkInterfaceTapConfigurationCreate.json"
+          }
+        },
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "azure-async-operation",
+          "final-state-schema": "#/definitions/NetworkInterfaceTapConfiguration"
+        },
+        "x-ms-long-running-operation": true
+      },
+      "delete": {
+        "operationId": "NetworkInterfaceTapConfigurations_Delete",
+        "tags": [
+          "NetworkInterfaceTapConfigurations"
+        ],
+        "description": "Deletes the specified tap configuration from the NetworkInterface.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "networkInterfaceName",
+            "in": "path",
+            "description": "The name of the network interface.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "tapConfigurationName",
+            "in": "path",
+            "description": "The name of the resource that is unique within a resource group. This name can be used to access the resource.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Resource deleted successfully."
+          },
+          "202": {
+            "description": "Resource deletion accepted.",
+            "headers": {
+              "Location": {
+                "type": "string",
+                "description": "The Location header contains the URL where the status of the long running operation can be checked."
+              },
+              "Retry-After": {
+                "type": "integer",
+                "format": "int32",
+                "description": "The Retry-After header can indicate how long the client should wait before polling the operation status."
+              }
+            }
+          },
+          "204": {
+            "description": "Resource does not exist."
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Delete tap configuration": {
+            "$ref": "./examples/NetworkInterfaceTapConfigurationDelete.json"
+          }
+        },
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "location"
+        },
+        "x-ms-long-running-operation": true
       }
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkManagers/{networkManagerName}/ipamPools": {
@@ -6047,6 +6897,322 @@
         }
       }
     },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkManagers/{networkManagerName}/verifierWorkspaces/{workspaceName}/reachabilityAnalysisRuns": {
+      "get": {
+        "operationId": "ReachabilityAnalysisRuns_List",
+        "tags": [
+          "ReachabilityAnalysisRuns"
+        ],
+        "summary": "Gets list of Reachability Analysis Runs.",
+        "description": "Gets list of Reachability Analysis Runs.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "networkManagerName",
+            "in": "path",
+            "description": "The name of the network manager.",
+            "required": true,
+            "type": "string",
+            "pattern": "^[0-9a-zA-Z]([0-9a-zA-Z_.-]{0,62}[0-9a-zA-Z_])?$"
+          },
+          {
+            "name": "workspaceName",
+            "in": "path",
+            "description": "The name of the resource",
+            "required": true,
+            "type": "string",
+            "pattern": "^[0-9a-zA-Z]([0-9a-zA-Z_.-]{0,62}[0-9a-zA-Z_])?$"
+          },
+          {
+            "name": "skipToken",
+            "in": "query",
+            "description": "Optional skip token.",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "description": "Optional num entries to skip.",
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": 0
+          },
+          {
+            "name": "top",
+            "in": "query",
+            "description": "Optional num entries to show.",
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": 50
+          },
+          {
+            "name": "sortKey",
+            "in": "query",
+            "description": "Optional key by which to sort.",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sortValue",
+            "in": "query",
+            "description": "Optional sort value for pagination.",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Azure operation completed successfully.",
+            "schema": {
+              "$ref": "#/definitions/ReachabilityAnalysisRunListResult"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CommonErrorResponse"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "ReachabilityAnalysisRunList": {
+            "$ref": "./examples/ReachabilityAnalysisRunList.json"
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkManagers/{networkManagerName}/verifierWorkspaces/{workspaceName}/reachabilityAnalysisRuns/{reachabilityAnalysisRunName}": {
+      "get": {
+        "operationId": "ReachabilityAnalysisRuns_Get",
+        "tags": [
+          "ReachabilityAnalysisRuns"
+        ],
+        "summary": "Gets Reachability Analysis Run.",
+        "description": "Gets Reachability Analysis Run.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "networkManagerName",
+            "in": "path",
+            "description": "The name of the network manager.",
+            "required": true,
+            "type": "string",
+            "pattern": "^[0-9a-zA-Z]([0-9a-zA-Z_.-]{0,62}[0-9a-zA-Z_])?$"
+          },
+          {
+            "name": "workspaceName",
+            "in": "path",
+            "description": "The name of the resource",
+            "required": true,
+            "type": "string",
+            "pattern": "^[0-9a-zA-Z]([0-9a-zA-Z_.-]{0,62}[0-9a-zA-Z_])?$"
+          },
+          {
+            "name": "reachabilityAnalysisRunName",
+            "in": "path",
+            "description": "Reachability Analysis Run name.",
+            "required": true,
+            "type": "string",
+            "pattern": "^[0-9a-zA-Z]([0-9a-zA-Z_.-]{0,62}[0-9a-zA-Z_])?$"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Azure operation completed successfully.",
+            "schema": {
+              "$ref": "#/definitions/ReachabilityAnalysisRun"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CommonErrorResponse"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "ReachabilityAnalysisRunGet": {
+            "$ref": "./examples/ReachabilityAnalysisRunGet.json"
+          }
+        }
+      },
+      "put": {
+        "operationId": "ReachabilityAnalysisRuns_Create",
+        "tags": [
+          "ReachabilityAnalysisRuns"
+        ],
+        "summary": "Creates Reachability Analysis Runs.",
+        "description": "Creates Reachability Analysis Runs.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "networkManagerName",
+            "in": "path",
+            "description": "The name of the network manager.",
+            "required": true,
+            "type": "string",
+            "pattern": "^[0-9a-zA-Z]([0-9a-zA-Z_.-]{0,62}[0-9a-zA-Z_])?$"
+          },
+          {
+            "name": "workspaceName",
+            "in": "path",
+            "description": "The name of the resource",
+            "required": true,
+            "type": "string",
+            "pattern": "^[0-9a-zA-Z]([0-9a-zA-Z_.-]{0,62}[0-9a-zA-Z_])?$"
+          },
+          {
+            "name": "reachabilityAnalysisRunName",
+            "in": "path",
+            "description": "Reachability Analysis Run name.",
+            "required": true,
+            "type": "string",
+            "pattern": "^[0-9a-zA-Z]([0-9a-zA-Z_.-]{0,62}[0-9a-zA-Z_])?$"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Analysis Run resource object to create/update.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ReachabilityAnalysisRun"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Resource 'ReachabilityAnalysisRun' update operation succeeded",
+            "schema": {
+              "$ref": "#/definitions/ReachabilityAnalysisRun"
+            }
+          },
+          "201": {
+            "description": "Resource 'ReachabilityAnalysisRun' create operation succeeded",
+            "schema": {
+              "$ref": "#/definitions/ReachabilityAnalysisRun"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CommonErrorResponse"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "ReachabilityAnalysisRunCreate": {
+            "$ref": "./examples/ReachabilityAnalysisRunPut.json"
+          }
+        }
+      },
+      "delete": {
+        "operationId": "ReachabilityAnalysisRuns_Delete",
+        "tags": [
+          "ReachabilityAnalysisRuns"
+        ],
+        "summary": "Deletes Reachability Analysis Run.",
+        "description": "Deletes Reachability Analysis Run.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "networkManagerName",
+            "in": "path",
+            "description": "The name of the network manager.",
+            "required": true,
+            "type": "string",
+            "pattern": "^[0-9a-zA-Z]([0-9a-zA-Z_.-]{0,62}[0-9a-zA-Z_])?$"
+          },
+          {
+            "name": "workspaceName",
+            "in": "path",
+            "description": "The name of the resource",
+            "required": true,
+            "type": "string",
+            "pattern": "^[0-9a-zA-Z]([0-9a-zA-Z_.-]{0,62}[0-9a-zA-Z_])?$"
+          },
+          {
+            "name": "reachabilityAnalysisRunName",
+            "in": "path",
+            "description": "Reachability Analysis Run name.",
+            "required": true,
+            "type": "string",
+            "pattern": "^[0-9a-zA-Z]([0-9a-zA-Z_.-]{0,62}[0-9a-zA-Z_])?$"
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Resource deletion accepted.",
+            "headers": {
+              "Location": {
+                "type": "string",
+                "description": "The Location header contains the URL where the status of the long running operation can be checked."
+              },
+              "Retry-After": {
+                "type": "integer",
+                "format": "int32",
+                "description": "The Retry-After header can indicate how long the client should wait before polling the operation status."
+              }
+            }
+          },
+          "204": {
+            "description": "Resource does not exist."
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CommonErrorResponse"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "ReachabilityAnalysisRunDelete": {
+            "$ref": "./examples/ReachabilityAnalysisRunDelete.json"
+          }
+        },
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "location"
+        },
+        "x-ms-long-running-operation": true
+      }
+    },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkProfiles": {
       "get": {
         "operationId": "NetworkProfiles_List",
@@ -6607,6 +7773,361 @@
         "x-ms-long-running-operation": true
       }
     },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkSecurityGroups/{networkSecurityGroupName}/defaultSecurityRules": {
+      "get": {
+        "operationId": "DefaultSecurityRules_List",
+        "tags": [
+          "DefaultSecurityRules"
+        ],
+        "description": "Gets all default security rules in a network security group.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "networkSecurityGroupName",
+            "in": "path",
+            "description": "The name of the network security group.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Azure operation completed successfully.",
+            "schema": {
+              "$ref": "#/definitions/SecurityRuleListResult"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "DefaultSecurityRuleList": {
+            "$ref": "./examples/DefaultSecurityRuleList.json"
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkSecurityGroups/{networkSecurityGroupName}/defaultSecurityRules/{defaultSecurityRuleName}": {
+      "get": {
+        "operationId": "DefaultSecurityRules_Get",
+        "tags": [
+          "DefaultSecurityRules"
+        ],
+        "description": "Get the specified default network security rule.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "networkSecurityGroupName",
+            "in": "path",
+            "description": "The name of the network security group.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "defaultSecurityRuleName",
+            "in": "path",
+            "description": "The name of the default security rule.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Azure operation completed successfully.",
+            "schema": {
+              "$ref": "#/definitions/SecurityRule"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "DefaultSecurityRuleGet": {
+            "$ref": "./examples/DefaultSecurityRuleGet.json"
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkSecurityGroups/{networkSecurityGroupName}/securityRules": {
+      "get": {
+        "operationId": "SecurityRules_List",
+        "tags": [
+          "SecurityRules"
+        ],
+        "description": "Gets all security rules in a network security group.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "networkSecurityGroupName",
+            "in": "path",
+            "description": "The name of the network security group.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Azure operation completed successfully.",
+            "schema": {
+              "$ref": "#/definitions/SecurityRuleListResult"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "List network security rules in network security group": {
+            "$ref": "./examples/NetworkSecurityGroupRuleList.json"
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkSecurityGroups/{networkSecurityGroupName}/securityRules/{securityRuleName}": {
+      "get": {
+        "operationId": "SecurityRules_Get",
+        "tags": [
+          "SecurityRules"
+        ],
+        "description": "Get the specified network security rule.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "networkSecurityGroupName",
+            "in": "path",
+            "description": "The name of the network security group.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "securityRuleName",
+            "in": "path",
+            "description": "The name of the security rule.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Azure operation completed successfully.",
+            "schema": {
+              "$ref": "#/definitions/SecurityRule"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Get network security rule in network security group": {
+            "$ref": "./examples/NetworkSecurityGroupRuleGet.json"
+          }
+        }
+      },
+      "put": {
+        "operationId": "SecurityRules_CreateOrUpdate",
+        "tags": [
+          "SecurityRules"
+        ],
+        "description": "Creates or updates a security rule in the specified network security group.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "networkSecurityGroupName",
+            "in": "path",
+            "description": "The name of the network security group.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "securityRuleName",
+            "in": "path",
+            "description": "The name of the security rule.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "securityRuleParameters",
+            "in": "body",
+            "description": "Parameters supplied to the create or update network security rule operation.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SecurityRule"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Resource 'SecurityRule' update operation succeeded",
+            "schema": {
+              "$ref": "#/definitions/SecurityRule"
+            }
+          },
+          "201": {
+            "description": "Resource 'SecurityRule' create operation succeeded",
+            "schema": {
+              "$ref": "#/definitions/SecurityRule"
+            },
+            "headers": {
+              "Azure-AsyncOperation": {
+                "type": "string",
+                "description": "A link to the status monitor"
+              },
+              "Retry-After": {
+                "type": "integer",
+                "format": "int32",
+                "description": "The Retry-After header can indicate how long the client should wait before polling the operation status."
+              }
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Create security rule": {
+            "$ref": "./examples/NetworkSecurityGroupRuleCreate.json"
+          }
+        },
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "azure-async-operation",
+          "final-state-schema": "#/definitions/SecurityRule"
+        },
+        "x-ms-long-running-operation": true
+      },
+      "delete": {
+        "operationId": "SecurityRules_Delete",
+        "tags": [
+          "SecurityRules"
+        ],
+        "description": "Deletes the specified network security rule.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "networkSecurityGroupName",
+            "in": "path",
+            "description": "The name of the network security group.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "securityRuleName",
+            "in": "path",
+            "description": "The name of the security rule.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Resource deleted successfully."
+          },
+          "202": {
+            "description": "Resource deletion accepted.",
+            "headers": {
+              "Location": {
+                "type": "string",
+                "description": "The Location header contains the URL where the status of the long running operation can be checked."
+              },
+              "Retry-After": {
+                "type": "integer",
+                "format": "int32",
+                "description": "The Retry-After header can indicate how long the client should wait before polling the operation status."
+              }
+            }
+          },
+          "204": {
+            "description": "Resource does not exist."
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Delete network security rule from network security group": {
+            "$ref": "./examples/NetworkSecurityGroupRuleDelete.json"
+          }
+        },
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "location"
+        },
+        "x-ms-long-running-operation": true
+      }
+    },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkVirtualAppliances": {
       "get": {
         "operationId": "NetworkVirtualAppliances_ListByResourceGroup",
@@ -6989,6 +8510,141 @@
         "x-ms-long-running-operation": true
       }
     },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkVirtualAppliances/{networkVirtualApplianceName}/inboundSecurityRules/{ruleCollectionName}": {
+      "get": {
+        "operationId": "InboundSecurityRule_Get",
+        "tags": [
+          "InboundSecurityRuleOperationGroup"
+        ],
+        "description": "Retrieves the available specified Network Virtual Appliance Inbound Security Rules Collection.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "networkVirtualApplianceName",
+            "in": "path",
+            "description": "The name of Network Virtual Appliance.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "ruleCollectionName",
+            "in": "path",
+            "description": "The name of the resource that is unique within a resource group. This name can be used to access the resource.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Azure operation completed successfully.",
+            "schema": {
+              "$ref": "#/definitions/InboundSecurityRule"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Create Network Virtual Appliance Inbound Security Rules": {
+            "$ref": "./examples/InboundSecurityRuleGet.json"
+          }
+        }
+      },
+      "put": {
+        "operationId": "InboundSecurityRule_CreateOrUpdate",
+        "tags": [
+          "InboundSecurityRuleOperationGroup"
+        ],
+        "description": "Creates or updates the specified Network Virtual Appliance Inbound Security Rules.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "networkVirtualApplianceName",
+            "in": "path",
+            "description": "The name of Network Virtual Appliance.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "ruleCollectionName",
+            "in": "path",
+            "description": "The name of the resource that is unique within a resource group. This name can be used to access the resource.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "parameters",
+            "in": "body",
+            "description": "Parameters supplied to the create or update Network Virtual Appliance Inbound Security Rules operation.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/InboundSecurityRule"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Resource 'InboundSecurityRule' update operation succeeded",
+            "schema": {
+              "$ref": "#/definitions/InboundSecurityRule"
+            }
+          },
+          "201": {
+            "description": "Resource 'InboundSecurityRule' create operation succeeded",
+            "schema": {
+              "$ref": "#/definitions/InboundSecurityRule"
+            },
+            "headers": {
+              "Azure-AsyncOperation": {
+                "type": "string",
+                "description": "A link to the status monitor"
+              },
+              "Retry-After": {
+                "type": "integer",
+                "format": "int32",
+                "description": "The Retry-After header can indicate how long the client should wait before polling the operation status."
+              }
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Create Network Virtual Appliance Inbound Security Rules": {
+            "$ref": "./examples/InboundSecurityRulePut.json"
+          }
+        },
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "azure-async-operation",
+          "final-state-schema": "#/definitions/InboundSecurityRule"
+        },
+        "x-ms-long-running-operation": true
+      }
+    },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkVirtualAppliances/{networkVirtualApplianceName}/reimage": {
       "post": {
         "operationId": "NetworkVirtualAppliances_Reimage",
@@ -7136,6 +8792,259 @@
         "x-ms-long-running-operation-options": {
           "final-state-via": "location",
           "final-state-schema": "#/definitions/NetworkVirtualApplianceInstanceIds"
+        },
+        "x-ms-long-running-operation": true
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkVirtualAppliances/{networkVirtualApplianceName}/virtualApplianceSites": {
+      "get": {
+        "operationId": "VirtualApplianceSites_List",
+        "tags": [
+          "VirtualApplianceSites"
+        ],
+        "description": "Lists all Network Virtual Appliance Sites in a Network Virtual Appliance resource.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "networkVirtualApplianceName",
+            "in": "path",
+            "description": "The name of Network Virtual Appliance.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The request has succeeded.",
+            "schema": {
+              "$ref": "#/definitions/NetworkVirtualApplianceSiteListResult"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "List all Network Virtual Appliance sites for a given Network Virtual Appliance": {
+            "$ref": "./examples/NetworkVirtualApplianceSiteList.json"
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkVirtualAppliances/{networkVirtualApplianceName}/virtualApplianceSites/{siteName}": {
+      "get": {
+        "operationId": "VirtualApplianceSites_Get",
+        "tags": [
+          "VirtualApplianceSites"
+        ],
+        "description": "Gets the specified Virtual Appliance Site.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "networkVirtualApplianceName",
+            "in": "path",
+            "description": "The name of Network Virtual Appliance.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "siteName",
+            "in": "path",
+            "description": "The name of the resource that is unique within a resource group. This name can be used to access the resource.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Azure operation completed successfully.",
+            "schema": {
+              "$ref": "#/definitions/VirtualApplianceSite"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "GetNetwork Virtual Appliance Site": {
+            "$ref": "./examples/NetworkVirtualApplianceSiteGet.json"
+          }
+        }
+      },
+      "put": {
+        "operationId": "VirtualApplianceSites_CreateOrUpdate",
+        "tags": [
+          "VirtualApplianceSites"
+        ],
+        "description": "Creates or updates the specified Network Virtual Appliance Site.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "networkVirtualApplianceName",
+            "in": "path",
+            "description": "The name of Network Virtual Appliance.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "siteName",
+            "in": "path",
+            "description": "The name of the resource that is unique within a resource group. This name can be used to access the resource.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "parameters",
+            "in": "body",
+            "description": "Parameters supplied to the create or update Network Virtual Appliance Site operation.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/VirtualApplianceSite"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Resource 'VirtualApplianceSite' update operation succeeded",
+            "schema": {
+              "$ref": "#/definitions/VirtualApplianceSite"
+            }
+          },
+          "201": {
+            "description": "Resource 'VirtualApplianceSite' create operation succeeded",
+            "schema": {
+              "$ref": "#/definitions/VirtualApplianceSite"
+            },
+            "headers": {
+              "Azure-AsyncOperation": {
+                "type": "string",
+                "description": "A link to the status monitor"
+              },
+              "Retry-After": {
+                "type": "integer",
+                "format": "int32",
+                "description": "The Retry-After header can indicate how long the client should wait before polling the operation status."
+              }
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Create Network Virtual Appliance Site": {
+            "$ref": "./examples/NetworkVirtualApplianceSitePut.json"
+          }
+        },
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "azure-async-operation",
+          "final-state-schema": "#/definitions/VirtualApplianceSite"
+        },
+        "x-ms-long-running-operation": true
+      },
+      "delete": {
+        "operationId": "VirtualApplianceSites_Delete",
+        "tags": [
+          "VirtualApplianceSites"
+        ],
+        "description": "Deletes the specified site from a Virtual Appliance.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "networkVirtualApplianceName",
+            "in": "path",
+            "description": "The name of Network Virtual Appliance.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "siteName",
+            "in": "path",
+            "description": "The name of the resource that is unique within a resource group. This name can be used to access the resource.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Resource deleted successfully."
+          },
+          "202": {
+            "description": "Resource deletion accepted.",
+            "headers": {
+              "Location": {
+                "type": "string",
+                "description": "The Location header contains the URL where the status of the long running operation can be checked."
+              },
+              "Retry-After": {
+                "type": "integer",
+                "format": "int32",
+                "description": "The Retry-After header can indicate how long the client should wait before polling the operation status."
+              }
+            }
+          },
+          "204": {
+            "description": "Resource does not exist."
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Delete Network Virtual Appliance Site": {
+            "$ref": "./examples/NetworkVirtualApplianceSiteDelete.json"
+          }
+        },
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "location"
         },
         "x-ms-long-running-operation": true
       }
@@ -7629,6 +9538,238 @@
         "x-ms-examples": {
           "Delete private dns zone group": {
             "$ref": "./examples/PrivateEndpointDnsZoneGroupDelete.json"
+          }
+        },
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "location"
+        },
+        "x-ms-long-running-operation": true
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/privateLinkServices": {
+      "get": {
+        "operationId": "PrivateLinkServices_List",
+        "tags": [
+          "PrivateLinkServices"
+        ],
+        "description": "Gets all private link services in a resource group.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Azure operation completed successfully.",
+            "schema": {
+              "$ref": "#/definitions/PrivateLinkServiceListResult"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/Error"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "List private link service in resource group": {
+            "$ref": "./examples/PrivateLinkServiceList.json"
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/privateLinkServices/{serviceName}": {
+      "get": {
+        "operationId": "PrivateLinkServices_Get",
+        "tags": [
+          "PrivateLinkServices"
+        ],
+        "description": "Gets the specified private link service by resource group.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "serviceName",
+            "in": "path",
+            "description": "The name of the private link service.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expands referenced resources.",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Azure operation completed successfully.",
+            "schema": {
+              "$ref": "#/definitions/PrivateLinkService"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/Error"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Get private link service": {
+            "$ref": "./examples/PrivateLinkServiceGet.json"
+          }
+        }
+      },
+      "put": {
+        "operationId": "PrivateLinkServices_CreateOrUpdate",
+        "tags": [
+          "PrivateLinkServices"
+        ],
+        "description": "Creates or updates an private link service in the specified resource group.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "serviceName",
+            "in": "path",
+            "description": "The name of the private link service.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "parameters",
+            "in": "body",
+            "description": "Parameters supplied to the create or update private link service operation.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PrivateLinkService"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Resource 'PrivateLinkService' update operation succeeded",
+            "schema": {
+              "$ref": "#/definitions/PrivateLinkService"
+            }
+          },
+          "201": {
+            "description": "Resource 'PrivateLinkService' create operation succeeded",
+            "schema": {
+              "$ref": "#/definitions/PrivateLinkService"
+            },
+            "headers": {
+              "Azure-AsyncOperation": {
+                "type": "string",
+                "description": "A link to the status monitor"
+              },
+              "Retry-After": {
+                "type": "integer",
+                "format": "int32",
+                "description": "The Retry-After header can indicate how long the client should wait before polling the operation status."
+              }
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/Error"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Create private link service": {
+            "$ref": "./examples/PrivateLinkServiceCreate.json"
+          }
+        },
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "azure-async-operation",
+          "final-state-schema": "#/definitions/PrivateLinkService"
+        },
+        "x-ms-long-running-operation": true
+      },
+      "delete": {
+        "operationId": "PrivateLinkServices_Delete",
+        "tags": [
+          "PrivateLinkServices"
+        ],
+        "description": "Deletes the specified private link service.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "serviceName",
+            "in": "path",
+            "description": "The name of the private link service.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Resource deleted successfully."
+          },
+          "202": {
+            "description": "Resource deletion accepted.",
+            "headers": {
+              "Location": {
+                "type": "string",
+                "description": "The Location header contains the URL where the status of the long running operation can be checked."
+              },
+              "Retry-After": {
+                "type": "integer",
+                "format": "int32",
+                "description": "The Retry-After header can indicate how long the client should wait before polling the operation status."
+              }
+            }
+          },
+          "204": {
+            "description": "Resource does not exist."
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/Error"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Delete private link service": {
+            "$ref": "./examples/PrivateLinkServiceDelete.json"
           }
         },
         "x-ms-long-running-operation-options": {
@@ -8980,6 +11121,259 @@
         "x-ms-long-running-operation": true
       }
     },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/routeTables/{routeTableName}/routes": {
+      "get": {
+        "operationId": "Routes_List",
+        "tags": [
+          "Routes"
+        ],
+        "description": "Gets all routes in a route table.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "routeTableName",
+            "in": "path",
+            "description": "The name of the route table.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Azure operation completed successfully.",
+            "schema": {
+              "$ref": "#/definitions/RouteListResult"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "List routes": {
+            "$ref": "./examples/RouteTableRouteList.json"
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/routeTables/{routeTableName}/routes/{routeName}": {
+      "get": {
+        "operationId": "Routes_Get",
+        "tags": [
+          "Routes"
+        ],
+        "description": "Gets the specified route from a route table.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "routeTableName",
+            "in": "path",
+            "description": "The name of the route table.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "routeName",
+            "in": "path",
+            "description": "The name of the route.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Azure operation completed successfully.",
+            "schema": {
+              "$ref": "#/definitions/Route"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Get route": {
+            "$ref": "./examples/RouteTableRouteGet.json"
+          }
+        }
+      },
+      "put": {
+        "operationId": "Routes_CreateOrUpdate",
+        "tags": [
+          "Routes"
+        ],
+        "description": "Creates or updates a route in the specified route table.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "routeTableName",
+            "in": "path",
+            "description": "The name of the route table.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "routeName",
+            "in": "path",
+            "description": "The name of the route.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "routeParameters",
+            "in": "body",
+            "description": "Parameters supplied to the create or update route operation.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Route"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Resource 'Route' update operation succeeded",
+            "schema": {
+              "$ref": "#/definitions/Route"
+            }
+          },
+          "201": {
+            "description": "Resource 'Route' create operation succeeded",
+            "schema": {
+              "$ref": "#/definitions/Route"
+            },
+            "headers": {
+              "Azure-AsyncOperation": {
+                "type": "string",
+                "description": "A link to the status monitor"
+              },
+              "Retry-After": {
+                "type": "integer",
+                "format": "int32",
+                "description": "The Retry-After header can indicate how long the client should wait before polling the operation status."
+              }
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Create route": {
+            "$ref": "./examples/RouteTableRouteCreate.json"
+          }
+        },
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "azure-async-operation",
+          "final-state-schema": "#/definitions/Route"
+        },
+        "x-ms-long-running-operation": true
+      },
+      "delete": {
+        "operationId": "Routes_Delete",
+        "tags": [
+          "Routes"
+        ],
+        "description": "Deletes the specified route from a route table.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "routeTableName",
+            "in": "path",
+            "description": "The name of the route table.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "routeName",
+            "in": "path",
+            "description": "The name of the route.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Resource deleted successfully."
+          },
+          "202": {
+            "description": "Resource deletion accepted.",
+            "headers": {
+              "Location": {
+                "type": "string",
+                "description": "The Location header contains the URL where the status of the long running operation can be checked."
+              },
+              "Retry-After": {
+                "type": "integer",
+                "format": "int32",
+                "description": "The Retry-After header can indicate how long the client should wait before polling the operation status."
+              }
+            }
+          },
+          "204": {
+            "description": "Resource does not exist."
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Delete route": {
+            "$ref": "./examples/RouteTableRouteDelete.json"
+          }
+        },
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "location"
+        },
+        "x-ms-long-running-operation": true
+      }
+    },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/securityPartnerProviders": {
       "get": {
         "operationId": "SecurityPartnerProviders_ListByResourceGroup",
@@ -9709,6 +12103,544 @@
         }
       }
     },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/subnets": {
+      "get": {
+        "operationId": "Subnets_List",
+        "tags": [
+          "Subnets"
+        ],
+        "description": "Gets all subnets in a virtual network.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "virtualNetworkName",
+            "in": "path",
+            "description": "The name of the virtual network.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Azure operation completed successfully.",
+            "schema": {
+              "$ref": "#/definitions/SubnetListResult"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "List subnets": {
+            "$ref": "./examples/SubnetList.json"
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/subnets/{subnetName}": {
+      "get": {
+        "operationId": "Subnets_Get",
+        "tags": [
+          "Subnets"
+        ],
+        "description": "Gets the specified subnet by virtual network and resource group.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "virtualNetworkName",
+            "in": "path",
+            "description": "The name of the virtual network.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "subnetName",
+            "in": "path",
+            "description": "The name of the subnet.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "description": "Expands referenced resources.",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Azure operation completed successfully.",
+            "schema": {
+              "$ref": "#/definitions/Subnet"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Get subnet": {
+            "$ref": "./examples/SubnetGet.json"
+          },
+          "Get subnet with a delegation": {
+            "$ref": "./examples/SubnetGetWithDelegation.json"
+          },
+          "Get subnet with sharing scope": {
+            "$ref": "./examples/SubnetGetWithSharingScope.json"
+          }
+        }
+      },
+      "put": {
+        "operationId": "Subnets_CreateOrUpdate",
+        "tags": [
+          "Subnets"
+        ],
+        "description": "Creates or updates a subnet in the specified virtual network.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "virtualNetworkName",
+            "in": "path",
+            "description": "The name of the virtual network.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "subnetName",
+            "in": "path",
+            "description": "The name of the subnet.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "subnetParameters",
+            "in": "body",
+            "description": "Parameters supplied to the create or update subnet operation.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Subnet"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Resource 'Subnet' update operation succeeded",
+            "schema": {
+              "$ref": "#/definitions/Subnet"
+            }
+          },
+          "201": {
+            "description": "Resource 'Subnet' create operation succeeded",
+            "schema": {
+              "$ref": "#/definitions/Subnet"
+            },
+            "headers": {
+              "Azure-AsyncOperation": {
+                "type": "string",
+                "description": "A link to the status monitor"
+              },
+              "Retry-After": {
+                "type": "integer",
+                "format": "int32",
+                "description": "The Retry-After header can indicate how long the client should wait before polling the operation status."
+              }
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Create subnet": {
+            "$ref": "./examples/SubnetCreate.json"
+          },
+          "Create subnet with a delegation": {
+            "$ref": "./examples/SubnetCreateWithDelegation.json"
+          },
+          "Create subnet with service endpoints": {
+            "$ref": "./examples/SubnetCreateServiceEndpoint.json"
+          },
+          "Create subnet with service endpoints with network identifier": {
+            "$ref": "./examples/SubnetCreateServiceEndpointNetworkIdentifier.json"
+          },
+          "Create subnet with sharing scope": {
+            "$ref": "./examples/SubnetCreateWithSharingScope.json"
+          }
+        },
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "azure-async-operation",
+          "final-state-schema": "#/definitions/Subnet"
+        },
+        "x-ms-long-running-operation": true
+      },
+      "delete": {
+        "operationId": "Subnets_Delete",
+        "tags": [
+          "Subnets"
+        ],
+        "description": "Deletes the specified subnet.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "virtualNetworkName",
+            "in": "path",
+            "description": "The name of the virtual network.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "subnetName",
+            "in": "path",
+            "description": "The name of the subnet.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Resource deleted successfully."
+          },
+          "202": {
+            "description": "Resource deletion accepted.",
+            "headers": {
+              "Location": {
+                "type": "string",
+                "description": "The Location header contains the URL where the status of the long running operation can be checked."
+              },
+              "Retry-After": {
+                "type": "integer",
+                "format": "int32",
+                "description": "The Retry-After header can indicate how long the client should wait before polling the operation status."
+              }
+            }
+          },
+          "204": {
+            "description": "Resource does not exist."
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Delete subnet": {
+            "$ref": "./examples/SubnetDelete.json"
+          }
+        },
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "location"
+        },
+        "x-ms-long-running-operation": true
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/subnets/{subnetName}/prepareNetworkPolicies": {
+      "post": {
+        "operationId": "Subnets_PrepareNetworkPolicies",
+        "tags": [
+          "Subnets"
+        ],
+        "description": "Prepares a subnet by applying network intent policies.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "virtualNetworkName",
+            "in": "path",
+            "description": "The name of the virtual network.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "subnetName",
+            "in": "path",
+            "description": "The name of the subnet.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "prepareNetworkPoliciesRequestParameters",
+            "in": "body",
+            "description": "Parameters supplied to prepare subnet by applying network intent policies.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PrepareNetworkPoliciesRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Azure operation completed successfully."
+          },
+          "202": {
+            "description": "Resource operation accepted.",
+            "headers": {
+              "Location": {
+                "type": "string",
+                "description": "The Location header contains the URL where the status of the long running operation can be checked."
+              },
+              "Retry-After": {
+                "type": "integer",
+                "format": "int32",
+                "description": "The Retry-After header can indicate how long the client should wait before polling the operation status."
+              }
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Prepare Network Policies": {
+            "$ref": "./examples/SubnetPrepareNetworkPolicies.json"
+          }
+        },
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "location"
+        },
+        "x-ms-long-running-operation": true
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/subnets/{subnetName}/resourceNavigationLinks": {
+      "get": {
+        "operationId": "ResourceNavigationLinks_List",
+        "tags": [
+          "Subnets"
+        ],
+        "description": "Gets a list of resource navigation links for a subnet.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "virtualNetworkName",
+            "in": "path",
+            "description": "The name of the virtual network.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "subnetName",
+            "in": "path",
+            "description": "The name of the subnet.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Azure operation completed successfully.",
+            "schema": {
+              "$ref": "#/definitions/ResourceNavigationLinksListResult"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Get Resource Navigation Links": {
+            "$ref": "./examples/VirtualNetworkGetResourceNavigationLinks.json"
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/subnets/{subnetName}/serviceAssociationLinks": {
+      "get": {
+        "operationId": "ServiceAssociationLinks_List",
+        "tags": [
+          "Subnets"
+        ],
+        "description": "Gets a list of service association links for a subnet.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "virtualNetworkName",
+            "in": "path",
+            "description": "The name of the virtual network.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "subnetName",
+            "in": "path",
+            "description": "The name of the subnet.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Azure operation completed successfully.",
+            "schema": {
+              "$ref": "#/definitions/ServiceAssociationLinksListResult"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Get Service Association Links": {
+            "$ref": "./examples/VirtualNetworkGetServiceAssociationLinks.json"
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/subnets/{subnetName}/unprepareNetworkPolicies": {
+      "post": {
+        "operationId": "Subnets_UnprepareNetworkPolicies",
+        "tags": [
+          "Subnets"
+        ],
+        "description": "Unprepares a subnet by removing network intent policies.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "virtualNetworkName",
+            "in": "path",
+            "description": "The name of the virtual network.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "subnetName",
+            "in": "path",
+            "description": "The name of the subnet.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "unprepareNetworkPoliciesRequestParameters",
+            "in": "body",
+            "description": "Parameters supplied to unprepare subnet to remove network intent policies.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UnprepareNetworkPoliciesRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Azure operation completed successfully."
+          },
+          "202": {
+            "description": "Resource operation accepted.",
+            "headers": {
+              "Location": {
+                "type": "string",
+                "description": "The Location header contains the URL where the status of the long running operation can be checked."
+              },
+              "Retry-After": {
+                "type": "integer",
+                "format": "int32",
+                "description": "The Retry-After header can indicate how long the client should wait before polling the operation status."
+              }
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Unprepare Network Policies": {
+            "$ref": "./examples/SubnetUnprepareNetworkPolicies.json"
+          }
+        },
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "location"
+        },
+        "x-ms-long-running-operation": true
+      }
+    },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/usages": {
       "get": {
         "operationId": "VirtualNetworks_ListUsage",
@@ -9756,6 +12688,310 @@
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/virtualNetworkPeerings": {
+      "get": {
+        "operationId": "VirtualNetworkPeerings_List",
+        "tags": [
+          "VirtualNetworkPeerings"
+        ],
+        "description": "Gets all virtual network peerings in a virtual network.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "virtualNetworkName",
+            "in": "path",
+            "description": "The name of the virtual network.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Azure operation completed successfully.",
+            "schema": {
+              "$ref": "#/definitions/VirtualNetworkPeeringListResult"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "List peerings": {
+            "$ref": "./examples/VirtualNetworkPeeringList.json"
+          },
+          "List peerings with remote virtual network encryption": {
+            "$ref": "./examples/VirtualNetworkPeeringListWithRemoteVirtualNetworkEncryption.json"
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/virtualNetworkPeerings/{virtualNetworkPeeringName}": {
+      "get": {
+        "operationId": "VirtualNetworkPeerings_Get",
+        "tags": [
+          "VirtualNetworkPeerings"
+        ],
+        "description": "Gets the specified virtual network peering.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "virtualNetworkName",
+            "in": "path",
+            "description": "The name of the virtual network.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "virtualNetworkPeeringName",
+            "in": "path",
+            "description": "The name of the virtual network peering.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Azure operation completed successfully.",
+            "schema": {
+              "$ref": "#/definitions/VirtualNetworkPeering"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Get V6 subnet peering": {
+            "$ref": "./examples/VirtualNetworkV6SubnetPeeringGet.json"
+          },
+          "Get peering": {
+            "$ref": "./examples/VirtualNetworkPeeringGet.json"
+          },
+          "Get peering with remote virtual network encryption": {
+            "$ref": "./examples/VirtualNetworkPeeringGetWithRemoteVirtualNetworkEncryption.json"
+          },
+          "Get subnet peering": {
+            "$ref": "./examples/VirtualNetworkSubnetPeeringGet.json"
+          }
+        }
+      },
+      "put": {
+        "operationId": "VirtualNetworkPeerings_CreateOrUpdate",
+        "tags": [
+          "VirtualNetworkPeerings"
+        ],
+        "description": "Creates or updates a peering in the specified virtual network.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "virtualNetworkName",
+            "in": "path",
+            "description": "The name of the virtual network.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "virtualNetworkPeeringName",
+            "in": "path",
+            "description": "The name of the virtual network peering.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "syncRemoteAddressSpace",
+            "in": "query",
+            "description": "Parameter indicates the intention to sync the peering with the current address space on the remote vNet after it's updated.",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true"
+            ],
+            "x-ms-enum": {
+              "name": "SyncRemoteAddressSpace",
+              "modelAsString": true,
+              "values": [
+                {
+                  "name": "true",
+                  "value": "true",
+                  "description": "true"
+                }
+              ]
+            }
+          },
+          {
+            "name": "VirtualNetworkPeeringParameters",
+            "in": "body",
+            "description": "Parameters supplied to the create or update virtual network peering operation.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/VirtualNetworkPeering"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Resource 'VirtualNetworkPeering' update operation succeeded",
+            "schema": {
+              "$ref": "#/definitions/VirtualNetworkPeering"
+            }
+          },
+          "201": {
+            "description": "Resource 'VirtualNetworkPeering' create operation succeeded",
+            "schema": {
+              "$ref": "#/definitions/VirtualNetworkPeering"
+            },
+            "headers": {
+              "Azure-AsyncOperation": {
+                "type": "string",
+                "description": "A link to the status monitor"
+              },
+              "Retry-After": {
+                "type": "integer",
+                "format": "int32",
+                "description": "The Retry-After header can indicate how long the client should wait before polling the operation status."
+              }
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Create V6 Subnet peering": {
+            "$ref": "./examples/VirtualNetworkV6SubnetPeeringCreate.json"
+          },
+          "Create peering": {
+            "$ref": "./examples/VirtualNetworkPeeringCreate.json"
+          },
+          "Create peering with remote virtual network encryption": {
+            "$ref": "./examples/VirtualNetworkPeeringCreateWithRemoteVirtualNetworkEncryption.json"
+          },
+          "Create subnet peering": {
+            "$ref": "./examples/VirtualNetworkSubnetPeeringCreate.json"
+          },
+          "Sync Peering": {
+            "$ref": "./examples/VirtualNetworkPeeringSync.json"
+          },
+          "Sync V6 Subnet Peering": {
+            "$ref": "./examples/VirtualNetworkV6SubnetPeeringSync.json"
+          },
+          "Sync subnet Peering": {
+            "$ref": "./examples/VirtualNetworkSubnetPeeringSync.json"
+          }
+        },
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "azure-async-operation",
+          "final-state-schema": "#/definitions/VirtualNetworkPeering"
+        },
+        "x-ms-long-running-operation": true
+      },
+      "delete": {
+        "operationId": "VirtualNetworkPeerings_Delete",
+        "tags": [
+          "VirtualNetworkPeerings"
+        ],
+        "description": "Deletes the specified virtual network peering.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "virtualNetworkName",
+            "in": "path",
+            "description": "The name of the virtual network.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "virtualNetworkPeeringName",
+            "in": "path",
+            "description": "The name of the virtual network peering.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Resource deleted successfully."
+          },
+          "202": {
+            "description": "Resource deletion accepted.",
+            "headers": {
+              "Location": {
+                "type": "string",
+                "description": "The Location header contains the URL where the status of the long running operation can be checked."
+              },
+              "Retry-After": {
+                "type": "integer",
+                "format": "int32",
+                "description": "The Retry-After header can indicate how long the client should wait before polling the operation status."
+              }
+            }
+          },
+          "204": {
+            "description": "Resource does not exist."
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Delete peering": {
+            "$ref": "./examples/VirtualNetworkPeeringDelete.json"
+          }
+        },
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "location"
+        },
+        "x-ms-long-running-operation": true
       }
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualRouters": {
@@ -9982,6 +13218,259 @@
         "x-ms-examples": {
           "Delete VirtualRouter": {
             "$ref": "./examples/VirtualRouterDelete.json"
+          }
+        },
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "location"
+        },
+        "x-ms-long-running-operation": true
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualRouters/{virtualRouterName}/peerings": {
+      "get": {
+        "operationId": "VirtualRouterPeerings_List",
+        "tags": [
+          "VirtualRouterPeerings"
+        ],
+        "description": "Lists all Virtual Router Peerings in a Virtual Router resource.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "virtualRouterName",
+            "in": "path",
+            "description": "The name of the Virtual Router.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Azure operation completed successfully.",
+            "schema": {
+              "$ref": "#/definitions/VirtualRouterPeeringListResult"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/Error"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "List all Virtual Router Peerings for a given Virtual Router": {
+            "$ref": "./examples/VirtualRouterPeeringList.json"
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualRouters/{virtualRouterName}/peerings/{peeringName}": {
+      "get": {
+        "operationId": "VirtualRouterPeerings_Get",
+        "tags": [
+          "VirtualRouterPeerings"
+        ],
+        "description": "Gets the specified Virtual Router Peering.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "virtualRouterName",
+            "in": "path",
+            "description": "The name of the Virtual Router.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "peeringName",
+            "in": "path",
+            "description": "The name of the resource that is unique within a resource group. This name can be used to access the resource.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Azure operation completed successfully.",
+            "schema": {
+              "$ref": "#/definitions/VirtualRouterPeering"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/Error"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Get Virtual Router Peering": {
+            "$ref": "./examples/VirtualRouterPeeringGet.json"
+          }
+        }
+      },
+      "put": {
+        "operationId": "VirtualRouterPeerings_CreateOrUpdate",
+        "tags": [
+          "VirtualRouterPeerings"
+        ],
+        "description": "Creates or updates the specified Virtual Router Peering.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "virtualRouterName",
+            "in": "path",
+            "description": "The name of the Virtual Router.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "peeringName",
+            "in": "path",
+            "description": "The name of the resource that is unique within a resource group. This name can be used to access the resource.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "parameters",
+            "in": "body",
+            "description": "Parameters supplied to the create or update Virtual Router Peering operation.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/VirtualRouterPeering"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Resource 'VirtualRouterPeering' update operation succeeded",
+            "schema": {
+              "$ref": "#/definitions/VirtualRouterPeering"
+            }
+          },
+          "201": {
+            "description": "Resource 'VirtualRouterPeering' create operation succeeded",
+            "schema": {
+              "$ref": "#/definitions/VirtualRouterPeering"
+            },
+            "headers": {
+              "Azure-AsyncOperation": {
+                "type": "string",
+                "description": "A link to the status monitor"
+              },
+              "Retry-After": {
+                "type": "integer",
+                "format": "int32",
+                "description": "The Retry-After header can indicate how long the client should wait before polling the operation status."
+              }
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/Error"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Create Virtual Router Peering": {
+            "$ref": "./examples/VirtualRouterPeeringPut.json"
+          }
+        },
+        "x-ms-long-running-operation-options": {
+          "final-state-via": "azure-async-operation",
+          "final-state-schema": "#/definitions/VirtualRouterPeering"
+        },
+        "x-ms-long-running-operation": true
+      },
+      "delete": {
+        "operationId": "VirtualRouterPeerings_Delete",
+        "tags": [
+          "VirtualRouterPeerings"
+        ],
+        "description": "Deletes the specified peering from a Virtual Router.",
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "virtualRouterName",
+            "in": "path",
+            "description": "The name of the Virtual Router.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "peeringName",
+            "in": "path",
+            "description": "The name of the resource that is unique within a resource group. This name can be used to access the resource.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Resource deleted successfully."
+          },
+          "202": {
+            "description": "Resource deletion accepted.",
+            "headers": {
+              "Location": {
+                "type": "string",
+                "description": "The Location header contains the URL where the status of the long running operation can be checked."
+              },
+              "Retry-After": {
+                "type": "integer",
+                "format": "int32",
+                "description": "The Retry-After header can indicate how long the client should wait before polling the operation status."
+              }
+            }
+          },
+          "204": {
+            "description": "Resource does not exist."
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "./common.json#/definitions/Error"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Delete VirtualRouterPeering": {
+            "$ref": "./examples/VirtualRouterPeeringDelete.json"
           }
         },
         "x-ms-long-running-operation-options": {
@@ -11015,7 +14504,7 @@
           "description": "Reference to an existing virtual network required for Developer Bastion Host only."
         },
         "networkAcls": {
-          "$ref": "./common.json#/definitions/BastionHostPropertiesFormatNetworkAcls"
+          "$ref": "#/definitions/BastionHostPropertiesFormatNetworkAcls"
         },
         "provisioningState": {
           "$ref": "./common.json#/definitions/NetworkProvisioningState",
@@ -11068,6 +14557,18 @@
           "type": "boolean",
           "description": "Enable/Disable Private Only feature of the Bastion Host resource.",
           "default": false
+        }
+      }
+    },
+    "BastionHostPropertiesFormatNetworkAcls": {
+      "type": "object",
+      "properties": {
+        "ipRules": {
+          "type": "array",
+          "description": "Sets the IP ACL rules for Developer Bastion Host.",
+          "items": {
+            "$ref": "#/definitions/IPRule"
+          }
         }
       }
     },
@@ -12729,7 +16230,7 @@
       "description": "IpamPool prefix allocation reference.",
       "properties": {
         "pool": {
-          "$ref": "./common.json#/definitions/IpamPoolPrefixAllocationPool",
+          "$ref": "#/definitions/IpamPoolPrefixAllocationPool",
           "x-ms-client-flatten": true
         },
         "numberOfIpAddresses": {
@@ -12743,6 +16244,16 @@
             "type": "string"
           },
           "readOnly": true
+        }
+      }
+    },
+    "IpamPoolPrefixAllocationPool": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "arm-id",
+          "description": "Resource id of the associated Azure IpamPool resource."
         }
       }
     },
@@ -13719,7 +17230,7 @@
           "readOnly": true
         },
         "networkProfile": {
-          "$ref": "./common.json#/definitions/NetworkVirtualAppliancePropertiesFormatNetworkProfile",
+          "$ref": "#/definitions/NetworkVirtualAppliancePropertiesFormatNetworkProfile",
           "description": "Network Profile containing configurations for Public and Private NIC."
         },
         "additionalNics": {
@@ -13792,6 +17303,19 @@
           "type": "string",
           "description": "A Internal Load Balancer's HA port frontend IP address. Can be used to set routes & UDR to load balance traffic between NVA instances",
           "readOnly": true
+        }
+      }
+    },
+    "NetworkVirtualAppliancePropertiesFormatNetworkProfile": {
+      "type": "object",
+      "description": "Network Profile containing configurations for Public and Private NIC.",
+      "properties": {
+        "networkInterfaceConfigurations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/VirtualApplianceNetworkInterfaceConfiguration"
+          },
+          "x-ms-identifiers": []
         }
       }
     },
