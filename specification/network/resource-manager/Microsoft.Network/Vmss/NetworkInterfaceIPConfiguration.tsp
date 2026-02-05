@@ -14,7 +14,6 @@ namespace microsoft.Compute;
 /**
  * IPConfiguration in a network interface.
  */
-@parentResource(NetworkInterface)
 model NetworkInterfaceIPConfiguration
   is Azure.ResourceManager.ProxyResource<NetworkInterfaceIPConfigurationPropertiesFormat> {
   ...ResourceNameParameter<
@@ -26,38 +25,87 @@ model NetworkInterfaceIPConfiguration
   ...Azure.ResourceManager.Legacy.EntityTagProperty;
 }
 
-@armResourceOperations
+alias NetworkInterfaceIPConfigurationOps = Azure.ResourceManager.Legacy.RoutedOperations<
+  {
+    ...ApiVersionParameter;
+    ...SubscriptionIdParameter;
+    ...ResourceGroupParameter;
+  },
+  {},
+  ResourceRoute = #{
+    route: "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute",
+  }
+>;
+
+@armResourceOperations(#{ allowStaticRoutes: true })
 interface NetworkInterfaceIPConfigurations {
   /**
    * Get the specified network interface ip configuration in a virtual machine scale set.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "non-standard operations"
+  @get
+  @route("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute/virtualMachineScaleSets/{virtualMachineScaleSetName}/virtualMachines/{virtualmachineIndex}/networkInterfaces/{networkInterfaceName}/ipConfigurations/{ipConfigurationName}")
   @operationId("NetworkInterfaces_GetVirtualMachineScaleSetIpConfiguration")
-  getVirtualMachineScaleSetIpConfiguration is ArmResourceRead<
+  getVirtualMachineScaleSetIpConfiguration is NetworkInterfaceIPConfigurationOps.ActionSync<
     NetworkInterfaceIPConfiguration,
+    Request = void,
     Parameters = {
+      @path
+      @key
+      virtualMachineScaleSetName: string;
+
+      @path
+      @key
+      virtualmachineIndex: string;
+
+      @path
+      @key
+      networkInterfaceName: string;
+
+      @path
+      @key
+      ipConfigurationName: string;
+
       /**
        * Expands referenced resources.
        */
       @query("$expand")
       $expand?: string;
-    }
+    },
+    Response = ArmResponse<NetworkInterfaceIPConfiguration>
   >;
 
   /**
    * Get the specified network interface ip configuration in a virtual machine scale set.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "non-standard operations"
+  @get
   @operationId("NetworkInterfaces_ListVirtualMachineScaleSetIpConfigurations")
   listVirtualMachineScaleSetIpConfigurations is ArmResourceListByParent<
     NetworkInterfaceIPConfiguration,
     Parameters = {
+      @path
+      @segment("virtualMachineScaleSets")
+      @key
+      virtualMachineScaleSetName: string;
+
+      @path
+      @segment("virtualMachines")
+      @key
+      virtualmachineIndex: string;
+
+      @path
+      @segment("networkInterfaces")
+      @key
+      networkInterfaceName: string;
+
       /**
        * Expands referenced resources.
        */
       @query("$expand")
       $expand?: string;
-    }
+    },
+    Response = ArmResponse<ResourceListResult<NetworkInterfaceIPConfiguration>>
   >;
 }
 

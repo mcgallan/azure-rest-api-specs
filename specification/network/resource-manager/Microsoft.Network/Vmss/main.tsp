@@ -25,7 +25,7 @@ using Azure.Core;
 using Azure.ResourceManager;
 using TypeSpec.Versioning;
 /**
- * Network Client
+ * The Microsoft Azure Network management API provides a RESTful set of web services that interact with Microsoft Azure Networks service to manage your network resources. The API has entities that capture the relationship between an end user and the Microsoft Azure Networks service.
  */
 @armProviderNamespace
 @service(#{ title: "NetworkManagementClient" })
@@ -39,7 +39,7 @@ namespace microsoft.Compute;
  */
 enum Versions {
   /**
-   * The 2018-10-01 API version.
+   * The 2025-05-01 API version.
    */
-  v2018_10_01: "2018-10-01",
+  v2025_05_01: "2025-05-01",
 }

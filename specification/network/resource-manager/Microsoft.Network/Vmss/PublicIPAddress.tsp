@@ -38,26 +38,85 @@ model PublicIPAddress
   ...Azure.ResourceManager.AvailabilityZonesProperty;
 }
 
-@armResourceOperations
+alias PublicIPAddressOps = Azure.ResourceManager.Legacy.RoutedOperations<
+  {
+    ...ApiVersionParameter;
+    ...SubscriptionIdParameter;
+    ...ResourceGroupParameter;
+  },
+  {},
+  ResourceRoute = #{
+    route: "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute",
+  }
+>;
+
+@armResourceOperations(#{ allowStaticRoutes: true })
 interface PublicIPAddresses {
   /**
    * Get the specified public IP address in a virtual machine scale set.
    */
-  getVirtualMachineScaleSetPublicIPAddress is ArmResourceRead<
+  @get
+  @route("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute/virtualMachineScaleSets/{virtualMachineScaleSetName}/virtualMachines/{virtualmachineIndex}/networkInterfaces/{networkInterfaceName}/ipconfigurations/{ipConfigurationName}/publicipaddresses/{publicIpAddressName}")
+  getVirtualMachineScaleSetPublicIPAddress is PublicIPAddressOps.ActionSync<
     PublicIPAddress,
+    Request = void,
     Parameters = {
+      @path
+      @key
+      virtualMachineScaleSetName: string;
+
+      @path
+      @key
+      virtualmachineIndex: string;
+
+      @path
+      @key
+      networkInterfaceName: string;
+
+      @path
+      @key
+      ipConfigurationName: string;
+
+      @path
+      @key
+      publicIpAddressName: string;
+
       /**
        * Expands referenced resources.
        */
       @query("$expand")
       $expand?: string;
-    }
+    },
+    Response = ArmResponse<PublicIPAddress>
   >;
 
   /**
    * Gets information about all public IP addresses in a virtual machine IP configuration in a virtual machine scale set.
    */
-  listVirtualMachineScaleSetVMPublicIPAddresses is ArmResourceListByParent<PublicIPAddress>;
+  listVirtualMachineScaleSetVMPublicIPAddresses is ArmResourceListByParent<
+    PublicIPAddress,
+    Parameters = {
+      @path
+      @segment("virtualMachineScaleSets")
+      @key
+      virtualMachineScaleSetName: string;
+
+      @path
+      @segment("virtualMachines")
+      @key
+      virtualmachineIndex: string;
+
+      @path
+      @segment("networkInterfaces")
+      @key
+      networkInterfaceName: string;
+
+      @path
+      @segment("ipconfigurations")
+      @key
+      ipConfigurationName: string;
+    }
+  >;
 }
 
 @@doc(PublicIPAddress.name, "The name of the public IP Address.");

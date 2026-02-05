@@ -22,6 +22,7 @@ interface NetworkInterfacesOperationGroup {
   @operationId("NetworkInterfaces_ListVirtualMachineScaleSetNetworkInterfaces")
   @autoRoute
   @get
+  @list
   @action("networkInterfaces")
   listVirtualMachineScaleSetNetworkInterfaces is ArmProviderActionSync<
     Response = ResourceListResult<NetworkInterface>,
@@ -46,6 +47,7 @@ interface PublicIPAddressesOperationGroup {
   @operationId("PublicIPAddresses_ListVirtualMachineScaleSetPublicIPAddresses")
   @autoRoute
   @get
+  @list
   @action("publicipaddresses")
   listVirtualMachineScaleSetPublicIPAddresses is ArmProviderActionSync<
     Response = ResourceListResult<PublicIPAddress>,

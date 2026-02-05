@@ -31,26 +31,65 @@ model NetworkInterface
   ...Azure.ResourceManager.Legacy.EntityTagProperty;
 }
 
-@armResourceOperations
+alias NetworkInterfaceOps = Azure.ResourceManager.Legacy.RoutedOperations<
+  {
+    ...ApiVersionParameter;
+    ...SubscriptionIdParameter;
+    ...ResourceGroupParameter;
+  },
+  {},
+  ResourceRoute = #{
+    route: "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute",
+  }
+>;
+
+@armResourceOperations(#{ allowStaticRoutes: true })
 interface NetworkInterfaces {
   /**
    * Get the specified network interface in a virtual machine scale set.
    */
-  getVirtualMachineScaleSetNetworkInterface is ArmResourceRead<
+  @get
+  @route("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute/virtualMachineScaleSets/{virtualMachineScaleSetName}/virtualMachines/{virtualmachineIndex}/networkInterfaces/{networkInterfaceName}")
+  getVirtualMachineScaleSetNetworkInterface is NetworkInterfaceOps.ActionSync<
     NetworkInterface,
+    Request = void,
     Parameters = {
+      @path
+      @key
+      virtualMachineScaleSetName: string;
+
+      @path
+      @key
+      virtualmachineIndex: string;
+
+      @path
+      @key
+      networkInterfaceName: string;
+
       /**
        * Expands referenced resources.
        */
       @query("$expand")
       $expand?: string;
-    }
+    },
+    Response = ArmResponse<NetworkInterface>
   >;
 
   /**
    * Gets information about all network interfaces in a virtual machine in a virtual machine scale set.
    */
-  listVirtualMachineScaleSetVMNetworkInterfaces is ArmResourceListByParent<NetworkInterface>;
+  listVirtualMachineScaleSetVMNetworkInterfaces is ArmResourceListByParent<
+    NetworkInterface,
+    Parameters = {
+      @path
+      @segment("virtualMachineScaleSets")
+      virtualMachineScaleSetName: string;
+
+      @path
+      @segment("virtualMachines")
+      virtualmachineIndex: string;
+    }
+  >;
 }
 
 @@doc(NetworkInterface.name, "The name of the network interface.");
