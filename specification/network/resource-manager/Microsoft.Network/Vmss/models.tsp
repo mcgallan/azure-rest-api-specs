@@ -61,7 +61,7 @@ union SecurityRuleProtocol {
 /**
  * The current provisioning state.
  */
-#suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-provisioning-state" "For backward compatibility"
+#suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-provisioning-state" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 union ProvisioningState {
   string,
 
@@ -646,7 +646,7 @@ union NetworkInterfaceAuxiliarySku {
 /**
  * The domain name label scope. If a domain name label and a domain name label scope are specified, an A DNS record is created for the public IP in the Microsoft Azure DNS system with a hashed value includes in FQDN.
  */
-#suppress "@azure-tools/typespec-azure-core/no-enum" "For backward compatibility"
+#suppress "@azure-tools/typespec-azure-core/no-enum" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 enum PublicIpAddressDnsSettingsDomainNameLabelScope {
   /**
    * TenantReuse
@@ -672,7 +672,7 @@ enum PublicIpAddressDnsSettingsDomainNameLabelScope {
 /**
  * The type of identity used for the resource. The type 'SystemAssigned, UserAssigned' includes both an implicitly created identity and a set of user assigned identities. The type 'None' will remove any identities from the virtual machine.
  */
-#suppress "@azure-tools/typespec-azure-core/no-enum" "For backward compatibility"
+#suppress "@azure-tools/typespec-azure-core/no-enum" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 enum ResourceIdentityType {
   /**
    * SystemAssigned
@@ -855,7 +855,7 @@ model SubResource {
 /**
  * NetworkSecurityGroup resource.
  */
-#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "For backward compatibility"
+#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model NetworkSecurityGroup extends Resource {
   /**
    * Properties of the network security group.
@@ -923,7 +923,7 @@ model NetworkSecurityGroupPropertiesFormat {
 /**
  * Network security rule.
  */
-#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "For backward compatibility"
+#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model SecurityRule extends SubResource {
   /**
    * Properties of the security rule.
@@ -1036,7 +1036,7 @@ model SecurityRulePropertiesFormat {
 /**
  * An application security group in a resource group.
  */
-#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "For backward compatibility"
+#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model ApplicationSecurityGroup extends Resource {
   /**
    * Properties of the application security group.
@@ -1096,14 +1096,14 @@ model Resource {
   /**
    * Resource tags.
    */
-  #suppress "@azure-tools/typespec-azure-resource-manager/arm-no-record" "For backward compatibility"
+  #suppress "@azure-tools/typespec-azure-resource-manager/arm-no-record" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   tags?: Record<string>;
 }
 
 /**
  * Subnet in a virtual network resource.
  */
-#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "For backward compatibility"
+#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model Subnet extends SubResource {
   /**
    * Properties of the subnet.
@@ -1260,7 +1260,7 @@ model SubnetPropertiesFormat {
 /**
  * Route table resource.
  */
-#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "For backward compatibility"
+#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model RouteTable extends Resource {
   /**
    * Properties of the route table.
@@ -1310,7 +1310,7 @@ model RouteTablePropertiesFormat {
 /**
  * Route resource.
  */
-#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "For backward compatibility"
+#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model Route extends SubResource {
   /**
    * Properties of the route.
@@ -1395,7 +1395,7 @@ model ServiceEndpointPropertiesFormat {
 /**
  * Service End point policy resource.
  */
-#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "For backward compatibility"
+#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model ServiceEndpointPolicy extends Resource {
   /**
    * Properties of the service end point policy.
@@ -1456,7 +1456,7 @@ model ServiceEndpointPolicyPropertiesFormat {
 /**
  * Service Endpoint policy definitions.
  */
-#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "For backward compatibility"
+#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model ServiceEndpointPolicyDefinition extends SubResource {
   /**
    * Properties of the service endpoint policy definition.
@@ -1509,7 +1509,7 @@ model ServiceEndpointPolicyDefinitionPropertiesFormat {
 /**
  * Private endpoint resource.
  */
-#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "For backward compatibility"
+#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model PrivateEndpoint extends Resource {
   /**
    * The extended location of the load balancer.
@@ -1589,7 +1589,7 @@ model PrivateEndpointProperties {
 /**
  * PrivateLinkServiceConnection resource.
  */
-#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "For backward compatibility"
+#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model PrivateLinkServiceConnection extends SubResource {
   /**
    * Properties of the private link service connection.
@@ -1732,7 +1732,7 @@ model PrivateEndpointIPConfigurationProperties {
 /**
  * IP configuration.
  */
-#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "For backward compatibility"
+#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model IPConfiguration extends SubResource {
   /**
    * Properties of the IP configuration.
@@ -1952,7 +1952,7 @@ model IpTag {
 /**
  * Nat Gateway resource.
  */
-#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "For backward compatibility"
+#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model NatGateway extends Resource {
   /**
    * The nat gateway SKU.
@@ -2048,7 +2048,7 @@ model NatGatewayPropertiesFormat {
  * IP configuration profile child resource.
  */
 #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "For backward compatibility"
+#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model IPConfigurationProfile extends SubResource {
   /**
    * Properties of the IP configuration profile.
@@ -2093,7 +2093,7 @@ model IPConfigurationProfilePropertiesFormat {
 /**
  * ResourceNavigationLink resource.
  */
-#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "For backward compatibility"
+#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model ResourceNavigationLink extends SubResource {
   /**
    * Resource navigation link properties format.
@@ -2142,7 +2142,7 @@ model ResourceNavigationLinkFormat {
 /**
  * ServiceAssociationLink resource.
  */
-#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "For backward compatibility"
+#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model ServiceAssociationLink extends SubResource {
   /**
    * Resource navigation link properties format.
@@ -2201,7 +2201,7 @@ model ServiceAssociationLinkPropertiesFormat {
 /**
  * Details the service to which the subnet is delegated.
  */
-#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "For backward compatibility"
+#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model Delegation extends SubResource {
   /**
    * Properties of the subnet.
@@ -2250,7 +2250,7 @@ model ServiceDelegationPropertiesFormat {
 /**
  * IP configuration of an application gateway. Currently 1 public and 1 private IP configuration is allowed.
  */
-#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "For backward compatibility"
+#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model ApplicationGatewayIPConfiguration extends SubResource {
   /**
    * Properties of the application gateway IP configuration.
@@ -2296,7 +2296,7 @@ model ApplicationGatewayIPConfigurationPropertiesFormat {
  * IpamPool prefix allocation reference.
  */
 model IpamPoolPrefixAllocation {
-  #suppress "@azure-tools/typespec-azure-core/documentation-required" "For backward compatibility"
+  #suppress "@azure-tools/typespec-azure-core/documentation-required" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   pool?: IpamPoolPrefixAllocationPool;
 
   /**
@@ -2311,7 +2311,7 @@ model IpamPoolPrefixAllocation {
   allocatedAddressPrefixes?: string[];
 }
 
-#suppress "@azure-tools/typespec-azure-core/documentation-required" "For backward compatibility"
+#suppress "@azure-tools/typespec-azure-core/documentation-required" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model IpamPoolPrefixAllocationPool {
   /**
    * Resource id of the associated Azure IpamPool resource.
@@ -2322,7 +2322,7 @@ model IpamPoolPrefixAllocationPool {
 /**
  * A flow log resource.
  */
-#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "For backward compatibility"
+#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model FlowLog extends Resource {
   /**
    * Properties of the flow log.
@@ -2492,11 +2492,11 @@ model ManagedServiceIdentity {
   /**
    * The list of user identities associated with resource. The user identity dictionary key references will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
    */
-  #suppress "@azure-tools/typespec-azure-resource-manager/arm-no-record" "For backward compatibility"
+  #suppress "@azure-tools/typespec-azure-resource-manager/arm-no-record" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   userAssignedIdentities?: Record<Components1Jq1T4ISchemasManagedserviceidentityPropertiesUserassignedidentitiesAdditionalproperties>;
 }
 #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-#suppress "@azure-tools/typespec-azure-core/documentation-required" "For backward compatibility"
+#suppress "@azure-tools/typespec-azure-core/documentation-required" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model Components1Jq1T4ISchemasManagedserviceidentityPropertiesUserassignedidentitiesAdditionalproperties {
   /**
    * The principal id of user assigned identity.
@@ -2599,7 +2599,7 @@ model NetworkInterfaceIPConfigurationPropertiesFormat {
 /**
  * Virtual Network Tap resource.
  */
-#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "For backward compatibility"
+#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model VirtualNetworkTap extends Resource {
   /**
    * Virtual Network Tap Properties.
@@ -2656,7 +2656,7 @@ model VirtualNetworkTapPropertiesFormat {
 /**
  * Tap configuration in a Network Interface.
  */
-#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "For backward compatibility"
+#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model NetworkInterfaceTapConfiguration extends SubResource {
   /**
    * Properties of the Virtual Network Tap configuration.
@@ -2700,7 +2700,7 @@ model NetworkInterfaceTapConfigurationPropertiesFormat {
 /**
  * Frontend IP address of the load balancer.
  */
-#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "For backward compatibility"
+#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model FrontendIPConfiguration extends SubResource {
   /**
    * Properties of the load balancer probe.
@@ -2806,7 +2806,7 @@ model FrontendIPConfigurationPropertiesFormat {
 /**
  * Backend Address Pool of an application gateway.
  */
-#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "For backward compatibility"
+#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model ApplicationGatewayBackendAddressPool extends SubResource {
   /**
    * Properties of the application gateway backend address pool.
@@ -2874,7 +2874,7 @@ model ApplicationGatewayBackendAddress {
 /**
  * Pool of backend IP addresses.
  */
-#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "For backward compatibility"
+#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model BackendAddressPool extends SubResource {
   /**
    * Properties of load balancer backend address pool.
@@ -3081,7 +3081,7 @@ model NatRulePortMapping {
 /**
  * Inbound NAT rule of the load balancer.
  */
-#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "For backward compatibility"
+#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model InboundNatRule extends SubResource {
   /**
    * Properties of load balancer inbound NAT rule.
@@ -3236,7 +3236,7 @@ model NetworkInterfaceDnsSettings {
 /**
  * Private link service resource.
  */
-#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "For backward compatibility"
+#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model PrivateLinkService extends Resource {
   /**
    * The extended location of the load balancer.
@@ -3328,7 +3328,7 @@ model PrivateLinkServiceProperties {
 /**
  * The private link service ip configuration.
  */
-#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "For backward compatibility"
+#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model PrivateLinkServiceIpConfiguration extends SubResource {
   /**
    * Properties of the private link service ip configuration.
@@ -3395,7 +3395,7 @@ model PrivateLinkServiceIpConfigurationProperties {
 /**
  * PrivateEndpointConnection resource.
  */
-#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "For backward compatibility"
+#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model PrivateEndpointConnection extends SubResource {
   /**
    * Properties of the private end point connection.
@@ -3458,7 +3458,7 @@ model PrivateEndpointConnectionProperties {
  * The visibility list of the private link service.
  */
 #suppress "@azure-tools/typespec-azure-resource-manager/no-empty-model" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "For backward compatibility"
+#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model PrivateLinkServicePropertiesVisibility extends ResourceSet {}
 
 /**
@@ -3475,7 +3475,7 @@ model ResourceSet {
  * The auto-approval list of the private link service.
  */
 #suppress "@azure-tools/typespec-azure-resource-manager/no-empty-model" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "For backward compatibility"
+#suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model PrivateLinkServicePropertiesAutoApproval extends ResourceSet {}
 
 /**

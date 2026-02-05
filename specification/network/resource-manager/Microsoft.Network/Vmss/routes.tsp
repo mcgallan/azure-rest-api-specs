@@ -13,7 +13,7 @@ using TypeSpec.OpenAPI;
 
 namespace Microsoft.Compute;
 
-#suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-interface-requires-decorator" "For backward compatibility"
+#suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-interface-requires-decorator" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 interface NetworkInterfacesOperationGroup {
   /**
    * Gets all network interfaces in a virtual machine scale set.
@@ -39,7 +39,7 @@ interface NetworkInterfacesOperationGroup {
 }
 
 #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-#suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-interface-requires-decorator" "For backward compatibility"
+#suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-interface-requires-decorator" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 interface PublicIPAddressesOperationGroup {
   /**
    * Gets information about all public IP addresses on a virtual machine scale set level.
