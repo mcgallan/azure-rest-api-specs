@@ -52,7 +52,7 @@ alias PublicIPAddressOps = Azure.ResourceManager.Legacy.RoutedOperations<
   }
 >;
 
-@armResourceOperations(#{ allowStaticRoutes: true })
+@armResourceOperations(#{ allowStaticRoutes: true, omitTags: true })
 interface PublicIPAddresses {
   /**
    * Get the specified public IP address in a virtual machine scale set.

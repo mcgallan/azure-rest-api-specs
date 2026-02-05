@@ -39,7 +39,7 @@ alias NetworkInterfaceIPConfigurationOps = Azure.ResourceManager.Legacy.RoutedOp
   }
 >;
 
-@armResourceOperations(#{ allowStaticRoutes: true })
+@armResourceOperations(#{ allowStaticRoutes: true, omitTags: true })
 interface NetworkInterfaceIPConfigurations {
   /**
    * Get the specified network interface ip configuration in a virtual machine scale set.
@@ -48,6 +48,7 @@ interface NetworkInterfaceIPConfigurations {
   @get
   @route("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{virtualMachineScaleSetName}/virtualMachines/{virtualmachineIndex}/networkInterfaces/{networkInterfaceName}/ipConfigurations/{ipConfigurationName}")
   @operationId("NetworkInterfaces_GetVirtualMachineScaleSetIpConfiguration")
+  @tag("NetworkInterfaces")
   getVirtualMachineScaleSetIpConfiguration is NetworkInterfaceIPConfigurationOps.ActionSync<
     NetworkInterfaceIPConfiguration,
     Request = void,
@@ -89,6 +90,7 @@ interface NetworkInterfaceIPConfigurations {
   @list
   @route("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute/virtualMachineScaleSets/{virtualMachineScaleSetName}/virtualMachines/{virtualmachineIndex}/networkInterfaces/{networkInterfaceName}/ipConfigurations")
   @operationId("NetworkInterfaces_ListVirtualMachineScaleSetIpConfigurations")
+  @tag("NetworkInterfaces")
   listVirtualMachineScaleSetIpConfigurations is NetworkInterfaceIPConfigurationOps.ActionSync<
     NetworkInterfaceIPConfiguration,
     Request = void,

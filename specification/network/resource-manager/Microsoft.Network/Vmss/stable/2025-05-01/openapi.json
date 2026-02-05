@@ -41,18 +41,15 @@
   "tags": [
     {
       "name": "NetworkInterfaces"
-    },
-    {
-      "name": "NetworkInterfaceIPConfigurations"
-    },
-    {
-      "name": "PublicIPAddresses"
     }
   ],
   "paths": {
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{virtualMachineScaleSetName}/networkInterfaces": {
       "get": {
         "operationId": "NetworkInterfaces_ListVirtualMachineScaleSetNetworkInterfaces",
+        "tags": [
+          "NetworkInterfaces"
+        ],
         "description": "Gets all network interfaces in a virtual machine scale set.",
         "parameters": [
           {
@@ -264,7 +261,7 @@
       "get": {
         "operationId": "NetworkInterfaces_GetVirtualMachineScaleSetIpConfiguration",
         "tags": [
-          "NetworkInterfaceIPConfigurations"
+          "NetworkInterfaces"
         ],
         "description": "Get the specified network interface ip configuration in a virtual machine scale set.",
         "parameters": [
@@ -333,9 +330,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{virtualMachineScaleSetName}/virtualMachines/{virtualmachineIndex}/networkInterfaces/{networkInterfaceName}/ipconfigurations/{ipConfigurationName}/publicipaddresses": {
       "get": {
         "operationId": "PublicIPAddresses_ListVirtualMachineScaleSetVMPublicIPAddresses",
-        "tags": [
-          "PublicIPAddresses"
-        ],
         "description": "Gets information about all public IP addresses in a virtual machine IP configuration in a virtual machine scale set.",
         "parameters": [
           {
@@ -399,9 +393,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{virtualMachineScaleSetName}/virtualMachines/{virtualmachineIndex}/networkInterfaces/{networkInterfaceName}/ipconfigurations/{ipConfigurationName}/publicipaddresses/{publicIpAddressName}": {
       "get": {
         "operationId": "PublicIPAddresses_GetVirtualMachineScaleSetPublicIPAddress",
-        "tags": [
-          "PublicIPAddresses"
-        ],
         "description": "Get the specified public IP address in a virtual machine scale set.",
         "parameters": [
           {
@@ -476,7 +467,7 @@
       "get": {
         "operationId": "NetworkInterfaces_ListVirtualMachineScaleSetIpConfigurations",
         "tags": [
-          "NetworkInterfaceIPConfigurations"
+          "NetworkInterfaces"
         ],
         "description": "Get the specified network interface ip configuration in a virtual machine scale set.",
         "parameters": [

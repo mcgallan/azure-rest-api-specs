@@ -20,6 +20,7 @@ interface NetworkInterfacesOperationGroup {
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "non-standard operations"
   @operationId("NetworkInterfaces_ListVirtualMachineScaleSetNetworkInterfaces")
+  @tag("NetworkInterfaces")
   @autoRoute
   @get
   @list
