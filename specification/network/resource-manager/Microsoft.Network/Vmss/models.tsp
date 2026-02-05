@@ -2405,12 +2405,12 @@ model RetentionPolicyParameters {
   /**
    * Number of days to retain flow log records.
    */
-  days?: int32;
+  days?: int32 = 0;
 
   /**
    * Flag to enable/disable retention.
    */
-  enabled?: boolean;
+  enabled?: boolean = false;
 }
 
 /**
@@ -3457,6 +3457,7 @@ model PrivateEndpointConnectionProperties {
 /**
  * The visibility list of the private link service.
  */
+#suppress "@azure-tools/typespec-azure-resource-manager/no-empty-model" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 #suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "For backward compatibility"
 model PrivateLinkServicePropertiesVisibility extends ResourceSet {}
 
@@ -3473,6 +3474,7 @@ model ResourceSet {
 /**
  * The auto-approval list of the private link service.
  */
+#suppress "@azure-tools/typespec-azure-resource-manager/no-empty-model" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 #suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "For backward compatibility"
 model PrivateLinkServicePropertiesAutoApproval extends ResourceSet {}
 

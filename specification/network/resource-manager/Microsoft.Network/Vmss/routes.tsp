@@ -18,8 +18,6 @@ interface NetworkInterfacesOperationGroup {
   /**
    * Gets all network interfaces in a virtual machine scale set.
    */
-  #suppress "@azure-tools/typespec-azure-core/no-openapi" "non-standard operations"
-  @operationId("NetworkInterfaces_ListVirtualMachineScaleSetNetworkInterfaces")
   @tag("NetworkInterfaces")
   @autoRoute
   @get
@@ -35,7 +33,8 @@ interface NetworkInterfacesOperationGroup {
       @path
       @segment("virtualMachineScaleSets")
       virtualMachineScaleSetName: string;
-    }
+    },
+    Error = CloudError
   >;
 }
 
@@ -45,9 +44,7 @@ interface PublicIPAddressesOperationGroup {
   /**
    * Gets information about all public IP addresses on a virtual machine scale set level.
    */
-  #suppress "@azure-tools/typespec-azure-core/no-openapi" "non-standard operations"
   #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @operationId("PublicIPAddresses_ListVirtualMachineScaleSetPublicIPAddresses")
   @autoRoute
   @get
   @list
@@ -62,6 +59,7 @@ interface PublicIPAddressesOperationGroup {
       @path
       @segment("virtualMachineScaleSets")
       virtualMachineScaleSetName: string;
-    }
+    },
+    Error = CloudError
   >;
 }

@@ -77,7 +77,8 @@ interface NetworkInterfaces {
       @query("$expand")
       $expand?: string;
     },
-    Response = ArmResponse<NetworkInterface>
+    Response = ArmResponse<NetworkInterface>,
+    OverrideErrorType = CloudError
   >;
 
   /**
@@ -96,7 +97,8 @@ interface NetworkInterfaces {
       @path
       @segment("virtualMachines")
       virtualmachineIndex: string;
-    }
+    },
+    Error = CloudError
   >;
 }
 

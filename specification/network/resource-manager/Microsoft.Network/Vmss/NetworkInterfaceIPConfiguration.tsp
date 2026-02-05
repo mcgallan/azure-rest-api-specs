@@ -44,10 +44,8 @@ interface NetworkInterfaceIPConfigurations {
   /**
    * Get the specified network interface ip configuration in a virtual machine scale set.
    */
-  #suppress "@azure-tools/typespec-azure-core/no-openapi" "non-standard operations"
   @get
   @route("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{virtualMachineScaleSetName}/virtualMachines/{virtualmachineIndex}/networkInterfaces/{networkInterfaceName}/ipConfigurations/{ipConfigurationName}")
-  @operationId("NetworkInterfaces_GetVirtualMachineScaleSetIpConfiguration")
   @tag("NetworkInterfaces")
   getVirtualMachineScaleSetIpConfiguration is NetworkInterfaceIPConfigurationOps.ActionSync<
     NetworkInterfaceIPConfiguration,
@@ -79,17 +77,16 @@ interface NetworkInterfaceIPConfigurations {
       @query("$expand")
       $expand?: string;
     },
-    Response = ArmResponse<NetworkInterfaceIPConfiguration>
+    Response = ArmResponse<NetworkInterfaceIPConfiguration>,
+    OverrideErrorType = CloudError
   >;
 
   /**
    * Get the specified network interface ip configuration in a virtual machine scale set.
    */
-  #suppress "@azure-tools/typespec-azure-core/no-openapi" "non-standard operations"
   @get
   @list
   @route("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute/virtualMachineScaleSets/{virtualMachineScaleSetName}/virtualMachines/{virtualmachineIndex}/networkInterfaces/{networkInterfaceName}/ipConfigurations")
-  @operationId("NetworkInterfaces_ListVirtualMachineScaleSetIpConfigurations")
   @tag("NetworkInterfaces")
   listVirtualMachineScaleSetIpConfigurations is NetworkInterfaceIPConfigurationOps.ActionSync<
     NetworkInterfaceIPConfiguration,
@@ -119,7 +116,8 @@ interface NetworkInterfaceIPConfigurations {
       @query("$expand")
       $expand?: string;
     },
-    Response = ArmResponse<ResourceListResult<NetworkInterfaceIPConfiguration>>
+    Response = ArmResponse<ResourceListResult<NetworkInterfaceIPConfiguration>>,
+    OverrideErrorType = CloudError
   >;
 }
 

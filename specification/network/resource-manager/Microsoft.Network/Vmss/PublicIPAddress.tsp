@@ -95,7 +95,8 @@ interface PublicIPAddresses {
       @query("$expand")
       $expand?: string;
     },
-    Response = ArmResponse<PublicIPAddress>
+    Response = ArmResponse<PublicIPAddress>,
+    OverrideErrorType = CloudError
   >;
 
   /**
@@ -128,7 +129,8 @@ interface PublicIPAddresses {
       @segment("ipconfigurations")
       @key
       ipConfigurationName: string;
-    }
+    },
+    Error = CloudError
   >;
 }
 
