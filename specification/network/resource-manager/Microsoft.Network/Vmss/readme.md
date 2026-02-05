@@ -37,8 +37,7 @@ These settings apply only when `--tag=package-2025-05-01` is specified on the co
 
 ```yaml $(tag) == 'package-2025-05-01'
 input-file:
-  - stable/2025-05-01/vmssNetworkInterface.json
-  - stable/2025-05-01/vmssPublicIpAddress.json
+  - stable/2025-05-01/openapi.json
 suppressions:
   - code: PutResponseCodes
     reason: Required for multiple response codes. Reviewed by ARM team.
