@@ -231,7 +231,8 @@ model AzureTrafficCollectorPropertiesFormat {
   /**
    * Collector Policies for Azure Traffic Collector.
    */
-  collectorPolicies?: CollectorPolicy[];
+  @visibility(Lifecycle.Read)
+  collectorPolicies?: ResourceReference[];
 
   /**
    * The virtualHub to which the Azure Traffic Collector belongs.

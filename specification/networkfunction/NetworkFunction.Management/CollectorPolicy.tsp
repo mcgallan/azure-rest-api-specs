@@ -28,7 +28,6 @@ model CollectorPolicy
    * Resource location.
    */
   #suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-invalid-envelope-property" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @TypeSpec.Versioning.added(Versions.v2022_11_01)
   location: string;
 
   /**
@@ -36,7 +35,6 @@ model CollectorPolicy
    */
   #suppress "@azure-tools/typespec-azure-resource-manager/arm-no-record" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   #suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-invalid-envelope-property" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @TypeSpec.Versioning.added(Versions.v2022_11_01)
   tags?: Record<string>;
 
   /**
@@ -65,7 +63,6 @@ interface CollectorPolicies {
   /**
    * Updates the specified Collector Policy tags.
    */
-  @TypeSpec.Versioning.added(Versions.v2022_11_01)
   @patch(#{ implicitOptionality: false })
   updateTags is ArmCustomPatchSync<
     CollectorPolicy,

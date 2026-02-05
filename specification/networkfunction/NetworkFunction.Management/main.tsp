@@ -37,16 +37,6 @@ namespace Microsoft.NetworkFunction;
  */
 enum Versions {
   /**
-   * The 2022-05-01 API version.
-   */
-  v2022_05_01: "2022-05-01",
-
-  /**
-   * The 2022-08-01 API version.
-   */
-  v2022_08_01: "2022-08-01",
-
-  /**
    * The 2022-11-01 API version.
    */
   v2022_11_01: "2022-11-01",

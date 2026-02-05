@@ -782,8 +782,9 @@
           "type": "array",
           "description": "Collector Policies for Azure Traffic Collector.",
           "items": {
-            "$ref": "#/definitions/CollectorPolicy"
-          }
+            "$ref": "#/definitions/ResourceReference"
+          },
+          "readOnly": true
         },
         "virtualHub": {
           "$ref": "#/definitions/ResourceReference",
