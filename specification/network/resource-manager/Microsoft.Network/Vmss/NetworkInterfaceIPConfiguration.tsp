@@ -14,6 +14,7 @@ namespace Microsoft.Compute;
 /**
  * IPConfiguration in a network interface.
  */
+@parentResource(NetworkInterface)
 model NetworkInterfaceIPConfiguration
   is Azure.ResourceManager.ProxyResource<NetworkInterfaceIPConfigurationPropertiesFormat> {
   ...ResourceNameParameter<
@@ -85,9 +86,12 @@ interface NetworkInterfaceIPConfigurations {
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "non-standard operations"
   @get
+  @list
+  @route("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute/virtualMachineScaleSets/{virtualMachineScaleSetName}/virtualMachines/{virtualmachineIndex}/networkInterfaces/{networkInterfaceName}/ipConfigurations")
   @operationId("NetworkInterfaces_ListVirtualMachineScaleSetIpConfigurations")
-  listVirtualMachineScaleSetIpConfigurations is ArmResourceListByParent<
+  listVirtualMachineScaleSetIpConfigurations is NetworkInterfaceIPConfigurationOps.ActionSync<
     NetworkInterfaceIPConfiguration,
+    Request = void,
     Parameters = {
       #suppress "@azure-tools/typespec-azure-core/documentation-required" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
       @path
