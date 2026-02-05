@@ -13,6 +13,7 @@ namespace microsoft.Compute;
 /**
  * A network interface in a resource group.
  */
+#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model NetworkInterface
   is Azure.ResourceManager.Legacy.TrackedResourceWithOptionalLocation<NetworkInterfacePropertiesFormat> {
   ...ResourceNameParameter<
@@ -28,6 +29,7 @@ model NetworkInterface
   #suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-invalid-envelope-property" "For backward compatibility"
   extendedLocation?: ExtendedLocation;
 
+  #suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   ...Azure.ResourceManager.Legacy.EntityTagProperty;
 }
 
@@ -54,14 +56,17 @@ interface NetworkInterfaces {
     NetworkInterface,
     Request = void,
     Parameters = {
+      #suppress "@azure-tools/typespec-azure-core/documentation-required" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
       @path
       @key
       virtualMachineScaleSetName: string;
 
+      #suppress "@azure-tools/typespec-azure-core/documentation-required" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
       @path
       @key
       virtualmachineIndex: string;
 
+      #suppress "@azure-tools/typespec-azure-core/documentation-required" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
       @path
       @key
       networkInterfaceName: string;
@@ -78,13 +83,16 @@ interface NetworkInterfaces {
   /**
    * Gets information about all network interfaces in a virtual machine in a virtual machine scale set.
    */
+  #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   listVirtualMachineScaleSetVMNetworkInterfaces is ArmResourceListByParent<
     NetworkInterface,
     Parameters = {
+      #suppress "@azure-tools/typespec-azure-core/documentation-required" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
       @path
       @segment("virtualMachineScaleSets")
       virtualMachineScaleSetName: string;
 
+      #suppress "@azure-tools/typespec-azure-core/documentation-required" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
       @path
       @segment("virtualMachines")
       virtualmachineIndex: string;

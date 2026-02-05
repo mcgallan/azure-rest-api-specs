@@ -784,6 +784,7 @@ model NetworkInterfacePropertiesFormat {
   /**
    * Indicates whether IP forwarding is enabled on this network interface.
    */
+  #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   enableIPForwarding?: boolean;
 
   /**
@@ -1158,6 +1159,7 @@ model SubnetPropertiesFormat {
   /**
    * An array of service endpoints.
    */
+  #suppress "@azure-tools/typespec-azure-resource-manager/missing-x-ms-identifiers" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   serviceEndpoints?: ServiceEndpointPropertiesFormat[];
 
   /**
@@ -1230,6 +1232,7 @@ model SubnetPropertiesFormat {
   /**
    * Application gateway IP configurations of virtual network resource.
    */
+  #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   applicationGatewayIPConfigurations?: ApplicationGatewayIPConfiguration[];
 
   /**
@@ -1245,6 +1248,7 @@ model SubnetPropertiesFormat {
   /**
    * A list of IPAM Pools for allocating IP address prefixes.
    */
+  #suppress "@azure-tools/typespec-azure-resource-manager/missing-x-ms-identifiers" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   ipamPoolPrefixAllocations?: IpamPoolPrefixAllocation[];
 
   /**
@@ -1563,6 +1567,7 @@ model PrivateEndpointProperties {
   /**
    * An array of custom dns configurations.
    */
+  #suppress "@azure-tools/typespec-azure-resource-manager/missing-x-ms-identifiers" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   customDnsConfigs?: CustomDnsConfigPropertiesFormat[];
 
   /**
@@ -1705,6 +1710,7 @@ model PrivateEndpointIPConfiguration {
 /**
  * Properties of an IP Configuration of the private endpoint.
  */
+#suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model PrivateEndpointIPConfigurationProperties {
   /**
    * The ID of a group obtained from the remote resource that this private endpoint should connect to.
@@ -1719,6 +1725,7 @@ model PrivateEndpointIPConfigurationProperties {
   /**
    * A private ip address obtained from the private endpoint's subnet.
    */
+  #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   privateIPAddress?: string;
 }
 
@@ -1747,15 +1754,18 @@ model IPConfiguration extends SubResource {
 /**
  * Properties of IP configuration.
  */
+#suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model IPConfigurationPropertiesFormat {
   /**
    * The private IP address of the IP configuration.
    */
+  #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   privateIPAddress?: string;
 
   /**
    * The private IP address allocation method.
    */
+  #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   privateIPAllocationMethod?: IPAllocationMethod;
 
   /**
@@ -1778,6 +1788,7 @@ model IPConfigurationPropertiesFormat {
 /**
  * SKU of a public IP address.
  */
+#suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model PublicIPAddressSku {
   /**
    * Name of a public IP address SKU.
@@ -1793,15 +1804,18 @@ model PublicIPAddressSku {
 /**
  * Public IP address properties.
  */
+#suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model PublicIPAddressPropertiesFormat {
   /**
    * The public IP address allocation method.
    */
+  #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   publicIPAllocationMethod?: IPAllocationMethod;
 
   /**
    * The public IP address version.
    */
+  #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   publicIPAddressVersion?: IPVersion;
 
   /**
@@ -1823,6 +1837,7 @@ model PublicIPAddressPropertiesFormat {
   /**
    * The list of tags associated with the public IP address.
    */
+  #suppress "@azure-tools/typespec-azure-resource-manager/missing-x-ms-identifiers" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   ipTags?: IpTag[];
 
   /**
@@ -1881,6 +1896,7 @@ model PublicIPAddressPropertiesFormat {
 /**
  * Contains FQDN of the DNS record associated with the public IP address.
  */
+#suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model PublicIPAddressDnsSettings {
   /**
    * The domain name label. The concatenation of the domain name label and the regionalized DNS zone make up the fully qualified domain name associated with the public IP address. If a domain name label is specified, an A DNS record is created for the public IP in the Microsoft Azure DNS system.
@@ -2031,6 +2047,7 @@ model NatGatewayPropertiesFormat {
 /**
  * IP configuration profile child resource.
  */
+#suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 #suppress "@azure-tools/typespec-azure-core/composition-over-inheritance" "For backward compatibility"
 model IPConfigurationProfile extends SubResource {
   /**
@@ -2059,6 +2076,7 @@ model IPConfigurationProfile extends SubResource {
 /**
  * IP configuration profile properties.
  */
+#suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model IPConfigurationProfilePropertiesFormat {
   /**
    * The reference to the subnet resource to create a container network interface ip configuration.
@@ -2260,6 +2278,7 @@ model ApplicationGatewayIPConfiguration extends SubResource {
 /**
  * Properties of IP configuration of an application gateway.
  */
+#suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model ApplicationGatewayIPConfigurationPropertiesFormat {
   /**
    * Reference to the subnet resource. A subnet from where application gateway gets its private address.
@@ -2476,7 +2495,7 @@ model ManagedServiceIdentity {
   #suppress "@azure-tools/typespec-azure-resource-manager/arm-no-record" "For backward compatibility"
   userAssignedIdentities?: Record<Components1Jq1T4ISchemasManagedserviceidentityPropertiesUserassignedidentitiesAdditionalproperties>;
 }
-
+#suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 #suppress "@azure-tools/typespec-azure-core/documentation-required" "For backward compatibility"
 model Components1Jq1T4ISchemasManagedserviceidentityPropertiesUserassignedidentitiesAdditionalproperties {
   /**
@@ -2495,6 +2514,7 @@ model Components1Jq1T4ISchemasManagedserviceidentityPropertiesUserassignedidenti
 /**
  * Properties of IP configuration.
  */
+#suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model NetworkInterfaceIPConfigurationPropertiesFormat {
   /**
    * The reference to gateway load balancer frontend IP.
@@ -2618,11 +2638,13 @@ model VirtualNetworkTapPropertiesFormat {
   /**
    * The reference to the private IP Address of the collector nic that will receive the tap.
    */
+  #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   destinationNetworkInterfaceIPConfiguration?: NetworkInterfaceIPConfiguration;
 
   /**
    * The reference to the private IP address on the internal Load Balancer that will receive the tap.
    */
+  #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   destinationLoadBalancerFrontEndIPConfiguration?: FrontendIPConfiguration;
 
   /**
@@ -2711,6 +2733,7 @@ model FrontendIPConfiguration extends SubResource {
 /**
  * Properties of Frontend IP Configuration of the load balancer.
  */
+#suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model FrontendIPConfigurationPropertiesFormat {
   /**
    * An array of references to inbound rules that use this frontend IP.
@@ -2744,11 +2767,13 @@ model FrontendIPConfigurationPropertiesFormat {
   /**
    * The Private IP allocation method.
    */
+  #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   privateIPAllocationMethod?: IPAllocationMethod;
 
   /**
    * Whether the specific ipconfiguration is IPv4 or IPv6. Default is taken as IPv4.
    */
+  #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   privateIPAddressVersion?: IPVersion;
 
   /**
@@ -2813,12 +2838,14 @@ model ApplicationGatewayBackendAddressPoolPropertiesFormat {
   /**
    * Collection of references to IPs defined in network interfaces.
    */
+  #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   @visibility(Lifecycle.Read)
   backendIPConfigurations?: NetworkInterfaceIPConfiguration[];
 
   /**
    * Backend addresses.
    */
+  #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   backendAddresses?: ApplicationGatewayBackendAddress[];
 
   /**
@@ -2883,6 +2910,7 @@ model BackendAddressPoolPropertiesFormat {
   /**
    * An array of gateway load balancer tunnel interfaces.
    */
+  #suppress "@azure-tools/typespec-azure-resource-manager/missing-x-ms-identifiers" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   tunnelInterfaces?: GatewayLoadBalancerTunnelInterface[];
 
   /**
@@ -2893,6 +2921,7 @@ model BackendAddressPoolPropertiesFormat {
   /**
    * An array of references to IP addresses defined in network interfaces.
    */
+  #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   @visibility(Lifecycle.Read)
   backendIPConfigurations?: NetworkInterfaceIPConfiguration[];
 
@@ -3004,17 +3033,21 @@ model LoadBalancerBackendAddressPropertiesFormat {
   /**
    * Reference to IP address defined in network interfaces.
    */
+  #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   @visibility(Lifecycle.Read)
   networkInterfaceIPConfiguration?: SubResource;
 
   /**
    * Reference to the frontend ip address configuration defined in regional loadbalancer.
    */
+  #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   loadBalancerFrontendIPConfiguration?: SubResource;
 
   /**
    * Collection of inbound NAT rule port mappings.
    */
+  #suppress "@azure-tools/typespec-azure-resource-manager/missing-x-ms-identifiers" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   @visibility(Lifecycle.Read)
   inboundNatRulesPortMapping?: NatRulePortMapping[];
 
@@ -3079,11 +3112,13 @@ model InboundNatRulePropertiesFormat {
   /**
    * A reference to frontend IP addresses.
    */
+  #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   frontendIPConfiguration?: SubResource;
 
   /**
    * A reference to a private IP address defined on a network interface of a VM. Traffic sent to the frontend port of each of the frontend IP configurations is forwarded to the backend IP.
    */
+  #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   @visibility(Lifecycle.Read)
   backendIPConfiguration?: NetworkInterfaceIPConfiguration;
 
@@ -3110,6 +3145,7 @@ model InboundNatRulePropertiesFormat {
   /**
    * Configures a virtual machine's endpoint for the floating IP capability required to configure a SQL AlwaysOn Availability Group. This setting is required when using the SQL AlwaysOn Availability Groups in SQL server. This setting can't be changed after you create the endpoint.
    */
+  #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   enableFloatingIP?: boolean;
 
   /**
@@ -3142,6 +3178,7 @@ model InboundNatRulePropertiesFormat {
 /**
  * PrivateLinkConnection properties for the network interface.
  */
+#suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model NetworkInterfaceIPConfigurationPrivateLinkConnectionProperties {
   /**
    * The group ID for current private link connection.
@@ -3234,6 +3271,7 @@ model PrivateLinkServiceProperties {
   /**
    * The destination IP address of the private link service.
    */
+  #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   destinationIPAddress?: string;
 
   /**
@@ -3321,11 +3359,13 @@ model PrivateLinkServiceIpConfigurationProperties {
   /**
    * The private IP address of the IP configuration.
    */
+  #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   privateIPAddress?: string;
 
   /**
    * The private IP address allocation method.
    */
+  #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   privateIPAllocationMethod?: IPAllocationMethod;
 
   /**
@@ -3347,6 +3387,7 @@ model PrivateLinkServiceIpConfigurationProperties {
   /**
    * Whether the specific IP configuration is IPv4 or IPv6. Default is IPv4.
    */
+  #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   privateIPAddressVersion?: IPVersion;
 }
 
@@ -3467,5 +3508,6 @@ model CloudErrorBody {
   /**
    * A list of additional details about the error.
    */
+  #suppress "@azure-tools/typespec-azure-resource-manager/missing-x-ms-identifiers" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   details?: CloudErrorBody[];
 }

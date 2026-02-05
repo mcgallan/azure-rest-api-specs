@@ -22,6 +22,7 @@ model NetworkInterfaceIPConfiguration
     SegmentName = "ipConfigurations",
     NamePattern = ""
   >;
+  #suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   ...Azure.ResourceManager.Legacy.EntityTagProperty;
 }
 
@@ -50,18 +51,22 @@ interface NetworkInterfaceIPConfigurations {
     NetworkInterfaceIPConfiguration,
     Request = void,
     Parameters = {
+      #suppress "@azure-tools/typespec-azure-core/documentation-required" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
       @path
       @key
       virtualMachineScaleSetName: string;
 
+      #suppress "@azure-tools/typespec-azure-core/documentation-required" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
       @path
       @key
       virtualmachineIndex: string;
 
+      #suppress "@azure-tools/typespec-azure-core/documentation-required" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
       @path
       @key
       networkInterfaceName: string;
 
+      #suppress "@azure-tools/typespec-azure-core/documentation-required" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
       @path
       @key
       ipConfigurationName: string;
@@ -84,16 +89,19 @@ interface NetworkInterfaceIPConfigurations {
   listVirtualMachineScaleSetIpConfigurations is ArmResourceListByParent<
     NetworkInterfaceIPConfiguration,
     Parameters = {
+      #suppress "@azure-tools/typespec-azure-core/documentation-required" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
       @path
       @segment("virtualMachineScaleSets")
       @key
       virtualMachineScaleSetName: string;
 
+      #suppress "@azure-tools/typespec-azure-core/documentation-required" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
       @path
       @segment("virtualMachines")
       @key
       virtualmachineIndex: string;
 
+      #suppress "@azure-tools/typespec-azure-core/documentation-required" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
       @path
       @segment("networkInterfaces")
       @key

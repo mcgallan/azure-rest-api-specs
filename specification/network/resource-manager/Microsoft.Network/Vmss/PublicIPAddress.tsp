@@ -13,6 +13,7 @@ namespace microsoft.Compute;
 /**
  * Public IP address resource.
  */
+#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 model PublicIPAddress
   is Azure.ResourceManager.Legacy.TrackedResourceWithOptionalLocation<PublicIPAddressPropertiesFormat> {
   ...ResourceNameParameter<
@@ -34,6 +35,7 @@ model PublicIPAddress
   #suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-invalid-envelope-property" "For backward compatibility"
   sku?: PublicIPAddressSku;
 
+  #suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   ...Azure.ResourceManager.Legacy.EntityTagProperty;
   ...Azure.ResourceManager.AvailabilityZonesProperty;
 }
@@ -55,28 +57,34 @@ interface PublicIPAddresses {
   /**
    * Get the specified public IP address in a virtual machine scale set.
    */
+  #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   @get
   @route("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute/virtualMachineScaleSets/{virtualMachineScaleSetName}/virtualMachines/{virtualmachineIndex}/networkInterfaces/{networkInterfaceName}/ipconfigurations/{ipConfigurationName}/publicipaddresses/{publicIpAddressName}")
   getVirtualMachineScaleSetPublicIPAddress is PublicIPAddressOps.ActionSync<
     PublicIPAddress,
     Request = void,
     Parameters = {
+      #suppress "@azure-tools/typespec-azure-core/documentation-required" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
       @path
       @key
       virtualMachineScaleSetName: string;
 
+      #suppress "@azure-tools/typespec-azure-core/documentation-required" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
       @path
       @key
       virtualmachineIndex: string;
 
+      #suppress "@azure-tools/typespec-azure-core/documentation-required" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
       @path
       @key
       networkInterfaceName: string;
 
+      #suppress "@azure-tools/typespec-azure-core/documentation-required" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
       @path
       @key
       ipConfigurationName: string;
 
+      #suppress "@azure-tools/typespec-azure-core/documentation-required" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
       @path
       @key
       publicIpAddressName: string;
@@ -93,24 +101,29 @@ interface PublicIPAddresses {
   /**
    * Gets information about all public IP addresses in a virtual machine IP configuration in a virtual machine scale set.
    */
+  #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   listVirtualMachineScaleSetVMPublicIPAddresses is ArmResourceListByParent<
     PublicIPAddress,
     Parameters = {
+      #suppress "@azure-tools/typespec-azure-core/documentation-required" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
       @path
       @segment("virtualMachineScaleSets")
       @key
       virtualMachineScaleSetName: string;
 
+      #suppress "@azure-tools/typespec-azure-core/documentation-required" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
       @path
       @segment("virtualMachines")
       @key
       virtualmachineIndex: string;
 
+      #suppress "@azure-tools/typespec-azure-core/documentation-required" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
       @path
       @segment("networkInterfaces")
       @key
       networkInterfaceName: string;
 
+      #suppress "@azure-tools/typespec-azure-core/documentation-required" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
       @path
       @segment("ipconfigurations")
       @key
