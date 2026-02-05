@@ -10,7 +10,7 @@ using Azure.ResourceManager;
 using TypeSpec.Http;
 using TypeSpec.OpenAPI;
 
-namespace microsoft.Compute;
+namespace Microsoft.Compute;
 /**
  * IPConfiguration in a network interface.
  */
@@ -34,7 +34,7 @@ alias NetworkInterfaceIPConfigurationOps = Azure.ResourceManager.Legacy.RoutedOp
   },
   {},
   ResourceRoute = #{
-    route: "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute",
+    route: "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute",
   }
 >;
 
@@ -45,7 +45,7 @@ interface NetworkInterfaceIPConfigurations {
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "non-standard operations"
   @get
-  @route("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute/virtualMachineScaleSets/{virtualMachineScaleSetName}/virtualMachines/{virtualmachineIndex}/networkInterfaces/{networkInterfaceName}/ipConfigurations/{ipConfigurationName}")
+  @route("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{virtualMachineScaleSetName}/virtualMachines/{virtualmachineIndex}/networkInterfaces/{networkInterfaceName}/ipConfigurations/{ipConfigurationName}")
   @operationId("NetworkInterfaces_GetVirtualMachineScaleSetIpConfiguration")
   getVirtualMachineScaleSetIpConfiguration is NetworkInterfaceIPConfigurationOps.ActionSync<
     NetworkInterfaceIPConfiguration,

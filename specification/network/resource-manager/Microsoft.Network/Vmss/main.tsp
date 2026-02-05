@@ -34,7 +34,7 @@ using TypeSpec.Versioning;
 @versioned(Versions)
 // FIXME: Common type version not set. Set to v3.
 @armCommonTypesVersion(Azure.ResourceManager.CommonTypes.Versions.v3)
-namespace microsoft.Compute;
+namespace Microsoft.Compute;
 
 /**
  * The available API versions.

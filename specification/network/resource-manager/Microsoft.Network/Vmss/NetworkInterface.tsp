@@ -9,7 +9,7 @@ using Azure.ResourceManager;
 using TypeSpec.Http;
 using TypeSpec.OpenAPI;
 
-namespace microsoft.Compute;
+namespace Microsoft.Compute;
 /**
  * A network interface in a resource group.
  */
@@ -41,7 +41,7 @@ alias NetworkInterfaceOps = Azure.ResourceManager.Legacy.RoutedOperations<
   },
   {},
   ResourceRoute = #{
-    route: "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute",
+    route: "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute",
   }
 >;
 
@@ -51,7 +51,7 @@ interface NetworkInterfaces {
    * Get the specified network interface in a virtual machine scale set.
    */
   @get
-  @route("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute/virtualMachineScaleSets/{virtualMachineScaleSetName}/virtualMachines/{virtualmachineIndex}/networkInterfaces/{networkInterfaceName}")
+  @route("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{virtualMachineScaleSetName}/virtualMachines/{virtualmachineIndex}/networkInterfaces/{networkInterfaceName}")
   getVirtualMachineScaleSetNetworkInterface is NetworkInterfaceOps.ActionSync<
     NetworkInterface,
     Request = void,

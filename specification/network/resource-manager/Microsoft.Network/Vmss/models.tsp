@@ -7,7 +7,7 @@ using TypeSpec.Http;
 using Azure.ResourceManager;
 using Azure.ResourceManager.Foundations;
 
-namespace microsoft.Compute;
+namespace Microsoft.Compute;
 
 /**
  * The supported ExtendedLocation types. Currently only EdgeZone is supported in Microsoft.Network resources.
