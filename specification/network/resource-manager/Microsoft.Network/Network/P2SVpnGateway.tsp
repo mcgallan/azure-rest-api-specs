@@ -56,12 +56,13 @@ alias P2SVpnGatewayOps = Azure.ResourceManager.Legacy.LegacyOperations<
 #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 #suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 @Azure.ResourceManager.Legacy.feature(Features.virtualWAN)
-@armResourceOperations
+@armResourceOperations(#{omitTags: true})
 interface P2SVpnGateways {
   /**
    * Retrieves the details of a virtual wan p2s vpn gateway.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("P2SVpnGateways")
   @operationId("P2sVpnGateways_Get")
   get is ArmResourceRead<P2SVpnGateway, Error = CloudError>;
 
@@ -69,6 +70,7 @@ interface P2SVpnGateways {
    * Creates a virtual wan p2s vpn gateway if it doesn't exist else updates the existing gateway.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("P2SVpnGateways")
   @operationId("P2sVpnGateways_CreateOrUpdate")
   createOrUpdate is ArmResourceCreateOrReplaceAsync<
     P2SVpnGateway,
@@ -80,6 +82,7 @@ interface P2SVpnGateways {
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   #suppress "@azure-tools/typespec-azure-resource-manager/lro-location-header" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("P2SVpnGateways")
   @operationId("P2sVpnGateways_UpdateTags")
   @patch(#{ implicitOptionality: false })
   updateTags is ArmCustomPatchAsync<
@@ -95,6 +98,7 @@ interface P2SVpnGateways {
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   #suppress "@azure-tools/typespec-azure-resource-manager/arm-delete-operation-response-codes" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("P2SVpnGateways")
   @operationId("P2sVpnGateways_Delete")
   delete is ArmResourceDeleteWithoutOkAsync<
     P2SVpnGateway,
@@ -106,6 +110,7 @@ interface P2SVpnGateways {
    * Lists all the P2SVpnGateways in a resource group.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("P2SVpnGateways")
   @operationId("P2sVpnGateways_ListByResourceGroup")
   listByResourceGroup is ArmResourceListByParent<
     P2SVpnGateway,
@@ -117,6 +122,7 @@ interface P2SVpnGateways {
    * Lists all the P2SVpnGateways in a subscription.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("P2SVpnGateways")
   @operationId("P2sVpnGateways_List")
   list is ArmListBySubscription<
     P2SVpnGateway,
@@ -127,6 +133,7 @@ interface P2SVpnGateways {
   /**
    * Resets the primary of the p2s vpn gateway in the specified resource group.
    */
+  @tag("P2SVpnGateways")
   reset is ArmResourceActionAsync<
     P2SVpnGateway,
     void,
@@ -138,6 +145,7 @@ interface P2SVpnGateways {
    * Generates VPN profile for P2S client of the P2SVpnGateway in the specified resource group.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("P2SVpnGateways")
   @operationId("P2sVpnGateways_GenerateVpnProfile")
   @action("generatevpnprofile")
   generateVpnProfile is ArmResourceActionAsync<
@@ -151,6 +159,7 @@ interface P2SVpnGateways {
    * Gets the connection health of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("P2SVpnGateways")
   @operationId("P2sVpnGateways_GetP2sVpnConnectionHealth")
   getP2sVpnConnectionHealth is ArmResourceActionAsync<
     P2SVpnGateway,
@@ -163,6 +172,7 @@ interface P2SVpnGateways {
    * Gets the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("P2SVpnGateways")
   @operationId("P2sVpnGateways_GetP2sVpnConnectionHealthDetailed")
   getP2sVpnConnectionHealthDetailed is ArmResourceActionAsync<
     P2SVpnGateway,
@@ -175,6 +185,7 @@ interface P2SVpnGateways {
    * Disconnect P2S vpn connections of the virtual wan P2SVpnGateway in the specified resource group.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("P2SVpnGateways")
   @operationId("P2sVpnGateways_DisconnectP2sVpnConnections")
   disconnectP2sVpnConnections is P2SVpnGatewayOps.ActionAsync<
     P2SVpnGateway,

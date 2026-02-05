@@ -84,17 +84,19 @@ alias VpnConnection2Ops = Azure.ResourceManager.Legacy.LegacyOperations<
 
 #suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 @Azure.ResourceManager.Legacy.feature(Features.virtualWAN)
-@armResourceOperations(#{ allowStaticRoutes: true })
+@armResourceOperations(#{ allowStaticRoutes: true, omitTags: true })
 interface VpnGateways {
   /**
    * Retrieves the details of a virtual wan vpn gateway.
    */
+  @tag("VpnGateways")
   @autoRoute
   get is ArmResourceRead<VpnGateway, Error = CloudError>;
 
   /**
    * Creates a virtual wan vpn gateway if it doesn't exist else updates the existing gateway.
    */
+  @tag("VpnGateways")
   @autoRoute
   createOrUpdate is ArmResourceCreateOrReplaceAsync<
     VpnGateway,
@@ -105,6 +107,7 @@ interface VpnGateways {
    * Updates virtual wan vpn gateway tags.
    */
   #suppress "@azure-tools/typespec-azure-resource-manager/lro-location-header" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("VpnGateways")
   @autoRoute
   @patch(#{ implicitOptionality: false })
   updateTags is ArmCustomPatchAsync<
@@ -119,6 +122,7 @@ interface VpnGateways {
    * Deletes a virtual wan vpn gateway.
    */
   #suppress "@azure-tools/typespec-azure-resource-manager/arm-delete-operation-response-codes" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("VpnGateways")
   @autoRoute
   delete is ArmResourceDeleteWithoutOkAsync<
     VpnGateway,
@@ -129,6 +133,7 @@ interface VpnGateways {
   /**
    * Lists all the VpnGateways in a resource group.
    */
+  @tag("VpnGateways")
   @autoRoute
   listByResourceGroup is ArmResourceListByParent<
     VpnGateway,
@@ -139,6 +144,7 @@ interface VpnGateways {
   /**
    * Lists all the VpnGateways in a subscription.
    */
+  @tag("VpnGateways")
   @autoRoute
   list is ArmListBySubscription<
     VpnGateway,
@@ -149,6 +155,7 @@ interface VpnGateways {
   /**
    * Resets the primary of the vpn gateway in the specified resource group.
    */
+  @tag("VpnGateways")
   @autoRoute
   reset is ArmResourceActionAsync<
     VpnGateway,
@@ -167,6 +174,7 @@ interface VpnGateways {
   /**
    * Starts packet capture on vpn gateway in the specified resource group.
    */
+  @tag("VpnGateways")
   @action("startpacketcapture")
   @autoRoute
   startPacketCapture is ArmResourceActionAsync<
@@ -182,6 +190,7 @@ interface VpnGateways {
   /**
    * Stops packet capture on vpn gateway in the specified resource group.
    */
+  @tag("VpnGateways")
   @action("stoppacketcapture")
   @autoRoute
   stopPacketCapture is ArmResourceActionAsync<

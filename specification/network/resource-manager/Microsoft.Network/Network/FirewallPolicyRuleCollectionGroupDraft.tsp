@@ -33,11 +33,12 @@ model FirewallPolicyRuleCollectionGroupDraft extends SubResourceModel {
   name: string;
 }
 
-@armResourceOperations
+@armResourceOperations(#{omitTags: true})
 interface FirewallPolicyRuleCollectionGroupDrafts {
   /**
    * Get Rule Collection Group Draft.
    */
+  @tag("FirewallPolicyRuleCollectionGroupDrafts")
   get is ArmResourceRead<
     FirewallPolicyRuleCollectionGroupDraft,
     Error = CloudError
@@ -46,6 +47,7 @@ interface FirewallPolicyRuleCollectionGroupDrafts {
   /**
    * Create or Update Rule Collection Group Draft.
    */
+  @tag("FirewallPolicyRuleCollectionGroupDrafts")
   createOrUpdate is ArmResourceCreateOrReplaceSync<
     FirewallPolicyRuleCollectionGroupDraft,
     Error = CloudError
@@ -54,6 +56,7 @@ interface FirewallPolicyRuleCollectionGroupDrafts {
   /**
    * Delete Rule Collection Group Draft.
    */
+  @tag("FirewallPolicyRuleCollectionGroupDrafts")
   delete is ArmResourceDeleteSync<
     FirewallPolicyRuleCollectionGroupDraft,
     Error = CloudError

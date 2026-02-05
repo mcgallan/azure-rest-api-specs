@@ -57,12 +57,13 @@ alias VirtualWanOps = Azure.ResourceManager.Legacy.LegacyOperations<
 #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 #suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 @Azure.ResourceManager.Legacy.feature(Features.virtualWAN)
-@armResourceOperations
+@armResourceOperations(#{omitTags: true})
 interface VirtualWANS {
   /**
    * Retrieves the details of a VirtualWAN.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("VirtualWANS")
   @operationId("VirtualWans_Get")
   get is ArmResourceRead<VirtualWAN, Error = CloudError>;
 
@@ -70,6 +71,7 @@ interface VirtualWANS {
    * Creates a VirtualWAN resource if it doesn't exist else updates the existing VirtualWAN.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("VirtualWANS")
   @operationId("VirtualWans_CreateOrUpdate")
   createOrUpdate is ArmResourceCreateOrReplaceAsync<
     VirtualWAN,
@@ -81,6 +83,7 @@ interface VirtualWANS {
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   #suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-patch" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("VirtualWANS")
   @operationId("VirtualWans_UpdateTags")
   @patch(#{ implicitOptionality: false })
   updateTags is ArmCustomPatchSync<
@@ -94,6 +97,7 @@ interface VirtualWANS {
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   #suppress "@azure-tools/typespec-azure-resource-manager/arm-delete-operation-response-codes" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("VirtualWANS")
   @operationId("VirtualWans_Delete")
   delete is ArmResourceDeleteWithoutOkAsync<
     VirtualWAN,
@@ -105,6 +109,7 @@ interface VirtualWANS {
    * Lists all the VirtualWANs in a resource group.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("VirtualWANS")
   @operationId("VirtualWans_ListByResourceGroup")
   listByResourceGroup is ArmResourceListByParent<
     VirtualWAN,
@@ -116,6 +121,7 @@ interface VirtualWANS {
    * Lists all the VirtualWANs in a subscription.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("VirtualWANS")
   @operationId("VirtualWans_List")
   list is ArmListBySubscription<
     VirtualWAN,

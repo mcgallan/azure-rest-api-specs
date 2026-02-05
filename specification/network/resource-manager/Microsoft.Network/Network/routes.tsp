@@ -86,6 +86,7 @@ interface AvailableDelegationsOperationGroup {
    * Gets all of the available subnet delegations for this subscription in this region.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("AvailableDelegations")
   @operationId("AvailableDelegations_List")
   @autoRoute
   @list
@@ -107,6 +108,7 @@ interface AvailableResourceGroupDelegationsOperationGroup {
    * Gets all of the available subnet delegations for this resource group in this region.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("AvailableResourceGroupDelegations")
   @operationId("AvailableResourceGroupDelegations_List")
   @autoRoute
   @list
@@ -128,6 +130,7 @@ interface AvailableServiceAliasesOperationGroup {
    * Gets all available service aliases for this subscription in this region.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("AvailableServiceAliases")
   @operationId("AvailableServiceAliases_List")
   @autoRoute
   @list
@@ -144,6 +147,7 @@ interface AvailableServiceAliasesOperationGroup {
    * Gets all available service aliases for this resource group in this region.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("AvailableServiceAliases")
   @operationId("AvailableServiceAliases_ListByResourceGroup")
   @autoRoute
   @list
@@ -165,6 +169,7 @@ interface AzureFirewallFqdnTagsOperationGroup {
    * Gets all the Azure Firewall FQDN Tags in a subscription.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("AzureFirewallFqdnTags")
   @operationId("AzureFirewallFqdnTags_ListAll")
   @autoRoute
   @get
@@ -186,6 +191,7 @@ interface CheckDnsNameAvailability {
    */
   #suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-interface-requires-decorator" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("CheckDnsNameAvailability")
   @autoRoute
   @get
   @operationId("CheckDnsNameAvailability")
@@ -266,6 +272,7 @@ interface NetworkInterfacesOperationGroup {
    * Gets all network interfaces in a cloud service.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("NetworkInterfaces")
   @operationId("NetworkInterfaces_ListCloudServiceNetworkInterfaces")
   @autoRoute
   @get
@@ -286,6 +293,7 @@ interface PublicIPAddressesOperationGroup {
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("PublicIPAddresses")
   @operationId("PublicIPAddresses_ListCloudServicePublicIPAddresses")
   @autoRoute
   @get
@@ -304,6 +312,7 @@ interface AvailableEndpointServicesOperationGroup {
    * List what values of endpoint services are available for use.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("AvailableEndpointServices")
   @operationId("AvailableEndpointServices_List")
   @autoRoute
   @list
@@ -325,6 +334,7 @@ interface ExpressRouteServiceProvidersOperationGroup {
    * Gets all the available express route service providers.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("ExpressRouteServiceProviders")
   @operationId("ExpressRouteServiceProviders_List")
   @autoRoute
   @list
@@ -347,6 +357,7 @@ interface LoadBalancersOperationGroup {
    * Swaps VIPs between two load balancers.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("LoadBalancers")
   @operationId("LoadBalancers_SwapPublicIpAddresses")
   @post
   @route("/subscriptions/{subscriptionId}/providers/Microsoft.Network/locations/{location}/setLoadBalancerFrontendPublicIpAddresses")
@@ -367,6 +378,7 @@ interface NetworkSecurityPerimeterAssociableResourceTypesOperationGroup {
    * Gets the list of resources that are onboarded with NSP. These resources can be associated with a network security perimeter
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("NetworkSecurityPerimeterAssociableResourceTypes")
   @operationId("NetworkSecurityPerimeterAssociableResourceTypes_List")
   @autoRoute
   @list
@@ -388,6 +400,7 @@ interface NetworkSecurityPerimeterOperationStatusesOperationGroup {
    * Gets the operation status for the given operation id.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("NetworkSecurityPerimeterOperationStatuses")
   @operationId("NetworkSecurityPerimeterOperationStatuses_Get")
   @route("/subscriptions/{subscriptionId}/providers/Microsoft.Network/locations/{location}/networkSecurityPerimeterOperationStatuses/{operationId}")
   @get
@@ -412,6 +425,7 @@ interface NetworkSecurityPerimeterServiceTagsOperationGroup {
    * Gets the list of service tags supported by NSP. These service tags can be used to create access rules in NSP.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("NetworkSecurityPerimeterServiceTags")
   @operationId("NetworkSecurityPerimeterServiceTags_List")
   @autoRoute
   @list
@@ -433,6 +447,7 @@ interface AvailablePrivateEndpointTypesOperationGroup {
    * Returns all of the resource types that can be linked to a Private Endpoint in this subscription in this region.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("AvailablePrivateEndpointTypes")
   @operationId("AvailablePrivateEndpointTypes_List")
   @autoRoute
   @list
@@ -448,6 +463,7 @@ interface AvailablePrivateEndpointTypesOperationGroup {
    * Returns all of the resource types that can be linked to a Private Endpoint in this subscription in this region.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("AvailablePrivateEndpointTypes")
   @operationId("AvailablePrivateEndpointTypes_ListByResourceGroup")
   @autoRoute
   @list
@@ -469,6 +485,7 @@ interface PrivateLinkServicesOperationGroup {
    * Checks whether the subscription is visible to private link service.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("PrivateLinkServices")
   @operationId("PrivateLinkServices_CheckPrivateLinkServiceVisibility")
   @autoRoute
   checkPrivateLinkServiceVisibility is ArmProviderActionAsync<
@@ -482,6 +499,7 @@ interface PrivateLinkServicesOperationGroup {
    * Checks whether the subscription is visible to private link service in the specified resource group.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("PrivateLinkServices")
   @operationId("PrivateLinkServices_CheckPrivateLinkServiceVisibilityByResourceGroup")
   @autoRoute
   @action("checkPrivateLinkServiceVisibility")
@@ -496,6 +514,7 @@ interface PrivateLinkServicesOperationGroup {
    * Returns all of the private link service ids that can be linked to a Private Endpoint with auto approved in this subscription in this region.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("PrivateLinkServices")
   @operationId("PrivateLinkServices_ListAutoApprovedPrivateLinkServices")
   @autoRoute
   @list
@@ -511,6 +530,7 @@ interface PrivateLinkServicesOperationGroup {
    * Returns all of the private link service ids that can be linked to a Private Endpoint with auto approved in this subscription in this region.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("PrivateLinkServices")
   @operationId("PrivateLinkServices_ListAutoApprovedPrivateLinkServicesByResourceGroup")
   @autoRoute
   @list
@@ -532,6 +552,7 @@ interface BgpServiceCommunitiesOperationGroup {
    * Gets all the available bgp service communities.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("BgpServiceCommunities")
   @operationId("BgpServiceCommunities_List")
   @autoRoute
   @list
@@ -552,6 +573,7 @@ interface ServiceTagsOperationGroup {
    * Gets a list of service tag information resources.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("ServiceTags")
   @operationId("ServiceTags_List")
   @autoRoute
   @get
@@ -572,6 +594,7 @@ interface ServiceTagInformationOperationGroup {
    * Gets a list of service tag information resources with pagination.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("ServiceTagInformation")
   @operationId("ServiceTagInformation_List")
   @autoRoute
   @list
@@ -607,6 +630,7 @@ interface UsagesOperationGroup {
    * List network usages for a subscription.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("Usages")
   @operationId("Usages_List")
   @autoRoute
   @list

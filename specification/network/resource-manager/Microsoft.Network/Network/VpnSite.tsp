@@ -38,16 +38,18 @@ model VpnSite extends ResourceWithRequiredLocation {
 
 #suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 @Azure.ResourceManager.Legacy.feature(Features.virtualWAN)
-@armResourceOperations
+@armResourceOperations(#{omitTags: true})
 interface VpnSites {
   /**
    * Retrieves the details of a VPN site.
    */
+  @tag("VpnSites")
   get is ArmResourceRead<VpnSite, Error = CloudError>;
 
   /**
    * Creates a VpnSite resource if it doesn't exist else updates the existing VpnSite.
    */
+  @tag("VpnSites")
   createOrUpdate is ArmResourceCreateOrReplaceAsync<
     VpnSite,
     Error = CloudError
@@ -56,6 +58,7 @@ interface VpnSites {
   /**
    * Updates VpnSite tags.
    */
+  @tag("VpnSites")
   @patch(#{ implicitOptionality: false })
   updateTags is ArmCustomPatchSync<
     VpnSite,
@@ -67,6 +70,7 @@ interface VpnSites {
    * Deletes a VpnSite.
    */
   #suppress "@azure-tools/typespec-azure-resource-manager/arm-delete-operation-response-codes" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("VpnSites")
   delete is ArmResourceDeleteWithoutOkAsync<
     VpnSite,
     Response = ArmDeletedResponse | ArmDeleteAcceptedLroResponse | ArmDeletedNoContentResponse,
@@ -76,6 +80,7 @@ interface VpnSites {
   /**
    * Lists all the vpnSites in a resource group.
    */
+  @tag("VpnSites")
   listByResourceGroup is ArmResourceListByParent<
     VpnSite,
     Response = ArmResponse<ListVpnSitesResult>,
@@ -85,6 +90,7 @@ interface VpnSites {
   /**
    * Lists all the VpnSites in a subscription.
    */
+  @tag("VpnSites")
   list is ArmListBySubscription<
     VpnSite,
     Response = ArmResponse<ListVpnSitesResult>,

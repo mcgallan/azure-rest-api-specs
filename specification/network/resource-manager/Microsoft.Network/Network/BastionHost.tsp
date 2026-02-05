@@ -101,6 +101,7 @@ interface BastionHosts {
    * Creates a Bastion Shareable Links for all the VMs specified in the request.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("BastionHosts")
   @operationId("PutBastionShareableLink")
   @list
   @action("createShareableLinks")
@@ -115,6 +116,7 @@ interface BastionHosts {
    * Deletes the Bastion Shareable Links for all the VMs specified in the request.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("BastionHosts")
   @operationId("DeleteBastionShareableLink")
   @action("deleteShareableLinks")
   deleteBastionShareableLink is ArmResourceActionAsync<
@@ -130,6 +132,7 @@ interface BastionHosts {
    * Deletes the Bastion Shareable Links for all the tokens specified in the request.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("BastionHosts")
   @operationId("DeleteBastionShareableLinkByToken")
   @action("deleteShareableLinksByToken")
   deleteBastionShareableLinkByToken is ArmResourceActionAsyncBase<
@@ -144,6 +147,7 @@ interface BastionHosts {
    * Return the Bastion Shareable Links for all the VMs specified in the request.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("BastionHosts")
   @operationId("GetBastionShareableLink")
   @list
   @action("getShareableLinks")
