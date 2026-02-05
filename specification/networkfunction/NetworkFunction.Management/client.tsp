@@ -7,3 +7,5 @@ using Azure.ClientGenerator.Core;
   "AzureTrafficCollectorClient",
   "javascript"
 );
+
+@@clientName(Microsoft.NetworkFunction, "TrafficCollectorMgmtClient", "python");
