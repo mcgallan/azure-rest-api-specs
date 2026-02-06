@@ -58,13 +58,12 @@ interface ProfilesOverrides {
   #suppress "@azure-tools/typespec-azure-resource-manager/arm-put-operation-response-codes" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   #suppress "@azure-tools/typespec-azure-resource-manager/no-response-body" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   replaceCreateOrUpdate(
+    ...Azure.ResourceManager.ProviderNamespace<Profile>,
     ...ApiVersionParameter,
     ...SubscriptionIdParameter,
     #suppress "@azure-tools/typespec-azure-core/documentation-required" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
     profileName: string,
     ...ResourceGroupParameter,
-    #suppress "@azure-tools/typespec-azure-core/documentation-required" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-    provider: "Microsoft.Network",
     #suppress "@azure-tools/typespec-azure-core/documentation-required" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
     parameters: Microsoft.Network.Profile,
   ): ArmResourceUpdatedResponse<Profile> | ArmResourceCreatedResponse<
@@ -78,5 +77,5 @@ interface ProfilesOverrides {
 }
 @@override(Profiles.createOrUpdate,
   ProfilesOverrides.replaceCreateOrUpdate,
-  "go"
+  "go,javascript"
 );
