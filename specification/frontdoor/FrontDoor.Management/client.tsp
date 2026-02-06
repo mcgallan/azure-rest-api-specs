@@ -49,25 +49,30 @@ using TypeSpec.Rest;
 /**
  * override for Profiles.createOrUpdate
  */
-#suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-#suppress "@azure-tools/typespec-azure-resource-manager/arm-put-operation-response-codes" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-#suppress "@azure-tools/typespec-azure-resource-manager/no-response-body" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-op replaceCreateOrUpdate(
-  ...ApiVersionParameter,
-  ...SubscriptionIdParameter,
-  #suppress "@azure-tools/typespec-azure-core/documentation-required" "override"
-  profileName: string,
-  ...ResourceGroupParameter,
-  #suppress "@azure-tools/typespec-azure-core/documentation-required" "override"
-  provider: "Microsoft.Network",
-  #suppress "@azure-tools/typespec-azure-core/documentation-required" "override"
-  parameters: Microsoft.Network.Profile,
-): ArmResourceUpdatedResponse<Profile> | ArmResourceCreatedResponse<
-  Profile,
-  ArmLroLocationHeader<FinalResult = Profile> &
-    Azure.Core.Foundations.RetryAfterHeader
-> | (ArmAcceptedLroResponse & {
-  @bodyRoot
-  _: Profile;
-});
-@@override(Profiles.createOrUpdate, replaceCreateOrUpdate, "go");
+interface ProfilesOverrides {
+  #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  #suppress "@azure-tools/typespec-azure-resource-manager/arm-put-operation-response-codes" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  #suppress "@azure-tools/typespec-azure-resource-manager/no-response-body" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  replaceCreateOrUpdate(
+    ...ApiVersionParameter,
+    ...SubscriptionIdParameter,
+    #suppress "@azure-tools/typespec-azure-core/documentation-required" "override"
+    profileName: string,
+    ...ResourceGroupParameter,
+    #suppress "@azure-tools/typespec-azure-core/documentation-required" "override"
+    provider: "Microsoft.Network",
+    #suppress "@azure-tools/typespec-azure-core/documentation-required" "override"
+    parameters: Microsoft.Network.Profile,
+  ): ArmResourceUpdatedResponse<Profile> | ArmResourceCreatedResponse<
+    Profile,
+    ArmLroLocationHeader<FinalResult = Profile> &
+      Azure.Core.Foundations.RetryAfterHeader
+  > | (ArmAcceptedLroResponse & {
+    @bodyRoot
+    _: Profile;
+  });
+}
+@@override(Profiles.createOrUpdate,
+  ProfilesOverrides.replaceCreateOrUpdate,
+  "go"
+);
