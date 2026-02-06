@@ -30,16 +30,18 @@ model FrontendEndpoint extends BasicResourceWithSettableIDName {
   name: string;
 }
 
-@armResourceOperations
+@armResourceOperations(#{omitTags: true})
 interface FrontendEndpoints {
   /**
    * Gets a Frontend endpoint with the specified name within the specified Front Door.
    */
+  @tag("FrontDoors")
   get is ArmResourceRead<FrontendEndpoint, Error = ErrorResponse>;
 
   /**
    * Lists all of the frontend endpoints within a Front Door.
    */
+  @tag("FrontDoors")
   listByFrontDoor is ArmResourceListByParent<
     FrontendEndpoint,
     Response = FrontendEndpointsListResult,
@@ -50,6 +52,7 @@ interface FrontendEndpoints {
    * Enables a frontendEndpoint for HTTPS traffic
    */
   #suppress "@azure-tools/typespec-azure-resource-manager/lro-location-header" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("FrontDoors")
   enableHttps is ArmResourceActionAsync<
     FrontendEndpoint,
     CustomHttpsConfiguration,
@@ -63,6 +66,7 @@ interface FrontendEndpoints {
    * Disables a frontendEndpoint for HTTPS traffic
    */
   #suppress "@azure-tools/typespec-azure-resource-manager/lro-location-header" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("FrontDoors")
   disableHttps is ArmResourceActionAsync<
     FrontendEndpoint,
     void,

@@ -30,12 +30,13 @@ model Experiment extends Resource {
   name: string;
 }
 
-@armResourceOperations
+@armResourceOperations(#{omitTags: true})
 interface Experiments {
   /**
    * Gets an Experiment by ExperimentName
    */
   @summary("Gets an Experiment by ExperimentName")
+  @tag("Experiments")
   get is ArmResourceRead<Experiment, Error = ErrorResponse>;
 
   /**
@@ -44,6 +45,7 @@ interface Experiments {
   #suppress "@azure-tools/typespec-azure-resource-manager/arm-put-operation-response-codes" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   #suppress "@azure-tools/typespec-azure-resource-manager/no-response-body" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   @summary("Creates or updates an Experiment")
+  @tag("Experiments")
   createOrUpdate is ArmResourceCreateOrReplaceAsync<
     Experiment,
     Response = ArmResourceUpdatedResponse<Experiment> | ArmResourceCreatedResponse<
@@ -63,6 +65,7 @@ interface Experiments {
   #suppress "@azure-tools/typespec-azure-resource-manager/no-response-body" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   @summary("Updates an Experiment by Experiment id")
   @patch(#{ implicitOptionality: false })
+  @tag("Experiments")
   update is ArmCustomPatchAsync<
     Experiment,
     PatchModel = ExperimentUpdateModel,
@@ -79,6 +82,7 @@ interface Experiments {
    */
   #suppress "@azure-tools/typespec-azure-resource-manager/arm-delete-operation-response-codes" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   @summary("Deletes an Experiment")
+  @tag("Experiments")
   delete is ArmResourceDeleteWithoutOkAsync<
     Experiment,
     Response = ArmDeletedResponse | ArmDeleteAcceptedLroResponse | ArmDeletedNoContentResponse,
@@ -89,6 +93,7 @@ interface Experiments {
    * Gets a list of Experiments
    */
   @summary("Gets a list of Experiments")
+  @tag("Experiments")
   listByProfile is ArmResourceListByParent<
     Experiment,
     Response = ArmResponse<ExperimentList>,
@@ -103,6 +108,7 @@ interface Experiments {
   @get
   @action("LatencyScorecard")
   @summary("Gets a Latency Scorecard for a given Experiment")
+  @tag("Reports")
   getLatencyScorecards is ArmResourceActionSync<
     Experiment,
     void,
@@ -119,6 +125,7 @@ interface Experiments {
   @operationId("Reports_GetTimeseries")
   @get
   @action("Timeseries")
+  @tag("Reports")
   getTimeseries is ArmResourceActionSync<
     Experiment,
     void,

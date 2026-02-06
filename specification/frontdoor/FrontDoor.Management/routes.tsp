@@ -24,6 +24,7 @@ interface ManagedRuleSetsOperationGroup {
   @list
   @get
   @action("FrontDoorWebApplicationFirewallManagedRuleSets")
+  @tag("WebApplicationFirewallManagedRuleSets")
   list is ArmProviderActionSync<
     Response = ManagedRuleSetDefinitionList,
     Scope = SubscriptionActionScope,
@@ -40,6 +41,7 @@ interface FrontDoorNameAvailabilityOperationGroup {
   @operationId("FrontDoorNameAvailability_Check")
   @autoRoute
   @action("checkFrontDoorNameAvailability")
+  @tag("CheckFrontDoorNameAvailability")
   check is ArmProviderActionSync<
     Request = CheckNameAvailabilityInput,
     Response = CheckNameAvailabilityOutput,
@@ -56,6 +58,7 @@ interface FrontDoorNameAvailabilityWithSubscriptionOperationGroup {
   @operationId("FrontDoorNameAvailabilityWithSubscription_Check")
   @autoRoute
   @action("checkFrontDoorNameAvailability")
+  @tag("CheckFrontDoorNameAvailabilityWithSubscription")
   check is ArmProviderActionSync<
     Request = CheckNameAvailabilityInput,
     Response = CheckNameAvailabilityOutput,

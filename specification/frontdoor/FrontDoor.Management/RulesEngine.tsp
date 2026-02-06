@@ -30,11 +30,12 @@ model RulesEngine extends BasicResource {
   name: string;
 }
 
-@armResourceOperations
+@armResourceOperations(#{omitTags: true})
 interface RulesEngines {
   /**
    * Gets a Rules Engine Configuration with the specified name within the specified Front Door.
    */
+  @tag("FrontDoors")
   get is ArmResourceRead<RulesEngine, Error = ErrorResponse>;
 
   /**
@@ -43,6 +44,7 @@ interface RulesEngines {
   #suppress "@azure-tools/typespec-azure-resource-manager/arm-put-operation-response-codes" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   #suppress "@azure-tools/typespec-azure-resource-manager/no-response-body" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   #suppress "@azure-tools/typespec-azure-resource-manager/lro-location-header" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("FrontDoors")
   createOrUpdate is ArmResourceCreateOrReplaceAsync<
     RulesEngine,
     Response = ArmResourceUpdatedResponse<RulesEngine> | ArmResourceCreatedResponse<
@@ -61,6 +63,7 @@ interface RulesEngines {
    * Deletes an existing Rules Engine Configuration with the specified parameters.
    */
   #suppress "@azure-tools/typespec-azure-resource-manager/lro-location-header" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("FrontDoors")
   delete is ArmResourceDeleteWithoutOkAsync<
     RulesEngine,
     LroHeaders = ArmAsyncOperationHeader &
@@ -71,6 +74,7 @@ interface RulesEngines {
   /**
    * Lists all of the Rules Engine Configurations within a Front Door.
    */
+  @tag("FrontDoors")
   listByFrontDoor is ArmResourceListByParent<
     RulesEngine,
     Error = ErrorResponse,

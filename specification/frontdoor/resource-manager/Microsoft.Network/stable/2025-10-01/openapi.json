@@ -46,22 +46,34 @@
       "name": "FrontDoors"
     },
     {
-      "name": "FrontendEndpoints"
+      "name": "NetworkExperimentProfiles"
     },
     {
-      "name": "RulesEngines"
-    },
-    {
-      "name": "Profiles"
+      "name": "PreconfiguredEndpoints"
     },
     {
       "name": "Experiments"
+    },
+    {
+      "name": "Reports"
+    },
+    {
+      "name": "WebApplicationFirewallManagedRuleSets"
+    },
+    {
+      "name": "CheckFrontDoorNameAvailability"
+    },
+    {
+      "name": "CheckFrontDoorNameAvailabilityWithSubscription"
     }
   ],
   "paths": {
     "/providers/Microsoft.Network/checkFrontDoorNameAvailability": {
       "post": {
         "operationId": "FrontDoorNameAvailability_Check",
+        "tags": [
+          "CheckFrontDoorNameAvailability"
+        ],
         "description": "Check the availability of a Front Door resource name.",
         "parameters": [
           {
@@ -141,7 +153,7 @@
       "get": {
         "operationId": "NetworkExperimentProfiles_List",
         "tags": [
-          "Profiles"
+          "NetworkExperimentProfiles"
         ],
         "summary": "Gets a list of Network Experiment Profiles under a subscription",
         "description": "Gets a list of Network Experiment Profiles under a subscription",
@@ -180,6 +192,9 @@
     "/subscriptions/{subscriptionId}/providers/Microsoft.Network/checkFrontDoorNameAvailability": {
       "post": {
         "operationId": "FrontDoorNameAvailabilityWithSubscription_Check",
+        "tags": [
+          "CheckFrontDoorNameAvailabilityWithSubscription"
+        ],
         "description": "Check the availability of a Front Door subdomain.",
         "parameters": [
           {
@@ -222,6 +237,9 @@
     "/subscriptions/{subscriptionId}/providers/Microsoft.Network/frontDoorWebApplicationFirewallManagedRuleSets": {
       "get": {
         "operationId": "ManagedRuleSets_List",
+        "tags": [
+          "WebApplicationFirewallManagedRuleSets"
+        ],
         "description": "Lists all available managed rule sets.",
         "parameters": [
           {
@@ -613,7 +631,7 @@
       "get": {
         "operationId": "NetworkExperimentProfiles_ListByResourceGroup",
         "tags": [
-          "Profiles"
+          "NetworkExperimentProfiles"
         ],
         "summary": "Gets a list of Network Experiment Profiles within a resource group under a subscription",
         "description": "Gets a list of Network Experiment Profiles within a resource group under a subscription",
@@ -656,7 +674,7 @@
       "get": {
         "operationId": "NetworkExperimentProfiles_Get",
         "tags": [
-          "Profiles"
+          "NetworkExperimentProfiles"
         ],
         "summary": "Gets an NetworkExperiment Profile by ProfileName",
         "description": "Gets an NetworkExperiment Profile by ProfileName",
@@ -702,7 +720,7 @@
       "put": {
         "operationId": "NetworkExperimentProfiles_CreateOrUpdate",
         "tags": [
-          "Profiles"
+          "NetworkExperimentProfiles"
         ],
         "summary": "Creates an NetworkExperiment Profile",
         "description": "Creates an NetworkExperiment Profile",
@@ -796,7 +814,7 @@
       "patch": {
         "operationId": "NetworkExperimentProfiles_Update",
         "tags": [
-          "Profiles"
+          "NetworkExperimentProfiles"
         ],
         "summary": "Updates an NetworkExperimentProfiles by NetworkExperimentProfile name",
         "description": "Updates an NetworkExperimentProfiles",
@@ -873,7 +891,7 @@
       "delete": {
         "operationId": "NetworkExperimentProfiles_Delete",
         "tags": [
-          "Profiles"
+          "NetworkExperimentProfiles"
         ],
         "summary": "Deletes an NetworkExperiment Profile by ProfileName",
         "description": "Deletes an NetworkExperiment Profile by ProfileName",
@@ -1305,7 +1323,7 @@
       "get": {
         "operationId": "Reports_GetLatencyScorecards",
         "tags": [
-          "Experiments"
+          "Reports"
         ],
         "summary": "Gets a Latency Scorecard for a given Experiment",
         "description": "Gets a Latency Scorecard for a given Experiment",
@@ -1408,7 +1426,7 @@
       "get": {
         "operationId": "Reports_GetTimeseries",
         "tags": [
-          "Experiments"
+          "Reports"
         ],
         "summary": "Gets a Timeseries for a given Experiment",
         "description": "Gets a Timeseries for a given Experiment",
@@ -1560,7 +1578,7 @@
       "get": {
         "operationId": "PreconfiguredEndpoints_List",
         "tags": [
-          "Profiles"
+          "PreconfiguredEndpoints"
         ],
         "summary": "Gets a list of Preconfigured Endpoints",
         "description": "Gets a list of Preconfigured Endpoints",
@@ -1859,7 +1877,7 @@
       "get": {
         "operationId": "FrontendEndpoints_ListByFrontDoor",
         "tags": [
-          "FrontendEndpoints"
+          "FrontDoors"
         ],
         "description": "Lists all of the frontend endpoints within a Front Door.",
         "parameters": [
@@ -1911,7 +1929,7 @@
       "get": {
         "operationId": "FrontendEndpoints_Get",
         "tags": [
-          "FrontendEndpoints"
+          "FrontDoors"
         ],
         "description": "Gets a Frontend endpoint with the specified name within the specified Front Door.",
         "parameters": [
@@ -1970,7 +1988,7 @@
       "post": {
         "operationId": "FrontendEndpoints_DisableHttps",
         "tags": [
-          "FrontendEndpoints"
+          "FrontDoors"
         ],
         "description": "Disables a frontendEndpoint for HTTPS traffic",
         "parameters": [
@@ -2044,7 +2062,7 @@
       "post": {
         "operationId": "FrontendEndpoints_EnableHttps",
         "tags": [
-          "FrontendEndpoints"
+          "FrontDoors"
         ],
         "description": "Enables a frontendEndpoint for HTTPS traffic",
         "parameters": [
@@ -2200,7 +2218,7 @@
       "get": {
         "operationId": "RulesEngines_ListByFrontDoor",
         "tags": [
-          "RulesEngines"
+          "FrontDoors"
         ],
         "description": "Lists all of the Rules Engine Configurations within a Front Door.",
         "parameters": [
@@ -2252,7 +2270,7 @@
       "get": {
         "operationId": "RulesEngines_Get",
         "tags": [
-          "RulesEngines"
+          "FrontDoors"
         ],
         "description": "Gets a Rules Engine Configuration with the specified name within the specified Front Door.",
         "parameters": [
@@ -2309,7 +2327,7 @@
       "put": {
         "operationId": "RulesEngines_CreateOrUpdate",
         "tags": [
-          "RulesEngines"
+          "FrontDoors"
         ],
         "description": "Creates a new Rules Engine Configuration with the specified name within the specified Front Door.",
         "parameters": [
@@ -2414,7 +2432,7 @@
       "delete": {
         "operationId": "RulesEngines_Delete",
         "tags": [
-          "RulesEngines"
+          "FrontDoors"
         ],
         "description": "Deletes an existing Rules Engine Configuration with the specified parameters.",
         "parameters": [
