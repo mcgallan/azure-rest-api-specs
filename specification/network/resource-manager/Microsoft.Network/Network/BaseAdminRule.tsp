@@ -52,7 +52,7 @@ interface BaseAdminRules {
    * Gets a network manager security configuration admin rule.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @tag("BaseAdminRules")
+  @tag("AdminRules")
   @operationId("AdminRules_Get")
   get is ArmResourceRead<BaseAdminRule, Error = CommonErrorResponse>;
 
@@ -60,7 +60,7 @@ interface BaseAdminRules {
    * Creates or updates an admin rule.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @tag("BaseAdminRules")
+  @tag("AdminRules")
   @operationId("AdminRules_CreateOrUpdate")
   createOrUpdate is ArmResourceCreateOrReplaceSync<
     BaseAdminRule,
@@ -72,7 +72,7 @@ interface BaseAdminRules {
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   #suppress "@azure-tools/typespec-azure-resource-manager/arm-delete-operation-response-codes" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @tag("BaseAdminRules")
+  @tag("AdminRules")
   @operationId("AdminRules_Delete")
   delete is ArmResourceDeleteWithoutOkAsync<
     BaseAdminRule,
@@ -91,7 +91,7 @@ interface BaseAdminRules {
    * List all network manager security configuration admin rules.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @tag("BaseAdminRules")
+  @tag("AdminRules")
   @operationId("AdminRules_List")
   list is ArmResourceListByParent<
     BaseAdminRule,

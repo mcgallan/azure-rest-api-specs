@@ -16,6 +16,7 @@ namespace Microsoft.Network;
 #suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-interface-requires-decorator" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 #suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 @Azure.ResourceManager.Legacy.feature(Features.applicationGateway)
+@armResourceOperations(#{omitTags: true})
 interface ApplicationGatewaysOperationGroup {
   /**
    * Lists all available server variables.
@@ -164,6 +165,7 @@ interface AvailableServiceAliasesOperationGroup {
 #suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-interface-requires-decorator" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 #suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 @Azure.ResourceManager.Legacy.feature(Features.firewall)
+@armResourceOperations(#{omitTags: true})
 interface AzureFirewallFqdnTagsOperationGroup {
   /**
    * Gets all the Azure Firewall FQDN Tags in a subscription.
@@ -267,6 +269,7 @@ alias CloudServicesOps = Azure.ResourceManager.Legacy.LegacyOperations<
 #suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-interface-requires-decorator" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 #suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 @Azure.ResourceManager.Legacy.feature(Features.virtualNetwork)
+@armResourceOperations(#{omitTags: true})
 interface NetworkInterfacesOperationGroup {
   /**
    * Gets all network interfaces in a cloud service.
@@ -329,6 +332,7 @@ interface AvailableEndpointServicesOperationGroup {
 #suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-interface-requires-decorator" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 #suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 @Azure.ResourceManager.Legacy.feature(Features.expressRoute)
+@armResourceOperations(#{omitTags: true})
 interface ExpressRouteServiceProvidersOperationGroup {
   /**
    * Gets all the available express route service providers.
@@ -352,6 +356,7 @@ interface ExpressRouteServiceProvidersOperationGroup {
 #suppress "@azure-tools/typespec-azure-core/no-private-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 @Azure.ResourceManager.Legacy.feature(Features.loadBalancer)
 @Http.Private.includeInapplicableMetadataInPayload(false)
+@armResourceOperations(#{omitTags: true})
 interface LoadBalancersOperationGroup {
   /**
    * Swaps VIPs between two load balancers.
@@ -373,6 +378,7 @@ interface LoadBalancersOperationGroup {
 #suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-interface-requires-decorator" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 #suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 @Azure.ResourceManager.Legacy.feature(Features.networkSecurityPerimeter)
+@armResourceOperations(#{omitTags: true})
 interface NetworkSecurityPerimeterAssociableResourceTypesOperationGroup {
   /**
    * Gets the list of resources that are onboarded with NSP. These resources can be associated with a network security perimeter
@@ -395,6 +401,7 @@ interface NetworkSecurityPerimeterAssociableResourceTypesOperationGroup {
 #suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-interface-requires-decorator" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 #suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 @Azure.ResourceManager.Legacy.feature(Features.networkSecurityPerimeter)
+@armResourceOperations(#{omitTags: true})
 interface NetworkSecurityPerimeterOperationStatusesOperationGroup {
   /**
    * Gets the operation status for the given operation id.
@@ -420,6 +427,7 @@ interface NetworkSecurityPerimeterOperationStatusesOperationGroup {
 #suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-interface-requires-decorator" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 #suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 @Azure.ResourceManager.Legacy.feature(Features.networkSecurityPerimeter)
+@armResourceOperations(#{omitTags: true})
 interface NetworkSecurityPerimeterServiceTagsOperationGroup {
   /**
    * Gets the list of service tags supported by NSP. These service tags can be used to create access rules in NSP.
@@ -480,6 +488,7 @@ interface AvailablePrivateEndpointTypesOperationGroup {
 #suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-interface-requires-decorator" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 #suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 @Azure.ResourceManager.Legacy.feature(Features.virtualNetwork)
+@armResourceOperations(#{omitTags: true})
 interface PrivateLinkServicesOperationGroup {
   /**
    * Checks whether the subscription is visible to private link service.
@@ -547,6 +556,7 @@ interface PrivateLinkServicesOperationGroup {
 #suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-interface-requires-decorator" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 #suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 @Azure.ResourceManager.Legacy.feature(Features.expressRoute)
+@armResourceOperations(#{omitTags: true})
 interface BgpServiceCommunitiesOperationGroup {
   /**
    * Gets all the available bgp service communities.
@@ -625,6 +635,7 @@ interface ServiceTagInformationOperationGroup {
 #suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-interface-requires-decorator" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 #suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 @Azure.ResourceManager.Legacy.feature(Features.virtualNetwork)
+@armResourceOperations(#{omitTags: true})
 interface UsagesOperationGroup {
   /**
    * List network usages for a subscription.

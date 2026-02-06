@@ -48,7 +48,7 @@ interface NspAccessRules {
    * Gets the specified NSP access rule by name.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @tag("NspAccessRules")
+  @tag("NetworkSecurityPerimeterAccessRules")
   @operationId("NetworkSecurityPerimeterAccessRules_Get")
   get is ArmResourceRead<NspAccessRule, Error = CloudError>;
 
@@ -56,7 +56,7 @@ interface NspAccessRules {
    * Creates or updates a network access rule.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @tag("NspAccessRules")
+  @tag("NetworkSecurityPerimeterAccessRules")
   @operationId("NetworkSecurityPerimeterAccessRules_CreateOrUpdate")
   createOrUpdate is ArmResourceCreateOrReplaceSync<
     NspAccessRule,
@@ -67,7 +67,7 @@ interface NspAccessRules {
    * Deletes an NSP access rule.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @tag("NspAccessRules")
+  @tag("NetworkSecurityPerimeterAccessRules")
   @operationId("NetworkSecurityPerimeterAccessRules_Delete")
   delete is ArmResourceDeleteSync<NspAccessRule, Error = CloudError>;
 
@@ -75,7 +75,7 @@ interface NspAccessRules {
    * Lists the NSP access rules in the specified NSP profile.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @tag("NspAccessRules")
+  @tag("NetworkSecurityPerimeterAccessRules")
   @operationId("NetworkSecurityPerimeterAccessRules_List")
   list is ArmResourceListByParent<
     NspAccessRule,

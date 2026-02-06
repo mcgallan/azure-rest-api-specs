@@ -71,7 +71,7 @@ interface BackendAddressPools {
    * Gets load balancer backend address pool.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @tag("BackendAddressPools")
+  @tag("LoadBalancers")
   @operationId("LoadBalancerBackendAddressPools_Get")
   get is ArmResourceRead<BackendAddressPool, Error = CloudError>;
 
@@ -79,7 +79,7 @@ interface BackendAddressPools {
    * Creates or updates a load balancer backend address pool.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @tag("BackendAddressPools")
+  @tag("LoadBalancers")
   @operationId("LoadBalancerBackendAddressPools_CreateOrUpdate")
   createOrUpdate is ArmResourceCreateOrReplaceAsync<
     BackendAddressPool,
@@ -91,7 +91,7 @@ interface BackendAddressPools {
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   #suppress "@azure-tools/typespec-azure-resource-manager/arm-delete-operation-response-codes" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @tag("BackendAddressPools")
+  @tag("LoadBalancers")
   @operationId("LoadBalancerBackendAddressPools_Delete")
   delete is ArmResourceDeleteWithoutOkAsync<
     BackendAddressPool,
@@ -103,7 +103,7 @@ interface BackendAddressPools {
    * Gets all the load balancer backed address pools.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @tag("BackendAddressPools")
+  @tag("LoadBalancers")
   @operationId("LoadBalancerBackendAddressPools_List")
   list is ArmResourceListByParent<
     BackendAddressPool,
@@ -116,7 +116,7 @@ interface BackendAddressPools {
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   #suppress "@azure-tools/typespec-azure-resource-manager/no-response-body" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @tag("BackendAddressPools")
+  @tag("LoadBalancers")
   @operationId("LoadBalancers_ListInboundNatRulePortMappings")
   @action("queryInboundNatRulePortMapping")
   listInboundNatRulePortMappings is ListInboundNatRulePortMappingsOps.ActionAsync<

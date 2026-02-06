@@ -55,6 +55,9 @@
       "name": "ApplicationSecurityGroups"
     },
     {
+      "name": "applicationSecurityGroups"
+    },
+    {
       "name": "AzureFirewalls"
     },
     {
@@ -64,31 +67,31 @@
       "name": "BastionHosts"
     },
     {
+      "name": "BastionShareableLink"
+    },
+    {
       "name": "ExpressRouteProviderPorts"
     },
     {
       "name": "NetworkInterfaces"
     },
     {
-      "name": "NetworkInterfaceOperationGroup"
-    },
-    {
       "name": "PublicIPAddresses"
     },
     {
-      "name": "PublicIPAddressOperationGroup"
-    },
-    {
-      "name": "SwapResources"
+      "name": "VipSwap"
     },
     {
       "name": "CustomIpPrefixes"
     },
     {
-      "name": "DdosCustomPolicies"
+      "name": "ddosCustomPolicies"
     },
     {
       "name": "DdosProtectionPlans"
+    },
+    {
+      "name": "DscpConfiguration"
     },
     {
       "name": "DscpConfigurations"
@@ -100,7 +103,19 @@
       "name": "ExpressRouteCircuits"
     },
     {
+      "name": "ExpressRouteCircuitStats"
+    },
+    {
       "name": "ExpressRouteCircuitPeerings"
+    },
+    {
+      "name": "ExpressRouteCircuitArpTable"
+    },
+    {
+      "name": "ExpressRouteCircuitRoutesTable"
+    },
+    {
+      "name": "ExpressRouteCircuitRoutesTableSummary"
     },
     {
       "name": "ExpressRouteCircuitConnections"
@@ -112,13 +127,25 @@
       "name": "ExpressRouteCrossConnections"
     },
     {
+      "name": "ExpressRouteCrossConnectionArpTable"
+    },
+    {
       "name": "ExpressRouteCrossConnectionRouteTableSummary"
+    },
+    {
+      "name": "ExpressRouteCrossConnectionRouteTable"
+    },
+    {
+      "name": "ExpressRouteCrossConnectionPeerings"
     },
     {
       "name": "ExpressRoutePortsLocations"
     },
     {
       "name": "ExpressRoutePorts"
+    },
+    {
+      "name": "ExpressRouteLinks"
     },
     {
       "name": "ExpressRoutePortAuthorizations"
@@ -157,37 +184,10 @@
       "name": "LoadBalancers"
     },
     {
-      "name": "BackendAddressPools"
-    },
-    {
-      "name": "FrontendIPConfigurations"
-    },
-    {
-      "name": "InboundNatRules"
-    },
-    {
-      "name": "LoadBalancingRules"
-    },
-    {
-      "name": "OutboundRules"
-    },
-    {
-      "name": "Probes"
-    },
-    {
       "name": "NatGateways"
     },
     {
-      "name": "NetworkInterfaceIPConfigurations"
-    },
-    {
-      "name": "NetworkInterfaceTapConfigurations"
-    },
-    {
       "name": "NetworkManagerConnections"
-    },
-    {
-      "name": "ManagementGroupNetworkManagerConnections"
     },
     {
       "name": "ConnectivityConfigurations"
@@ -217,7 +217,7 @@
       "name": "AdminRuleCollections"
     },
     {
-      "name": "BaseAdminRules"
+      "name": "AdminRules"
     },
     {
       "name": "SecurityUserConfigurations"
@@ -238,37 +238,28 @@
       "name": "SecurityRules"
     },
     {
-      "name": "DefaultSecurityRules"
-    },
-    {
       "name": "NetworkSecurityPerimeters"
     },
     {
-      "name": "NspProfiles"
-    },
-    {
-      "name": "NspAccessRules"
+      "name": "NetworkSecurityPerimeterProfiles"
     },
     {
       "name": "NetworkSecurityPerimeterAccessRules"
     },
     {
-      "name": "NspAssociations"
-    },
-    {
       "name": "NetworkSecurityPerimeterAssociations"
     },
     {
-      "name": "NspLinks"
+      "name": "NetworkSecurityPerimeterLinks"
     },
     {
-      "name": "NspLinkReferences"
+      "name": "NetworkSecurityPerimeterLinkReferences"
     },
     {
-      "name": "NspLoggingConfigurations"
+      "name": "NetworkSecurityPerimeterLoggingConfigurations"
     },
     {
-      "name": "ReachabilityAnalysisIntents"
+      "name": "ReachabilityAnalysisIntent"
     },
     {
       "name": "VerifierWorkspaces"
@@ -286,16 +277,16 @@
       "name": "VirtualApplianceSites"
     },
     {
-      "name": "NetworkVirtualApplianceSkus"
-    },
-    {
-      "name": "InboundSecurityRuleOperationGroup"
+      "name": "VirtualApplianceSkus"
     },
     {
       "name": "NetworkWatchers"
     },
     {
-      "name": "ConnectionMonitorResults"
+      "name": "PacketCaptures"
+    },
+    {
+      "name": "ConnectionMonitors"
     },
     {
       "name": "FlowLogs"
@@ -304,7 +295,13 @@
       "name": "PrivateEndpoints"
     },
     {
+      "name": "PrivateDnsZoneGroups"
+    },
+    {
       "name": "PrivateLinkServices"
+    },
+    {
+      "name": "PrivateLinkService"
     },
     {
       "name": "PrivateEndpointConnections"
@@ -314,6 +311,9 @@
     },
     {
       "name": "RouteFilters"
+    },
+    {
+      "name": "RouteFilterRules"
     },
     {
       "name": "RouteTables"
@@ -334,7 +334,10 @@
       "name": "VirtualNetworks"
     },
     {
-      "name": "EffectiveConfigurations"
+      "name": "NetworkManagerEffectiveConnectivityConfiguration"
+    },
+    {
+      "name": "NetworkManagerEffectiveSecurityAdminRules"
     },
     {
       "name": "Subnets"
@@ -353,6 +356,9 @@
     },
     {
       "name": "VirtualNetworkGatewayNatRules"
+    },
+    {
+      "name": "VirtualNetworkTap"
     },
     {
       "name": "VirtualNetworkTaps"
@@ -382,6 +388,9 @@
       "name": "VirtualHubs"
     },
     {
+      "name": "VirtualWANs"
+    },
+    {
       "name": "RouteMaps"
     },
     {
@@ -394,6 +403,9 @@
       "name": "VpnSiteLinkConnections"
     },
     {
+      "name": "VpnLinkConnections"
+    },
+    {
       "name": "VpnGatewayNatRules"
     },
     {
@@ -401,6 +413,9 @@
     },
     {
       "name": "ExpressRouteGateways"
+    },
+    {
+      "name": "ExpressRouteConnections"
     },
     {
       "name": "BgpConnections"
@@ -474,7 +489,7 @@
       "get": {
         "operationId": "ManagementGroupNetworkManagerConnections_List",
         "tags": [
-          "ManagementGroupNetworkManagerConnections"
+          "NetworkManagerConnections"
         ],
         "description": "List all network manager connections created by this management group.",
         "parameters": [
@@ -535,7 +550,7 @@
       "get": {
         "operationId": "ManagementGroupNetworkManagerConnections_Get",
         "tags": [
-          "ManagementGroupNetworkManagerConnections"
+          "NetworkManagerConnections"
         ],
         "description": "Get a specified connection created by this management group.",
         "parameters": [
@@ -581,7 +596,7 @@
       "put": {
         "operationId": "ManagementGroupNetworkManagerConnections_CreateOrUpdate",
         "tags": [
-          "ManagementGroupNetworkManagerConnections"
+          "NetworkManagerConnections"
         ],
         "description": "Create a network manager connection on this management group.",
         "parameters": [
@@ -642,7 +657,7 @@
       "delete": {
         "operationId": "ManagementGroupNetworkManagerConnections_Delete",
         "tags": [
-          "ManagementGroupNetworkManagerConnections"
+          "NetworkManagerConnections"
         ],
         "description": "Delete specified pending connection created by this management group.",
         "parameters": [
@@ -1998,9 +2013,6 @@
     "/subscriptions/{subscriptionId}/providers/Microsoft.Network/locations/{location}/applicationGatewayWafDynamicManifests": {
       "get": {
         "operationId": "ApplicationGatewayWafDynamicManifests_Get",
-        "tags": [
-          "ApplicationGateways"
-        ],
         "description": "Gets the regional application gateway waf manifest.",
         "parameters": [
           {
@@ -2365,7 +2377,7 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/providers/Microsoft.Network/locations/{location}/networkSecurityPerimeterOperationStatuses/{operationId}": {
+    "/subscriptions/{subscriptionId}/providers/Microsoft.Network/locations/{location}/networkSecurityPerimeterOperationStatuses/{operationId}/subscriptions/{subscriptionId}/locations/{location}/{operationId}": {
       "get": {
         "operationId": "NetworkSecurityPerimeterOperationStatuses_Get",
         "tags": [
@@ -2596,7 +2608,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/providers/Microsoft.Network/locations/{location}/setLoadBalancerFrontendPublicIpAddresses": {
+    "/subscriptions/{subscriptionId}/providers/Microsoft.Network/locations/{location}/setLoadBalancerFrontendPublicIpAddresses/subscriptions/{subscriptionId}/locations/{location}": {
       "post": {
         "operationId": "LoadBalancers_SwapPublicIpAddresses",
         "tags": [
@@ -2788,7 +2800,7 @@
       "get": {
         "operationId": "NetworkInterfaces_ListAll",
         "tags": [
-          "NetworkInterfaceOperationGroup"
+          "NetworkInterfaces"
         ],
         "description": "Gets all network interfaces in a subscription.",
         "parameters": [
@@ -3213,7 +3225,7 @@
       "get": {
         "operationId": "VirtualApplianceSkus_List",
         "tags": [
-          "NetworkVirtualApplianceSkus"
+          "VirtualApplianceSkus"
         ],
         "description": "List all SKUs available for a virtual appliance.",
         "parameters": [
@@ -3252,7 +3264,7 @@
       "get": {
         "operationId": "VirtualApplianceSkus_Get",
         "tags": [
-          "NetworkVirtualApplianceSkus"
+          "VirtualApplianceSkus"
         ],
         "description": "Retrieves a single available sku for network virtual appliance.",
         "parameters": [
@@ -3490,7 +3502,7 @@
       "get": {
         "operationId": "PublicIPAddresses_ListAll",
         "tags": [
-          "PublicIPAddressOperationGroup"
+          "PublicIPAddresses"
         ],
         "description": "Gets all the public IP addresses in a subscription.",
         "parameters": [
@@ -4657,7 +4669,7 @@
       "get": {
         "operationId": "ExpressRouteLinks_List",
         "tags": [
-          "ExpressRoutePorts"
+          "ExpressRouteLinks"
         ],
         "description": "Retrieve the ExpressRouteLink sub-resources of the specified ExpressRoutePort resource.",
         "parameters": [
@@ -4706,7 +4718,7 @@
       "get": {
         "operationId": "ExpressRouteLinks_Get",
         "tags": [
-          "ExpressRoutePorts"
+          "ExpressRouteLinks"
         ],
         "description": "Retrieves the specified ExpressRouteLink resource.",
         "parameters": [
@@ -6057,7 +6069,7 @@
       "patch": {
         "operationId": "ApplicationSecurityGroups_UpdateTags",
         "tags": [
-          "ApplicationSecurityGroups"
+          "applicationSecurityGroups"
         ],
         "description": "Updates an application security group's tags.",
         "parameters": [
@@ -7022,7 +7034,8 @@
       "post": {
         "operationId": "PutBastionShareableLink",
         "tags": [
-          "BastionHosts"
+          "BastionHosts",
+          "BastionShareableLink"
         ],
         "description": "Creates a Bastion Shareable Links for all the VMs specified in the request.",
         "parameters": [
@@ -7099,7 +7112,8 @@
       "post": {
         "operationId": "DeleteBastionShareableLink",
         "tags": [
-          "BastionHosts"
+          "BastionHosts",
+          "BastionShareableLink"
         ],
         "description": "Deletes the Bastion Shareable Links for all the VMs specified in the request.",
         "parameters": [
@@ -7169,7 +7183,8 @@
       "post": {
         "operationId": "DeleteBastionShareableLinkByToken",
         "tags": [
-          "BastionHosts"
+          "BastionHosts",
+          "BastionShareableLink"
         ],
         "description": "Deletes the Bastion Shareable Links for all the tokens specified in the request.",
         "parameters": [
@@ -7362,7 +7377,8 @@
       "post": {
         "operationId": "GetBastionShareableLink",
         "tags": [
-          "BastionHosts"
+          "BastionHosts",
+          "BastionShareableLink"
         ],
         "description": "Return the Bastion Shareable Links for all the VMs specified in the request.",
         "parameters": [
@@ -8523,7 +8539,7 @@
       "get": {
         "operationId": "DdosCustomPolicies_Get",
         "tags": [
-          "DdosCustomPolicies"
+          "ddosCustomPolicies"
         ],
         "description": "Gets information about the specified DDoS custom policy.",
         "parameters": [
@@ -8567,7 +8583,7 @@
       "put": {
         "operationId": "DdosCustomPolicies_CreateOrUpdate",
         "tags": [
-          "DdosCustomPolicies"
+          "ddosCustomPolicies"
         ],
         "description": "Creates or updates a DDoS custom policy.",
         "parameters": [
@@ -8642,7 +8658,7 @@
       "patch": {
         "operationId": "DdosCustomPolicies_UpdateTags",
         "tags": [
-          "DdosCustomPolicies"
+          "ddosCustomPolicies"
         ],
         "description": "Update a DDoS custom policy tags.",
         "parameters": [
@@ -8695,7 +8711,7 @@
       "delete": {
         "operationId": "DdosCustomPolicies_Delete",
         "tags": [
-          "DdosCustomPolicies"
+          "ddosCustomPolicies"
         ],
         "description": "Deletes the specified DDoS custom policy.",
         "parameters": [
@@ -9079,7 +9095,7 @@
       "get": {
         "operationId": "DscpConfiguration_Get",
         "tags": [
-          "DscpConfigurations"
+          "DscpConfiguration"
         ],
         "description": "Gets a DSCP Configuration.",
         "parameters": [
@@ -9123,7 +9139,7 @@
       "put": {
         "operationId": "DscpConfiguration_CreateOrUpdate",
         "tags": [
-          "DscpConfigurations"
+          "DscpConfiguration"
         ],
         "description": "Creates or updates a DSCP Configuration.",
         "parameters": [
@@ -9146,7 +9162,7 @@
           {
             "name": "parameters",
             "in": "body",
-            "description": "Parameters supplied to the create or update dscp configuration operation.",
+            "description": "Parameters supplied to the create or update DscpConfiguration operation.",
             "required": true,
             "schema": {
               "$ref": "#/definitions/DscpConfiguration"
@@ -9198,7 +9214,7 @@
       "delete": {
         "operationId": "DscpConfiguration_Delete",
         "tags": [
-          "DscpConfigurations"
+          "DscpConfiguration"
         ],
         "description": "Deletes a DSCP Configuration.",
         "parameters": [
@@ -10049,7 +10065,7 @@
       "post": {
         "operationId": "ExpressRouteCircuits_ListArpTable",
         "tags": [
-          "ExpressRouteCircuitPeerings"
+          "ExpressRouteCircuitArpTable"
         ],
         "description": "Gets the currently advertised ARP table associated with the express route circuit in a resource group.",
         "parameters": [
@@ -10525,7 +10541,7 @@
       "post": {
         "operationId": "ExpressRouteCircuits_ListRoutesTable",
         "tags": [
-          "ExpressRouteCircuitPeerings"
+          "ExpressRouteCircuitRoutesTable"
         ],
         "description": "Gets the currently advertised routes table associated with the express route circuit in a resource group.",
         "parameters": [
@@ -10604,7 +10620,7 @@
       "post": {
         "operationId": "ExpressRouteCircuits_ListRoutesTableSummary",
         "tags": [
-          "ExpressRouteCircuitPeerings"
+          "ExpressRouteCircuitRoutesTableSummary"
         ],
         "description": "Gets the currently advertised routes table summary associated with the express route circuit in a resource group.",
         "parameters": [
@@ -10683,7 +10699,7 @@
       "get": {
         "operationId": "ExpressRouteCircuits_GetPeeringStats",
         "tags": [
-          "ExpressRouteCircuitPeerings"
+          "ExpressRouteCircuitStats"
         ],
         "description": "Gets all stats from an express route circuit in a resource group.",
         "parameters": [
@@ -10736,7 +10752,7 @@
       "get": {
         "operationId": "ExpressRouteCircuits_GetStats",
         "tags": [
-          "ExpressRouteCircuits"
+          "ExpressRouteCircuitStats"
         ],
         "description": "Gets all the stats from an express route circuit in a resource group.",
         "parameters": [
@@ -10987,7 +11003,7 @@
       "get": {
         "operationId": "ExpressRouteCrossConnectionPeerings_List",
         "tags": [
-          "ExpressRouteCrossConnections"
+          "ExpressRouteCrossConnectionPeerings"
         ],
         "description": "Gets all peerings in a specified ExpressRouteCrossConnection.",
         "parameters": [
@@ -11036,7 +11052,7 @@
       "get": {
         "operationId": "ExpressRouteCrossConnectionPeerings_Get",
         "tags": [
-          "ExpressRouteCrossConnections"
+          "ExpressRouteCrossConnectionPeerings"
         ],
         "description": "Gets the specified peering for the ExpressRouteCrossConnection.",
         "parameters": [
@@ -11087,7 +11103,7 @@
       "put": {
         "operationId": "ExpressRouteCrossConnectionPeerings_CreateOrUpdate",
         "tags": [
-          "ExpressRouteCrossConnections"
+          "ExpressRouteCrossConnectionPeerings"
         ],
         "description": "Creates or updates a peering in the specified ExpressRouteCrossConnection.",
         "parameters": [
@@ -11169,7 +11185,7 @@
       "delete": {
         "operationId": "ExpressRouteCrossConnectionPeerings_Delete",
         "tags": [
-          "ExpressRouteCrossConnections"
+          "ExpressRouteCrossConnectionPeerings"
         ],
         "description": "Deletes the specified peering from the ExpressRouteCrossConnection.",
         "parameters": [
@@ -11240,7 +11256,7 @@
       "post": {
         "operationId": "ExpressRouteCrossConnections_ListArpTable",
         "tags": [
-          "ExpressRouteCrossConnections"
+          "ExpressRouteCrossConnectionArpTable"
         ],
         "description": "Gets the currently advertised ARP table associated with the express route cross connection in a resource group.",
         "parameters": [
@@ -11319,7 +11335,7 @@
       "post": {
         "operationId": "ExpressRouteCrossConnections_ListRoutesTable",
         "tags": [
-          "ExpressRouteCrossConnections"
+          "ExpressRouteCrossConnectionRouteTable"
         ],
         "description": "Gets the currently advertised routes table associated with the express route cross connection in a resource group.",
         "parameters": [
@@ -11771,7 +11787,8 @@
       "get": {
         "operationId": "ExpressRouteConnections_List",
         "tags": [
-          "ExpressRouteGateways"
+          "ExpressRouteGateways",
+          "ExpressRouteConnections"
         ],
         "description": "Lists ExpressRouteConnections.",
         "parameters": [
@@ -11817,7 +11834,8 @@
       "get": {
         "operationId": "ExpressRouteConnections_Get",
         "tags": [
-          "ExpressRouteGateways"
+          "ExpressRouteGateways",
+          "ExpressRouteConnections"
         ],
         "description": "Gets the specified ExpressRouteConnection.",
         "parameters": [
@@ -11868,7 +11886,8 @@
       "put": {
         "operationId": "ExpressRouteConnections_CreateOrUpdate",
         "tags": [
-          "ExpressRouteGateways"
+          "ExpressRouteGateways",
+          "ExpressRouteConnections"
         ],
         "description": "Creates a connection between an ExpressRoute gateway and an ExpressRoute circuit.",
         "parameters": [
@@ -11950,7 +11969,8 @@
       "delete": {
         "operationId": "ExpressRouteConnections_Delete",
         "tags": [
-          "ExpressRouteGateways"
+          "ExpressRouteGateways",
+          "ExpressRouteConnections"
         ],
         "description": "Deletes a connection to a ExpressRoute circuit.",
         "parameters": [
@@ -14134,7 +14154,7 @@
       "get": {
         "operationId": "LoadBalancerBackendAddressPools_List",
         "tags": [
-          "BackendAddressPools"
+          "LoadBalancers"
         ],
         "description": "Gets all the load balancer backed address pools.",
         "parameters": [
@@ -14186,7 +14206,7 @@
       "get": {
         "operationId": "LoadBalancerBackendAddressPools_Get",
         "tags": [
-          "BackendAddressPools"
+          "LoadBalancers"
         ],
         "description": "Gets load balancer backend address pool.",
         "parameters": [
@@ -14240,7 +14260,7 @@
       "put": {
         "operationId": "LoadBalancerBackendAddressPools_CreateOrUpdate",
         "tags": [
-          "BackendAddressPools"
+          "LoadBalancers"
         ],
         "description": "Creates or updates a load balancer backend address pool.",
         "parameters": [
@@ -14322,7 +14342,7 @@
       "delete": {
         "operationId": "LoadBalancerBackendAddressPools_Delete",
         "tags": [
-          "BackendAddressPools"
+          "LoadBalancers"
         ],
         "description": "Deletes the specified load balancer backend address pool.",
         "parameters": [
@@ -14393,7 +14413,7 @@
       "post": {
         "operationId": "LoadBalancers_ListInboundNatRulePortMappings",
         "tags": [
-          "BackendAddressPools"
+          "LoadBalancers"
         ],
         "description": "List of inbound NAT rule port mappings.",
         "parameters": [
@@ -14480,7 +14500,7 @@
       "get": {
         "operationId": "LoadBalancerFrontendIPConfigurations_List",
         "tags": [
-          "FrontendIPConfigurations"
+          "LoadBalancers"
         ],
         "description": "Gets all the load balancer frontend IP configurations.",
         "parameters": [
@@ -14529,7 +14549,7 @@
       "get": {
         "operationId": "LoadBalancerFrontendIPConfigurations_Get",
         "tags": [
-          "FrontendIPConfigurations"
+          "LoadBalancers"
         ],
         "description": "Gets load balancer frontend IP configuration.",
         "parameters": [
@@ -14582,7 +14602,7 @@
       "get": {
         "operationId": "InboundNatRules_List",
         "tags": [
-          "InboundNatRules"
+          "LoadBalancers"
         ],
         "description": "Gets all the inbound NAT rules in a load balancer.",
         "parameters": [
@@ -14631,7 +14651,7 @@
       "get": {
         "operationId": "InboundNatRules_Get",
         "tags": [
-          "InboundNatRules"
+          "LoadBalancers"
         ],
         "description": "Gets the specified load balancer inbound NAT rule.",
         "parameters": [
@@ -14689,7 +14709,7 @@
       "put": {
         "operationId": "InboundNatRules_CreateOrUpdate",
         "tags": [
-          "InboundNatRules"
+          "LoadBalancers"
         ],
         "description": "Creates or updates a load balancer inbound NAT rule.",
         "parameters": [
@@ -14771,7 +14791,7 @@
       "delete": {
         "operationId": "InboundNatRules_Delete",
         "tags": [
-          "InboundNatRules"
+          "LoadBalancers"
         ],
         "description": "Deletes the specified load balancer inbound NAT rule.",
         "parameters": [
@@ -14842,7 +14862,7 @@
       "get": {
         "operationId": "LoadBalancerLoadBalancingRules_List",
         "tags": [
-          "LoadBalancingRules"
+          "LoadBalancers"
         ],
         "description": "Gets all the load balancing rules in a load balancer.",
         "parameters": [
@@ -14891,7 +14911,7 @@
       "get": {
         "operationId": "LoadBalancerLoadBalancingRules_Get",
         "tags": [
-          "LoadBalancingRules"
+          "LoadBalancers"
         ],
         "description": "Gets the specified load balancer load balancing rule.",
         "parameters": [
@@ -14944,7 +14964,7 @@
       "post": {
         "operationId": "LoadBalancerLoadBalancingRules_Health",
         "tags": [
-          "LoadBalancingRules"
+          "LoadBalancers"
         ],
         "description": "Get health details of a load balancing rule.",
         "parameters": [
@@ -15134,7 +15154,7 @@
       "get": {
         "operationId": "LoadBalancerOutboundRules_List",
         "tags": [
-          "OutboundRules"
+          "LoadBalancers"
         ],
         "description": "Gets all the outbound rules in a load balancer.",
         "parameters": [
@@ -15183,7 +15203,7 @@
       "get": {
         "operationId": "LoadBalancerOutboundRules_Get",
         "tags": [
-          "OutboundRules"
+          "LoadBalancers"
         ],
         "description": "Gets the specified load balancer outbound rule.",
         "parameters": [
@@ -15236,7 +15256,7 @@
       "get": {
         "operationId": "LoadBalancerProbes_List",
         "tags": [
-          "Probes"
+          "LoadBalancers"
         ],
         "description": "Gets all the load balancer probes.",
         "parameters": [
@@ -15285,7 +15305,7 @@
       "get": {
         "operationId": "LoadBalancerProbes_Get",
         "tags": [
-          "Probes"
+          "LoadBalancers"
         ],
         "description": "Gets load balancer probe.",
         "parameters": [
@@ -16174,7 +16194,7 @@
       "get": {
         "operationId": "NetworkInterfaces_List",
         "tags": [
-          "NetworkInterfaceOperationGroup"
+          "NetworkInterfaces"
         ],
         "description": "Gets all network interfaces in a resource group.",
         "parameters": [
@@ -16216,7 +16236,7 @@
       "get": {
         "operationId": "NetworkInterfaces_Get",
         "tags": [
-          "NetworkInterfaceOperationGroup"
+          "NetworkInterfaces"
         ],
         "description": "Gets information about the specified network interface.",
         "parameters": [
@@ -16267,7 +16287,7 @@
       "put": {
         "operationId": "NetworkInterfaces_CreateOrUpdate",
         "tags": [
-          "NetworkInterfaceOperationGroup"
+          "NetworkInterfaces"
         ],
         "description": "Creates or updates a network interface.",
         "parameters": [
@@ -16345,7 +16365,7 @@
       "patch": {
         "operationId": "NetworkInterfaces_UpdateTags",
         "tags": [
-          "NetworkInterfaceOperationGroup"
+          "NetworkInterfaces"
         ],
         "description": "Updates a network interface tags.",
         "parameters": [
@@ -16398,7 +16418,7 @@
       "delete": {
         "operationId": "NetworkInterfaces_Delete",
         "tags": [
-          "NetworkInterfaceOperationGroup"
+          "NetworkInterfaces"
         ],
         "description": "Deletes the specified network interface.",
         "parameters": [
@@ -16462,7 +16482,7 @@
       "post": {
         "operationId": "NetworkInterfaces_ListEffectiveNetworkSecurityGroups",
         "tags": [
-          "NetworkInterfaceOperationGroup"
+          "NetworkInterfaces"
         ],
         "description": "Gets all network security groups applied to a network interface.",
         "parameters": [
@@ -16527,7 +16547,7 @@
       "post": {
         "operationId": "NetworkInterfaces_GetEffectiveRouteTable",
         "tags": [
-          "NetworkInterfaceOperationGroup"
+          "NetworkInterfaces"
         ],
         "description": "Gets all route tables applied to a network interface.",
         "parameters": [
@@ -16592,7 +16612,7 @@
       "get": {
         "operationId": "NetworkInterfaceIPConfigurations_List",
         "tags": [
-          "NetworkInterfaceIPConfigurations"
+          "NetworkInterfaces"
         ],
         "description": "Get all ip configurations in a network interface.",
         "parameters": [
@@ -16641,7 +16661,7 @@
       "get": {
         "operationId": "NetworkInterfaceIPConfigurations_Get",
         "tags": [
-          "NetworkInterfaceIPConfigurations"
+          "NetworkInterfaces"
         ],
         "description": "Gets the specified network interface ip configuration.",
         "parameters": [
@@ -16694,7 +16714,7 @@
       "get": {
         "operationId": "NetworkInterfaceLoadBalancers_List",
         "tags": [
-          "NetworkInterfaceOperationGroup"
+          "NetworkInterfaces"
         ],
         "description": "List all load balancers in a network interface.",
         "parameters": [
@@ -16743,7 +16763,7 @@
       "get": {
         "operationId": "NetworkInterfaceTapConfigurations_List",
         "tags": [
-          "NetworkInterfaceTapConfigurations"
+          "NetworkInterfaces"
         ],
         "description": "Get all Tap configurations in a network interface.",
         "parameters": [
@@ -16792,7 +16812,7 @@
       "get": {
         "operationId": "NetworkInterfaceTapConfigurations_Get",
         "tags": [
-          "NetworkInterfaceTapConfigurations"
+          "NetworkInterfaces"
         ],
         "description": "Get the specified tap configuration on a network interface.",
         "parameters": [
@@ -16843,7 +16863,7 @@
       "put": {
         "operationId": "NetworkInterfaceTapConfigurations_CreateOrUpdate",
         "tags": [
-          "NetworkInterfaceTapConfigurations"
+          "NetworkInterfaces"
         ],
         "description": "Creates or updates a Tap configuration in the specified NetworkInterface.",
         "parameters": [
@@ -16925,7 +16945,7 @@
       "delete": {
         "operationId": "NetworkInterfaceTapConfigurations_Delete",
         "tags": [
-          "NetworkInterfaceTapConfigurations"
+          "NetworkInterfaces"
         ],
         "description": "Deletes the specified tap configuration from the NetworkInterface.",
         "parameters": [
@@ -20900,7 +20920,7 @@
       "get": {
         "operationId": "AdminRules_List",
         "tags": [
-          "BaseAdminRules"
+          "AdminRules"
         ],
         "description": "List all network manager security configuration admin rules.",
         "parameters": [
@@ -20981,7 +21001,7 @@
       "get": {
         "operationId": "AdminRules_Get",
         "tags": [
-          "BaseAdminRules"
+          "AdminRules"
         ],
         "description": "Gets a network manager security configuration admin rule.",
         "parameters": [
@@ -21050,7 +21070,7 @@
       "put": {
         "operationId": "AdminRules_CreateOrUpdate",
         "tags": [
-          "BaseAdminRules"
+          "AdminRules"
         ],
         "description": "Creates or updates an admin rule.",
         "parameters": [
@@ -21134,7 +21154,7 @@
       "delete": {
         "operationId": "AdminRules_Delete",
         "tags": [
-          "BaseAdminRules"
+          "AdminRules"
         ],
         "description": "Deletes an admin rule.",
         "parameters": [
@@ -22495,7 +22515,7 @@
       "get": {
         "operationId": "ReachabilityAnalysisIntents_List",
         "tags": [
-          "ReachabilityAnalysisIntents"
+          "ReachabilityAnalysisIntent"
         ],
         "summary": "Gets list of Reachability Analysis Intents .",
         "description": "Gets list of Reachability Analysis Intents .",
@@ -22593,7 +22613,7 @@
       "get": {
         "operationId": "ReachabilityAnalysisIntents_Get",
         "tags": [
-          "ReachabilityAnalysisIntents"
+          "ReachabilityAnalysisIntent"
         ],
         "summary": "Get the Reachability Analysis Intent.",
         "description": "Get the Reachability Analysis Intent.",
@@ -22655,7 +22675,7 @@
       "put": {
         "operationId": "ReachabilityAnalysisIntents_Create",
         "tags": [
-          "ReachabilityAnalysisIntents"
+          "ReachabilityAnalysisIntent"
         ],
         "summary": "Creates Reachability Analysis Intent.",
         "description": "Creates Reachability Analysis Intent.",
@@ -22732,7 +22752,7 @@
       "delete": {
         "operationId": "ReachabilityAnalysisIntents_Delete",
         "tags": [
-          "ReachabilityAnalysisIntents"
+          "ReachabilityAnalysisIntent"
         ],
         "summary": "Deletes Reachability Analysis Intent.",
         "description": "Deletes Reachability Analysis Intent.",
@@ -23672,7 +23692,7 @@
       "get": {
         "operationId": "DefaultSecurityRules_List",
         "tags": [
-          "DefaultSecurityRules"
+          "SecurityRules"
         ],
         "description": "Gets all default security rules in a network security group.",
         "parameters": [
@@ -23721,7 +23741,7 @@
       "get": {
         "operationId": "DefaultSecurityRules_Get",
         "tags": [
-          "DefaultSecurityRules"
+          "SecurityRules"
         ],
         "description": "Get the specified default network security rule.",
         "parameters": [
@@ -24321,7 +24341,7 @@
       "get": {
         "operationId": "NetworkSecurityPerimeterLinkReferences_List",
         "tags": [
-          "NspLinkReferences"
+          "NetworkSecurityPerimeterLinkReferences"
         ],
         "description": "Lists the NSP LinkReference resources in the specified network security perimeter.",
         "parameters": [
@@ -24389,7 +24409,7 @@
       "get": {
         "operationId": "NetworkSecurityPerimeterLinkReferences_Get",
         "tags": [
-          "NspLinkReferences"
+          "NetworkSecurityPerimeterLinkReferences"
         ],
         "description": "Gets the specified NSP linkReference resource.",
         "parameters": [
@@ -24444,7 +24464,7 @@
       "delete": {
         "operationId": "NetworkSecurityPerimeterLinkReferences_Delete",
         "tags": [
-          "NspLinkReferences"
+          "NetworkSecurityPerimeterLinkReferences"
         ],
         "description": "Deletes an NSP LinkReference resource.",
         "parameters": [
@@ -24519,7 +24539,7 @@
       "get": {
         "operationId": "NetworkSecurityPerimeterLinks_List",
         "tags": [
-          "NspLinks"
+          "NetworkSecurityPerimeterLinks"
         ],
         "description": "Lists the NSP Link resources in the specified network security perimeter.",
         "parameters": [
@@ -24587,7 +24607,7 @@
       "get": {
         "operationId": "NetworkSecurityPerimeterLinks_Get",
         "tags": [
-          "NspLinks"
+          "NetworkSecurityPerimeterLinks"
         ],
         "description": "Gets the specified NSP link resource.",
         "parameters": [
@@ -24642,7 +24662,7 @@
       "put": {
         "operationId": "NetworkSecurityPerimeterLinks_CreateOrUpdate",
         "tags": [
-          "NspLinks"
+          "NetworkSecurityPerimeterLinks"
         ],
         "description": "Creates or updates NSP link resource.",
         "parameters": [
@@ -24712,7 +24732,7 @@
       "delete": {
         "operationId": "NetworkSecurityPerimeterLinks_Delete",
         "tags": [
-          "NspLinks"
+          "NetworkSecurityPerimeterLinks"
         ],
         "description": "Deletes an NSP Link resource.",
         "parameters": [
@@ -24787,7 +24807,7 @@
       "get": {
         "operationId": "NetworkSecurityPerimeterLoggingConfigurations_List",
         "tags": [
-          "NspLoggingConfigurations"
+          "NetworkSecurityPerimeterLoggingConfigurations"
         ],
         "description": "Lists the NSP logging configuration.",
         "parameters": [
@@ -24838,7 +24858,7 @@
       "get": {
         "operationId": "NetworkSecurityPerimeterLoggingConfigurations_Get",
         "tags": [
-          "NspLoggingConfigurations"
+          "NetworkSecurityPerimeterLoggingConfigurations"
         ],
         "description": "Gets the NSP logging configuration.",
         "parameters": [
@@ -24893,7 +24913,7 @@
       "put": {
         "operationId": "NetworkSecurityPerimeterLoggingConfigurations_CreateOrUpdate",
         "tags": [
-          "NspLoggingConfigurations"
+          "NetworkSecurityPerimeterLoggingConfigurations"
         ],
         "description": "Creates or updates NSP logging configuration.",
         "parameters": [
@@ -24963,7 +24983,7 @@
       "delete": {
         "operationId": "NetworkSecurityPerimeterLoggingConfigurations_Delete",
         "tags": [
-          "NspLoggingConfigurations"
+          "NetworkSecurityPerimeterLoggingConfigurations"
         ],
         "description": "Deletes an NSP Logging configuration.",
         "parameters": [
@@ -25020,7 +25040,7 @@
       "get": {
         "operationId": "NetworkSecurityPerimeterProfiles_List",
         "tags": [
-          "NspProfiles"
+          "NetworkSecurityPerimeterProfiles"
         ],
         "description": "Lists the NSP profiles in the specified network security perimeter.",
         "parameters": [
@@ -25088,7 +25108,7 @@
       "get": {
         "operationId": "NetworkSecurityPerimeterProfiles_Get",
         "tags": [
-          "NspProfiles"
+          "NetworkSecurityPerimeterProfiles"
         ],
         "description": "Gets the specified NSP profile.",
         "parameters": [
@@ -25143,7 +25163,7 @@
       "put": {
         "operationId": "NetworkSecurityPerimeterProfiles_CreateOrUpdate",
         "tags": [
-          "NspProfiles"
+          "NetworkSecurityPerimeterProfiles"
         ],
         "description": "Creates or updates a network profile.",
         "parameters": [
@@ -25213,7 +25233,7 @@
       "delete": {
         "operationId": "NetworkSecurityPerimeterProfiles_Delete",
         "tags": [
-          "NspProfiles"
+          "NetworkSecurityPerimeterProfiles"
         ],
         "description": "Deletes an NSP profile.",
         "parameters": [
@@ -25270,7 +25290,7 @@
       "get": {
         "operationId": "NetworkSecurityPerimeterAccessRules_List",
         "tags": [
-          "NspAccessRules"
+          "NetworkSecurityPerimeterAccessRules"
         ],
         "description": "Lists the NSP access rules in the specified NSP profile.",
         "parameters": [
@@ -25347,7 +25367,7 @@
       "get": {
         "operationId": "NetworkSecurityPerimeterAccessRules_Get",
         "tags": [
-          "NspAccessRules"
+          "NetworkSecurityPerimeterAccessRules"
         ],
         "description": "Gets the specified NSP access rule by name.",
         "parameters": [
@@ -25411,7 +25431,7 @@
       "put": {
         "operationId": "NetworkSecurityPerimeterAccessRules_CreateOrUpdate",
         "tags": [
-          "NspAccessRules"
+          "NetworkSecurityPerimeterAccessRules"
         ],
         "description": "Creates or updates a network access rule.",
         "parameters": [
@@ -25490,7 +25510,7 @@
       "delete": {
         "operationId": "NetworkSecurityPerimeterAccessRules_Delete",
         "tags": [
-          "NspAccessRules"
+          "NetworkSecurityPerimeterAccessRules"
         ],
         "description": "Deletes an NSP access rule.",
         "parameters": [
@@ -25627,7 +25647,7 @@
       "get": {
         "operationId": "NetworkSecurityPerimeterAssociations_List",
         "tags": [
-          "NspAssociations"
+          "NetworkSecurityPerimeterAssociations"
         ],
         "description": "Lists the NSP resource associations.",
         "parameters": [
@@ -25695,7 +25715,7 @@
       "get": {
         "operationId": "NetworkSecurityPerimeterAssociations_Get",
         "tags": [
-          "NspAssociations"
+          "NetworkSecurityPerimeterAssociations"
         ],
         "description": "Gets the specified NSP association by name.",
         "parameters": [
@@ -25750,7 +25770,7 @@
       "put": {
         "operationId": "NetworkSecurityPerimeterAssociations_CreateOrUpdate",
         "tags": [
-          "NspAssociations"
+          "NetworkSecurityPerimeterAssociations"
         ],
         "description": "Creates or updates a NSP resource association.",
         "parameters": [
@@ -25849,7 +25869,7 @@
       "delete": {
         "operationId": "NetworkSecurityPerimeterAssociations_Delete",
         "tags": [
-          "NspAssociations"
+          "NetworkSecurityPerimeterAssociations"
         ],
         "description": "Deletes an NSP association resource.",
         "parameters": [
@@ -26367,9 +26387,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkVirtualAppliances/{networkVirtualApplianceName}/inboundSecurityRules/{ruleCollectionName}": {
       "get": {
         "operationId": "InboundSecurityRule_Get",
-        "tags": [
-          "InboundSecurityRuleOperationGroup"
-        ],
         "description": "Retrieves the available specified Network Virtual Appliance Inbound Security Rules Collection.",
         "parameters": [
           {
@@ -26418,9 +26435,6 @@
       },
       "put": {
         "operationId": "InboundSecurityRule_CreateOrUpdate",
-        "tags": [
-          "InboundSecurityRuleOperationGroup"
-        ],
         "description": "Creates or updates the specified Network Virtual Appliance Inbound Security Rules.",
         "parameters": [
           {
@@ -27642,7 +27656,7 @@
       "get": {
         "operationId": "ConnectionMonitors_List",
         "tags": [
-          "ConnectionMonitorResults"
+          "ConnectionMonitors"
         ],
         "description": "Lists all connection monitors for the specified Network Watcher.",
         "parameters": [
@@ -27691,7 +27705,7 @@
       "get": {
         "operationId": "ConnectionMonitors_Get",
         "tags": [
-          "ConnectionMonitorResults"
+          "ConnectionMonitors"
         ],
         "description": "Gets a connection monitor by name.",
         "parameters": [
@@ -27742,7 +27756,7 @@
       "put": {
         "operationId": "ConnectionMonitors_CreateOrUpdate",
         "tags": [
-          "ConnectionMonitorResults"
+          "ConnectionMonitors"
         ],
         "description": "Create or update a connection monitor.",
         "parameters": [
@@ -27837,7 +27851,7 @@
       "patch": {
         "operationId": "ConnectionMonitors_UpdateTags",
         "tags": [
-          "ConnectionMonitorResults"
+          "ConnectionMonitors"
         ],
         "description": "Update tags of the specified connection monitor.",
         "parameters": [
@@ -27897,7 +27911,7 @@
       "delete": {
         "operationId": "ConnectionMonitors_Delete",
         "tags": [
-          "ConnectionMonitorResults"
+          "ConnectionMonitors"
         ],
         "description": "Deletes the specified connection monitor.",
         "parameters": [
@@ -27965,7 +27979,7 @@
       "post": {
         "operationId": "ConnectionMonitors_Stop",
         "tags": [
-          "ConnectionMonitorResults"
+          "ConnectionMonitors"
         ],
         "description": "Stops the specified connection monitor.",
         "parameters": [
@@ -28651,7 +28665,8 @@
       "get": {
         "operationId": "PacketCaptures_List",
         "tags": [
-          "NetworkWatchers"
+          "NetworkWatchers",
+          "PacketCaptures"
         ],
         "description": "Lists all packet capture sessions within the specified resource group.",
         "parameters": [
@@ -28700,7 +28715,8 @@
       "get": {
         "operationId": "PacketCaptures_Get",
         "tags": [
-          "NetworkWatchers"
+          "NetworkWatchers",
+          "PacketCaptures"
         ],
         "description": "Gets a packet capture session by name.",
         "parameters": [
@@ -28751,7 +28767,8 @@
       "put": {
         "operationId": "PacketCaptures_Create",
         "tags": [
-          "NetworkWatchers"
+          "NetworkWatchers",
+          "PacketCaptures"
         ],
         "description": "Create and start a packet capture on the specified VM.",
         "parameters": [
@@ -28827,7 +28844,8 @@
       "delete": {
         "operationId": "PacketCaptures_Delete",
         "tags": [
-          "NetworkWatchers"
+          "NetworkWatchers",
+          "PacketCaptures"
         ],
         "description": "Deletes the specified packet capture session.",
         "parameters": [
@@ -28895,7 +28913,8 @@
       "post": {
         "operationId": "PacketCaptures_GetStatus",
         "tags": [
-          "NetworkWatchers"
+          "NetworkWatchers",
+          "PacketCaptures"
         ],
         "description": "Query the status of a running packet capture session.",
         "parameters": [
@@ -28970,7 +28989,8 @@
       "post": {
         "operationId": "PacketCaptures_Stop",
         "tags": [
-          "NetworkWatchers"
+          "NetworkWatchers",
+          "PacketCaptures"
         ],
         "description": "Stops a specified packet capture session.",
         "parameters": [
@@ -30290,7 +30310,8 @@
       "get": {
         "operationId": "PrivateDnsZoneGroups_List",
         "tags": [
-          "PrivateEndpoints"
+          "PrivateEndpoints",
+          "PrivateDnsZoneGroups"
         ],
         "description": "Gets all private dns zone groups in a private endpoint.",
         "parameters": [
@@ -30339,7 +30360,8 @@
       "get": {
         "operationId": "PrivateDnsZoneGroups_Get",
         "tags": [
-          "PrivateEndpoints"
+          "PrivateEndpoints",
+          "PrivateDnsZoneGroups"
         ],
         "description": "Gets the private dns zone group resource by specified private dns zone group name.",
         "parameters": [
@@ -30390,7 +30412,8 @@
       "put": {
         "operationId": "PrivateDnsZoneGroups_CreateOrUpdate",
         "tags": [
-          "PrivateEndpoints"
+          "PrivateEndpoints",
+          "PrivateDnsZoneGroups"
         ],
         "description": "Creates or updates a private dns zone group in the specified private endpoint.",
         "parameters": [
@@ -30472,7 +30495,8 @@
       "delete": {
         "operationId": "PrivateDnsZoneGroups_Delete",
         "tags": [
-          "PrivateEndpoints"
+          "PrivateEndpoints",
+          "PrivateDnsZoneGroups"
         ],
         "description": "Deletes the specified private dns zone group.",
         "parameters": [
@@ -30636,7 +30660,8 @@
       "put": {
         "operationId": "PrivateLinkServices_CreateOrUpdate",
         "tags": [
-          "PrivateLinkServices"
+          "PrivateLinkServices",
+          "PrivateLinkService"
         ],
         "description": "Creates or updates an private link service in the specified resource group.",
         "parameters": [
@@ -30775,7 +30800,8 @@
       "get": {
         "operationId": "PrivateLinkServices_ListPrivateEndpointConnections",
         "tags": [
-          "PrivateEndpointConnections"
+          "PrivateEndpointConnections",
+          "PrivateLinkServices"
         ],
         "description": "Gets all private end point connections for a specific private link service.",
         "parameters": [
@@ -30824,7 +30850,8 @@
       "get": {
         "operationId": "PrivateLinkServices_GetPrivateEndpointConnection",
         "tags": [
-          "PrivateEndpointConnections"
+          "PrivateEndpointConnections",
+          "PrivateLinkServices"
         ],
         "description": "Get the specific private end point connection by specific private link service in the resource group.",
         "parameters": [
@@ -30882,7 +30909,8 @@
       "put": {
         "operationId": "PrivateLinkServices_UpdatePrivateEndpointConnection",
         "tags": [
-          "PrivateEndpointConnections"
+          "PrivateEndpointConnections",
+          "PrivateLinkServices"
         ],
         "description": "Approve or reject private end point connection for a private link service in a subscription.",
         "parameters": [
@@ -30942,7 +30970,8 @@
       "delete": {
         "operationId": "PrivateLinkServices_DeletePrivateEndpointConnection",
         "tags": [
-          "PrivateEndpointConnections"
+          "PrivateEndpointConnections",
+          "PrivateLinkServices"
         ],
         "description": "Delete private end point connection for a private link service in a subscription.",
         "parameters": [
@@ -31013,7 +31042,7 @@
       "get": {
         "operationId": "PublicIPAddresses_List",
         "tags": [
-          "PublicIPAddressOperationGroup"
+          "PublicIPAddresses"
         ],
         "description": "Gets all public IP addresses in a resource group.",
         "parameters": [
@@ -31055,7 +31084,7 @@
       "get": {
         "operationId": "PublicIPAddresses_Get",
         "tags": [
-          "PublicIPAddressOperationGroup"
+          "PublicIPAddresses"
         ],
         "description": "Gets the specified public IP address in a specified resource group.",
         "parameters": [
@@ -31109,7 +31138,7 @@
       "put": {
         "operationId": "PublicIPAddresses_CreateOrUpdate",
         "tags": [
-          "PublicIPAddressOperationGroup"
+          "PublicIPAddresses"
         ],
         "description": "Creates or updates a static or dynamic public IP address.",
         "parameters": [
@@ -31196,7 +31225,7 @@
       "patch": {
         "operationId": "PublicIPAddresses_UpdateTags",
         "tags": [
-          "PublicIPAddressOperationGroup"
+          "PublicIPAddresses"
         ],
         "description": "Updates public IP address tags.",
         "parameters": [
@@ -31249,7 +31278,7 @@
       "delete": {
         "operationId": "PublicIPAddresses_Delete",
         "tags": [
-          "PublicIPAddressOperationGroup"
+          "PublicIPAddresses"
         ],
         "description": "Deletes the specified public IP address.",
         "parameters": [
@@ -31313,7 +31342,7 @@
       "post": {
         "operationId": "PublicIPAddresses_DdosProtectionStatus",
         "tags": [
-          "PublicIPAddressOperationGroup"
+          "PublicIPAddresses"
         ],
         "description": "Gets the Ddos Protection Status of a Public IP Address",
         "parameters": [
@@ -31378,7 +31407,7 @@
       "post": {
         "operationId": "PublicIPAddresses_DisassociateCloudServiceReservedPublicIp",
         "tags": [
-          "PublicIPAddressOperationGroup"
+          "PublicIPAddresses"
         ],
         "description": "Disassociates the Cloud Service reserved Public IP and associates the specified Standalone Public IP to the same Cloud Service frontend.",
         "parameters": [
@@ -31457,7 +31486,7 @@
       "post": {
         "operationId": "PublicIPAddresses_ReserveCloudServicePublicIpAddress",
         "tags": [
-          "PublicIPAddressOperationGroup"
+          "PublicIPAddresses"
         ],
         "description": "Reserves the specified Cloud Service Public IP by switching its allocation method to Static. If rollback is requested, reverts the allocation method to Dynamic.",
         "parameters": [
@@ -32120,7 +32149,8 @@
       "get": {
         "operationId": "RouteFilterRules_ListByRouteFilter",
         "tags": [
-          "RouteFilters"
+          "RouteFilters",
+          "RouteFilterRules"
         ],
         "description": "Gets all RouteFilterRules in a route filter.",
         "parameters": [
@@ -32169,7 +32199,8 @@
       "get": {
         "operationId": "RouteFilterRules_Get",
         "tags": [
-          "RouteFilters"
+          "RouteFilters",
+          "RouteFilterRules"
         ],
         "description": "Gets the specified rule from a route filter.",
         "parameters": [
@@ -32220,7 +32251,8 @@
       "put": {
         "operationId": "RouteFilterRules_CreateOrUpdate",
         "tags": [
-          "RouteFilters"
+          "RouteFilters",
+          "RouteFilterRules"
         ],
         "description": "Creates or updates a route in the specified route filter.",
         "parameters": [
@@ -32302,7 +32334,8 @@
       "delete": {
         "operationId": "RouteFilterRules_Delete",
         "tags": [
-          "RouteFilters"
+          "RouteFilters",
+          "RouteFilterRules"
         ],
         "description": "Deletes the specified rule from a route filter.",
         "parameters": [
@@ -33536,7 +33569,7 @@
         "tags": [
           "ServiceEndpointPolicyDefinitions"
         ],
-        "description": "Get the specified service endpoint policy definitions from service endpoint policy.",
+        "description": "Get a ServiceEndpointPolicyDefinition",
         "parameters": [
           {
             "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
@@ -34377,7 +34410,7 @@
       "patch": {
         "operationId": "VirtualHubs_UpdateTags",
         "tags": [
-          "VirtualHubs"
+          "VirtualWANs"
         ],
         "description": "Updates VirtualHub tags.",
         "parameters": [
@@ -39269,9 +39302,9 @@
       "get": {
         "operationId": "VirtualNetworkTaps_Get",
         "tags": [
-          "VirtualNetworkTaps"
+          "VirtualNetworkTap"
         ],
-        "description": "Gets information about the specified virtual network tap.",
+        "description": "Get a VirtualNetworkTap",
         "parameters": [
           {
             "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
@@ -39313,9 +39346,9 @@
       "put": {
         "operationId": "VirtualNetworkTaps_CreateOrUpdate",
         "tags": [
-          "VirtualNetworkTaps"
+          "VirtualNetworkTap"
         ],
-        "description": "Creates or updates a Virtual Network Tap.",
+        "description": "Create a VirtualNetworkTap",
         "parameters": [
           {
             "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
@@ -39388,9 +39421,9 @@
       "patch": {
         "operationId": "VirtualNetworkTaps_UpdateTags",
         "tags": [
-          "VirtualNetworkTaps"
+          "VirtualNetworkTap"
         ],
-        "description": "Updates an VirtualNetworkTap tags.",
+        "description": "Update a VirtualNetworkTap",
         "parameters": [
           {
             "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
@@ -39441,9 +39474,9 @@
       "delete": {
         "operationId": "VirtualNetworkTaps_Delete",
         "tags": [
-          "VirtualNetworkTaps"
+          "VirtualNetworkTap"
         ],
-        "description": "Deletes the specified virtual network tap.",
+        "description": "Delete a VirtualNetworkTap",
         "parameters": [
           {
             "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/ApiVersionParameter"
@@ -39956,7 +39989,7 @@
       "post": {
         "operationId": "ListNetworkManagerEffectiveConnectivityConfigurations",
         "tags": [
-          "EffectiveConfigurations"
+          "NetworkManagerEffectiveConnectivityConfiguration"
         ],
         "description": "List all effective connectivity configurations applied on a virtual network.",
         "parameters": [
@@ -40021,7 +40054,7 @@
       "post": {
         "operationId": "ListNetworkManagerEffectiveSecurityAdminRules",
         "tags": [
-          "EffectiveConfigurations"
+          "NetworkManagerEffectiveSecurityAdminRules"
         ],
         "description": "List all effective security admin rules applied on a virtual network.",
         "parameters": [
@@ -43346,7 +43379,8 @@
       "post": {
         "operationId": "VpnLinkConnections_ResetConnection",
         "tags": [
-          "VpnSiteLinkConnections"
+          "VpnSiteLinkConnections",
+          "VpnLinkConnections"
         ],
         "description": "Resets the VpnLink connection specified.",
         "parameters": [
@@ -44696,7 +44730,7 @@
       "get": {
         "operationId": "VipSwap_List",
         "tags": [
-          "SwapResources"
+          "VipSwap"
         ],
         "description": "Gets the list of SwapResource which identifies the slot type for the specified cloud service. The slot type on a cloud service can either be Staging or Production",
         "parameters": [
@@ -44745,7 +44779,7 @@
       "get": {
         "operationId": "VipSwap_Get",
         "tags": [
-          "SwapResources"
+          "VipSwap"
         ],
         "description": "Gets the SwapResource which identifies the slot type for the specified cloud service. The slot type on a cloud service can either be Staging or Production",
         "parameters": [
@@ -44806,7 +44840,7 @@
       "put": {
         "operationId": "VipSwap_Create",
         "tags": [
-          "SwapResources"
+          "VipSwap"
         ],
         "description": "Performs vip swap operation on swappable cloud services.",
         "parameters": [
@@ -53345,6 +53379,13 @@
           "$ref": "#/definitions/ConnectionMonitorResultProperties",
           "description": "Properties of the connection monitor result.",
           "x-ms-client-flatten": true
+        },
+        "tags": {
+          "type": "object",
+          "description": "Connection monitor tags.",
+          "additionalProperties": {
+            "type": "string"
+          }
         }
       },
       "allOf": [
@@ -54698,6 +54739,13 @@
           "$ref": "#/definitions/DdosProtectionPlanPropertiesFormat",
           "description": "Properties of the DDoS protection plan.",
           "x-ms-client-flatten": true
+        },
+        "tags": {
+          "type": "object",
+          "description": "Resource tags.",
+          "additionalProperties": {
+            "type": "string"
+          }
         },
         "etag": {
           "type": "string",

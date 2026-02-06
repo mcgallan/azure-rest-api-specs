@@ -51,7 +51,7 @@ interface FrontendIPConfigurations {
    * Gets load balancer frontend IP configuration.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @tag("FrontendIPConfigurations")
+  @tag("LoadBalancers")
   @operationId("LoadBalancerFrontendIPConfigurations_Get")
   get is ArmResourceRead<FrontendIPConfiguration, Error = CloudError>;
 
@@ -59,7 +59,7 @@ interface FrontendIPConfigurations {
    * Gets all the load balancer frontend IP configurations.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @tag("FrontendIPConfigurations")
+  @tag("LoadBalancers")
   @operationId("LoadBalancerFrontendIPConfigurations_List")
   list is ArmResourceListByParent<
     FrontendIPConfiguration,

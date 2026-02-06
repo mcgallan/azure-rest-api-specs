@@ -1,0 +1,42 @@
+
+| tags | error | The tags for operation "ApplicationGateways_ListAvailableServerVariables" changed: ["ApplicationGateways"] -> [] |
+| tags | error | The tags for operation "ApplicationGateways_ListAvailableRequestHeaders" changed: ["ApplicationGateways"] -> [] |
+| tags | error | The tags for operation "ApplicationGateways_ListAvailableResponseHeaders" changed: ["ApplicationGateways"] -> [] |
+| tags | error | The tags for operation "ApplicationGateways_ListAvailableWafRuleSets" changed: ["ApplicationGateways"] -> [] |
+| tags | error | The tags for operation "ApplicationGatewayWafDynamicManifestsDefault_Get" changed: [] -> ["ApplicationGateways"] |
+| tags | error | The tags for operation "AvailableDelegations_List" changed: [] -> ["AvailableDelegations"] |
+| tags | error | The tags for operation "AvailableResourceGroupDelegations_List" changed: [] -> ["AvailableResourceGroupDelegations"] |
+| tags | error | The tags for operation "AvailableServiceAliases_List" changed: [] -> ["AvailableServiceAliases"] |
+| tags | error | The tags for operation "AvailableServiceAliases_ListByResourceGroup" changed: [] -> ["AvailableServiceAliases"] |
+| tags | error | The tags for operation "AzureFirewalls_ListLearnedPrefixes" changed: [] -> ["AzureFirewalls"] |
+| tags | error | The tags for operation "AzureFirewallFqdnTags_ListAll" changed: ["AzureFirewallFqdnTags"] -> [] |
+| tags | error | The tags for operation "CheckDnsNameAvailability" changed: [] -> ["CheckDnsNameAvailability"] |
+| tags | error | The tags for operation "NetworkInterfaces_ListCloudServiceNetworkInterfaces" changed: ["NetworkInterfaces"] -> [] |
+| tags | error | The tags for operation "PublicIPAddresses_ListCloudServicePublicIPAddresses" changed: [] -> ["PublicIPAddresses"] |
+| tags | error | The tags for operation "PublicIPAddresses_ListCloudServiceRoleInstancePublicIPAddresses" changed: [] -> ["PublicIPAddresses"] |
+| tags | error | The tags for operation "PublicIPAddresses_GetCloudServicePublicIPAddress" changed: [] -> ["PublicIPAddresses"] |
+| tags | error | The tags for operation "AvailableEndpointServices_List" changed: [] -> ["AvailableEndpointServices"] |
+| tags | error | The tags for operation "ExpressRouteServiceProviders_List" changed: ["ExpressRouteServiceProviders"] -> [] |
+| tags | error | The tags for operation "FirewallPolicyIdpsSignatures_List" changed: [] -> ["FirewallPolicies"] |
+| tags | error | The tags for operation "FirewallPolicyIdpsSignaturesOverrides_Patch" changed: [] -> ["FirewallPolicyIdpsSignaturesOverrides"] |
+| tags | error | The tags for operation "FirewallPolicyIdpsSignaturesOverrides_Put" changed: [] -> ["FirewallPolicyIdpsSignaturesOverrides"] |
+| tags | error | The tags for operation "FirewallPolicyIdpsSignaturesOverrides_Get" changed: [] -> ["FirewallPolicyIdpsSignaturesOverrides"] |
+| tags | error | The tags for operation "FirewallPolicyIdpsSignaturesFilterValues_List" changed: [] -> ["FirewallPolicies"] |
+| tags | error | The tags for operation "FirewallPolicyIdpsSignaturesOverrides_List" changed: [] -> ["FirewallPolicyIdpsSignaturesOverrides"] |
+| tags | error | The tags for operation "FirewallPolicyDrafts_CreateOrUpdate" changed: [] -> ["FirewallPolicyDrafts"] |
+| tags | error | The tags for operation "FirewallPolicyDrafts_Delete" changed: [] -> ["FirewallPolicyDrafts"] |
+| tags | error | The tags for operation "FirewallPolicyDrafts_Get" changed: [] -> ["FirewallPolicyDrafts"] |
+| tags | error | The tags for operation "FirewallPolicyDeployments_Deploy" changed: [] -> ["FirewallPolicies"] |
+| tags | error | The tags for operation "FirewallPolicyRuleCollectionGroupDrafts_Delete" changed: [] -> ["FirewallPolicyRuleCollectionGroupDrafts"] |
+| tags | error | The tags for operation "FirewallPolicyRuleCollectionGroupDrafts_CreateOrUpdate" changed: [] -> ["FirewallPolicyRuleCollectionGroupDrafts"] |
+| tags | error | The tags for operation "FirewallPolicyRuleCollectionGroupDrafts_Get" changed: [] -> ["FirewallPolicyRuleCollectionGroupDrafts"] |
+| tags | error | The tags for operation "LoadBalancers_SwapPublicIpAddresses" changed: ["LoadBalancers"] -> [] |
+| tags | error | The tags for operation "NetworkInterfaceTapConfigurations_Get" changed: ["NetworkInterfaces"] -> ["Network Interfaces"] |
+| tags | error | The tags for operation "NetworkInterfaceTapConfigurations_List" changed: ["NetworkInterfaces"] -> ["Network Interfaces"] |
+| tags | error | The tags for operation "ListActiveConnectivityConfigurations" changed: ["NetworkManagerActiveConnectivityConfigurations"] -> ["NetworkManagers"] |
+| tags | error | The tags for operation "ListActiveSecurityAdminRules" changed: ["NetworkManagerActiveConfigurations"] -> ["NetworkManagers"] |
+| tags | error | The tags for operation "NetworkSecurityPerimeterAssociableResourceTypes_List" changed: ["NetworkSecurityPerimeterAssociableResourceTypes"] -> [] |
+| tags | error | The tags for operation "NetworkSecurityPerimeterOperationStatuses_Get" changed: ["NetworkSecurityPerimeterOperationStatuses"] -> [] |
+| tags | error | The tags for operation "NetworkSecurityPerimeterServiceTags_List" changed: ["NetworkSecurityPerimeterServiceTags"] -> [] |
+| tags | error | The tags for operation "ReachabilityAnalysisIntents_Delete" changed: ["ReachabilityAnalysisIntent"] -> ["ReachabilityAnalysisIntents"] |
+

@@ -1,0 +1,52 @@
+
+| tags | error | The tags for operation "ApplicationGatewayWafDynamicManifestsDefault_Get" changed: [] -> ["ApplicationGateways"] |
+| tags | error | The tags for operation "AvailableDelegations_List" changed: [] -> ["AvailableDelegations"] |
+| tags | error | The tags for operation "AvailableResourceGroupDelegations_List" changed: [] -> ["AvailableResourceGroupDelegations"] |
+| tags | error | The tags for operation "AvailableServiceAliases_List" changed: [] -> ["AvailableServiceAliases"] |
+| tags | error | The tags for operation "AvailableServiceAliases_ListByResourceGroup" changed: [] -> ["AvailableServiceAliases"] |
+| tags | error | The tags for operation "AzureFirewalls_ListLearnedPrefixes" changed: [] -> ["AzureFirewalls"] |
+| tags | error | The tags for operation "PublicIPAddresses_ListCloudServicePublicIPAddresses" changed: [] -> ["PublicIPAddresses"] |
+| tags | error | The tags for operation "PublicIPAddresses_ListCloudServiceRoleInstancePublicIPAddresses" changed: [] -> ["PublicIPAddresses"] |
+| tags | error | The tags for operation "PublicIPAddresses_GetCloudServicePublicIPAddress" changed: [] -> ["PublicIPAddresses"] |
+| tags | error | The tags for operation "AvailableEndpointServices_List" changed: [] -> ["AvailableEndpointServices"] |
+| tags | error | The tags for operation "FirewallPolicyIdpsSignatures_List" changed: [] -> ["FirewallPolicies"] |
+| tags | error | The tags for operation "FirewallPolicyIdpsSignaturesOverrides_Patch" changed: [] -> ["FirewallPolicyIdpsSignaturesOverrides"] |
+| tags | error | The tags for operation "FirewallPolicyIdpsSignaturesOverrides_Put" changed: [] -> ["FirewallPolicyIdpsSignaturesOverrides"] |
+| tags | error | The tags for operation "FirewallPolicyIdpsSignaturesOverrides_Get" changed: [] -> ["FirewallPolicyIdpsSignaturesOverrides"] |
+| tags | error | The tags for operation "FirewallPolicyIdpsSignaturesFilterValues_List" changed: [] -> ["FirewallPolicies"] |
+| tags | error | The tags for operation "FirewallPolicyIdpsSignaturesOverrides_List" changed: [] -> ["FirewallPolicyIdpsSignaturesOverrides"] |
+| tags | error | The tags for operation "FirewallPolicyDrafts_CreateOrUpdate" changed: [] -> ["FirewallPolicyDrafts"] |
+| tags | error | The tags for operation "FirewallPolicyDrafts_Delete" changed: [] -> ["FirewallPolicyDrafts"] |
+| tags | error | The tags for operation "FirewallPolicyDrafts_Get" changed: [] -> ["FirewallPolicyDrafts"] |
+| tags | error | The tags for operation "FirewallPolicyDeployments_Deploy" changed: [] -> ["FirewallPolicies"] |
+| tags | error | The tags for operation "FirewallPolicyRuleCollectionGroupDrafts_Delete" changed: [] -> ["FirewallPolicyRuleCollectionGroupDrafts"] |
+| tags | error | The tags for operation "FirewallPolicyRuleCollectionGroupDrafts_CreateOrUpdate" changed: [] -> ["FirewallPolicyRuleCollectionGroupDrafts"] |
+| tags | error | The tags for operation "FirewallPolicyRuleCollectionGroupDrafts_Get" changed: [] -> ["FirewallPolicyRuleCollectionGroupDrafts"] |
+| tags | error | The tags for operation "NetworkInterfaceTapConfigurations_Get" changed: ["NetworkInterfaces"] -> ["Network Interfaces"] |
+| tags | error | The tags for operation "NetworkInterfaceTapConfigurations_List" changed: ["NetworkInterfaces"] -> ["Network Interfaces"] |
+| tags | error | The tags for operation "ListActiveConnectivityConfigurations" changed: ["NetworkManagerActiveConnectivityConfigurations"] -> ["NetworkManagers"] |
+| tags | error | The tags for operation "ListActiveSecurityAdminRules" changed: ["NetworkManagerActiveConfigurations"] -> ["NetworkManagers"] |
+| tags | error | The tags for operation "ReachabilityAnalysisIntents_Delete" changed: ["ReachabilityAnalysisIntent"] -> ["ReachabilityAnalysisIntents"] |
+| tags | error | The tags for operation "PacketCaptures_Create" changed: ["PacketCaptures"] -> ["NetworkWatchers","PacketCaptures"] |
+| tags | error | The tags for operation "PacketCaptures_Get" changed: ["PacketCaptures"] -> ["NetworkWatchers","PacketCaptures"] |
+| tags | error | The tags for operation "PacketCaptures_Delete" changed: ["PacketCaptures"] -> ["NetworkWatchers","PacketCaptures"] |
+| tags | error | The tags for operation "PacketCaptures_Stop" changed: ["PacketCaptures"] -> ["NetworkWatchers","PacketCaptures"] |
+| tags | error | The tags for operation "PacketCaptures_GetStatus" changed: ["PacketCaptures"] -> ["NetworkWatchers","PacketCaptures"] |
+| tags | error | The tags for operation "PacketCaptures_List" changed: ["PacketCaptures"] -> ["NetworkWatchers","PacketCaptures"] |
+| tags | error | The tags for operation "NetworkWatchers_SetFlowLogConfiguration" changed: ["NetworkWatchers","TrafficAnalytics"] -> ["NetworkWatchers"] |
+| tags | error | The tags for operation "NetworkWatchers_GetFlowLogStatus" changed: ["NetworkWatchers","TrafficAnalytics"] -> ["NetworkWatchers"] |
+| tags | error | The tags for operation "ConnectionMonitors_CreateOrUpdate" changed: ["ConnectionMonitors"] -> ["ConnectionMonitorResults"] |
+| tags | error | The tags for operation "ConnectionMonitors_Get" changed: ["ConnectionMonitors"] -> ["ConnectionMonitorResults"] |
+| tags | error | The tags for operation "ConnectionMonitors_Delete" changed: ["ConnectionMonitors"] -> ["ConnectionMonitorResults"] |
+| tags | error | The tags for operation "ConnectionMonitors_UpdateTags" changed: ["ConnectionMonitors"] -> ["ConnectionMonitorResults"] |
+| tags | error | The tags for operation "ConnectionMonitors_Stop" changed: ["ConnectionMonitors"] -> ["ConnectionMonitorResults"] |
+| tags | error | The tags for operation "ConnectionMonitors_List" changed: ["ConnectionMonitors"] -> ["ConnectionMonitorResults"] |
+| tags | error | The tags for operation "Operations_List" changed: [] -> ["Operations"] |
+| tags | error | The tags for operation "AvailablePrivateEndpointTypes_List" changed: [] -> ["AvailablePrivateEndpointTypes"] |
+| tags | error | The tags for operation "AvailablePrivateEndpointTypes_ListByResourceGroup" changed: [] -> ["AvailablePrivateEndpointTypes"] |
+| tags | error | The tags for operation "PrivateDnsZoneGroups_Delete" changed: ["PrivateDnsZoneGroups"] -> ["PrivateEndpoints"] |
+| tags | error | The tags for operation "PrivateDnsZoneGroups_Get" changed: ["PrivateDnsZoneGroups"] -> ["PrivateEndpoints"] |
+| tags | error | The tags for operation "PrivateDnsZoneGroups_CreateOrUpdate" changed: ["PrivateDnsZoneGroups"] -> ["PrivateEndpoints"] |
+| tags | error | The tags for operation "PrivateDnsZoneGroups_List" changed: ["PrivateDnsZoneGroups"] -> ["PrivateEndpoints"] |
+| tags | error | The tags for operation "PrivateLinkServices_CreateOrUpdate" changed: ["PrivateLinkService"] -> ["PrivateLinkServices"] |
+

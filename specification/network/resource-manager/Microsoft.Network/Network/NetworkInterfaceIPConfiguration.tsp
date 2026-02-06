@@ -47,13 +47,13 @@ interface NetworkInterfaceIPConfigurations {
   /**
    * Gets the specified network interface ip configuration.
    */
-  @tag("NetworkInterfaceIPConfigurations")
+  @tag("NetworkInterfaces")
   get is ArmResourceRead<NetworkInterfaceIPConfiguration, Error = CloudError>;
 
   /**
    * Get all ip configurations in a network interface.
    */
-  @tag("NetworkInterfaceIPConfigurations")
+  @tag("NetworkInterfaces")
   list is ArmResourceListByParent<
     NetworkInterfaceIPConfiguration,
     Error = CloudError

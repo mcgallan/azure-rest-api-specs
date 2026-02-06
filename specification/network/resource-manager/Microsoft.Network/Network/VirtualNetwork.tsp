@@ -160,12 +160,13 @@ interface VirtualNetworks {
 
 #suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 @Azure.ResourceManager.Legacy.feature(Features.networkManager)
-@armResourceOperations
+@armResourceOperations(#{omitTags: true})
 interface EffectiveConfigurations {
   /**
    * List all effective connectivity configurations applied on a virtual network.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("NetworkManagerEffectiveConnectivityConfiguration")
   @operationId("ListNetworkManagerEffectiveConnectivityConfigurations")
   @list
   listNetworkManagerEffectiveConnectivityConfigurations is ArmResourceActionSync<
@@ -188,6 +189,7 @@ interface EffectiveConfigurations {
    * List all effective security admin rules applied on a virtual network.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @tag("NetworkManagerEffectiveSecurityAdminRules")
   @operationId("ListNetworkManagerEffectiveSecurityAdminRules")
   @list
   listNetworkManagerEffectiveSecurityAdminRules is ArmResourceActionSync<

@@ -115,7 +115,7 @@ interface VirtualHubs {
   /**
    * Updates VirtualHub tags.
    */
-  @tag("VirtualHubs")
+  @tag("VirtualWANs")
   @patch(#{ implicitOptionality: false })
   @autoRoute
   updateTags is ArmCustomPatchSync<

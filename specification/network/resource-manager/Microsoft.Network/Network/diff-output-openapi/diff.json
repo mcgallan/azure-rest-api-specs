@@ -16,6 +16,9 @@
       "name": "ApplicationSecurityGroups"
     },
     {
+      "name": "applicationSecurityGroups"
+    },
+    {
       "name": "AzureFirewalls"
     },
     {
@@ -25,31 +28,31 @@
       "name": "BastionHosts"
     },
     {
+      "name": "BastionShareableLink"
+    },
+    {
       "name": "ExpressRouteProviderPorts"
     },
     {
       "name": "NetworkInterfaces"
     },
     {
-      "name": "NetworkInterfaceOperationGroup"
-    },
-    {
       "name": "PublicIPAddresses"
     },
     {
-      "name": "PublicIPAddressOperationGroup"
-    },
-    {
-      "name": "SwapResources"
+      "name": "VipSwap"
     },
     {
       "name": "CustomIpPrefixes"
     },
     {
-      "name": "DdosCustomPolicies"
+      "name": "ddosCustomPolicies"
     },
     {
       "name": "DdosProtectionPlans"
+    },
+    {
+      "name": "DscpConfiguration"
     },
     {
       "name": "DscpConfigurations"
@@ -61,7 +64,19 @@
       "name": "ExpressRouteCircuits"
     },
     {
+      "name": "ExpressRouteCircuitStats"
+    },
+    {
       "name": "ExpressRouteCircuitPeerings"
+    },
+    {
+      "name": "ExpressRouteCircuitArpTable"
+    },
+    {
+      "name": "ExpressRouteCircuitRoutesTable"
+    },
+    {
+      "name": "ExpressRouteCircuitRoutesTableSummary"
     },
     {
       "name": "ExpressRouteCircuitConnections"
@@ -73,10 +88,25 @@
       "name": "ExpressRouteCrossConnections"
     },
     {
+      "name": "ExpressRouteCrossConnectionArpTable"
+    },
+    {
+      "name": "ExpressRouteCrossConnectionRouteTableSummary"
+    },
+    {
+      "name": "ExpressRouteCrossConnectionRouteTable"
+    },
+    {
+      "name": "ExpressRouteCrossConnectionPeerings"
+    },
+    {
       "name": "ExpressRoutePortsLocations"
     },
     {
       "name": "ExpressRoutePorts"
+    },
+    {
+      "name": "ExpressRouteLinks"
     },
     {
       "name": "ExpressRoutePortAuthorizations"
@@ -115,37 +145,10 @@
       "name": "LoadBalancers"
     },
     {
-      "name": "BackendAddressPools"
-    },
-    {
-      "name": "FrontendIPConfigurations"
-    },
-    {
-      "name": "InboundNatRules"
-    },
-    {
-      "name": "LoadBalancingRules"
-    },
-    {
-      "name": "OutboundRules"
-    },
-    {
-      "name": "Probes"
-    },
-    {
       "name": "NatGateways"
     },
     {
-      "name": "NetworkInterfaceIPConfigurations"
-    },
-    {
-      "name": "NetworkInterfaceTapConfigurations"
-    },
-    {
       "name": "NetworkManagerConnections"
-    },
-    {
-      "name": "ManagementGroupNetworkManagerConnections"
     },
     {
       "name": "ConnectivityConfigurations"
@@ -175,7 +178,7 @@
       "name": "AdminRuleCollections"
     },
     {
-      "name": "BaseAdminRules"
+      "name": "AdminRules"
     },
     {
       "name": "SecurityUserConfigurations"
@@ -196,31 +199,28 @@
       "name": "SecurityRules"
     },
     {
-      "name": "DefaultSecurityRules"
-    },
-    {
       "name": "NetworkSecurityPerimeters"
     },
     {
-      "name": "NspProfiles"
+      "name": "NetworkSecurityPerimeterProfiles"
     },
     {
-      "name": "NspAccessRules"
+      "name": "NetworkSecurityPerimeterAccessRules"
     },
     {
-      "name": "NspAssociations"
+      "name": "NetworkSecurityPerimeterAssociations"
     },
     {
-      "name": "NspLinks"
+      "name": "NetworkSecurityPerimeterLinks"
     },
     {
-      "name": "NspLinkReferences"
+      "name": "NetworkSecurityPerimeterLinkReferences"
     },
     {
-      "name": "NspLoggingConfigurations"
+      "name": "NetworkSecurityPerimeterLoggingConfigurations"
     },
     {
-      "name": "ReachabilityAnalysisIntents"
+      "name": "ReachabilityAnalysisIntent"
     },
     {
       "name": "VerifierWorkspaces"
@@ -238,16 +238,16 @@
       "name": "VirtualApplianceSites"
     },
     {
-      "name": "NetworkVirtualApplianceSkus"
-    },
-    {
-      "name": "InboundSecurityRuleOperationGroup"
+      "name": "VirtualApplianceSkus"
     },
     {
       "name": "NetworkWatchers"
     },
     {
-      "name": "ConnectionMonitorResults"
+      "name": "PacketCaptures"
+    },
+    {
+      "name": "ConnectionMonitors"
     },
     {
       "name": "FlowLogs"
@@ -256,7 +256,13 @@
       "name": "PrivateEndpoints"
     },
     {
+      "name": "PrivateDnsZoneGroups"
+    },
+    {
       "name": "PrivateLinkServices"
+    },
+    {
+      "name": "PrivateLinkService"
     },
     {
       "name": "PrivateEndpointConnections"
@@ -266,6 +272,9 @@
     },
     {
       "name": "RouteFilters"
+    },
+    {
+      "name": "RouteFilterRules"
     },
     {
       "name": "RouteTables"
@@ -286,7 +295,10 @@
       "name": "VirtualNetworks"
     },
     {
-      "name": "EffectiveConfigurations"
+      "name": "NetworkManagerEffectiveConnectivityConfiguration"
+    },
+    {
+      "name": "NetworkManagerEffectiveSecurityAdminRules"
     },
     {
       "name": "Subnets"
@@ -305,6 +317,9 @@
     },
     {
       "name": "VirtualNetworkGatewayNatRules"
+    },
+    {
+      "name": "VirtualNetworkTap"
     },
     {
       "name": "VirtualNetworkTaps"
@@ -334,6 +349,9 @@
       "name": "VirtualHubs"
     },
     {
+      "name": "VirtualWANs"
+    },
+    {
       "name": "RouteMaps"
     },
     {
@@ -346,6 +364,9 @@
       "name": "VpnSiteLinkConnections"
     },
     {
+      "name": "VpnLinkConnections"
+    },
+    {
       "name": "VpnGatewayNatRules"
     },
     {
@@ -353,6 +374,9 @@
     },
     {
       "name": "ExpressRouteGateways"
+    },
+    {
+      "name": "ExpressRouteConnections"
     },
     {
       "name": "BgpConnections"
@@ -422,6 +446,91 @@
     }
   ],
   "paths": {
+    "/subscriptions/{subscriptionId}/providers/microsoft.Network/locations/{location}/networkSecurityPerimeterOperationStatuses/{operationId}__deleted": {
+      "parameters": [
+        {
+          "$ref": "./network.json#/parameters/SubscriptionIdParameter"
+        },
+        {
+          "$ref": "#/parameters/LocationParameter"
+        },
+        {
+          "$ref": "#/parameters/OperationIdParameter"
+        },
+        {
+          "$ref": "./network.json#/parameters/ApiVersionParameter"
+        }
+      ],
+      "get": {
+        "operationId": "NetworkSecurityPerimeterOperationStatuses_Get",
+        "tags": [
+          "NetworkSecurityPerimeterOperationStatuses"
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "../../../../../../common-types/resource-management/v6/types.json#/definitions/OperationStatusResult"
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./network.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "NspOperationStatusGet": {
+            "$ref": "./examples/NspOperationStatusGet.json"
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/providers/microsoft.Network/locations/{location}/setLoadBalancerFrontendPublicIpAddresses__deleted": {
+      "post": {
+        "operationId": "LoadBalancers_SwapPublicIpAddresses",
+        "tags": [
+          "LoadBalancers"
+        ],
+        "parameters": [
+          {
+            "name": "location",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "parameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/LoadBalancerVipSwapRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore"
+          },
+          "202": {
+            "description": "ignore"
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "./network.json#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Swap VIPs between two load balancers.": {
+            "$ref": "./examples/LoadBalancersSwapPublicIpAddresses.json"
+          }
+        },
+        "x-ms-long-running-operation": true
+      }
+    },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute/virtualMachineScaleSets/{virtualMachineScaleSetName}/networkInterfaces__deleted": {
       "get": {
         "operationId": "NetworkInterfaces_ListVirtualMachineScaleSetNetworkInterfaces",
@@ -816,6 +925,91 @@
             "$ref": "./examples/VmssPublicIpGet.json"
           }
         }
+      }
+    },
+    "/subscriptions/{subscriptionId}/providers/microsoft.Network/locations/{location}/networkSecurityPerimeterOperationStatuses/{operationId}/subscriptions/{subscriptionId}/locations/{location}/{operationId}__added": {
+      "get": {
+        "operationId": "NetworkSecurityPerimeterOperationStatuses_Get",
+        "tags": [
+          "NetworkSecurityPerimeterOperationStatuses"
+        ],
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
+          },
+          {
+            "name": "operationId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "../../../../../../common-types/resource-management/v5/types.json#/definitions/OperationStatusResult"
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "NspOperationStatusGet": {
+            "$ref": "./examples/NspOperationStatusGet.json"
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/providers/microsoft.Network/locations/{location}/setLoadBalancerFrontendPublicIpAddresses/subscriptions/{subscriptionId}/locations/{location}__added": {
+      "post": {
+        "operationId": "LoadBalancers_SwapPublicIpAddresses",
+        "tags": [
+          "LoadBalancers"
+        ],
+        "parameters": [
+          {
+            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
+          },
+          {
+            "name": "parameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/LoadBalancerVipSwapRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ignore"
+          },
+          "202": {
+            "description": "ignore",
+            "headers": {
+              "Location": {
+                "type": "string",
+                "description": "The Location header contains the URL where the status of the long running operation can be checked."
+              }
+            }
+          },
+          "default": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "Swap VIPs between two load balancers.": {
+            "$ref": "./examples/LoadBalancersSwapPublicIpAddresses.json"
+          }
+        },
+        "x-ms-long-running-operation": true
       }
     },
     "/subscriptions/{subscriptionId}/providers/microsoft.Network/serviceGateways__added": {
@@ -1400,16 +1594,6 @@
     },
     "/providers/microsoft.Management/managementGroups/{managementGroupId}/providers/microsoft.Network/networkManagerConnections": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "NetworkManagerConnections"
-          ],
-          [
-            "+",
-            "ManagementGroupNetworkManagerConnections"
-          ]
-        ],
         "parameters": [
           [
             "~",
@@ -1484,16 +1668,6 @@
             "type": "string"
           }
         ],
-        "tags": [
-          [
-            "-",
-            "NetworkManagerConnections"
-          ],
-          [
-            "+",
-            "ManagementGroupNetworkManagerConnections"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -1506,16 +1680,6 @@
         }
       },
       "put": {
-        "tags": [
-          [
-            "-",
-            "NetworkManagerConnections"
-          ],
-          [
-            "+",
-            "ManagementGroupNetworkManagerConnections"
-          ]
-        ],
         "parameters": [
           [
             "+",
@@ -1566,16 +1730,6 @@
             "required": true,
             "type": "string"
           }
-        ],
-        "tags": [
-          [
-            "-",
-            "NetworkManagerConnections"
-          ],
-          [
-            "+",
-            "ManagementGroupNetworkManagerConnections"
-          ]
         ],
         "responses": {
           "default": {
@@ -2083,9 +2237,6 @@
     },
     "/subscriptions/{subscriptionId}/providers/microsoft.Network/locations/{location}/applicationGatewayWafDynamicManifests": {
       "get": {
-        "tags__added": [
-          "ApplicationGateways"
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -2297,53 +2448,6 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/providers/microsoft.Network/locations/{location}/networkSecurityPerimeterOperationStatuses/{operationId}": {
-      "parameters__deleted": [
-        {
-          "$ref": "./network.json#/parameters/SubscriptionIdParameter"
-        },
-        {
-          "$ref": "#/parameters/LocationParameter"
-        },
-        {
-          "$ref": "#/parameters/OperationIdParameter"
-        },
-        {
-          "$ref": "./network.json#/parameters/ApiVersionParameter"
-        }
-      ],
-      "get": {
-        "parameters__added": [
-          {
-            "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
-          },
-          {
-            "name": "operationId",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "schema": {
-              "$ref": {
-                "__old": "../../../../../../common-types/resource-management/v6/types.json#/definitions/OperationStatusResult",
-                "__new": "../../../../../../common-types/resource-management/v5/types.json#/definitions/OperationStatusResult"
-              }
-            }
-          },
-          "default": {
-            "schema": {
-              "$ref": {
-                "__old": "./network.json#/definitions/CloudError",
-                "__new": "#/definitions/CloudError"
-              }
-            }
-          }
-        }
-      }
-    },
     "/subscriptions/{subscriptionId}/providers/microsoft.Network/locations/{location}/nspServiceTags": {
       "get": {
         "parameters": [
@@ -2460,43 +2564,6 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/providers/microsoft.Network/locations/{location}/setLoadBalancerFrontendPublicIpAddresses": {
-      "post": {
-        "parameters": [
-          [
-            "~",
-            {
-              "name__deleted": "location",
-              "in__deleted": "path",
-              "required__deleted": true,
-              "type__deleted": "string",
-              "$ref__added": "../../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
-            }
-          ],
-          [
-            " "
-          ]
-        ],
-        "responses": {
-          "202": {
-            "headers__added": {
-              "Location": {
-                "type": "string",
-                "description": "The Location header contains the URL where the status of the long running operation can be checked."
-              }
-            }
-          },
-          "default": {
-            "schema": {
-              "$ref": {
-                "__old": "./network.json#/definitions/CloudError",
-                "__new": "#/definitions/CloudError"
-              }
-            }
-          }
-        }
-      }
-    },
     "/subscriptions/{subscriptionId}/providers/microsoft.Network/locations/{location}/usages": {
       "get": {
         "parameters": [
@@ -2569,16 +2636,6 @@
     },
     "/subscriptions/{subscriptionId}/providers/microsoft.Network/networkInterfaces": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "NetworkInterfaces"
-          ],
-          [
-            "+",
-            "NetworkInterfaceOperationGroup"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -2765,16 +2822,6 @@
     },
     "/subscriptions/{subscriptionId}/providers/microsoft.Network/networkVirtualApplianceSkus": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "VirtualApplianceSkus"
-          ],
-          [
-            "+",
-            "NetworkVirtualApplianceSkus"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -2789,16 +2836,6 @@
     },
     "/subscriptions/{subscriptionId}/providers/microsoft.Network/networkVirtualApplianceSkus/{skuName}": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "VirtualApplianceSkus"
-          ],
-          [
-            "+",
-            "NetworkVirtualApplianceSkus"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -2872,16 +2909,6 @@
     },
     "/subscriptions/{subscriptionId}/providers/microsoft.Network/publicIPAddresses": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "PublicIPAddresses"
-          ],
-          [
-            "+",
-            "PublicIPAddressOperationGroup"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -3115,16 +3142,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{groupName}/providers/microsoft.Compute/cloudServices/{resourceName}/providers/microsoft.Network/cloudServiceSlots": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "VipSwap"
-          ],
-          [
-            "+",
-            "SwapResources"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -3139,16 +3156,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{groupName}/providers/microsoft.Compute/cloudServices/{resourceName}/providers/microsoft.Network/cloudServiceSlots/{singletonResource}": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "VipSwap"
-          ],
-          [
-            "+",
-            "SwapResources"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -3161,16 +3168,6 @@
         }
       },
       "put": {
-        "tags": [
-          [
-            "-",
-            "VipSwap"
-          ],
-          [
-            "+",
-            "SwapResources"
-          ]
-        ],
         "responses": {
           "202": {
             "headers__added": {
@@ -3693,16 +3690,6 @@
         }
       },
       "patch": {
-        "tags": [
-          [
-            "-",
-            "applicationSecurityGroups"
-          ],
-          [
-            "+",
-            "ApplicationSecurityGroups"
-          ]
-        ],
         "parameters": [
           [
             " "
@@ -4076,15 +4063,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/bastionHosts/{bastionHostName}/createShareableLinks": {
       "post": {
-        "tags": [
-          [
-            " "
-          ],
-          [
-            "-",
-            "BastionShareableLink"
-          ]
-        ],
         "responses": {
           "202": {
             "headers__added": {
@@ -4107,15 +4085,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/bastionHosts/{bastionHostName}/deleteShareableLinks": {
       "post": {
-        "tags": [
-          [
-            " "
-          ],
-          [
-            "-",
-            "BastionShareableLink"
-          ]
-        ],
         "responses": {
           "202": {
             "headers__added": {
@@ -4138,15 +4107,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/bastionHosts/{bastionHostName}/deleteShareableLinksByToken": {
       "post": {
-        "tags": [
-          [
-            " "
-          ],
-          [
-            "-",
-            "BastionShareableLink"
-          ]
-        ],
         "responses": {
           "202": {
             "headers": {
@@ -4204,15 +4164,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/bastionHosts/{bastionHostName}/getShareableLinks": {
       "post": {
-        "tags": [
-          [
-            " "
-          ],
-          [
-            "-",
-            "BastionShareableLink"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -4628,16 +4579,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/ddosCustomPolicies/{ddosCustomPolicyName}": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "ddosCustomPolicies"
-          ],
-          [
-            "+",
-            "DdosCustomPolicies"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -4650,16 +4591,6 @@
         }
       },
       "put": {
-        "tags": [
-          [
-            "-",
-            "ddosCustomPolicies"
-          ],
-          [
-            "+",
-            "DdosCustomPolicies"
-          ]
-        ],
         "responses": {
           "201": {
             "headers__added": {
@@ -4683,16 +4614,6 @@
         }
       },
       "patch": {
-        "tags": [
-          [
-            "-",
-            "ddosCustomPolicies"
-          ],
-          [
-            "+",
-            "DdosCustomPolicies"
-          ]
-        ],
         "parameters": [
           [
             " "
@@ -4721,16 +4642,6 @@
         }
       },
       "delete": {
-        "tags": [
-          [
-            "-",
-            "ddosCustomPolicies"
-          ],
-          [
-            "+",
-            "DdosCustomPolicies"
-          ]
-        ],
         "responses": {
           "202": {
             "headers": {
@@ -4870,16 +4781,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/dscpConfigurations/{dscpConfigurationName}": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "DscpConfiguration"
-          ],
-          [
-            "+",
-            "DscpConfigurations"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -4892,16 +4793,6 @@
         }
       },
       "put": {
-        "tags": [
-          [
-            "-",
-            "DscpConfiguration"
-          ],
-          [
-            "+",
-            "DscpConfigurations"
-          ]
-        ],
         "responses": {
           "201": {
             "headers__added": {
@@ -4922,16 +4813,6 @@
         }
       },
       "delete": {
-        "tags": [
-          [
-            "-",
-            "DscpConfiguration"
-          ],
-          [
-            "+",
-            "DscpConfigurations"
-          ]
-        ],
         "responses": {
           "202": {
             "headers__added": {
@@ -5195,16 +5076,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/expressRouteCircuits/{circuitName}/peerings/{peeringName}/arpTables/{devicePath}": {
       "post": {
-        "tags": [
-          [
-            "-",
-            "ExpressRouteCircuitArpTable"
-          ],
-          [
-            "+",
-            "ExpressRouteCircuitPeerings"
-          ]
-        ],
         "responses": {
           "202": {
             "headers__added": {
@@ -5326,16 +5197,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/expressRouteCircuits/{circuitName}/peerings/{peeringName}/routeTables/{devicePath}": {
       "post": {
-        "tags": [
-          [
-            "-",
-            "ExpressRouteCircuitRoutesTable"
-          ],
-          [
-            "+",
-            "ExpressRouteCircuitPeerings"
-          ]
-        ],
         "responses": {
           "202": {
             "headers__added": {
@@ -5358,16 +5219,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/expressRouteCircuits/{circuitName}/peerings/{peeringName}/routeTablesSummary/{devicePath}": {
       "post": {
-        "tags": [
-          [
-            "-",
-            "ExpressRouteCircuitRoutesTableSummary"
-          ],
-          [
-            "+",
-            "ExpressRouteCircuitPeerings"
-          ]
-        ],
         "responses": {
           "202": {
             "headers__added": {
@@ -5390,16 +5241,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/expressRouteCircuits/{circuitName}/peerings/{peeringName}/stats": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "ExpressRouteCircuitStats"
-          ],
-          [
-            "+",
-            "ExpressRouteCircuitPeerings"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -5414,16 +5255,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/expressRouteCircuits/{circuitName}/stats": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "ExpressRouteCircuitStats"
-          ],
-          [
-            "+",
-            "ExpressRouteCircuits"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -5517,16 +5348,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/expressRouteCrossConnections/{crossConnectionName}/peerings": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "ExpressRouteCrossConnectionPeerings"
-          ],
-          [
-            "+",
-            "ExpressRouteCrossConnections"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -5541,16 +5362,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/expressRouteCrossConnections/{crossConnectionName}/peerings/{peeringName}": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "ExpressRouteCrossConnectionPeerings"
-          ],
-          [
-            "+",
-            "ExpressRouteCrossConnections"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -5563,16 +5374,6 @@
         }
       },
       "put": {
-        "tags": [
-          [
-            "-",
-            "ExpressRouteCrossConnectionPeerings"
-          ],
-          [
-            "+",
-            "ExpressRouteCrossConnections"
-          ]
-        ],
         "responses": {
           "201": {
             "headers__added": {
@@ -5596,16 +5397,6 @@
         }
       },
       "delete": {
-        "tags": [
-          [
-            "-",
-            "ExpressRouteCrossConnectionPeerings"
-          ],
-          [
-            "+",
-            "ExpressRouteCrossConnections"
-          ]
-        ],
         "responses": {
           "202": {
             "headers__added": {
@@ -5628,16 +5419,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/expressRouteCrossConnections/{crossConnectionName}/peerings/{peeringName}/arpTables/{devicePath}": {
       "post": {
-        "tags": [
-          [
-            "-",
-            "ExpressRouteCrossConnectionArpTable"
-          ],
-          [
-            "+",
-            "ExpressRouteCrossConnections"
-          ]
-        ],
         "responses": {
           "200": {
             "schema": {
@@ -5668,16 +5449,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/expressRouteCrossConnections/{crossConnectionName}/peerings/{peeringName}/routeTables/{devicePath}": {
       "post": {
-        "tags": [
-          [
-            "-",
-            "ExpressRouteCrossConnectionRouteTable"
-          ],
-          [
-            "+",
-            "ExpressRouteCrossConnections"
-          ]
-        ],
         "responses": {
           "200": {
             "schema": {
@@ -5708,9 +5479,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/expressRouteCrossConnections/{crossConnectionName}/peerings/{peeringName}/routeTablesSummary/{devicePath}": {
       "post": {
-        "tags__deleted": [
-          "ExpressRouteCrossConnectionRouteTableSummary"
-        ],
         "responses": {
           "202": {
             "headers__added": {
@@ -5845,12 +5613,11 @@
       "get": {
         "tags": [
           [
-            "-",
-            "ExpressRouteConnections"
-          ],
-          [
             "+",
             "ExpressRouteGateways"
+          ],
+          [
+            " "
           ]
         ],
         "responses": {
@@ -5869,12 +5636,11 @@
       "get": {
         "tags": [
           [
-            "-",
-            "ExpressRouteConnections"
-          ],
-          [
             "+",
             "ExpressRouteGateways"
+          ],
+          [
+            " "
           ]
         ],
         "responses": {
@@ -5891,12 +5657,11 @@
       "put": {
         "tags": [
           [
-            "-",
-            "ExpressRouteConnections"
-          ],
-          [
             "+",
             "ExpressRouteGateways"
+          ],
+          [
+            " "
           ]
         ],
         "responses": {
@@ -5924,12 +5689,11 @@
       "delete": {
         "tags": [
           [
-            "-",
-            "ExpressRouteConnections"
-          ],
-          [
             "+",
             "ExpressRouteGateways"
+          ],
+          [
+            " "
           ]
         ],
         "responses": {
@@ -6156,16 +5920,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/expressRoutePorts/{expressRoutePortName}/links": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "ExpressRouteLinks"
-          ],
-          [
-            "+",
-            "ExpressRoutePorts"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -6180,16 +5934,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/expressRoutePorts/{expressRoutePortName}/links/{linkName}": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "ExpressRouteLinks"
-          ],
-          [
-            "+",
-            "ExpressRoutePorts"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -7048,16 +6792,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/loadBalancers/{loadBalancerName}/backendAddressPools": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "LoadBalancers"
-          ],
-          [
-            "+",
-            "BackendAddressPools"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -7072,16 +6806,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/loadBalancers/{loadBalancerName}/backendAddressPools/{backendAddressPoolName}": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "LoadBalancers"
-          ],
-          [
-            "+",
-            "BackendAddressPools"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -7094,16 +6818,6 @@
         }
       },
       "put": {
-        "tags": [
-          [
-            "-",
-            "LoadBalancers"
-          ],
-          [
-            "+",
-            "BackendAddressPools"
-          ]
-        ],
         "responses": {
           "201": {
             "headers__added": {
@@ -7127,16 +6841,6 @@
         }
       },
       "delete": {
-        "tags": [
-          [
-            "-",
-            "LoadBalancers"
-          ],
-          [
-            "+",
-            "BackendAddressPools"
-          ]
-        ],
         "responses": {
           "202": {
             "headers__added": {
@@ -7159,16 +6863,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{groupName}/providers/microsoft.Network/loadBalancers/{loadBalancerName}/backendAddressPools/{backendPoolName}/queryInboundNatRulePortMapping": {
       "post": {
-        "tags": [
-          [
-            "-",
-            "LoadBalancers"
-          ],
-          [
-            "+",
-            "BackendAddressPools"
-          ]
-        ],
         "responses": {
           "202": {
             "headers__added": {
@@ -7191,16 +6885,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/loadBalancers/{loadBalancerName}/frontendIPConfigurations": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "LoadBalancers"
-          ],
-          [
-            "+",
-            "FrontendIPConfigurations"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -7215,16 +6899,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/loadBalancers/{loadBalancerName}/frontendIPConfigurations/{frontendIPConfigurationName}": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "LoadBalancers"
-          ],
-          [
-            "+",
-            "FrontendIPConfigurations"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -7239,16 +6913,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/loadBalancers/{loadBalancerName}/inboundNatRules": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "LoadBalancers"
-          ],
-          [
-            "+",
-            "InboundNatRules"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -7263,16 +6927,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/loadBalancers/{loadBalancerName}/inboundNatRules/{inboundNatRuleName}": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "LoadBalancers"
-          ],
-          [
-            "+",
-            "InboundNatRules"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -7285,16 +6939,6 @@
         }
       },
       "put": {
-        "tags": [
-          [
-            "-",
-            "LoadBalancers"
-          ],
-          [
-            "+",
-            "InboundNatRules"
-          ]
-        ],
         "responses": {
           "201": {
             "headers__added": {
@@ -7318,16 +6962,6 @@
         }
       },
       "delete": {
-        "tags": [
-          [
-            "-",
-            "LoadBalancers"
-          ],
-          [
-            "+",
-            "InboundNatRules"
-          ]
-        ],
         "responses": {
           "202": {
             "headers__added": {
@@ -7350,16 +6984,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/loadBalancers/{loadBalancerName}/loadBalancingRules": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "LoadBalancers"
-          ],
-          [
-            "+",
-            "LoadBalancingRules"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -7374,16 +6998,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/loadBalancers/{loadBalancerName}/loadBalancingRules/{loadBalancingRuleName}": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "LoadBalancers"
-          ],
-          [
-            "+",
-            "LoadBalancingRules"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -7398,16 +7012,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{groupName}/providers/microsoft.Network/loadBalancers/{loadBalancerName}/loadBalancingRules/{loadBalancingRuleName}/health": {
       "post": {
-        "tags": [
-          [
-            "-",
-            "LoadBalancers"
-          ],
-          [
-            "+",
-            "LoadBalancingRules"
-          ]
-        ],
         "responses": {
           "202": {
             "headers": {
@@ -7468,16 +7072,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/loadBalancers/{loadBalancerName}/outboundRules": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "LoadBalancers"
-          ],
-          [
-            "+",
-            "OutboundRules"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -7492,16 +7086,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/loadBalancers/{loadBalancerName}/outboundRules/{outboundRuleName}": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "LoadBalancers"
-          ],
-          [
-            "+",
-            "OutboundRules"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -7516,16 +7100,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/loadBalancers/{loadBalancerName}/probes": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "LoadBalancers"
-          ],
-          [
-            "+",
-            "Probes"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -7540,16 +7114,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/loadBalancers/{loadBalancerName}/probes/{probeName}": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "LoadBalancers"
-          ],
-          [
-            "+",
-            "Probes"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -7912,16 +7476,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkInterfaces": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "NetworkInterfaces"
-          ],
-          [
-            "+",
-            "NetworkInterfaceOperationGroup"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -7936,16 +7490,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkInterfaces/{networkInterfaceName}": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "NetworkInterfaces"
-          ],
-          [
-            "+",
-            "NetworkInterfaceOperationGroup"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -7958,16 +7502,6 @@
         }
       },
       "put": {
-        "tags": [
-          [
-            "-",
-            "NetworkInterfaces"
-          ],
-          [
-            "+",
-            "NetworkInterfaceOperationGroup"
-          ]
-        ],
         "responses": {
           "201": {
             "headers__added": {
@@ -7991,16 +7525,6 @@
         }
       },
       "patch": {
-        "tags": [
-          [
-            "-",
-            "NetworkInterfaces"
-          ],
-          [
-            "+",
-            "NetworkInterfaceOperationGroup"
-          ]
-        ],
         "parameters": [
           [
             " "
@@ -8029,16 +7553,6 @@
         }
       },
       "delete": {
-        "tags": [
-          [
-            "-",
-            "NetworkInterfaces"
-          ],
-          [
-            "+",
-            "NetworkInterfaceOperationGroup"
-          ]
-        ],
         "responses": {
           "202": {
             "headers__added": {
@@ -8061,16 +7575,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkInterfaces/{networkInterfaceName}/effectiveNetworkSecurityGroups": {
       "post": {
-        "tags": [
-          [
-            "-",
-            "NetworkInterfaces"
-          ],
-          [
-            "+",
-            "NetworkInterfaceOperationGroup"
-          ]
-        ],
         "responses": {
           "202": {
             "headers__added": {
@@ -8093,16 +7597,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkInterfaces/{networkInterfaceName}/effectiveRouteTable": {
       "post": {
-        "tags": [
-          [
-            "-",
-            "NetworkInterfaces"
-          ],
-          [
-            "+",
-            "NetworkInterfaceOperationGroup"
-          ]
-        ],
         "responses": {
           "202": {
             "headers__added": {
@@ -8125,16 +7619,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkInterfaces/{networkInterfaceName}/ipConfigurations": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "NetworkInterfaces"
-          ],
-          [
-            "+",
-            "NetworkInterfaceIPConfigurations"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -8149,16 +7633,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkInterfaces/{networkInterfaceName}/ipConfigurations/{ipConfigurationName}": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "NetworkInterfaces"
-          ],
-          [
-            "+",
-            "NetworkInterfaceIPConfigurations"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -8173,16 +7647,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkInterfaces/{networkInterfaceName}/loadBalancers": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "NetworkInterfaces"
-          ],
-          [
-            "+",
-            "NetworkInterfaceOperationGroup"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -8197,16 +7661,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkInterfaces/{networkInterfaceName}/tapConfigurations": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "NetworkInterfaces"
-          ],
-          [
-            "+",
-            "NetworkInterfaceTapConfigurations"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -8221,16 +7675,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkInterfaces/{networkInterfaceName}/tapConfigurations/{tapConfigurationName}": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "NetworkInterfaces"
-          ],
-          [
-            "+",
-            "NetworkInterfaceTapConfigurations"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -8250,7 +7694,7 @@
           ],
           [
             "+",
-            "NetworkInterfaceTapConfigurations"
+            "NetworkInterfaces"
           ]
         ],
         "responses": {
@@ -8283,7 +7727,7 @@
           ],
           [
             "+",
-            "NetworkInterfaceTapConfigurations"
+            "NetworkInterfaces"
           ]
         ],
         "responses": {
@@ -10793,16 +10237,6 @@
             "type": "string"
           }
         ],
-        "tags": [
-          [
-            "-",
-            "AdminRules"
-          ],
-          [
-            "+",
-            "BaseAdminRules"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -10867,16 +10301,6 @@
             "type": "string"
           }
         ],
-        "tags": [
-          [
-            "-",
-            "AdminRules"
-          ],
-          [
-            "+",
-            "BaseAdminRules"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -10889,16 +10313,6 @@
         }
       },
       "put": {
-        "tags": [
-          [
-            "-",
-            "AdminRules"
-          ],
-          [
-            "+",
-            "BaseAdminRules"
-          ]
-        ],
         "parameters": [
           [
             "+",
@@ -10953,16 +10367,6 @@
         }
       },
       "delete": {
-        "tags": [
-          [
-            "-",
-            "AdminRules"
-          ],
-          [
-            "+",
-            "BaseAdminRules"
-          ]
-        ],
         "parameters": [
           [
             "+",
@@ -11878,6 +11282,16 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkManagers/{networkManagerName}/verifierWorkspaces/{workspaceName}/reachabilityAnalysisIntents": {
       "get": {
+        "tags": [
+          [
+            "-",
+            "ReachabilityAnalysisIntents"
+          ],
+          [
+            "+",
+            "ReachabilityAnalysisIntent"
+          ]
+        ],
         "parameters": [
           [
             "-",
@@ -11928,6 +11342,16 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkManagers/{networkManagerName}/verifierWorkspaces/{workspaceName}/reachabilityAnalysisIntents/{reachabilityAnalysisIntentName}": {
       "get": {
+        "tags": [
+          [
+            "-",
+            "ReachabilityAnalysisIntents"
+          ],
+          [
+            "+",
+            "ReachabilityAnalysisIntent"
+          ]
+        ],
         "parameters": [
           [
             "-",
@@ -11964,6 +11388,16 @@
         }
       },
       "put": {
+        "tags": [
+          [
+            "-",
+            "ReachabilityAnalysisIntents"
+          ],
+          [
+            "+",
+            "ReachabilityAnalysisIntent"
+          ]
+        ],
         "parameters": [
           [
             "-",
@@ -12003,16 +11437,6 @@
         }
       },
       "delete": {
-        "tags": [
-          [
-            "-",
-            "ReachabilityAnalysisIntent"
-          ],
-          [
-            "+",
-            "ReachabilityAnalysisIntents"
-          ]
-        ],
         "parameters": [
           [
             "-",
@@ -12411,16 +11835,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkSecurityGroups/{networkSecurityGroupName}/defaultSecurityRules": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "SecurityRules"
-          ],
-          [
-            "+",
-            "DefaultSecurityRules"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -12435,16 +11849,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkSecurityGroups/{networkSecurityGroupName}/defaultSecurityRules/{defaultSecurityRuleName}": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "SecurityRules"
-          ],
-          [
-            "+",
-            "DefaultSecurityRules"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -12682,16 +12086,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkSecurityPerimeters/{networkSecurityPerimeterName}/linkReferences": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "NetworkSecurityPerimeterLinkReferences"
-          ],
-          [
-            "+",
-            "NspLinkReferences"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -12741,16 +12135,6 @@
             "pattern": "(^[a-zA-Z0-9]+[a-zA-Z0-9_.-]*[a-zA-Z0-9_]+$)|(^[a-zA-Z0-9]$)"
           }
         ],
-        "tags": [
-          [
-            "-",
-            "NetworkSecurityPerimeterLinkReferences"
-          ],
-          [
-            "+",
-            "NspLinkReferences"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -12781,16 +12165,6 @@
             "pattern": "(^[a-zA-Z0-9]+[a-zA-Z0-9_.-]*[a-zA-Z0-9_]+$)|(^[a-zA-Z0-9]$)"
           }
         ],
-        "tags": [
-          [
-            "-",
-            "NetworkSecurityPerimeterLinkReferences"
-          ],
-          [
-            "+",
-            "NspLinkReferences"
-          ]
-        ],
         "responses": {
           "202": {
             "headers": {
@@ -12817,16 +12191,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkSecurityPerimeters/{networkSecurityPerimeterName}/links": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "NetworkSecurityPerimeterLinks"
-          ],
-          [
-            "+",
-            "NspLinks"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -12876,16 +12240,6 @@
             "pattern": "(^[a-zA-Z0-9]+[a-zA-Z0-9_.-]*[a-zA-Z0-9_]+$)|(^[a-zA-Z0-9]$)"
           }
         ],
-        "tags": [
-          [
-            "-",
-            "NetworkSecurityPerimeterLinks"
-          ],
-          [
-            "+",
-            "NspLinks"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -12898,16 +12252,6 @@
         }
       },
       "put": {
-        "tags": [
-          [
-            "-",
-            "NetworkSecurityPerimeterLinks"
-          ],
-          [
-            "+",
-            "NspLinks"
-          ]
-        ],
         "parameters": [
           [
             "+",
@@ -12965,16 +12309,6 @@
             "pattern": "(^[a-zA-Z0-9]+[a-zA-Z0-9_.-]*[a-zA-Z0-9_]+$)|(^[a-zA-Z0-9]$)"
           }
         ],
-        "tags": [
-          [
-            "-",
-            "NetworkSecurityPerimeterLinks"
-          ],
-          [
-            "+",
-            "NspLinks"
-          ]
-        ],
         "responses": {
           "202": {
             "headers": {
@@ -13025,16 +12359,6 @@
             "pattern": "(^[a-zA-Z0-9]+[a-zA-Z0-9_.-]*[a-zA-Z0-9_]+$)|(^[a-zA-Z0-9]$)"
           }
         ],
-        "tags": [
-          [
-            "-",
-            "NetworkSecurityPerimeterLoggingConfigurations"
-          ],
-          [
-            "+",
-            "NspLoggingConfigurations"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -13084,16 +12408,6 @@
             "pattern": "(^[a-zA-Z0-9]+[a-zA-Z0-9_.-]*[a-zA-Z0-9_]+$)|(^[a-zA-Z0-9]$)"
           }
         ],
-        "tags": [
-          [
-            "-",
-            "NetworkSecurityPerimeterLoggingConfigurations"
-          ],
-          [
-            "+",
-            "NspLoggingConfigurations"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -13106,16 +12420,6 @@
         }
       },
       "put": {
-        "tags": [
-          [
-            "-",
-            "NetworkSecurityPerimeterLoggingConfigurations"
-          ],
-          [
-            "+",
-            "NspLoggingConfigurations"
-          ]
-        ],
         "parameters": [
           [
             "+",
@@ -13173,16 +12477,6 @@
             "pattern": "(^[a-zA-Z0-9]+[a-zA-Z0-9_.-]*[a-zA-Z0-9_]+$)|(^[a-zA-Z0-9]$)"
           }
         ],
-        "tags": [
-          [
-            "-",
-            "NetworkSecurityPerimeterLoggingConfigurations"
-          ],
-          [
-            "+",
-            "NspLoggingConfigurations"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -13197,16 +12491,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkSecurityPerimeters/{networkSecurityPerimeterName}/profiles": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "NetworkSecurityPerimeterProfiles"
-          ],
-          [
-            "+",
-            "NspProfiles"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -13256,16 +12540,6 @@
             "pattern": "(^[a-zA-Z0-9]+[a-zA-Z0-9_.-]*[a-zA-Z0-9_]+$)|(^[a-zA-Z0-9]$)"
           }
         ],
-        "tags": [
-          [
-            "-",
-            "NetworkSecurityPerimeterProfiles"
-          ],
-          [
-            "+",
-            "NspProfiles"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -13278,16 +12552,6 @@
         }
       },
       "put": {
-        "tags": [
-          [
-            "-",
-            "NetworkSecurityPerimeterProfiles"
-          ],
-          [
-            "+",
-            "NspProfiles"
-          ]
-        ],
         "parameters": [
           [
             "+",
@@ -13345,16 +12609,6 @@
             "pattern": "(^[a-zA-Z0-9]+[a-zA-Z0-9_.-]*[a-zA-Z0-9_]+$)|(^[a-zA-Z0-9]$)"
           }
         ],
-        "tags": [
-          [
-            "-",
-            "NetworkSecurityPerimeterProfiles"
-          ],
-          [
-            "+",
-            "NspProfiles"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -13369,16 +12623,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkSecurityPerimeters/{networkSecurityPerimeterName}/profiles/{profileName}/accessRules": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "NetworkSecurityPerimeterAccessRules"
-          ],
-          [
-            "+",
-            "NspAccessRules"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -13439,16 +12683,6 @@
             "pattern": "(^[a-zA-Z0-9]+[a-zA-Z0-9_.-]*[a-zA-Z0-9_]+$)|(^[a-zA-Z0-9]$)"
           }
         ],
-        "tags": [
-          [
-            "-",
-            "NetworkSecurityPerimeterAccessRules"
-          ],
-          [
-            "+",
-            "NspAccessRules"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -13461,16 +12695,6 @@
         }
       },
       "put": {
-        "tags": [
-          [
-            "-",
-            "NetworkSecurityPerimeterAccessRules"
-          ],
-          [
-            "+",
-            "NspAccessRules"
-          ]
-        ],
         "parameters": [
           [
             "+",
@@ -13547,16 +12771,6 @@
             "pattern": "(^[a-zA-Z0-9]+[a-zA-Z0-9_.-]*[a-zA-Z0-9_]+$)|(^[a-zA-Z0-9]$)"
           }
         ],
-        "tags": [
-          [
-            "-",
-            "NetworkSecurityPerimeterAccessRules"
-          ],
-          [
-            "+",
-            "NspAccessRules"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -13591,9 +12805,6 @@
         }
       ],
       "post": {
-        "tags__deleted": [
-          "NetworkSecurityPerimeterAccessRules"
-        ],
         "parameters": [
           [
             "+",
@@ -13656,16 +12867,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkSecurityPerimeters/{networkSecurityPerimeterName}/resourceAssociations": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "NetworkSecurityPerimeterAssociations"
-          ],
-          [
-            "+",
-            "NspAssociations"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -13715,16 +12916,6 @@
             "pattern": "(^[a-zA-Z0-9]+[a-zA-Z0-9_.-]*[a-zA-Z0-9_]+$)|(^[a-zA-Z0-9]$)"
           }
         ],
-        "tags": [
-          [
-            "-",
-            "NetworkSecurityPerimeterAssociations"
-          ],
-          [
-            "+",
-            "NspAssociations"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -13737,16 +12928,6 @@
         }
       },
       "put": {
-        "tags": [
-          [
-            "-",
-            "NetworkSecurityPerimeterAssociations"
-          ],
-          [
-            "+",
-            "NspAssociations"
-          ]
-        ],
         "parameters": [
           [
             "+",
@@ -13817,16 +12998,6 @@
             "pattern": "(^[a-zA-Z0-9]+[a-zA-Z0-9_.-]*[a-zA-Z0-9_]+$)|(^[a-zA-Z0-9]$)"
           }
         ],
-        "tags": [
-          [
-            "-",
-            "NetworkSecurityPerimeterAssociations"
-          ],
-          [
-            "+",
-            "NspAssociations"
-          ]
-        ],
         "responses": {
           "202": {
             "headers": {
@@ -13868,9 +13039,6 @@
         }
       ],
       "post": {
-        "tags__deleted": [
-          "NetworkSecurityPerimeterAssociations"
-        ],
         "parameters": [
           [
             "+",
@@ -14065,9 +13233,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkVirtualAppliances/{networkVirtualApplianceName}/inboundSecurityRules/{ruleCollectionName}": {
       "get": {
-        "tags__added": [
-          "InboundSecurityRuleOperationGroup"
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -14080,9 +13245,6 @@
         }
       },
       "put": {
-        "tags__added": [
-          "InboundSecurityRuleOperationGroup"
-        ],
         "responses": {
           "201": {
             "headers__added": {
@@ -14433,16 +13595,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkWatchers/{networkWatcherName}/connectionMonitors": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "ConnectionMonitors"
-          ],
-          [
-            "+",
-            "ConnectionMonitorResults"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -14457,16 +13609,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkWatchers/{networkWatcherName}/connectionMonitors/{connectionMonitorName}": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "ConnectionMonitors"
-          ],
-          [
-            "+",
-            "ConnectionMonitorResults"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -14479,16 +13621,6 @@
         }
       },
       "put": {
-        "tags": [
-          [
-            "-",
-            "ConnectionMonitors"
-          ],
-          [
-            "+",
-            "ConnectionMonitorResults"
-          ]
-        ],
         "parameters": [
           [
             " "
@@ -14539,16 +13671,6 @@
         }
       },
       "patch": {
-        "tags": [
-          [
-            "-",
-            "ConnectionMonitors"
-          ],
-          [
-            "+",
-            "ConnectionMonitorResults"
-          ]
-        ],
         "parameters": [
           [
             " "
@@ -14580,16 +13702,6 @@
         }
       },
       "delete": {
-        "tags": [
-          [
-            "-",
-            "ConnectionMonitors"
-          ],
-          [
-            "+",
-            "ConnectionMonitorResults"
-          ]
-        ],
         "responses": {
           "202": {
             "headers__added": {
@@ -14612,16 +13724,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkWatchers/{networkWatcherName}/connectionMonitors/{connectionMonitorName}/stop": {
       "post": {
-        "tags": [
-          [
-            "-",
-            "ConnectionMonitors"
-          ],
-          [
-            "+",
-            "ConnectionMonitorResults"
-          ]
-        ],
         "responses": {
           "202": {
             "headers__added": {
@@ -14776,12 +13878,11 @@
       "get": {
         "tags": [
           [
-            "-",
-            "PacketCaptures"
-          ],
-          [
             "+",
             "NetworkWatchers"
+          ],
+          [
+            " "
           ]
         ]
       }
@@ -14790,24 +13891,22 @@
       "get": {
         "tags": [
           [
-            "-",
-            "PacketCaptures"
-          ],
-          [
             "+",
             "NetworkWatchers"
+          ],
+          [
+            " "
           ]
         ]
       },
       "put": {
         "tags": [
           [
-            "-",
-            "PacketCaptures"
-          ],
-          [
             "+",
             "NetworkWatchers"
+          ],
+          [
+            " "
           ]
         ],
         "responses": {
@@ -14827,12 +13926,11 @@
       "delete": {
         "tags": [
           [
-            "-",
-            "PacketCaptures"
-          ],
-          [
             "+",
             "NetworkWatchers"
+          ],
+          [
+            " "
           ]
         ],
         "responses": {
@@ -14851,12 +13949,11 @@
       "post": {
         "tags": [
           [
-            "-",
-            "PacketCaptures"
-          ],
-          [
             "+",
             "NetworkWatchers"
+          ],
+          [
+            " "
           ]
         ],
         "responses": {
@@ -14875,12 +13972,11 @@
       "post": {
         "tags": [
           [
-            "-",
-            "PacketCaptures"
-          ],
-          [
             "+",
             "NetworkWatchers"
+          ],
+          [
+            " "
           ]
         ],
         "responses": {
@@ -15084,9 +14180,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/p2svpnGateways/{p2sVpnGatewayName}/disconnectP2sVpnConnections": {
       "post": {
-        "tags__deleted": [
-          "P2SVpnGateways"
-        ],
         "responses": {
           "202": {
             "headers__added": {
@@ -15109,9 +14202,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/p2svpnGateways/{gatewayName}/generatevpnprofile": {
       "post": {
-        "tags__deleted": [
-          "P2SVpnGateways"
-        ],
         "responses": {
           "202": {
             "headers__added": {
@@ -15134,9 +14224,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/p2svpnGateways/{gatewayName}/getP2sVpnConnectionHealth": {
       "post": {
-        "tags__deleted": [
-          "P2SVpnGateways"
-        ],
         "responses": {
           "202": {
             "headers__added": {
@@ -15159,9 +14246,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/p2svpnGateways/{gatewayName}/getP2sVpnConnectionHealthDetailed": {
       "post": {
-        "tags__deleted": [
-          "P2SVpnGateways"
-        ],
         "responses": {
           "202": {
             "headers__added": {
@@ -15184,9 +14268,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/p2svpnGateways/{gatewayName}/reset": {
       "post": {
-        "tags__deleted": [
-          "P2SVpnGateways"
-        ],
         "responses": {
           "202": {
             "headers__added": {
@@ -15282,12 +14363,11 @@
       "get": {
         "tags": [
           [
-            "-",
-            "PrivateDnsZoneGroups"
-          ],
-          [
             "+",
             "PrivateEndpoints"
+          ],
+          [
+            " "
           ]
         ],
         "responses": {
@@ -15306,12 +14386,11 @@
       "get": {
         "tags": [
           [
-            "-",
-            "PrivateDnsZoneGroups"
-          ],
-          [
             "+",
             "PrivateEndpoints"
+          ],
+          [
+            " "
           ]
         ],
         "responses": {
@@ -15328,12 +14407,11 @@
       "put": {
         "tags": [
           [
-            "-",
-            "PrivateDnsZoneGroups"
-          ],
-          [
             "+",
             "PrivateEndpoints"
+          ],
+          [
+            " "
           ]
         ],
         "responses": {
@@ -15361,12 +14439,11 @@
       "delete": {
         "tags": [
           [
-            "-",
-            "PrivateDnsZoneGroups"
-          ],
-          [
             "+",
             "PrivateEndpoints"
+          ],
+          [
+            " "
           ]
         ],
         "responses": {
@@ -15419,12 +14496,11 @@
       "put": {
         "tags": [
           [
-            "-",
-            "PrivateLinkService"
-          ],
-          [
             "+",
             "PrivateLinkServices"
+          ],
+          [
+            " "
           ]
         ],
         "responses": {
@@ -15474,12 +14550,11 @@
       "get": {
         "tags": [
           [
-            "-",
-            "PrivateLinkServices"
-          ],
-          [
             "+",
             "PrivateEndpointConnections"
+          ],
+          [
+            " "
           ]
         ],
         "responses": {
@@ -15498,12 +14573,11 @@
       "get": {
         "tags": [
           [
-            "-",
-            "PrivateLinkServices"
-          ],
-          [
             "+",
             "PrivateEndpointConnections"
+          ],
+          [
+            " "
           ]
         ],
         "responses": {
@@ -15520,12 +14594,11 @@
       "put": {
         "tags": [
           [
-            "-",
-            "PrivateLinkServices"
-          ],
-          [
             "+",
             "PrivateEndpointConnections"
+          ],
+          [
+            " "
           ]
         ],
         "responses": {
@@ -15542,12 +14615,11 @@
       "delete": {
         "tags": [
           [
-            "-",
-            "PrivateLinkServices"
-          ],
-          [
             "+",
             "PrivateEndpointConnections"
+          ],
+          [
+            " "
           ]
         ],
         "responses": {
@@ -15572,16 +14644,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/publicIPAddresses": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "PublicIPAddresses"
-          ],
-          [
-            "+",
-            "PublicIPAddressOperationGroup"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -15596,16 +14658,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/publicIPAddresses/{publicIpAddressName}": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "PublicIPAddresses"
-          ],
-          [
-            "+",
-            "PublicIPAddressOperationGroup"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -15618,16 +14670,6 @@
         }
       },
       "put": {
-        "tags": [
-          [
-            "-",
-            "PublicIPAddresses"
-          ],
-          [
-            "+",
-            "PublicIPAddressOperationGroup"
-          ]
-        ],
         "responses": {
           "201": {
             "headers__added": {
@@ -15651,16 +14693,6 @@
         }
       },
       "patch": {
-        "tags": [
-          [
-            "-",
-            "PublicIPAddresses"
-          ],
-          [
-            "+",
-            "PublicIPAddressOperationGroup"
-          ]
-        ],
         "parameters": [
           [
             " "
@@ -15689,16 +14721,6 @@
         }
       },
       "delete": {
-        "tags": [
-          [
-            "-",
-            "PublicIPAddresses"
-          ],
-          [
-            "+",
-            "PublicIPAddressOperationGroup"
-          ]
-        ],
         "responses": {
           "202": {
             "headers": {
@@ -15723,16 +14745,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/publicIPAddresses/{publicIpAddressName}/ddosProtectionStatus": {
       "post": {
-        "tags": [
-          [
-            "-",
-            "PublicIPAddresses"
-          ],
-          [
-            "+",
-            "PublicIPAddressOperationGroup"
-          ]
-        ],
         "responses": {
           "202": {
             "headers": {
@@ -15757,16 +14769,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/publicIPAddresses/{publicIpAddressName}/disassociateCloudServiceReservedPublicIp": {
       "post": {
-        "tags": [
-          [
-            "-",
-            "PublicIPAddresses"
-          ],
-          [
-            "+",
-            "PublicIPAddressOperationGroup"
-          ]
-        ],
         "parameters": [
           [
             "~",
@@ -15811,16 +14813,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/publicIPAddresses/{publicIpAddressName}/reserveCloudServicePublicIpAddress": {
       "post": {
-        "tags": [
-          [
-            "-",
-            "PublicIPAddresses"
-          ],
-          [
-            "+",
-            "PublicIPAddressOperationGroup"
-          ]
-        ],
         "parameters": [
           [
             "~",
@@ -16071,12 +15063,11 @@
       "get": {
         "tags": [
           [
-            "-",
-            "RouteFilterRules"
-          ],
-          [
             "+",
             "RouteFilters"
+          ],
+          [
+            " "
           ]
         ],
         "responses": {
@@ -16095,12 +15086,11 @@
       "get": {
         "tags": [
           [
-            "-",
-            "RouteFilterRules"
-          ],
-          [
             "+",
             "RouteFilters"
+          ],
+          [
+            " "
           ]
         ],
         "responses": {
@@ -16117,12 +15107,11 @@
       "put": {
         "tags": [
           [
-            "-",
-            "RouteFilterRules"
-          ],
-          [
             "+",
             "RouteFilters"
+          ],
+          [
+            " "
           ]
         ],
         "responses": {
@@ -16150,12 +15139,11 @@
       "delete": {
         "tags": [
           [
-            "-",
-            "RouteFilterRules"
-          ],
-          [
             "+",
             "RouteFilters"
+          ],
+          [
+            " "
           ]
         ],
         "responses": {
@@ -16706,16 +15694,6 @@
         }
       },
       "patch": {
-        "tags": [
-          [
-            "-",
-            "VirtualWANs"
-          ],
-          [
-            "+",
-            "VirtualHubs"
-          ]
-        ],
         "parameters": [
           [
             " "
@@ -18367,16 +17345,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualNetworkTaps/{tapName}": {
       "get": {
-        "tags": [
-          [
-            "-",
-            "VirtualNetworkTap"
-          ],
-          [
-            "+",
-            "VirtualNetworkTaps"
-          ]
-        ],
         "responses": {
           "default": {
             "schema": {
@@ -18389,16 +17357,6 @@
         }
       },
       "put": {
-        "tags": [
-          [
-            "-",
-            "VirtualNetworkTap"
-          ],
-          [
-            "+",
-            "VirtualNetworkTaps"
-          ]
-        ],
         "responses": {
           "201": {
             "headers__added": {
@@ -18422,16 +17380,6 @@
         }
       },
       "patch": {
-        "tags": [
-          [
-            "-",
-            "VirtualNetworkTap"
-          ],
-          [
-            "+",
-            "VirtualNetworkTaps"
-          ]
-        ],
         "parameters": [
           [
             " "
@@ -18460,16 +17408,6 @@
         }
       },
       "delete": {
-        "tags": [
-          [
-            "-",
-            "VirtualNetworkTap"
-          ],
-          [
-            "+",
-            "VirtualNetworkTaps"
-          ]
-        ],
         "responses": {
           "202": {
             "headers__added": {
@@ -18650,16 +17588,6 @@
         }
       ],
       "post": {
-        "tags": [
-          [
-            "-",
-            "NetworkManagerEffectiveConnectivityConfiguration"
-          ],
-          [
-            "+",
-            "EffectiveConfigurations"
-          ]
-        ],
         "parameters": [
           [
             "+",
@@ -18724,16 +17652,6 @@
         }
       ],
       "post": {
-        "tags": [
-          [
-            "-",
-            "NetworkManagerEffectiveSecurityAdminRules"
-          ],
-          [
-            "+",
-            "EffectiveConfigurations"
-          ]
-        ],
         "parameters": [
           [
             "+",
@@ -19613,9 +18531,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/vpnGateways/{gatewayName}/reset": {
       "post": {
-        "tags__deleted": [
-          "VpnGateways"
-        ],
         "responses": {
           "202": {
             "headers__added": {
@@ -19638,9 +18553,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/vpnGateways/{gatewayName}/startpacketcapture": {
       "post": {
-        "tags__deleted": [
-          "VpnGateways"
-        ],
         "responses": {
           "200": {
             "schema": {
@@ -19669,9 +18581,6 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/vpnGateways/{gatewayName}/stoppacketcapture": {
       "post": {
-        "tags__deleted": [
-          "VpnGateways"
-        ],
         "responses": {
           "200": {
             "schema": {
@@ -19900,6 +18809,10 @@
           [
             "+",
             "VpnSiteLinkConnections"
+          ],
+          [
+            "+",
+            "VpnLinkConnections"
           ]
         ],
         "responses": {
@@ -23816,12 +22729,6 @@
         },
         "location__deleted": {
           "type": "string"
-        },
-        "tags__deleted": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          }
         }
       }
     },
@@ -24305,12 +23212,6 @@
         },
         "location__deleted": {
           "type": "string"
-        },
-        "tags__deleted": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          }
         }
       }
     },

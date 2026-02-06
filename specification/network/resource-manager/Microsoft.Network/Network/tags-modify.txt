@@ -1,0 +1,55 @@
+
+| tags | error | The tags for operation "NetworkInterfaceTapConfigurations_Get" changed: ["NetworkInterfaces"] -> ["Network Interfaces"] |
+| tags | error | The tags for operation "NetworkInterfaceTapConfigurations_List" changed: ["NetworkInterfaces"] -> ["Network Interfaces"] |
+| tags | error | The tags for operation "ListActiveConnectivityConfigurations" changed: ["NetworkManagerActiveConnectivityConfigurations"] -> ["NetworkManagers"] |
+| tags | error | The tags for operation "ListActiveSecurityAdminRules" changed: ["NetworkManagerActiveConfigurations"] -> ["NetworkManagers"] |
+| tags | error | The tags for operation "ReachabilityAnalysisIntents_Delete" changed: ["ReachabilityAnalysisIntent"] -> ["ReachabilityAnalysisIntents"] |
+| tags | error | The tags for operation "PacketCaptures_Create" changed: ["PacketCaptures"] -> ["NetworkWatchers","PacketCaptures"] |
+| tags | error | The tags for operation "PacketCaptures_Get" changed: ["PacketCaptures"] -> ["NetworkWatchers","PacketCaptures"] |
+| tags | error | The tags for operation "PacketCaptures_Delete" changed: ["PacketCaptures"] -> ["NetworkWatchers","PacketCaptures"] |
+| tags | error | The tags for operation "PacketCaptures_Stop" changed: ["PacketCaptures"] -> ["NetworkWatchers","PacketCaptures"] |
+| tags | error | The tags for operation "PacketCaptures_GetStatus" changed: ["PacketCaptures"] -> ["NetworkWatchers","PacketCaptures"] |
+| tags | error | The tags for operation "PacketCaptures_List" changed: ["PacketCaptures"] -> ["NetworkWatchers","PacketCaptures"] |
+| tags | error | The tags for operation "NetworkWatchers_SetFlowLogConfiguration" changed: ["NetworkWatchers","TrafficAnalytics"] -> ["NetworkWatchers"] |
+| tags | error | The tags for operation "NetworkWatchers_GetFlowLogStatus" changed: ["NetworkWatchers","TrafficAnalytics"] -> ["NetworkWatchers"] |
+| tags | error | The tags for operation "ConnectionMonitors_CreateOrUpdate" changed: ["ConnectionMonitors"] -> ["ConnectionMonitorResults"] |
+| tags | error | The tags for operation "ConnectionMonitors_Get" changed: ["ConnectionMonitors"] -> ["ConnectionMonitorResults"] |
+| tags | error | The tags for operation "ConnectionMonitors_Delete" changed: ["ConnectionMonitors"] -> ["ConnectionMonitorResults"] |
+| tags | error | The tags for operation "ConnectionMonitors_UpdateTags" changed: ["ConnectionMonitors"] -> ["ConnectionMonitorResults"] |
+| tags | error | The tags for operation "ConnectionMonitors_Stop" changed: ["ConnectionMonitors"] -> ["ConnectionMonitorResults"] |
+| tags | error | The tags for operation "ConnectionMonitors_List" changed: ["ConnectionMonitors"] -> ["ConnectionMonitorResults"] |
+| tags | error | The tags for operation "PrivateDnsZoneGroups_Delete" changed: ["PrivateDnsZoneGroups"] -> ["PrivateEndpoints"] |
+| tags | error | The tags for operation "PrivateDnsZoneGroups_Get" changed: ["PrivateDnsZoneGroups"] -> ["PrivateEndpoints"] |
+| tags | error | The tags for operation "PrivateDnsZoneGroups_CreateOrUpdate" changed: ["PrivateDnsZoneGroups"] -> ["PrivateEndpoints"] |
+| tags | error | The tags for operation "PrivateDnsZoneGroups_List" changed: ["PrivateDnsZoneGroups"] -> ["PrivateEndpoints"] |
+| tags | error | The tags for operation "PrivateLinkServices_CreateOrUpdate" changed: ["PrivateLinkService"] -> ["PrivateLinkServices"] |
+| tags | error | The tags for operation "PrivateLinkServices_GetPrivateEndpointConnection" changed: ["PrivateLinkServices"] -> ["PrivateEndpointConnections","PrivateLinkServices"] |
+| tags | error | The tags for operation "PrivateLinkServices_UpdatePrivateEndpointConnection" changed: ["PrivateLinkServices"] -> ["PrivateEndpointConnections","PrivateLinkServices"] |
+| tags | error | The tags for operation "PrivateLinkServices_DeletePrivateEndpointConnection" changed: ["PrivateLinkServices"] -> ["PrivateEndpointConnections","PrivateLinkServices"] |
+| tags | error | The tags for operation "PrivateLinkServices_ListPrivateEndpointConnections" changed: ["PrivateLinkServices"] -> ["PrivateEndpointConnections","PrivateLinkServices"] |
+| tags | error | The tags for operation "PublicIPAddresses_Delete" changed: ["PublicIPAddresses"] -> ["PublicIPAddressOperationGroup"] |
+| tags | error | The tags for operation "PublicIPAddresses_Get" changed: ["PublicIPAddresses"] -> ["PublicIPAddressOperationGroup"] |
+| tags | error | The tags for operation "PublicIPAddresses_CreateOrUpdate" changed: ["PublicIPAddresses"] -> ["PublicIPAddressOperationGroup"] |
+| tags | error | The tags for operation "PublicIPAddresses_UpdateTags" changed: ["PublicIPAddresses"] -> ["PublicIPAddressOperationGroup"] |
+| tags | error | The tags for operation "PublicIPAddresses_ListAll" changed: ["PublicIPAddresses"] -> ["PublicIPAddressOperationGroup"] |
+| tags | error | The tags for operation "PublicIPAddresses_List" changed: ["PublicIPAddresses"] -> ["PublicIPAddressOperationGroup"] |
+| tags | error | The tags for operation "PublicIPAddresses_DdosProtectionStatus" changed: ["PublicIPAddresses"] -> ["PublicIPAddressOperationGroup"] |
+| tags | error | The tags for operation "PublicIPAddresses_ReserveCloudServicePublicIpAddress" changed: ["PublicIPAddresses"] -> ["PublicIPAddressOperationGroup"] |
+| tags | error | The tags for operation "PublicIPAddresses_DisassociateCloudServiceReservedPublicIp" changed: ["PublicIPAddresses"] -> ["PublicIPAddressOperationGroup"] |
+| tags | error | The tags for operation "RouteFilterRules_Delete" changed: ["RouteFilterRules"] -> ["RouteFilters"] |
+| tags | error | The tags for operation "RouteFilterRules_Get" changed: ["RouteFilterRules"] -> ["RouteFilters"] |
+| tags | error | The tags for operation "RouteFilterRules_CreateOrUpdate" changed: ["RouteFilterRules"] -> ["RouteFilters"] |
+| tags | error | The tags for operation "RouteFilterRules_ListByRouteFilter" changed: ["RouteFilterRules"] -> ["RouteFilters"] |
+| tags | error | The tags for operation "VirtualNetworkGateways_VpnDeviceConfigurationScript" changed: ["VirtualNetworkGateways"] -> ["VirtualNetworkGatewayConnections"] |
+| tags | error | The tags for operation "VirtualNetworkTaps_Delete" changed: ["VirtualNetworkTap"] -> ["VirtualNetworkTaps"] |
+| tags | error | The tags for operation "VirtualNetworkTaps_Get" changed: ["VirtualNetworkTap"] -> ["VirtualNetworkTaps"] |
+| tags | error | The tags for operation "VirtualNetworkTaps_CreateOrUpdate" changed: ["VirtualNetworkTap"] -> ["VirtualNetworkTaps"] |
+| tags | error | The tags for operation "VirtualNetworkTaps_UpdateTags" changed: ["VirtualNetworkTap"] -> ["VirtualNetworkTaps"] |
+| tags | error | The tags for operation "VirtualWans_UpdateTags" changed: ["VirtualWANs"] -> ["VirtualWANS"] |
+| tags | error | The tags for operation "VirtualHubs_UpdateTags" changed: ["VirtualWANs"] -> ["VirtualHubs"] |
+| tags | error | The tags for operation "VpnLinkConnections_ResetConnection" changed: ["vpnLinkConnections"] -> ["VpnSiteLinkConnections"] |
+| tags | error | The tags for operation "ExpressRouteConnections_CreateOrUpdate" changed: ["ExpressRouteConnections"] -> ["ExpressRouteGateways"] |
+| tags | error | The tags for operation "ExpressRouteConnections_Get" changed: ["ExpressRouteConnections"] -> ["ExpressRouteGateways"] |
+| tags | error | The tags for operation "ExpressRouteConnections_Delete" changed: ["ExpressRouteConnections"] -> ["ExpressRouteGateways"] |
+| tags | error | The tags for operation "ExpressRouteConnections_List" changed: ["ExpressRouteConnections"] -> ["ExpressRouteGateways"] |
+

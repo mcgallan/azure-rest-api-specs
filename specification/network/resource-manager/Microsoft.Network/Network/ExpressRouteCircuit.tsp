@@ -97,7 +97,7 @@ interface ExpressRouteCircuits {
   /**
    * Gets all the stats from an express route circuit in a resource group.
    */
-  @tag("ExpressRouteCircuits")
+  @tag("ExpressRouteCircuitStats")
   @get
   @action("stats")
   getStats is ArmResourceActionSync<

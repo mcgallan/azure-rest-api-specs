@@ -50,7 +50,7 @@ interface OutboundRules {
    * Gets the specified load balancer outbound rule.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @tag("OutboundRules")
+  @tag("LoadBalancers")
   @operationId("LoadBalancerOutboundRules_Get")
   get is ArmResourceRead<OutboundRule, Error = CloudError>;
 
@@ -58,7 +58,7 @@ interface OutboundRules {
    * Gets all the outbound rules in a load balancer.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @tag("OutboundRules")
+  @tag("LoadBalancers")
   @operationId("LoadBalancerOutboundRules_List")
   list is ArmResourceListByParent<
     OutboundRule,
