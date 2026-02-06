@@ -34,7 +34,7 @@ model Profile extends ResourcewithSettableName {
   etag?: string;
 }
 
-@armResourceOperations(#{omitTags: true})
+@armResourceOperations(#{ omitTags: true })
 interface Profiles {
   /**
    * Gets an NetworkExperiment Profile by ProfileName

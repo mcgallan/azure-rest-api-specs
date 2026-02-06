@@ -30,7 +30,7 @@ model RulesEngine extends BasicResource {
   name: string;
 }
 
-@armResourceOperations(#{omitTags: true})
+@armResourceOperations(#{ omitTags: true })
 interface RulesEngines {
   /**
    * Gets a Rules Engine Configuration with the specified name within the specified Front Door.

@@ -30,7 +30,7 @@ model Experiment extends Resource {
   name: string;
 }
 
-@armResourceOperations(#{omitTags: true})
+@armResourceOperations(#{ omitTags: true })
 interface Experiments {
   /**
    * Gets an Experiment by ExperimentName

@@ -30,7 +30,7 @@ model FrontendEndpoint extends BasicResourceWithSettableIDName {
   name: string;
 }
 
-@armResourceOperations(#{omitTags: true})
+@armResourceOperations(#{ omitTags: true })
 interface FrontendEndpoints {
   /**
    * Gets a Frontend endpoint with the specified name within the specified Front Door.
