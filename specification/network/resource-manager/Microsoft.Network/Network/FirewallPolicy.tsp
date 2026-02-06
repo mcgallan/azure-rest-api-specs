@@ -103,7 +103,6 @@ interface FirewallPolicies {
    * Retrieves the current status of IDPS signatures for the relevant policy. Maximal amount of returned signatures is 1000.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @tag("FirewallPolicies")
   @operationId("FirewallPolicyIdpsSignatures_List")
   @action("listIdpsSignatures")
   firewallPolicyIdpsSignaturesList is ArmResourceActionSync<
@@ -117,7 +116,6 @@ interface FirewallPolicies {
    * Retrieves the current filter values for the signatures overrides
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @tag("FirewallPolicies")
   @operationId("FirewallPolicyIdpsSignaturesFilterValues_List")
   @action("listIdpsFilterOptions")
   firewallPolicyIdpsSignaturesFilterValuesList is ArmResourceActionSync<
@@ -131,7 +129,6 @@ interface FirewallPolicies {
    * Deploys the firewall policy draft and child rule collection group drafts.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @tag("FirewallPolicies")
   @operationId("FirewallPolicyDeployments_Deploy")
   @Azure.Core.useFinalStateVia("azure-async-operation")
   deploy is ArmResourceActionAsyncBase<

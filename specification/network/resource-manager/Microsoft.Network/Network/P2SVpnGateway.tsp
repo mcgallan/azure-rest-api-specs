@@ -62,7 +62,6 @@ interface P2SVpnGateways {
    * Retrieves the details of a virtual wan p2s vpn gateway.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @tag("P2SVpnGateways")
   @operationId("P2sVpnGateways_Get")
   get is ArmResourceRead<P2SVpnGateway, Error = CloudError>;
 
@@ -70,7 +69,6 @@ interface P2SVpnGateways {
    * Creates a virtual wan p2s vpn gateway if it doesn't exist else updates the existing gateway.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @tag("P2SVpnGateways")
   @operationId("P2sVpnGateways_CreateOrUpdate")
   createOrUpdate is ArmResourceCreateOrReplaceAsync<
     P2SVpnGateway,
@@ -98,7 +96,6 @@ interface P2SVpnGateways {
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   #suppress "@azure-tools/typespec-azure-resource-manager/arm-delete-operation-response-codes" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @tag("P2SVpnGateways")
   @operationId("P2sVpnGateways_Delete")
   delete is ArmResourceDeleteWithoutOkAsync<
     P2SVpnGateway,
@@ -110,7 +107,6 @@ interface P2SVpnGateways {
    * Lists all the P2SVpnGateways in a resource group.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @tag("P2SVpnGateways")
   @operationId("P2sVpnGateways_ListByResourceGroup")
   listByResourceGroup is ArmResourceListByParent<
     P2SVpnGateway,
@@ -122,7 +118,6 @@ interface P2SVpnGateways {
    * Lists all the P2SVpnGateways in a subscription.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @tag("P2SVpnGateways")
   @operationId("P2sVpnGateways_List")
   list is ArmListBySubscription<
     P2SVpnGateway,
@@ -215,3 +210,4 @@ interface P2SVpnGateways {
 @@doc(P2SVpnGateways.disconnectP2sVpnConnections::parameters.body,
   "The parameters are supplied to disconnect p2s vpn connections."
 );
+

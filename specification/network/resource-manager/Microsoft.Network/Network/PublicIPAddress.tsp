@@ -117,7 +117,7 @@ alias PublicIPAddressSubscriptionOps = Azure.ResourceManager.Legacy.LegacyOperat
 
 #suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 @Azure.ResourceManager.Legacy.feature(Features.virtualNetwork)
-@armResourceOperations
+@armResourceOperations(#{omitTags: true})
 interface PublicIPAddresses {
   /**
    * Get the specified public IP address in a cloud service.

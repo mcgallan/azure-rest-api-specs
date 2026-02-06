@@ -130,15 +130,6 @@
       "name": "FirewallPolicyRuleCollectionGroups"
     },
     {
-      "name": "FirewallPolicyIdpsSignaturesOverrides"
-    },
-    {
-      "name": "FirewallPolicyDrafts"
-    },
-    {
-      "name": "FirewallPolicyRuleCollectionGroupDrafts"
-    },
-    {
       "name": "IpamPools"
     },
     {
@@ -241,9 +232,6 @@
       "name": "ReachabilityAnalysisRuns"
     },
     {
-      "name": "NetworkVirtualApplianceConnections"
-    },
-    {
       "name": "NetworkVirtualAppliances"
     },
     {
@@ -328,9 +316,6 @@
       "name": "LocalNetworkGateways"
     },
     {
-      "name": "VirtualNetworkGatewayNatRules"
-    },
-    {
       "name": "VirtualNetworkTap"
     },
     {
@@ -343,43 +328,19 @@
       "name": "VirtualRouterPeerings"
     },
     {
-      "name": "VirtualWANS"
+      "name": "VirtualWANs"
     },
     {
       "name": "VpnSites"
     },
     {
-      "name": "VpnSiteLinks"
-    },
-    {
       "name": "VpnServerConfigurations"
-    },
-    {
-      "name": "VpnServerConfigurationPolicyGroups"
-    },
-    {
-      "name": "VirtualHubs"
-    },
-    {
-      "name": "VirtualWANs"
-    },
-    {
-      "name": "RouteMaps"
     },
     {
       "name": "VpnGateways"
     },
     {
-      "name": "ConnectionSharedKeyResults"
-    },
-    {
-      "name": "VpnSiteLinkConnections"
-    },
-    {
-      "name": "VpnLinkConnections"
-    },
-    {
-      "name": "VpnGatewayNatRules"
+      "name": "vpnLinkConnections"
     },
     {
       "name": "P2SVpnGateways"
@@ -391,37 +352,10 @@
       "name": "ExpressRouteConnections"
     },
     {
-      "name": "BgpConnections"
-    },
-    {
-      "name": "HubIpConfigurations"
-    },
-    {
-      "name": "HubRouteTables"
-    },
-    {
-      "name": "RoutingIntents"
-    },
-    {
       "name": "WebApplicationFirewallPolicies"
     },
     {
-      "name": "AvailableDelegations"
-    },
-    {
-      "name": "AvailableResourceGroupDelegations"
-    },
-    {
-      "name": "AvailableServiceAliases"
-    },
-    {
       "name": "AzureFirewallFqdnTags"
-    },
-    {
-      "name": "CheckDnsNameAvailability"
-    },
-    {
-      "name": "AvailableEndpointServices"
     },
     {
       "name": "ExpressRouteServiceProviders"
@@ -436,16 +370,7 @@
       "name": "NetworkSecurityPerimeterServiceTags"
     },
     {
-      "name": "AvailablePrivateEndpointTypes"
-    },
-    {
       "name": "BgpServiceCommunities"
-    },
-    {
-      "name": "ServiceTags"
-    },
-    {
-      "name": "ServiceTagInformation"
     },
     {
       "name": "Usages"
@@ -1728,9 +1653,6 @@
     "/subscriptions/{subscriptionId}/providers/microsoft.Network/locations/{location}/applicationGatewayWafDynamicManifests/dafault": {
       "get": {
         "operationId": "ApplicationGatewayWafDynamicManifestsDefault_Get",
-        "tags": [
-          "ApplicationGateways"
-        ],
         "parameters": [
           {
             "name": "location",
@@ -1798,9 +1720,6 @@
     "/subscriptions/{subscriptionId}/providers/microsoft.Network/locations/{location}/availableDelegations": {
       "get": {
         "operationId": "AvailableDelegations_List",
-        "tags": [
-          "AvailableDelegations"
-        ],
         "parameters": [
           {
             "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
@@ -1833,9 +1752,6 @@
     "/subscriptions/{subscriptionId}/providers/microsoft.Network/locations/{location}/availablePrivateEndpointTypes": {
       "get": {
         "operationId": "AvailablePrivateEndpointTypes_List",
-        "tags": [
-          "AvailablePrivateEndpointTypes"
-        ],
         "parameters": [
           {
             "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
@@ -1868,9 +1784,6 @@
     "/subscriptions/{subscriptionId}/providers/microsoft.Network/locations/{location}/availableServiceAliases": {
       "get": {
         "operationId": "AvailableServiceAliases_List",
-        "tags": [
-          "AvailableServiceAliases"
-        ],
         "parameters": [
           {
             "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
@@ -1903,9 +1816,6 @@
     "/subscriptions/{subscriptionId}/providers/microsoft.Network/locations/{location}/checkDnsNameAvailability": {
       "get": {
         "operationId": "CheckDnsNameAvailability",
-        "tags": [
-          "CheckDnsNameAvailability"
-        ],
         "parameters": [
           {
             "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
@@ -2099,9 +2009,6 @@
     "/subscriptions/{subscriptionId}/providers/microsoft.Network/locations/{location}/serviceTagDetails": {
       "get": {
         "operationId": "ServiceTagInformation_List",
-        "tags": [
-          "ServiceTagInformation"
-        ],
         "parameters": [
           {
             "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
@@ -2150,9 +2057,6 @@
     "/subscriptions/{subscriptionId}/providers/microsoft.Network/locations/{location}/serviceTags": {
       "get": {
         "operationId": "ServiceTags_List",
-        "tags": [
-          "ServiceTags"
-        ],
         "parameters": [
           {
             "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
@@ -2267,9 +2171,6 @@
     "/subscriptions/{subscriptionId}/providers/microsoft.Network/locations/{location}/virtualNetworkAvailableEndpointServices": {
       "get": {
         "operationId": "AvailableEndpointServices_List",
-        "tags": [
-          "AvailableEndpointServices"
-        ],
         "parameters": [
           {
             "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
@@ -2804,9 +2705,6 @@
     "/subscriptions/{subscriptionId}/providers/microsoft.Network/p2svpnGateways": {
       "get": {
         "operationId": "P2sVpnGateways_List",
-        "tags": [
-          "P2SVpnGateways"
-        ],
         "parameters": [],
         "responses": {
           "200": {
@@ -3109,9 +3007,6 @@
     "/subscriptions/{subscriptionId}/providers/microsoft.Network/virtualHubs": {
       "get": {
         "operationId": "VirtualHubs_List",
-        "tags": [
-          "VirtualHubs"
-        ],
         "parameters": [],
         "responses": {
           "200": {
@@ -3259,9 +3154,6 @@
     "/subscriptions/{subscriptionId}/providers/microsoft.Network/virtualWans": {
       "get": {
         "operationId": "VirtualWans_List",
-        "tags": [
-          "VirtualWANS"
-        ],
         "parameters": [],
         "responses": {
           "200": {
@@ -3290,9 +3182,6 @@
     "/subscriptions/{subscriptionId}/providers/microsoft.Network/vpnGateways": {
       "get": {
         "operationId": "VpnGateways_List",
-        "tags": [
-          "VpnGateways"
-        ],
         "parameters": [],
         "responses": {
           "200": {
@@ -3321,9 +3210,6 @@
     "/subscriptions/{subscriptionId}/providers/microsoft.Network/vpnServerConfigurations": {
       "get": {
         "operationId": "VpnServerConfigurations_List",
-        "tags": [
-          "VpnServerConfigurations"
-        ],
         "parameters": [],
         "responses": {
           "200": {
@@ -3352,9 +3238,6 @@
     "/subscriptions/{subscriptionId}/providers/microsoft.Network/vpnSites": {
       "get": {
         "operationId": "VpnSites_List",
-        "tags": [
-          "VpnSites"
-        ],
         "parameters": [],
         "responses": {
           "200": {
@@ -3583,9 +3466,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute/cloudServices/{cloudServiceName}/publicipaddresses": {
       "get": {
         "operationId": "PublicIPAddresses_ListCloudServicePublicIPAddresses",
-        "tags": [
-          "PublicIPAddresses"
-        ],
         "parameters": [
           {
             "name": "cloudServiceName",
@@ -3717,9 +3597,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute/cloudServices/{cloudServiceName}/roleInstances/{roleInstanceName}/networkInterfaces/{networkInterfaceName}/ipconfigurations/{ipConfigurationName}/publicipaddresses": {
       "get": {
         "operationId": "PublicIPAddresses_ListCloudServiceRoleInstancePublicIPAddresses",
-        "tags": [
-          "PublicIPAddresses"
-        ],
         "parameters": [
           {
             "name": "cloudServiceName",
@@ -3773,9 +3650,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute/cloudServices/{cloudServiceName}/roleInstances/{roleInstanceName}/networkInterfaces/{networkInterfaceName}/ipconfigurations/{ipConfigurationName}/publicipaddresses/{publicIpAddressName}": {
       "get": {
         "operationId": "PublicIPAddresses_GetCloudServicePublicIPAddress",
-        "tags": [
-          "PublicIPAddresses"
-        ],
         "parameters": [
           {
             "name": "cloudServiceName",
@@ -5080,9 +4954,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/azureFirewalls/{azureFirewallName}/learnedIPPrefixes": {
       "post": {
         "operationId": "AzureFirewalls_ListLearnedPrefixes",
-        "tags": [
-          "AzureFirewalls"
-        ],
         "parameters": [
           {
             "name": "azureFirewallName",
@@ -9962,9 +9833,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/firewallPolicies/{firewallPolicyName}/deploy": {
       "post": {
         "operationId": "FirewallPolicyDeployments_Deploy",
-        "tags": [
-          "FirewallPolicies"
-        ],
         "parameters": [
           {
             "name": "firewallPolicyName",
@@ -10009,9 +9877,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/firewallPolicies/{firewallPolicyName}/firewallPolicyDrafts/default": {
       "get": {
         "operationId": "FirewallPolicyDrafts_Get",
-        "tags": [
-          "FirewallPolicyDrafts"
-        ],
         "parameters": [
           {
             "name": "firewallPolicyName",
@@ -10042,9 +9907,6 @@
       },
       "put": {
         "operationId": "FirewallPolicyDrafts_CreateOrUpdate",
-        "tags": [
-          "FirewallPolicyDrafts"
-        ],
         "parameters": [
           {
             "name": "firewallPolicyName",
@@ -10089,9 +9951,6 @@
       },
       "delete": {
         "operationId": "FirewallPolicyDrafts_Delete",
-        "tags": [
-          "FirewallPolicyDrafts"
-        ],
         "parameters": [
           {
             "name": "firewallPolicyName",
@@ -10124,9 +9983,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/firewallPolicies/{firewallPolicyName}/listIdpsFilterOptions": {
       "post": {
         "operationId": "FirewallPolicyIdpsSignaturesFilterValues_List",
-        "tags": [
-          "FirewallPolicies"
-        ],
         "parameters": [
           {
             "name": "firewallPolicyName",
@@ -10167,9 +10023,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/firewallPolicies/{firewallPolicyName}/listIdpsSignatures": {
       "post": {
         "operationId": "FirewallPolicyIdpsSignatures_List",
-        "tags": [
-          "FirewallPolicies"
-        ],
         "parameters": [
           {
             "name": "firewallPolicyName",
@@ -10429,9 +10282,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/firewallPolicies/{firewallPolicyName}/ruleCollectionGroups/{ruleCollectionGroupName}/ruleCollectionGroupDrafts/default": {
       "get": {
         "operationId": "FirewallPolicyRuleCollectionGroupDrafts_Get",
-        "tags": [
-          "FirewallPolicyRuleCollectionGroupDrafts"
-        ],
         "parameters": [
           {
             "name": "firewallPolicyName",
@@ -10468,9 +10318,6 @@
       },
       "put": {
         "operationId": "FirewallPolicyRuleCollectionGroupDrafts_CreateOrUpdate",
-        "tags": [
-          "FirewallPolicyRuleCollectionGroupDrafts"
-        ],
         "parameters": [
           {
             "name": "firewallPolicyName",
@@ -10521,9 +10368,6 @@
       },
       "delete": {
         "operationId": "FirewallPolicyRuleCollectionGroupDrafts_Delete",
-        "tags": [
-          "FirewallPolicyRuleCollectionGroupDrafts"
-        ],
         "parameters": [
           {
             "name": "firewallPolicyName",
@@ -10562,9 +10406,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/firewallPolicies/{firewallPolicyName}/signatureOverrides": {
       "get": {
         "operationId": "FirewallPolicyIdpsSignaturesOverrides_List",
-        "tags": [
-          "FirewallPolicyIdpsSignaturesOverrides"
-        ],
         "parameters": [
           {
             "name": "firewallPolicyName",
@@ -10597,9 +10438,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/firewallPolicies/{firewallPolicyName}/signatureOverrides/default": {
       "get": {
         "operationId": "FirewallPolicyIdpsSignaturesOverrides_Get",
-        "tags": [
-          "FirewallPolicyIdpsSignaturesOverrides"
-        ],
         "parameters": [
           {
             "name": "firewallPolicyName",
@@ -10630,9 +10468,6 @@
       },
       "put": {
         "operationId": "FirewallPolicyIdpsSignaturesOverrides_Put",
-        "tags": [
-          "FirewallPolicyIdpsSignaturesOverrides"
-        ],
         "parameters": [
           {
             "name": "firewallPolicyName",
@@ -10671,9 +10506,6 @@
       },
       "patch": {
         "operationId": "FirewallPolicyIdpsSignaturesOverrides_Patch",
-        "tags": [
-          "FirewallPolicyIdpsSignaturesOverrides"
-        ],
         "parameters": [
           {
             "name": "firewallPolicyName",
@@ -12560,9 +12392,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/locations/{location}/availableDelegations": {
       "get": {
         "operationId": "AvailableResourceGroupDelegations_List",
-        "tags": [
-          "AvailableResourceGroupDelegations"
-        ],
         "parameters": [
           {
             "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
@@ -12595,9 +12424,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/locations/{location}/availablePrivateEndpointTypes": {
       "get": {
         "operationId": "AvailablePrivateEndpointTypes_ListByResourceGroup",
-        "tags": [
-          "AvailablePrivateEndpointTypes"
-        ],
         "parameters": [
           {
             "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
@@ -12630,9 +12456,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/locations/{location}/availableServiceAliases": {
       "get": {
         "operationId": "AvailableServiceAliases_ListByResourceGroup",
-        "tags": [
-          "AvailableServiceAliases"
-        ],
         "parameters": [
           {
             "$ref": "../../../../../../common-types/resource-management/v5/types.json#/parameters/LocationParameter"
@@ -20891,9 +20714,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkVirtualAppliances/{networkVirtualApplianceName}/networkVirtualApplianceConnections": {
       "get": {
         "operationId": "NetworkVirtualApplianceConnections_List",
-        "tags": [
-          "NetworkVirtualApplianceConnections"
-        ],
         "parameters": [
           {
             "name": "networkVirtualApplianceName",
@@ -20929,9 +20749,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/networkVirtualAppliances/{networkVirtualApplianceName}/networkVirtualApplianceConnections/{connectionName}": {
       "get": {
         "operationId": "NetworkVirtualApplianceConnections_Get",
-        "tags": [
-          "NetworkVirtualApplianceConnections"
-        ],
         "parameters": [
           {
             "name": "networkVirtualApplianceName",
@@ -20968,9 +20785,6 @@
       },
       "put": {
         "operationId": "NetworkVirtualApplianceConnections_CreateOrUpdate",
-        "tags": [
-          "NetworkVirtualApplianceConnections"
-        ],
         "parameters": [
           {
             "name": "networkVirtualApplianceName",
@@ -21032,9 +20846,6 @@
       },
       "delete": {
         "operationId": "NetworkVirtualApplianceConnections_Delete",
-        "tags": [
-          "NetworkVirtualApplianceConnections"
-        ],
         "parameters": [
           {
             "name": "networkVirtualApplianceName",
@@ -23057,9 +22868,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/p2svpnGateways": {
       "get": {
         "operationId": "P2sVpnGateways_ListByResourceGroup",
-        "tags": [
-          "P2SVpnGateways"
-        ],
         "parameters": [],
         "responses": {
           "200": {
@@ -23088,9 +22896,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/p2svpnGateways/{gatewayName}": {
       "get": {
         "operationId": "P2sVpnGateways_Get",
-        "tags": [
-          "P2SVpnGateways"
-        ],
         "parameters": [
           {
             "name": "gatewayName",
@@ -23121,9 +22926,6 @@
       },
       "put": {
         "operationId": "P2sVpnGateways_CreateOrUpdate",
-        "tags": [
-          "P2SVpnGateways"
-        ],
         "parameters": [
           {
             "name": "gatewayName",
@@ -23234,9 +23036,6 @@
       },
       "delete": {
         "operationId": "P2sVpnGateways_Delete",
-        "tags": [
-          "P2SVpnGateways"
-        ],
         "parameters": [
           {
             "name": "gatewayName",
@@ -26662,9 +26461,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualHubs": {
       "get": {
         "operationId": "VirtualHubs_ListByResourceGroup",
-        "tags": [
-          "VirtualHubs"
-        ],
         "parameters": [],
         "responses": {
           "200": {
@@ -26693,9 +26489,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualHubs/{virtualHubName}": {
       "get": {
         "operationId": "VirtualHubs_Get",
-        "tags": [
-          "VirtualHubs"
-        ],
         "parameters": [
           {
             "name": "virtualHubName",
@@ -26726,9 +26519,6 @@
       },
       "put": {
         "operationId": "VirtualHubs_CreateOrUpdate",
-        "tags": [
-          "VirtualHubs"
-        ],
         "parameters": [
           {
             "name": "virtualHubName",
@@ -26825,9 +26615,6 @@
       },
       "delete": {
         "operationId": "VirtualHubs_Delete",
-        "tags": [
-          "VirtualHubs"
-        ],
         "parameters": [
           {
             "name": "virtualHubName",
@@ -26870,9 +26657,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualHubs/{virtualHubName}/bgpConnections": {
       "get": {
         "operationId": "VirtualHubBgpConnections_List",
-        "tags": [
-          "BgpConnections"
-        ],
         "parameters": [
           {
             "name": "virtualHubName",
@@ -26908,9 +26692,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualHubs/{virtualHubName}/bgpConnections/{connectionName}": {
       "get": {
         "operationId": "VirtualHubBgpConnection_Get",
-        "tags": [
-          "BgpConnections"
-        ],
         "parameters": [
           {
             "name": "virtualHubName",
@@ -26947,9 +26728,6 @@
       },
       "put": {
         "operationId": "VirtualHubBgpConnection_CreateOrUpdate",
-        "tags": [
-          "BgpConnections"
-        ],
         "parameters": [
           {
             "name": "virtualHubName",
@@ -27011,9 +26789,6 @@
       },
       "delete": {
         "operationId": "VirtualHubBgpConnection_Delete",
-        "tags": [
-          "BgpConnections"
-        ],
         "parameters": [
           {
             "name": "virtualHubName",
@@ -27062,9 +26837,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualHubs/{hubName}/bgpConnections/{connectionName}/advertisedRoutes": {
       "post": {
         "operationId": "VirtualHubBgpConnections_ListAdvertisedRoutes",
-        "tags": [
-          "BgpConnections"
-        ],
         "parameters": [
           {
             "name": "hubName",
@@ -27119,9 +26891,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualHubs/{hubName}/bgpConnections/{connectionName}/learnedRoutes": {
       "post": {
         "operationId": "VirtualHubBgpConnections_ListLearnedRoutes",
-        "tags": [
-          "BgpConnections"
-        ],
         "parameters": [
           {
             "name": "hubName",
@@ -27231,9 +27000,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualHubs/{virtualHubName}/hubRouteTables": {
       "get": {
         "operationId": "HubRouteTables_List",
-        "tags": [
-          "HubRouteTables"
-        ],
         "parameters": [
           {
             "name": "virtualHubName",
@@ -27269,9 +27035,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualHubs/{virtualHubName}/hubRouteTables/{routeTableName}": {
       "get": {
         "operationId": "HubRouteTables_Get",
-        "tags": [
-          "HubRouteTables"
-        ],
         "parameters": [
           {
             "name": "virtualHubName",
@@ -27308,9 +27071,6 @@
       },
       "put": {
         "operationId": "HubRouteTables_CreateOrUpdate",
-        "tags": [
-          "HubRouteTables"
-        ],
         "parameters": [
           {
             "name": "virtualHubName",
@@ -27372,9 +27132,6 @@
       },
       "delete": {
         "operationId": "HubRouteTables_Delete",
-        "tags": [
-          "HubRouteTables"
-        ],
         "parameters": [
           {
             "name": "virtualHubName",
@@ -27653,9 +27410,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualHubs/{virtualHubName}/ipConfigurations": {
       "get": {
         "operationId": "VirtualHubIpConfiguration_List",
-        "tags": [
-          "HubIpConfigurations"
-        ],
         "parameters": [
           {
             "name": "virtualHubName",
@@ -27691,9 +27445,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualHubs/{virtualHubName}/ipConfigurations/{ipConfigName}": {
       "get": {
         "operationId": "VirtualHubIpConfiguration_Get",
-        "tags": [
-          "HubIpConfigurations"
-        ],
         "parameters": [
           {
             "name": "virtualHubName",
@@ -27730,9 +27481,6 @@
       },
       "put": {
         "operationId": "VirtualHubIpConfiguration_CreateOrUpdate",
-        "tags": [
-          "HubIpConfigurations"
-        ],
         "parameters": [
           {
             "name": "virtualHubName",
@@ -27794,9 +27542,6 @@
       },
       "delete": {
         "operationId": "VirtualHubIpConfiguration_Delete",
-        "tags": [
-          "HubIpConfigurations"
-        ],
         "parameters": [
           {
             "name": "virtualHubName",
@@ -27895,9 +27640,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualHubs/{virtualHubName}/routeMaps": {
       "get": {
         "operationId": "RouteMaps_List",
-        "tags": [
-          "RouteMaps"
-        ],
         "parameters": [
           {
             "name": "virtualHubName",
@@ -27933,9 +27675,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualHubs/{virtualHubName}/routeMaps/{routeMapName}": {
       "get": {
         "operationId": "RouteMaps_Get",
-        "tags": [
-          "RouteMaps"
-        ],
         "parameters": [
           {
             "name": "virtualHubName",
@@ -27972,9 +27711,6 @@
       },
       "put": {
         "operationId": "RouteMaps_CreateOrUpdate",
-        "tags": [
-          "RouteMaps"
-        ],
         "parameters": [
           {
             "name": "virtualHubName",
@@ -28036,9 +27772,6 @@
       },
       "delete": {
         "operationId": "RouteMaps_Delete",
-        "tags": [
-          "RouteMaps"
-        ],
         "parameters": [
           {
             "name": "virtualHubName",
@@ -28267,9 +28000,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualHubs/{virtualHubName}/routingIntent": {
       "get": {
         "operationId": "RoutingIntent_List",
-        "tags": [
-          "RoutingIntents"
-        ],
         "parameters": [
           {
             "name": "virtualHubName",
@@ -28305,9 +28035,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualHubs/{virtualHubName}/routingIntent/{routingIntentName}": {
       "get": {
         "operationId": "RoutingIntent_Get",
-        "tags": [
-          "RoutingIntents"
-        ],
         "parameters": [
           {
             "name": "virtualHubName",
@@ -28344,9 +28071,6 @@
       },
       "put": {
         "operationId": "RoutingIntent_CreateOrUpdate",
-        "tags": [
-          "RoutingIntents"
-        ],
         "parameters": [
           {
             "name": "virtualHubName",
@@ -28408,9 +28132,6 @@
       },
       "delete": {
         "operationId": "RoutingIntent_Delete",
-        "tags": [
-          "RoutingIntents"
-        ],
         "parameters": [
           {
             "name": "virtualHubName",
@@ -28871,9 +28592,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualNetworkGateways/{virtualNetworkGatewayName}/abortMigration": {
       "post": {
         "operationId": "VirtualNetworkGateways_InvokeAbortMigration",
-        "tags": [
-          "VirtualNetworkGateways"
-        ],
         "parameters": [
           {
             "name": "virtualNetworkGatewayName",
@@ -28910,9 +28628,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualNetworkGateways/{virtualNetworkGatewayName}/commitMigration": {
       "post": {
         "operationId": "VirtualNetworkGateways_InvokeCommitMigration",
-        "tags": [
-          "VirtualNetworkGateways"
-        ],
         "parameters": [
           {
             "name": "virtualNetworkGatewayName",
@@ -29037,9 +28752,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualNetworkGateways/{virtualNetworkGatewayName}/executeMigration": {
       "post": {
         "operationId": "VirtualNetworkGateways_InvokeExecuteMigration",
-        "tags": [
-          "VirtualNetworkGateways"
-        ],
         "parameters": [
           {
             "name": "virtualNetworkGatewayName",
@@ -29715,9 +29427,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualNetworkGateways/{virtualNetworkGatewayName}/natRules": {
       "get": {
         "operationId": "VirtualNetworkGatewayNatRules_ListByVirtualNetworkGateway",
-        "tags": [
-          "VirtualNetworkGatewayNatRules"
-        ],
         "parameters": [
           {
             "name": "virtualNetworkGatewayName",
@@ -29753,9 +29462,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualNetworkGateways/{virtualNetworkGatewayName}/natRules/{natRuleName}": {
       "get": {
         "operationId": "VirtualNetworkGatewayNatRules_Get",
-        "tags": [
-          "VirtualNetworkGatewayNatRules"
-        ],
         "parameters": [
           {
             "name": "virtualNetworkGatewayName",
@@ -29792,9 +29498,6 @@
       },
       "put": {
         "operationId": "VirtualNetworkGatewayNatRules_CreateOrUpdate",
-        "tags": [
-          "VirtualNetworkGatewayNatRules"
-        ],
         "parameters": [
           {
             "name": "virtualNetworkGatewayName",
@@ -29856,9 +29559,6 @@
       },
       "delete": {
         "operationId": "VirtualNetworkGatewayNatRules_Delete",
-        "tags": [
-          "VirtualNetworkGatewayNatRules"
-        ],
         "parameters": [
           {
             "name": "virtualNetworkGatewayName",
@@ -29907,9 +29607,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualNetworkGateways/{virtualNetworkGatewayName}/prepareMigration": {
       "post": {
         "operationId": "VirtualNetworkGateways_InvokePrepareMigration",
-        "tags": [
-          "VirtualNetworkGateways"
-        ],
         "parameters": [
           {
             "name": "virtualNetworkGatewayName",
@@ -30797,9 +30494,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualNetworks/{virtualNetworkName}/checkIPAddressAvailability": {
       "get": {
         "operationId": "VirtualNetworks_CheckIPAddressAvailability",
-        "tags": [
-          "VirtualNetworks"
-        ],
         "parameters": [
           {
             "name": "virtualNetworkName",
@@ -30838,9 +30532,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualNetworks/{virtualNetworkName}/ddosProtectionStatus": {
       "post": {
         "operationId": "VirtualNetworks_ListDdosProtectionStatus",
-        "tags": [
-          "VirtualNetworks"
-        ],
         "parameters": [
           {
             "name": "virtualNetworkName",
@@ -31214,9 +30905,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualNetworks/{virtualNetworkName}/subnets/{subnetName}/prepareNetworkPolicies": {
       "post": {
         "operationId": "Subnets_PrepareNetworkPolicies",
-        "tags": [
-          "Subnets"
-        ],
         "parameters": [
           {
             "name": "virtualNetworkName",
@@ -31270,9 +30958,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualNetworks/{virtualNetworkName}/subnets/{subnetName}/resourceNavigationLinks": {
       "get": {
         "operationId": "ResourceNavigationLinks_List",
-        "tags": [
-          "Subnets"
-        ],
         "parameters": [
           {
             "name": "virtualNetworkName",
@@ -31311,9 +30996,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualNetworks/{virtualNetworkName}/subnets/{subnetName}/serviceAssociationLinks": {
       "get": {
         "operationId": "ServiceAssociationLinks_List",
-        "tags": [
-          "Subnets"
-        ],
         "parameters": [
           {
             "name": "virtualNetworkName",
@@ -31352,9 +31034,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualNetworks/{virtualNetworkName}/subnets/{subnetName}/unprepareNetworkPolicies": {
       "post": {
         "operationId": "Subnets_UnprepareNetworkPolicies",
-        "tags": [
-          "Subnets"
-        ],
         "parameters": [
           {
             "name": "virtualNetworkName",
@@ -31408,9 +31087,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualNetworks/{virtualNetworkName}/usages": {
       "get": {
         "operationId": "VirtualNetworks_ListUsage",
-        "tags": [
-          "VirtualNetworks"
-        ],
         "parameters": [
           {
             "name": "virtualNetworkName",
@@ -32044,9 +31720,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualWans": {
       "get": {
         "operationId": "VirtualWans_ListByResourceGroup",
-        "tags": [
-          "VirtualWANS"
-        ],
         "parameters": [],
         "responses": {
           "200": {
@@ -32075,9 +31748,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualWans/{VirtualWANName}": {
       "get": {
         "operationId": "VirtualWans_Get",
-        "tags": [
-          "VirtualWANS"
-        ],
         "parameters": [
           {
             "name": "VirtualWANName",
@@ -32108,9 +31778,6 @@
       },
       "put": {
         "operationId": "VirtualWans_CreateOrUpdate",
-        "tags": [
-          "VirtualWANS"
-        ],
         "parameters": [
           {
             "name": "VirtualWANName",
@@ -32167,7 +31834,7 @@
       "patch": {
         "operationId": "VirtualWans_UpdateTags",
         "tags": [
-          "VirtualWANS"
+          "VirtualWANs"
         ],
         "parameters": [
           {
@@ -32207,9 +31874,6 @@
       },
       "delete": {
         "operationId": "VirtualWans_Delete",
-        "tags": [
-          "VirtualWANS"
-        ],
         "parameters": [
           {
             "name": "VirtualWANName",
@@ -32423,9 +32087,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/vpnGateways": {
       "get": {
         "operationId": "VpnGateways_ListByResourceGroup",
-        "tags": [
-          "VpnGateways"
-        ],
         "parameters": [],
         "responses": {
           "200": {
@@ -32454,9 +32115,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/vpnGateways/{gatewayName}": {
       "get": {
         "operationId": "VpnGateways_Get",
-        "tags": [
-          "VpnGateways"
-        ],
         "parameters": [
           {
             "name": "gatewayName",
@@ -32487,9 +32145,6 @@
       },
       "put": {
         "operationId": "VpnGateways_CreateOrUpdate",
-        "tags": [
-          "VpnGateways"
-        ],
         "parameters": [
           {
             "name": "gatewayName",
@@ -32600,9 +32255,6 @@
       },
       "delete": {
         "operationId": "VpnGateways_Delete",
-        "tags": [
-          "VpnGateways"
-        ],
         "parameters": [
           {
             "name": "gatewayName",
@@ -32645,9 +32297,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/vpnGateways/{gatewayName}/natRules": {
       "get": {
         "operationId": "NatRules_ListByVpnGateway",
-        "tags": [
-          "VpnGatewayNatRules"
-        ],
         "parameters": [
           {
             "name": "gatewayName",
@@ -32683,9 +32332,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/vpnGateways/{gatewayName}/natRules/{natRuleName}": {
       "get": {
         "operationId": "NatRules_Get",
-        "tags": [
-          "VpnGatewayNatRules"
-        ],
         "parameters": [
           {
             "name": "gatewayName",
@@ -32722,9 +32368,6 @@
       },
       "put": {
         "operationId": "NatRules_CreateOrUpdate",
-        "tags": [
-          "VpnGatewayNatRules"
-        ],
         "parameters": [
           {
             "name": "gatewayName",
@@ -32786,9 +32429,6 @@
       },
       "delete": {
         "operationId": "NatRules_Delete",
-        "tags": [
-          "VpnGatewayNatRules"
-        ],
         "parameters": [
           {
             "name": "gatewayName",
@@ -33287,9 +32927,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/vpnGateways/{gatewayName}/vpnConnections/{connectionName}/vpnLinkConnections": {
       "get": {
         "operationId": "VpnLinkConnections_ListByVpnConnection",
-        "tags": [
-          "VpnSiteLinkConnections"
-        ],
         "parameters": [
           {
             "name": "gatewayName",
@@ -33331,9 +32968,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/vpnGateways/{gatewayName}/vpnConnections/{connectionName}/vpnLinkConnections/{linkConnectionName}": {
       "get": {
         "operationId": "VpnSiteLinkConnections_Get",
-        "tags": [
-          "VpnSiteLinkConnections"
-        ],
         "parameters": [
           {
             "name": "gatewayName",
@@ -33378,9 +33012,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/vpnGateways/{gatewayName}/vpnConnections/{connectionName}/vpnLinkConnections/{linkConnectionName}/getikesas": {
       "post": {
         "operationId": "VpnLinkConnections_GetIkeSas",
-        "tags": [
-          "VpnSiteLinkConnections"
-        ],
         "parameters": [
           {
             "name": "gatewayName",
@@ -33436,8 +33067,7 @@
       "post": {
         "operationId": "VpnLinkConnections_ResetConnection",
         "tags": [
-          "VpnSiteLinkConnections",
-          "VpnLinkConnections"
+          "vpnLinkConnections"
         ],
         "parameters": [
           {
@@ -33487,9 +33117,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/vpnGateways/{gatewayName}/vpnConnections/{connectionName}/vpnLinkConnections/{linkConnectionName}/sharedKeys": {
       "get": {
         "operationId": "VpnLinkConnections_GetAllSharedKeys",
-        "tags": [
-          "ConnectionSharedKeyResults"
-        ],
         "parameters": [
           {
             "name": "gatewayName",
@@ -33537,9 +33164,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/vpnGateways/{gatewayName}/vpnConnections/{connectionName}/vpnLinkConnections/{linkConnectionName}/sharedKeys/default": {
       "get": {
         "operationId": "VpnLinkConnections_GetDefaultSharedKey",
-        "tags": [
-          "ConnectionSharedKeyResults"
-        ],
         "parameters": [
           {
             "name": "gatewayName",
@@ -33582,9 +33206,6 @@
       },
       "put": {
         "operationId": "VpnLinkConnections_SetOrInitDefaultSharedKey",
-        "tags": [
-          "ConnectionSharedKeyResults"
-        ],
         "parameters": [
           {
             "name": "gatewayName",
@@ -33654,9 +33275,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/vpnGateways/{gatewayName}/vpnConnections/{connectionName}/vpnLinkConnections/{linkConnectionName}/sharedKeys/default/listSharedKey": {
       "post": {
         "operationId": "VpnLinkConnections_ListDefaultSharedKey",
-        "tags": [
-          "ConnectionSharedKeyResults"
-        ],
         "parameters": [
           {
             "name": "gatewayName",
@@ -33701,9 +33319,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/vpnServerConfigurations": {
       "get": {
         "operationId": "VpnServerConfigurations_ListByResourceGroup",
-        "tags": [
-          "VpnServerConfigurations"
-        ],
         "parameters": [],
         "responses": {
           "200": {
@@ -33732,9 +33347,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/vpnServerConfigurations/{vpnServerConfigurationName}": {
       "get": {
         "operationId": "VpnServerConfigurations_Get",
-        "tags": [
-          "VpnServerConfigurations"
-        ],
         "parameters": [
           {
             "name": "vpnServerConfigurationName",
@@ -33765,9 +33377,6 @@
       },
       "put": {
         "operationId": "VpnServerConfigurations_CreateOrUpdate",
-        "tags": [
-          "VpnServerConfigurations"
-        ],
         "parameters": [
           {
             "name": "vpnServerConfigurationName",
@@ -33864,9 +33473,6 @@
       },
       "delete": {
         "operationId": "VpnServerConfigurations_Delete",
-        "tags": [
-          "VpnServerConfigurations"
-        ],
         "parameters": [
           {
             "name": "vpnServerConfigurationName",
@@ -33909,9 +33515,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/vpnServerConfigurations/{vpnServerConfigurationName}/configurationPolicyGroups": {
       "get": {
         "operationId": "configurationPolicyGroups_ListByVpnServerConfiguration",
-        "tags": [
-          "VpnServerConfigurationPolicyGroups"
-        ],
         "parameters": [
           {
             "name": "vpnServerConfigurationName",
@@ -33947,9 +33550,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/vpnServerConfigurations/{vpnServerConfigurationName}/configurationPolicyGroups/{configurationPolicyGroupName}": {
       "get": {
         "operationId": "ConfigurationPolicyGroups_Get",
-        "tags": [
-          "VpnServerConfigurationPolicyGroups"
-        ],
         "parameters": [
           {
             "name": "vpnServerConfigurationName",
@@ -33986,9 +33586,6 @@
       },
       "put": {
         "operationId": "ConfigurationPolicyGroups_CreateOrUpdate",
-        "tags": [
-          "VpnServerConfigurationPolicyGroups"
-        ],
         "parameters": [
           {
             "name": "vpnServerConfigurationName",
@@ -34050,9 +33647,6 @@
       },
       "delete": {
         "operationId": "ConfigurationPolicyGroups_Delete",
-        "tags": [
-          "VpnServerConfigurationPolicyGroups"
-        ],
         "parameters": [
           {
             "name": "vpnServerConfigurationName",
@@ -34136,9 +33730,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/vpnSites": {
       "get": {
         "operationId": "VpnSites_ListByResourceGroup",
-        "tags": [
-          "VpnSites"
-        ],
         "parameters": [],
         "responses": {
           "200": {
@@ -34167,9 +33758,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/vpnSites/{vpnSiteName}": {
       "get": {
         "operationId": "VpnSites_Get",
-        "tags": [
-          "VpnSites"
-        ],
         "parameters": [
           {
             "name": "vpnSiteName",
@@ -34200,9 +33788,6 @@
       },
       "put": {
         "operationId": "VpnSites_CreateOrUpdate",
-        "tags": [
-          "VpnSites"
-        ],
         "parameters": [
           {
             "name": "vpnSiteName",
@@ -34299,9 +33884,6 @@
       },
       "delete": {
         "operationId": "VpnSites_Delete",
-        "tags": [
-          "VpnSites"
-        ],
         "parameters": [
           {
             "name": "vpnSiteName",
@@ -34344,9 +33926,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/vpnSites/{vpnSiteName}/vpnSiteLinks": {
       "get": {
         "operationId": "VpnSiteLinks_ListByVpnSite",
-        "tags": [
-          "VpnSiteLinks"
-        ],
         "parameters": [
           {
             "name": "vpnSiteName",
@@ -34382,9 +33961,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/vpnSites/{vpnSiteName}/vpnSiteLinks/{vpnSiteLinkName}": {
       "get": {
         "operationId": "VpnSiteLinks_Get",
-        "tags": [
-          "VpnSiteLinks"
-        ],
         "parameters": [
           {
             "name": "vpnSiteName",

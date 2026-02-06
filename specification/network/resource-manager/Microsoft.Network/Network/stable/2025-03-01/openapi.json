@@ -157,15 +157,6 @@
       "name": "FirewallPolicyRuleCollectionGroups"
     },
     {
-      "name": "FirewallPolicyIdpsSignaturesOverrides"
-    },
-    {
-      "name": "FirewallPolicyDrafts"
-    },
-    {
-      "name": "FirewallPolicyRuleCollectionGroupDrafts"
-    },
-    {
       "name": "IpamPools"
     },
     {
@@ -268,9 +259,6 @@
       "name": "ReachabilityAnalysisRuns"
     },
     {
-      "name": "NetworkVirtualApplianceConnections"
-    },
-    {
       "name": "NetworkVirtualAppliances"
     },
     {
@@ -355,9 +343,6 @@
       "name": "LocalNetworkGateways"
     },
     {
-      "name": "VirtualNetworkGatewayNatRules"
-    },
-    {
       "name": "VirtualNetworkTap"
     },
     {
@@ -370,43 +355,19 @@
       "name": "VirtualRouterPeerings"
     },
     {
-      "name": "VirtualWANS"
+      "name": "VirtualWANs"
     },
     {
       "name": "VpnSites"
     },
     {
-      "name": "VpnSiteLinks"
-    },
-    {
       "name": "VpnServerConfigurations"
-    },
-    {
-      "name": "VpnServerConfigurationPolicyGroups"
-    },
-    {
-      "name": "VirtualHubs"
-    },
-    {
-      "name": "VirtualWANs"
-    },
-    {
-      "name": "RouteMaps"
     },
     {
       "name": "VpnGateways"
     },
     {
-      "name": "ConnectionSharedKeyResults"
-    },
-    {
-      "name": "VpnSiteLinkConnections"
-    },
-    {
-      "name": "VpnLinkConnections"
-    },
-    {
-      "name": "VpnGatewayNatRules"
+      "name": "vpnLinkConnections"
     },
     {
       "name": "P2SVpnGateways"
@@ -418,37 +379,10 @@
       "name": "ExpressRouteConnections"
     },
     {
-      "name": "BgpConnections"
-    },
-    {
-      "name": "HubIpConfigurations"
-    },
-    {
-      "name": "HubRouteTables"
-    },
-    {
-      "name": "RoutingIntents"
-    },
-    {
       "name": "WebApplicationFirewallPolicies"
     },
     {
-      "name": "AvailableDelegations"
-    },
-    {
-      "name": "AvailableResourceGroupDelegations"
-    },
-    {
-      "name": "AvailableServiceAliases"
-    },
-    {
       "name": "AzureFirewallFqdnTags"
-    },
-    {
-      "name": "CheckDnsNameAvailability"
-    },
-    {
-      "name": "AvailableEndpointServices"
     },
     {
       "name": "ExpressRouteServiceProviders"
@@ -463,16 +397,7 @@
       "name": "NetworkSecurityPerimeterServiceTags"
     },
     {
-      "name": "AvailablePrivateEndpointTypes"
-    },
-    {
       "name": "BgpServiceCommunities"
-    },
-    {
-      "name": "ServiceTags"
-    },
-    {
-      "name": "ServiceTagInformation"
     },
     {
       "name": "Usages"
@@ -2056,9 +1981,6 @@
     "/subscriptions/{subscriptionId}/providers/Microsoft.Network/locations/{location}/applicationGatewayWafDynamicManifests/dafault": {
       "get": {
         "operationId": "ApplicationGatewayWafDynamicManifestsDefault_Get",
-        "tags": [
-          "ApplicationGateways"
-        ],
         "description": "Gets the regional application gateway waf manifest.",
         "parameters": [
           {
@@ -2141,9 +2063,6 @@
     "/subscriptions/{subscriptionId}/providers/Microsoft.Network/locations/{location}/availableDelegations": {
       "get": {
         "operationId": "AvailableDelegations_List",
-        "tags": [
-          "AvailableDelegations"
-        ],
         "description": "Gets all of the available subnet delegations for this subscription in this region.",
         "parameters": [
           {
@@ -2183,9 +2102,6 @@
     "/subscriptions/{subscriptionId}/providers/Microsoft.Network/locations/{location}/availablePrivateEndpointTypes": {
       "get": {
         "operationId": "AvailablePrivateEndpointTypes_List",
-        "tags": [
-          "AvailablePrivateEndpointTypes"
-        ],
         "description": "Returns all of the resource types that can be linked to a Private Endpoint in this subscription in this region.",
         "parameters": [
           {
@@ -2225,9 +2141,6 @@
     "/subscriptions/{subscriptionId}/providers/Microsoft.Network/locations/{location}/availableServiceAliases": {
       "get": {
         "operationId": "AvailableServiceAliases_List",
-        "tags": [
-          "AvailableServiceAliases"
-        ],
         "description": "Gets all available service aliases for this subscription in this region.",
         "parameters": [
           {
@@ -2267,9 +2180,6 @@
     "/subscriptions/{subscriptionId}/providers/Microsoft.Network/locations/{location}/checkDnsNameAvailability": {
       "get": {
         "operationId": "CheckDnsNameAvailability",
-        "tags": [
-          "CheckDnsNameAvailability"
-        ],
         "description": "Checks whether a domain name in the cloudapp.azure.com zone is available for use.",
         "parameters": [
           {
@@ -2510,9 +2420,6 @@
     "/subscriptions/{subscriptionId}/providers/Microsoft.Network/locations/{location}/serviceTagDetails": {
       "get": {
         "operationId": "ServiceTagInformation_List",
-        "tags": [
-          "ServiceTagInformation"
-        ],
         "description": "Gets a list of service tag information resources with pagination.",
         "parameters": [
           {
@@ -2572,9 +2479,6 @@
     "/subscriptions/{subscriptionId}/providers/Microsoft.Network/locations/{location}/serviceTags": {
       "get": {
         "operationId": "ServiceTags_List",
-        "tags": [
-          "ServiceTags"
-        ],
         "description": "Gets a list of service tag information resources.",
         "parameters": [
           {
@@ -2718,9 +2622,6 @@
     "/subscriptions/{subscriptionId}/providers/Microsoft.Network/locations/{location}/virtualNetworkAvailableEndpointServices": {
       "get": {
         "operationId": "AvailableEndpointServices_List",
-        "tags": [
-          "AvailableEndpointServices"
-        ],
         "description": "List what values of endpoint services are available for use.",
         "parameters": [
           {
@@ -3384,9 +3285,6 @@
     "/subscriptions/{subscriptionId}/providers/Microsoft.Network/p2svpnGateways": {
       "get": {
         "operationId": "P2sVpnGateways_List",
-        "tags": [
-          "P2SVpnGateways"
-        ],
         "description": "Lists all the P2SVpnGateways in a subscription.",
         "parameters": [
           {
@@ -3769,9 +3667,6 @@
     "/subscriptions/{subscriptionId}/providers/Microsoft.Network/virtualHubs": {
       "get": {
         "operationId": "VirtualHubs_List",
-        "tags": [
-          "VirtualHubs"
-        ],
         "description": "Lists all the VirtualHubs in a subscription.",
         "parameters": [
           {
@@ -3959,9 +3854,6 @@
     "/subscriptions/{subscriptionId}/providers/Microsoft.Network/virtualWans": {
       "get": {
         "operationId": "VirtualWans_List",
-        "tags": [
-          "VirtualWANS"
-        ],
         "description": "Lists all the VirtualWANs in a subscription.",
         "parameters": [
           {
@@ -3998,9 +3890,6 @@
     "/subscriptions/{subscriptionId}/providers/Microsoft.Network/vpnGateways": {
       "get": {
         "operationId": "VpnGateways_List",
-        "tags": [
-          "VpnGateways"
-        ],
         "description": "Lists all the VpnGateways in a subscription.",
         "parameters": [
           {
@@ -4037,9 +3926,6 @@
     "/subscriptions/{subscriptionId}/providers/Microsoft.Network/vpnServerConfigurations": {
       "get": {
         "operationId": "VpnServerConfigurations_List",
-        "tags": [
-          "VpnServerConfigurations"
-        ],
         "description": "Lists all the VpnServerConfigurations in a subscription.",
         "parameters": [
           {
@@ -4076,9 +3962,6 @@
     "/subscriptions/{subscriptionId}/providers/Microsoft.Network/vpnSites": {
       "get": {
         "operationId": "VpnSites_List",
-        "tags": [
-          "VpnSites"
-        ],
         "description": "Lists all the VpnSites in a subscription.",
         "parameters": [
           {
@@ -6509,9 +6392,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/azureFirewalls/{azureFirewallName}/learnedIPPrefixes": {
       "post": {
         "operationId": "AzureFirewalls_ListLearnedPrefixes",
-        "tags": [
-          "AzureFirewalls"
-        ],
         "description": "Retrieves a list of all IP prefixes that azure firewall has learned to not SNAT.",
         "parameters": [
           {
@@ -12583,9 +12463,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/firewallPolicies/{firewallPolicyName}/deploy": {
       "post": {
         "operationId": "FirewallPolicyDeployments_Deploy",
-        "tags": [
-          "FirewallPolicies"
-        ],
         "description": "Deploys the firewall policy draft and child rule collection group drafts.",
         "parameters": [
           {
@@ -12646,9 +12523,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/firewallPolicies/{firewallPolicyName}/firewallPolicyDrafts/default": {
       "get": {
         "operationId": "FirewallPolicyDrafts_Get",
-        "tags": [
-          "FirewallPolicyDrafts"
-        ],
         "description": "Get a draft Firewall Policy.",
         "parameters": [
           {
@@ -12690,9 +12564,6 @@
       },
       "put": {
         "operationId": "FirewallPolicyDrafts_CreateOrUpdate",
-        "tags": [
-          "FirewallPolicyDrafts"
-        ],
         "description": "Create or update a draft Firewall Policy.",
         "parameters": [
           {
@@ -12749,9 +12620,6 @@
       },
       "delete": {
         "operationId": "FirewallPolicyDrafts_Delete",
-        "tags": [
-          "FirewallPolicyDrafts"
-        ],
         "description": "Delete a draft policy.",
         "parameters": [
           {
@@ -12795,9 +12663,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/firewallPolicies/{firewallPolicyName}/listIdpsFilterOptions": {
       "post": {
         "operationId": "FirewallPolicyIdpsSignaturesFilterValues_List",
-        "tags": [
-          "FirewallPolicies"
-        ],
         "description": "Retrieves the current filter values for the signatures overrides",
         "parameters": [
           {
@@ -12850,9 +12715,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/firewallPolicies/{firewallPolicyName}/listIdpsSignatures": {
       "post": {
         "operationId": "FirewallPolicyIdpsSignatures_List",
-        "tags": [
-          "FirewallPolicies"
-        ],
         "description": "Retrieves the current status of IDPS signatures for the relevant policy. Maximal amount of returned signatures is 1000.",
         "parameters": [
           {
@@ -13185,9 +13047,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/firewallPolicies/{firewallPolicyName}/ruleCollectionGroups/{ruleCollectionGroupName}/ruleCollectionGroupDrafts/default": {
       "get": {
         "operationId": "FirewallPolicyRuleCollectionGroupDrafts_Get",
-        "tags": [
-          "FirewallPolicyRuleCollectionGroupDrafts"
-        ],
         "description": "Get Rule Collection Group Draft.",
         "parameters": [
           {
@@ -13236,9 +13095,6 @@
       },
       "put": {
         "operationId": "FirewallPolicyRuleCollectionGroupDrafts_CreateOrUpdate",
-        "tags": [
-          "FirewallPolicyRuleCollectionGroupDrafts"
-        ],
         "description": "Create or Update Rule Collection Group Draft.",
         "parameters": [
           {
@@ -13302,9 +13158,6 @@
       },
       "delete": {
         "operationId": "FirewallPolicyRuleCollectionGroupDrafts_Delete",
-        "tags": [
-          "FirewallPolicyRuleCollectionGroupDrafts"
-        ],
         "description": "Delete Rule Collection Group Draft.",
         "parameters": [
           {
@@ -13355,9 +13208,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/firewallPolicies/{firewallPolicyName}/signatureOverrides": {
       "get": {
         "operationId": "FirewallPolicyIdpsSignaturesOverrides_List",
-        "tags": [
-          "FirewallPolicyIdpsSignaturesOverrides"
-        ],
         "description": "Returns all signatures overrides objects for a specific policy as a list containing a single value.",
         "parameters": [
           {
@@ -13401,9 +13251,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/firewallPolicies/{firewallPolicyName}/signatureOverrides/default": {
       "get": {
         "operationId": "FirewallPolicyIdpsSignaturesOverrides_Get",
-        "tags": [
-          "FirewallPolicyIdpsSignaturesOverrides"
-        ],
         "description": "Returns all signatures overrides for a specific policy.",
         "parameters": [
           {
@@ -13445,9 +13292,6 @@
       },
       "put": {
         "operationId": "FirewallPolicyIdpsSignaturesOverrides_Put",
-        "tags": [
-          "FirewallPolicyIdpsSignaturesOverrides"
-        ],
         "description": "Will override/create a new signature overrides for the policy's IDPS",
         "parameters": [
           {
@@ -13498,9 +13342,6 @@
       },
       "patch": {
         "operationId": "FirewallPolicyIdpsSignaturesOverrides_Patch",
-        "tags": [
-          "FirewallPolicyIdpsSignaturesOverrides"
-        ],
         "description": "Will update the status of policy's signature overrides for IDPS",
         "parameters": [
           {
@@ -15684,9 +15525,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/locations/{location}/availableDelegations": {
       "get": {
         "operationId": "AvailableResourceGroupDelegations_List",
-        "tags": [
-          "AvailableResourceGroupDelegations"
-        ],
         "description": "Gets all of the available subnet delegations for this resource group in this region.",
         "parameters": [
           {
@@ -15729,9 +15567,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/locations/{location}/availablePrivateEndpointTypes": {
       "get": {
         "operationId": "AvailablePrivateEndpointTypes_ListByResourceGroup",
-        "tags": [
-          "AvailablePrivateEndpointTypes"
-        ],
         "description": "Returns all of the resource types that can be linked to a Private Endpoint in this subscription in this region.",
         "parameters": [
           {
@@ -15774,9 +15609,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/locations/{location}/availableServiceAliases": {
       "get": {
         "operationId": "AvailableServiceAliases_ListByResourceGroup",
-        "tags": [
-          "AvailableServiceAliases"
-        ],
         "description": "Gets all available service aliases for this resource group in this region.",
         "parameters": [
           {
@@ -26516,9 +26348,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkVirtualAppliances/{networkVirtualApplianceName}/networkVirtualApplianceConnections": {
       "get": {
         "operationId": "NetworkVirtualApplianceConnections_List",
-        "tags": [
-          "NetworkVirtualApplianceConnections"
-        ],
         "description": "Lists NetworkVirtualApplianceConnections under the NVA.",
         "parameters": [
           {
@@ -26565,9 +26394,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkVirtualAppliances/{networkVirtualApplianceName}/networkVirtualApplianceConnections/{connectionName}": {
       "get": {
         "operationId": "NetworkVirtualApplianceConnections_Get",
-        "tags": [
-          "NetworkVirtualApplianceConnections"
-        ],
         "description": "Retrieves the details of specified NVA connection.",
         "parameters": [
           {
@@ -26615,9 +26441,6 @@
       },
       "put": {
         "operationId": "NetworkVirtualApplianceConnections_CreateOrUpdate",
-        "tags": [
-          "NetworkVirtualApplianceConnections"
-        ],
         "description": "Creates a connection to Network Virtual Appliance, if it doesn't exist else updates the existing NVA connection'",
         "parameters": [
           {
@@ -26696,9 +26519,6 @@
       },
       "delete": {
         "operationId": "NetworkVirtualApplianceConnections_Delete",
-        "tags": [
-          "NetworkVirtualApplianceConnections"
-        ],
         "description": "Deletes a NVA connection.",
         "parameters": [
           {
@@ -29420,9 +29240,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/p2svpnGateways": {
       "get": {
         "operationId": "P2sVpnGateways_ListByResourceGroup",
-        "tags": [
-          "P2SVpnGateways"
-        ],
         "description": "Lists all the P2SVpnGateways in a resource group.",
         "parameters": [
           {
@@ -29462,9 +29279,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/p2svpnGateways/{gatewayName}": {
       "get": {
         "operationId": "P2sVpnGateways_Get",
-        "tags": [
-          "P2SVpnGateways"
-        ],
         "description": "Retrieves the details of a virtual wan p2s vpn gateway.",
         "parameters": [
           {
@@ -29506,9 +29320,6 @@
       },
       "put": {
         "operationId": "P2sVpnGateways_CreateOrUpdate",
-        "tags": [
-          "P2SVpnGateways"
-        ],
         "description": "Creates a virtual wan p2s vpn gateway if it doesn't exist else updates the existing gateway.",
         "parameters": [
           {
@@ -29653,9 +29464,6 @@
       },
       "delete": {
         "operationId": "P2sVpnGateways_Delete",
-        "tags": [
-          "P2SVpnGateways"
-        ],
         "description": "Deletes a virtual wan p2s vpn gateway.",
         "parameters": [
           {
@@ -34248,9 +34056,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualHubs": {
       "get": {
         "operationId": "VirtualHubs_ListByResourceGroup",
-        "tags": [
-          "VirtualHubs"
-        ],
         "description": "Lists all the VirtualHubs in a resource group.",
         "parameters": [
           {
@@ -34290,9 +34095,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualHubs/{virtualHubName}": {
       "get": {
         "operationId": "VirtualHubs_Get",
-        "tags": [
-          "VirtualHubs"
-        ],
         "description": "Retrieves the details of a VirtualHub.",
         "parameters": [
           {
@@ -34334,9 +34136,6 @@
       },
       "put": {
         "operationId": "VirtualHubs_CreateOrUpdate",
-        "tags": [
-          "VirtualHubs"
-        ],
         "description": "Creates a VirtualHub resource if it doesn't exist else updates the existing VirtualHub.",
         "parameters": [
           {
@@ -34462,9 +34261,6 @@
       },
       "delete": {
         "operationId": "VirtualHubs_Delete",
-        "tags": [
-          "VirtualHubs"
-        ],
         "description": "Deletes a VirtualHub.",
         "parameters": [
           {
@@ -34526,9 +34322,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualHubs/{virtualHubName}/bgpConnections": {
       "get": {
         "operationId": "VirtualHubBgpConnections_List",
-        "tags": [
-          "BgpConnections"
-        ],
         "description": "Retrieves the details of all VirtualHubBgpConnections.",
         "parameters": [
           {
@@ -34575,9 +34368,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualHubs/{virtualHubName}/bgpConnections/{connectionName}": {
       "get": {
         "operationId": "VirtualHubBgpConnection_Get",
-        "tags": [
-          "BgpConnections"
-        ],
         "description": "Retrieves the details of a Virtual Hub Bgp Connection.",
         "parameters": [
           {
@@ -34626,9 +34416,6 @@
       },
       "put": {
         "operationId": "VirtualHubBgpConnection_CreateOrUpdate",
-        "tags": [
-          "BgpConnections"
-        ],
         "description": "Creates a VirtualHubBgpConnection resource if it doesn't exist else updates the existing VirtualHubBgpConnection.",
         "parameters": [
           {
@@ -34708,9 +34495,6 @@
       },
       "delete": {
         "operationId": "VirtualHubBgpConnection_Delete",
-        "tags": [
-          "BgpConnections"
-        ],
         "description": "Deletes a VirtualHubBgpConnection.",
         "parameters": [
           {
@@ -34779,9 +34563,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualHubs/{hubName}/bgpConnections/{connectionName}/advertisedRoutes": {
       "post": {
         "operationId": "VirtualHubBgpConnections_ListAdvertisedRoutes",
-        "tags": [
-          "BgpConnections"
-        ],
         "description": "Retrieves a list of routes the virtual hub bgp connection is advertising to the specified peer.",
         "parameters": [
           {
@@ -34857,9 +34638,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualHubs/{hubName}/bgpConnections/{connectionName}/learnedRoutes": {
       "post": {
         "operationId": "VirtualHubBgpConnections_ListLearnedRoutes",
-        "tags": [
-          "BgpConnections"
-        ],
         "description": "Retrieves a list of routes the virtual hub bgp connection has learned.",
         "parameters": [
           {
@@ -35012,9 +34790,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualHubs/{virtualHubName}/hubRouteTables": {
       "get": {
         "operationId": "HubRouteTables_List",
-        "tags": [
-          "HubRouteTables"
-        ],
         "description": "Retrieves the details of all RouteTables.",
         "parameters": [
           {
@@ -35061,9 +34836,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualHubs/{virtualHubName}/hubRouteTables/{routeTableName}": {
       "get": {
         "operationId": "HubRouteTables_Get",
-        "tags": [
-          "HubRouteTables"
-        ],
         "description": "Retrieves the details of a RouteTable.",
         "parameters": [
           {
@@ -35112,9 +34884,6 @@
       },
       "put": {
         "operationId": "HubRouteTables_CreateOrUpdate",
-        "tags": [
-          "HubRouteTables"
-        ],
         "description": "Creates a RouteTable resource if it doesn't exist else updates the existing RouteTable.",
         "parameters": [
           {
@@ -35194,9 +34963,6 @@
       },
       "delete": {
         "operationId": "HubRouteTables_Delete",
-        "tags": [
-          "HubRouteTables"
-        ],
         "description": "Deletes a RouteTable.",
         "parameters": [
           {
@@ -35574,9 +35340,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualHubs/{virtualHubName}/ipConfigurations": {
       "get": {
         "operationId": "VirtualHubIpConfiguration_List",
-        "tags": [
-          "HubIpConfigurations"
-        ],
         "description": "Retrieves the details of all VirtualHubIpConfigurations.",
         "parameters": [
           {
@@ -35623,9 +35386,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualHubs/{virtualHubName}/ipConfigurations/{ipConfigName}": {
       "get": {
         "operationId": "VirtualHubIpConfiguration_Get",
-        "tags": [
-          "HubIpConfigurations"
-        ],
         "description": "Retrieves the details of a Virtual Hub Ip configuration.",
         "parameters": [
           {
@@ -35674,9 +35434,6 @@
       },
       "put": {
         "operationId": "VirtualHubIpConfiguration_CreateOrUpdate",
-        "tags": [
-          "HubIpConfigurations"
-        ],
         "description": "Creates a VirtualHubIpConfiguration resource if it doesn't exist else updates the existing VirtualHubIpConfiguration.",
         "parameters": [
           {
@@ -35756,9 +35513,6 @@
       },
       "delete": {
         "operationId": "VirtualHubIpConfiguration_Delete",
-        "tags": [
-          "HubIpConfigurations"
-        ],
         "description": "Deletes a VirtualHubIpConfiguration.",
         "parameters": [
           {
@@ -35898,9 +35652,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualHubs/{virtualHubName}/routeMaps": {
       "get": {
         "operationId": "RouteMaps_List",
-        "tags": [
-          "RouteMaps"
-        ],
         "description": "Retrieves the details of all RouteMaps.",
         "parameters": [
           {
@@ -35947,9 +35698,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualHubs/{virtualHubName}/routeMaps/{routeMapName}": {
       "get": {
         "operationId": "RouteMaps_Get",
-        "tags": [
-          "RouteMaps"
-        ],
         "description": "Retrieves the details of a RouteMap.",
         "parameters": [
           {
@@ -35998,9 +35746,6 @@
       },
       "put": {
         "operationId": "RouteMaps_CreateOrUpdate",
-        "tags": [
-          "RouteMaps"
-        ],
         "description": "Creates a RouteMap if it doesn't exist else updates the existing one.",
         "parameters": [
           {
@@ -36080,9 +35825,6 @@
       },
       "delete": {
         "operationId": "RouteMaps_Delete",
-        "tags": [
-          "RouteMaps"
-        ],
         "description": "Deletes a RouteMap.",
         "parameters": [
           {
@@ -36392,9 +36134,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualHubs/{virtualHubName}/routingIntent": {
       "get": {
         "operationId": "RoutingIntent_List",
-        "tags": [
-          "RoutingIntents"
-        ],
         "description": "Retrieves the details of all RoutingIntent child resources of the VirtualHub.",
         "parameters": [
           {
@@ -36441,9 +36180,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualHubs/{virtualHubName}/routingIntent/{routingIntentName}": {
       "get": {
         "operationId": "RoutingIntent_Get",
-        "tags": [
-          "RoutingIntents"
-        ],
         "description": "Retrieves the details of a RoutingIntent.",
         "parameters": [
           {
@@ -36492,9 +36228,6 @@
       },
       "put": {
         "operationId": "RoutingIntent_CreateOrUpdate",
-        "tags": [
-          "RoutingIntents"
-        ],
         "description": "Creates a RoutingIntent resource if it doesn't exist else updates the existing RoutingIntent.",
         "parameters": [
           {
@@ -36574,9 +36307,6 @@
       },
       "delete": {
         "operationId": "RoutingIntent_Delete",
-        "tags": [
-          "RoutingIntents"
-        ],
         "description": "Deletes a RoutingIntent.",
         "parameters": [
           {
@@ -37202,9 +36932,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworkGateways/{virtualNetworkGatewayName}/abortMigration": {
       "post": {
         "operationId": "VirtualNetworkGateways_InvokeAbortMigration",
-        "tags": [
-          "VirtualNetworkGateways"
-        ],
         "description": "Trigger abort migration for the virtual network gateway.",
         "parameters": [
           {
@@ -37260,9 +36987,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworkGateways/{virtualNetworkGatewayName}/commitMigration": {
       "post": {
         "operationId": "VirtualNetworkGateways_InvokeCommitMigration",
-        "tags": [
-          "VirtualNetworkGateways"
-        ],
         "description": "Trigger commit migration for the virtual network gateway.",
         "parameters": [
           {
@@ -37437,9 +37161,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworkGateways/{virtualNetworkGatewayName}/executeMigration": {
       "post": {
         "operationId": "VirtualNetworkGateways_InvokeExecuteMigration",
-        "tags": [
-          "VirtualNetworkGateways"
-        ],
         "description": "Trigger execute migration for the virtual network gateway.",
         "parameters": [
           {
@@ -38393,9 +38114,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworkGateways/{virtualNetworkGatewayName}/natRules": {
       "get": {
         "operationId": "VirtualNetworkGatewayNatRules_ListByVirtualNetworkGateway",
-        "tags": [
-          "VirtualNetworkGatewayNatRules"
-        ],
         "description": "Retrieves all nat rules for a particular virtual network gateway.",
         "parameters": [
           {
@@ -38442,9 +38160,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworkGateways/{virtualNetworkGatewayName}/natRules/{natRuleName}": {
       "get": {
         "operationId": "VirtualNetworkGatewayNatRules_Get",
-        "tags": [
-          "VirtualNetworkGatewayNatRules"
-        ],
         "description": "Retrieves the details of a nat rule.",
         "parameters": [
           {
@@ -38493,9 +38208,6 @@
       },
       "put": {
         "operationId": "VirtualNetworkGatewayNatRules_CreateOrUpdate",
-        "tags": [
-          "VirtualNetworkGatewayNatRules"
-        ],
         "description": "Creates a nat rule to a scalable virtual network gateway if it doesn't exist else updates the existing nat rules.",
         "parameters": [
           {
@@ -38575,9 +38287,6 @@
       },
       "delete": {
         "operationId": "VirtualNetworkGatewayNatRules_Delete",
-        "tags": [
-          "VirtualNetworkGatewayNatRules"
-        ],
         "description": "Deletes a nat rule.",
         "parameters": [
           {
@@ -38646,9 +38355,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworkGateways/{virtualNetworkGatewayName}/prepareMigration": {
       "post": {
         "operationId": "VirtualNetworkGateways_InvokePrepareMigration",
-        "tags": [
-          "VirtualNetworkGateways"
-        ],
         "description": "Trigger prepare migration for the virtual network gateway.",
         "parameters": [
           {
@@ -39852,9 +39558,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/checkIPAddressAvailability": {
       "get": {
         "operationId": "VirtualNetworks_CheckIPAddressAvailability",
-        "tags": [
-          "VirtualNetworks"
-        ],
         "description": "Checks whether a private IP address is available for use.",
         "parameters": [
           {
@@ -39905,9 +39608,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/ddosProtectionStatus": {
       "post": {
         "operationId": "VirtualNetworks_ListDdosProtectionStatus",
-        "tags": [
-          "VirtualNetworks"
-        ],
         "description": "Gets the Ddos Protection Status of all IP Addresses under the Virtual Network",
         "parameters": [
           {
@@ -40396,9 +40096,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/subnets/{subnetName}/prepareNetworkPolicies": {
       "post": {
         "operationId": "Subnets_PrepareNetworkPolicies",
-        "tags": [
-          "Subnets"
-        ],
         "description": "Prepares a subnet by applying network intent policies.",
         "parameters": [
           {
@@ -40473,9 +40170,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/subnets/{subnetName}/resourceNavigationLinks": {
       "get": {
         "operationId": "ResourceNavigationLinks_List",
-        "tags": [
-          "Subnets"
-        ],
         "description": "Gets a list of resource navigation links for a subnet.",
         "parameters": [
           {
@@ -40526,9 +40220,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/subnets/{subnetName}/serviceAssociationLinks": {
       "get": {
         "operationId": "ServiceAssociationLinks_List",
-        "tags": [
-          "Subnets"
-        ],
         "description": "Gets a list of service association links for a subnet.",
         "parameters": [
           {
@@ -40579,9 +40270,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/subnets/{subnetName}/unprepareNetworkPolicies": {
       "post": {
         "operationId": "Subnets_UnprepareNetworkPolicies",
-        "tags": [
-          "Subnets"
-        ],
         "description": "Unprepares a subnet by removing network intent policies.",
         "parameters": [
           {
@@ -40656,9 +40344,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/usages": {
       "get": {
         "operationId": "VirtualNetworks_ListUsage",
-        "tags": [
-          "VirtualNetworks"
-        ],
         "description": "Lists usage stats.",
         "parameters": [
           {
@@ -41494,9 +41179,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualWans": {
       "get": {
         "operationId": "VirtualWans_ListByResourceGroup",
-        "tags": [
-          "VirtualWANS"
-        ],
         "description": "Lists all the VirtualWANs in a resource group.",
         "parameters": [
           {
@@ -41536,9 +41218,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualWans/{VirtualWANName}": {
       "get": {
         "operationId": "VirtualWans_Get",
-        "tags": [
-          "VirtualWANS"
-        ],
         "description": "Retrieves the details of a VirtualWAN.",
         "parameters": [
           {
@@ -41580,9 +41259,6 @@
       },
       "put": {
         "operationId": "VirtualWans_CreateOrUpdate",
-        "tags": [
-          "VirtualWANS"
-        ],
         "description": "Creates a VirtualWAN resource if it doesn't exist else updates the existing VirtualWAN.",
         "parameters": [
           {
@@ -41656,7 +41332,7 @@
       "patch": {
         "operationId": "VirtualWans_UpdateTags",
         "tags": [
-          "VirtualWANS"
+          "VirtualWANs"
         ],
         "description": "Updates a VirtualWAN tags.",
         "parameters": [
@@ -41708,9 +41384,6 @@
       },
       "delete": {
         "operationId": "VirtualWans_Delete",
-        "tags": [
-          "VirtualWANS"
-        ],
         "description": "Deletes a VirtualWAN.",
         "parameters": [
           {
@@ -42015,9 +41688,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/vpnGateways": {
       "get": {
         "operationId": "VpnGateways_ListByResourceGroup",
-        "tags": [
-          "VpnGateways"
-        ],
         "description": "Lists all the VpnGateways in a resource group.",
         "parameters": [
           {
@@ -42057,9 +41727,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/vpnGateways/{gatewayName}": {
       "get": {
         "operationId": "VpnGateways_Get",
-        "tags": [
-          "VpnGateways"
-        ],
         "description": "Retrieves the details of a virtual wan vpn gateway.",
         "parameters": [
           {
@@ -42101,9 +41768,6 @@
       },
       "put": {
         "operationId": "VpnGateways_CreateOrUpdate",
-        "tags": [
-          "VpnGateways"
-        ],
         "description": "Creates a virtual wan vpn gateway if it doesn't exist else updates the existing gateway.",
         "parameters": [
           {
@@ -42248,9 +41912,6 @@
       },
       "delete": {
         "operationId": "VpnGateways_Delete",
-        "tags": [
-          "VpnGateways"
-        ],
         "description": "Deletes a virtual wan vpn gateway.",
         "parameters": [
           {
@@ -42312,9 +41973,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/vpnGateways/{gatewayName}/natRules": {
       "get": {
         "operationId": "NatRules_ListByVpnGateway",
-        "tags": [
-          "VpnGatewayNatRules"
-        ],
         "description": "Retrieves all nat rules for a particular virtual wan vpn gateway.",
         "parameters": [
           {
@@ -42361,9 +42019,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/vpnGateways/{gatewayName}/natRules/{natRuleName}": {
       "get": {
         "operationId": "NatRules_Get",
-        "tags": [
-          "VpnGatewayNatRules"
-        ],
         "description": "Retrieves the details of a nat ruleGet.",
         "parameters": [
           {
@@ -42412,9 +42067,6 @@
       },
       "put": {
         "operationId": "NatRules_CreateOrUpdate",
-        "tags": [
-          "VpnGatewayNatRules"
-        ],
         "description": "Creates a nat rule to a scalable vpn gateway if it doesn't exist else updates the existing nat rules.",
         "parameters": [
           {
@@ -42494,9 +42146,6 @@
       },
       "delete": {
         "operationId": "NatRules_Delete",
-        "tags": [
-          "VpnGatewayNatRules"
-        ],
         "description": "Deletes a nat rule.",
         "parameters": [
           {
@@ -43184,9 +42833,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/vpnGateways/{gatewayName}/vpnConnections/{connectionName}/vpnLinkConnections": {
       "get": {
         "operationId": "VpnLinkConnections_ListByVpnConnection",
-        "tags": [
-          "VpnSiteLinkConnections"
-        ],
         "description": "Retrieves all vpn site link connections for a particular virtual wan vpn gateway vpn connection.",
         "parameters": [
           {
@@ -43240,9 +42886,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/vpnGateways/{gatewayName}/vpnConnections/{connectionName}/vpnLinkConnections/{linkConnectionName}": {
       "get": {
         "operationId": "VpnSiteLinkConnections_Get",
-        "tags": [
-          "VpnSiteLinkConnections"
-        ],
         "description": "Retrieves the details of a vpn site link connection.",
         "parameters": [
           {
@@ -43300,9 +42943,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/vpnGateways/{gatewayName}/vpnConnections/{connectionName}/vpnLinkConnections/{linkConnectionName}/getikesas": {
       "post": {
         "operationId": "VpnLinkConnections_GetIkeSas",
-        "tags": [
-          "VpnSiteLinkConnections"
-        ],
         "description": "Lists IKE Security Associations for Vpn Site Link Connection in the specified resource group.",
         "parameters": [
           {
@@ -43379,8 +43019,7 @@
       "post": {
         "operationId": "VpnLinkConnections_ResetConnection",
         "tags": [
-          "VpnSiteLinkConnections",
-          "VpnLinkConnections"
+          "vpnLinkConnections"
         ],
         "description": "Resets the VpnLink connection specified.",
         "parameters": [
@@ -43451,9 +43090,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/vpnGateways/{gatewayName}/vpnConnections/{connectionName}/vpnLinkConnections/{linkConnectionName}/sharedKeys": {
       "get": {
         "operationId": "VpnLinkConnections_GetAllSharedKeys",
-        "tags": [
-          "ConnectionSharedKeyResults"
-        ],
         "description": "Lists all shared keys of VpnLink connection specified.",
         "parameters": [
           {
@@ -43514,9 +43150,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/vpnGateways/{gatewayName}/vpnConnections/{connectionName}/vpnLinkConnections/{linkConnectionName}/sharedKeys/default": {
       "get": {
         "operationId": "VpnLinkConnections_GetDefaultSharedKey",
-        "tags": [
-          "ConnectionSharedKeyResults"
-        ],
         "description": "Gets the shared key of VpnLink connection specified.",
         "parameters": [
           {
@@ -43572,9 +43205,6 @@
       },
       "put": {
         "operationId": "VpnLinkConnections_SetOrInitDefaultSharedKey",
-        "tags": [
-          "ConnectionSharedKeyResults"
-        ],
         "description": "Sets or auto generates the shared key based on the user input. If users give a shared key value, it does the set operation. If key length is given, the operation creates a random key of the pre-defined length.",
         "parameters": [
           {
@@ -43663,9 +43293,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/vpnGateways/{gatewayName}/vpnConnections/{connectionName}/vpnLinkConnections/{linkConnectionName}/sharedKeys/default/listSharedKey": {
       "post": {
         "operationId": "VpnLinkConnections_ListDefaultSharedKey",
-        "tags": [
-          "ConnectionSharedKeyResults"
-        ],
         "description": "Gets the value of the shared key of VpnLink connection specified.",
         "parameters": [
           {
@@ -43723,9 +43350,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/vpnServerConfigurations": {
       "get": {
         "operationId": "VpnServerConfigurations_ListByResourceGroup",
-        "tags": [
-          "VpnServerConfigurations"
-        ],
         "description": "Lists all the vpnServerConfigurations in a resource group.",
         "parameters": [
           {
@@ -43765,9 +43389,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/vpnServerConfigurations/{vpnServerConfigurationName}": {
       "get": {
         "operationId": "VpnServerConfigurations_Get",
-        "tags": [
-          "VpnServerConfigurations"
-        ],
         "description": "Retrieves the details of a VpnServerConfiguration.",
         "parameters": [
           {
@@ -43809,9 +43430,6 @@
       },
       "put": {
         "operationId": "VpnServerConfigurations_CreateOrUpdate",
-        "tags": [
-          "VpnServerConfigurations"
-        ],
         "description": "Creates a VpnServerConfiguration resource if it doesn't exist else updates the existing VpnServerConfiguration.",
         "parameters": [
           {
@@ -43937,9 +43555,6 @@
       },
       "delete": {
         "operationId": "VpnServerConfigurations_Delete",
-        "tags": [
-          "VpnServerConfigurations"
-        ],
         "description": "Deletes a VpnServerConfiguration.",
         "parameters": [
           {
@@ -44001,9 +43616,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/vpnServerConfigurations/{vpnServerConfigurationName}/configurationPolicyGroups": {
       "get": {
         "operationId": "configurationPolicyGroups_ListByVpnServerConfiguration",
-        "tags": [
-          "VpnServerConfigurationPolicyGroups"
-        ],
         "description": "Lists all the configurationPolicyGroups in a resource group for a vpnServerConfiguration.",
         "parameters": [
           {
@@ -44050,9 +43662,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/vpnServerConfigurations/{vpnServerConfigurationName}/configurationPolicyGroups/{configurationPolicyGroupName}": {
       "get": {
         "operationId": "ConfigurationPolicyGroups_Get",
-        "tags": [
-          "VpnServerConfigurationPolicyGroups"
-        ],
         "description": "Retrieves the details of a ConfigurationPolicyGroup.",
         "parameters": [
           {
@@ -44101,9 +43710,6 @@
       },
       "put": {
         "operationId": "ConfigurationPolicyGroups_CreateOrUpdate",
-        "tags": [
-          "VpnServerConfigurationPolicyGroups"
-        ],
         "description": "Creates a ConfigurationPolicyGroup if it doesn't exist else updates the existing one.",
         "parameters": [
           {
@@ -44183,9 +43789,6 @@
       },
       "delete": {
         "operationId": "ConfigurationPolicyGroups_Delete",
-        "tags": [
-          "VpnServerConfigurationPolicyGroups"
-        ],
         "description": "Deletes a ConfigurationPolicyGroup.",
         "parameters": [
           {
@@ -44300,9 +43903,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/vpnSites": {
       "get": {
         "operationId": "VpnSites_ListByResourceGroup",
-        "tags": [
-          "VpnSites"
-        ],
         "description": "Lists all the vpnSites in a resource group.",
         "parameters": [
           {
@@ -44342,9 +43942,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/vpnSites/{vpnSiteName}": {
       "get": {
         "operationId": "VpnSites_Get",
-        "tags": [
-          "VpnSites"
-        ],
         "description": "Retrieves the details of a VPN site.",
         "parameters": [
           {
@@ -44386,9 +43983,6 @@
       },
       "put": {
         "operationId": "VpnSites_CreateOrUpdate",
-        "tags": [
-          "VpnSites"
-        ],
         "description": "Creates a VpnSite resource if it doesn't exist else updates the existing VpnSite.",
         "parameters": [
           {
@@ -44514,9 +44108,6 @@
       },
       "delete": {
         "operationId": "VpnSites_Delete",
-        "tags": [
-          "VpnSites"
-        ],
         "description": "Deletes a VpnSite.",
         "parameters": [
           {
@@ -44578,9 +44169,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/vpnSites/{vpnSiteName}/vpnSiteLinks": {
       "get": {
         "operationId": "VpnSiteLinks_ListByVpnSite",
-        "tags": [
-          "VpnSiteLinks"
-        ],
         "description": "Lists all the vpnSiteLinks in a resource group for a vpn site.",
         "parameters": [
           {
@@ -44627,9 +44215,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/vpnSites/{vpnSiteName}/vpnSiteLinks/{vpnSiteLinkName}": {
       "get": {
         "operationId": "VpnSiteLinks_Get",
-        "tags": [
-          "VpnSiteLinks"
-        ],
         "description": "Retrieves the details of a VPN site link.",
         "parameters": [
           {
@@ -44926,9 +44511,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute/cloudServices/{cloudServiceName}/publicipaddresses": {
       "get": {
         "operationId": "PublicIPAddresses_ListCloudServicePublicIPAddresses",
-        "tags": [
-          "PublicIPAddresses"
-        ],
         "description": "Gets information about all public IP addresses on a cloud service level.",
         "parameters": [
           {
@@ -45098,9 +44680,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute/cloudServices/{cloudServiceName}/roleInstances/{roleInstanceName}/networkInterfaces/{networkInterfaceName}/ipconfigurations/{ipConfigurationName}/publicipaddresses": {
       "get": {
         "operationId": "PublicIPAddresses_ListCloudServiceRoleInstancePublicIPAddresses",
-        "tags": [
-          "PublicIPAddresses"
-        ],
         "description": "Gets information about all public IP addresses in a role instance IP configuration in a cloud service.",
         "parameters": [
           {
@@ -45168,9 +44747,6 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute/cloudServices/{cloudServiceName}/roleInstances/{roleInstanceName}/networkInterfaces/{networkInterfaceName}/ipconfigurations/{ipConfigurationName}/publicipaddresses/{publicIpAddressName}": {
       "get": {
         "operationId": "PublicIPAddresses_GetCloudServicePublicIPAddress",
-        "tags": [
-          "PublicIPAddresses"
-        ],
         "description": "Get the specified public IP address in a cloud service.",
         "parameters": [
           {

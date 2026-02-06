@@ -89,14 +89,12 @@ interface VpnGateways {
   /**
    * Retrieves the details of a virtual wan vpn gateway.
    */
-  @tag("VpnGateways")
   @autoRoute
   get is ArmResourceRead<VpnGateway, Error = CloudError>;
 
   /**
    * Creates a virtual wan vpn gateway if it doesn't exist else updates the existing gateway.
    */
-  @tag("VpnGateways")
   @autoRoute
   createOrUpdate is ArmResourceCreateOrReplaceAsync<
     VpnGateway,
@@ -122,7 +120,6 @@ interface VpnGateways {
    * Deletes a virtual wan vpn gateway.
    */
   #suppress "@azure-tools/typespec-azure-resource-manager/arm-delete-operation-response-codes" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @tag("VpnGateways")
   @autoRoute
   delete is ArmResourceDeleteWithoutOkAsync<
     VpnGateway,
@@ -133,7 +130,6 @@ interface VpnGateways {
   /**
    * Lists all the VpnGateways in a resource group.
    */
-  @tag("VpnGateways")
   @autoRoute
   listByResourceGroup is ArmResourceListByParent<
     VpnGateway,
@@ -144,7 +140,6 @@ interface VpnGateways {
   /**
    * Lists all the VpnGateways in a subscription.
    */
-  @tag("VpnGateways")
   @autoRoute
   list is ArmListBySubscription<
     VpnGateway,
@@ -329,3 +324,4 @@ interface VpnGateways {
 @@doc(VpnGateways.vpnConnectionsStopPacketCapture::parameters.body,
   "Vpn Connection packet capture parameters supplied to stop packet capture on gateway connection."
 );
+

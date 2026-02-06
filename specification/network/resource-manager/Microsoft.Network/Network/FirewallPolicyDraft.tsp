@@ -36,13 +36,11 @@ interface FirewallPolicyDrafts {
   /**
    * Get a draft Firewall Policy.
    */
-  @tag("FirewallPolicyDrafts")
   get is ArmResourceRead<FirewallPolicyDraft, Error = CloudError>;
 
   /**
    * Create or update a draft Firewall Policy.
    */
-  @tag("FirewallPolicyDrafts")
   createOrUpdate is ArmResourceCreateOrReplaceSync<
     FirewallPolicyDraft,
     Error = CloudError
@@ -51,7 +49,6 @@ interface FirewallPolicyDrafts {
   /**
    * Delete a draft policy.
    */
-  @tag("FirewallPolicyDrafts")
   delete is ArmResourceDeleteSync<FirewallPolicyDraft, Error = CloudError>;
 }
 

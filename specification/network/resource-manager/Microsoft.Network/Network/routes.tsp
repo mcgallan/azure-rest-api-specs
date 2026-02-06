@@ -87,7 +87,6 @@ interface AvailableDelegationsOperationGroup {
    * Gets all of the available subnet delegations for this subscription in this region.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @tag("AvailableDelegations")
   @operationId("AvailableDelegations_List")
   @autoRoute
   @list
@@ -109,7 +108,6 @@ interface AvailableResourceGroupDelegationsOperationGroup {
    * Gets all of the available subnet delegations for this resource group in this region.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @tag("AvailableResourceGroupDelegations")
   @operationId("AvailableResourceGroupDelegations_List")
   @autoRoute
   @list
@@ -131,7 +129,6 @@ interface AvailableServiceAliasesOperationGroup {
    * Gets all available service aliases for this subscription in this region.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @tag("AvailableServiceAliases")
   @operationId("AvailableServiceAliases_List")
   @autoRoute
   @list
@@ -148,7 +145,6 @@ interface AvailableServiceAliasesOperationGroup {
    * Gets all available service aliases for this resource group in this region.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @tag("AvailableServiceAliases")
   @operationId("AvailableServiceAliases_ListByResourceGroup")
   @autoRoute
   @list
@@ -193,7 +189,6 @@ interface CheckDnsNameAvailability {
    */
   #suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-interface-requires-decorator" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @tag("CheckDnsNameAvailability")
   @autoRoute
   @get
   @operationId("CheckDnsNameAvailability")
@@ -296,7 +291,6 @@ interface PublicIPAddressesOperationGroup {
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @tag("PublicIPAddresses")
   @operationId("PublicIPAddresses_ListCloudServicePublicIPAddresses")
   @autoRoute
   @get
@@ -315,7 +309,6 @@ interface AvailableEndpointServicesOperationGroup {
    * List what values of endpoint services are available for use.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @tag("AvailableEndpointServices")
   @operationId("AvailableEndpointServices_List")
   @autoRoute
   @list
@@ -455,7 +448,6 @@ interface AvailablePrivateEndpointTypesOperationGroup {
    * Returns all of the resource types that can be linked to a Private Endpoint in this subscription in this region.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @tag("AvailablePrivateEndpointTypes")
   @operationId("AvailablePrivateEndpointTypes_List")
   @autoRoute
   @list
@@ -471,7 +463,6 @@ interface AvailablePrivateEndpointTypesOperationGroup {
    * Returns all of the resource types that can be linked to a Private Endpoint in this subscription in this region.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @tag("AvailablePrivateEndpointTypes")
   @operationId("AvailablePrivateEndpointTypes_ListByResourceGroup")
   @autoRoute
   @list
@@ -583,7 +574,6 @@ interface ServiceTagsOperationGroup {
    * Gets a list of service tag information resources.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @tag("ServiceTags")
   @operationId("ServiceTags_List")
   @autoRoute
   @get
@@ -604,7 +594,6 @@ interface ServiceTagInformationOperationGroup {
    * Gets a list of service tag information resources with pagination.
    */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @tag("ServiceTagInformation")
   @operationId("ServiceTagInformation_List")
   @autoRoute
   @list

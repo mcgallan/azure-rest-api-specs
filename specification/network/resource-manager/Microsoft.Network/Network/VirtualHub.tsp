@@ -98,14 +98,12 @@ interface VirtualHubs {
   /**
    * Retrieves the details of a VirtualHub.
    */
-  @tag("VirtualHubs")
   @autoRoute
   get is ArmResourceRead<VirtualHub, Error = CloudError>;
 
   /**
    * Creates a VirtualHub resource if it doesn't exist else updates the existing VirtualHub.
    */
-  @tag("VirtualHubs")
   @autoRoute
   createOrUpdate is ArmResourceCreateOrReplaceAsync<
     VirtualHub,
@@ -128,7 +126,6 @@ interface VirtualHubs {
    * Deletes a VirtualHub.
    */
   #suppress "@azure-tools/typespec-azure-resource-manager/arm-delete-operation-response-codes" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @tag("VirtualHubs")
   @autoRoute
   delete is ArmResourceDeleteWithoutOkAsync<
     VirtualHub,
@@ -139,7 +136,6 @@ interface VirtualHubs {
   /**
    * Lists all the VirtualHubs in a resource group.
    */
-  @tag("VirtualHubs")
   @autoRoute
   listByResourceGroup is ArmResourceListByParent<
     VirtualHub,
@@ -150,7 +146,6 @@ interface VirtualHubs {
   /**
    * Lists all the VirtualHubs in a subscription.
    */
-  @tag("VirtualHubs")
   @autoRoute
   list is ArmListBySubscription<
     VirtualHub,
