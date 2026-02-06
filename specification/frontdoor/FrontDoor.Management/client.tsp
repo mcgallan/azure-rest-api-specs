@@ -64,7 +64,7 @@ interface ProfilesOverrides {
     profileName: string,
     ...ResourceGroupParameter,
     #suppress "@azure-tools/typespec-azure-core/documentation-required" "override"
-    provider: "Microsoft.Network",
+    ...Azure.ResourceManager.Legacy.Provider,
     #suppress "@azure-tools/typespec-azure-core/documentation-required" "override"
     parameters: Microsoft.Network.Profile,
   ): ArmResourceUpdatedResponse<Profile> | ArmResourceCreatedResponse<
