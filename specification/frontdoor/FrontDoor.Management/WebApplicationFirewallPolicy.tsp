@@ -44,17 +44,13 @@ interface WebApplicationFirewallPolicies {
   /**
    * Retrieve protection policy with specified name within a resource group.
    */
-  #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @operationId("Policies_Get")
   get is ArmResourceRead<WebApplicationFirewallPolicy, Error = ErrorResponse>;
 
   /**
    * Create or update policy with specified rule set name within a resource group.
    */
-  #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   #suppress "@azure-tools/typespec-azure-resource-manager/arm-put-operation-response-codes" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   #suppress "@azure-tools/typespec-azure-resource-manager/no-response-body" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @operationId("Policies_CreateOrUpdate")
   createOrUpdate is ArmResourceCreateOrReplaceAsync<
     WebApplicationFirewallPolicy,
     Response = ArmResourceUpdatedResponse<WebApplicationFirewallPolicy> | ArmResourceCreatedResponse<
@@ -71,8 +67,6 @@ interface WebApplicationFirewallPolicies {
   /**
    * Patch a specific frontdoor webApplicationFirewall policy for tags update under the specified subscription and resource group.
    */
-  #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @operationId("Policies_Update")
   @patch(#{ implicitOptionality: false })
   update is ArmCustomPatchAsync<
     WebApplicationFirewallPolicy,
@@ -86,9 +80,7 @@ interface WebApplicationFirewallPolicies {
   /**
    * Deletes Policy
    */
-  #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   #suppress "@azure-tools/typespec-azure-resource-manager/arm-delete-operation-response-codes" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @operationId("Policies_Delete")
   delete is ArmResourceDeleteWithoutOkAsync<
     WebApplicationFirewallPolicy,
     Response = ArmDeletedResponse | ArmDeleteAcceptedLroResponse | ArmDeletedNoContentResponse,
@@ -98,8 +90,6 @@ interface WebApplicationFirewallPolicies {
   /**
    * Lists all of the protection policies within a resource group.
    */
-  #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @operationId("Policies_List")
   list is ArmResourceListByParent<
     WebApplicationFirewallPolicy,
     Response = ArmResponse<WebApplicationFirewallPolicyList>,
@@ -109,8 +99,6 @@ interface WebApplicationFirewallPolicies {
   /**
    * Lists all of the protection policies within a subscription.
    */
-  #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @operationId("Policies_ListBySubscription")
   listBySubscription is ArmListBySubscription<
     WebApplicationFirewallPolicy,
     Response = ArmResponse<WebApplicationFirewallPolicyList>,

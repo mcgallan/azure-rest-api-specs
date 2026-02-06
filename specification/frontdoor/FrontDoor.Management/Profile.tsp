@@ -34,24 +34,22 @@ model Profile extends ResourcewithSettableName {
   etag?: string;
 }
 
-@armResourceOperations
+@armResourceOperations(#{ omitTags: true })
 interface Profiles {
   /**
    * Gets an NetworkExperiment Profile by ProfileName
    */
-  #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @operationId("NetworkExperimentProfiles_Get")
   @summary("Gets an NetworkExperiment Profile by ProfileName")
+  @tag("NetworkExperimentProfiles")
   get is ArmResourceRead<Profile, Error = ErrorResponse>;
 
   /**
    * Creates an NetworkExperiment Profile
    */
-  #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   #suppress "@azure-tools/typespec-azure-resource-manager/arm-put-operation-response-codes" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   #suppress "@azure-tools/typespec-azure-resource-manager/no-response-body" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @operationId("NetworkExperimentProfiles_CreateOrUpdate")
   @summary("Creates an NetworkExperiment Profile")
+  @tag("NetworkExperimentProfiles")
   createOrUpdate is ArmResourceCreateOrReplaceAsync<
     Profile,
     Response = ArmResourceUpdatedResponse<Profile> | ArmResourceCreatedResponse<
@@ -68,11 +66,10 @@ interface Profiles {
   /**
    * Updates an NetworkExperimentProfiles
    */
-  #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   #suppress "@azure-tools/typespec-azure-resource-manager/no-response-body" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @operationId("NetworkExperimentProfiles_Update")
   @summary("Updates an NetworkExperimentProfiles by NetworkExperimentProfile name")
   @patch(#{ implicitOptionality: false })
+  @tag("NetworkExperimentProfiles")
   update is ArmCustomPatchAsync<
     Profile,
     PatchModel = ProfileUpdateModel,
@@ -87,10 +84,9 @@ interface Profiles {
   /**
    * Deletes an NetworkExperiment Profile by ProfileName
    */
-  #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   #suppress "@azure-tools/typespec-azure-resource-manager/arm-delete-operation-response-codes" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @operationId("NetworkExperimentProfiles_Delete")
   @summary("Deletes an NetworkExperiment Profile by ProfileName")
+  @tag("NetworkExperimentProfiles")
   delete is ArmResourceDeleteWithoutOkAsync<
     Profile,
     Response = ArmDeletedResponse | ArmDeleteAcceptedLroResponse | ArmDeletedNoContentResponse,
@@ -100,9 +96,8 @@ interface Profiles {
   /**
    * Gets a list of Network Experiment Profiles within a resource group under a subscription
    */
-  #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   @summary("Gets a list of Network Experiment Profiles within a resource group under a subscription")
-  @operationId("NetworkExperimentProfiles_ListByResourceGroup")
+  @tag("NetworkExperimentProfiles")
   listByResourceGroup is ArmResourceListByParent<
     Profile,
     Response = ArmResponse<ProfileList>,
@@ -112,9 +107,8 @@ interface Profiles {
   /**
    * Gets a list of Network Experiment Profiles under a subscription
    */
-  #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   @summary("Gets a list of Network Experiment Profiles under a subscription")
-  @operationId("NetworkExperimentProfiles_List")
+  @tag("NetworkExperimentProfiles")
   list is ArmListBySubscription<
     Profile,
     Response = ArmResponse<ProfileList>,
@@ -124,12 +118,11 @@ interface Profiles {
   /**
    * Gets a list of Preconfigured Endpoints
    */
-  #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   @summary("Gets a list of Preconfigured Endpoints")
-  @operationId("PreconfiguredEndpoints_List")
   @list
   @get
   @action("PreconfiguredEndpoints")
+  @tag("PreconfiguredEndpoints")
   preconfiguredEndpointsList is ArmResourceActionSync<
     Profile,
     void,

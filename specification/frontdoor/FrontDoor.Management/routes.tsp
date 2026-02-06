@@ -18,12 +18,11 @@ interface ManagedRuleSetsOperationGroup {
   /**
    * Lists all available managed rule sets.
    */
-  #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @operationId("ManagedRuleSets_List")
   @autoRoute
   @list
   @get
   @action("FrontDoorWebApplicationFirewallManagedRuleSets")
+  @tag("WebApplicationFirewallManagedRuleSets")
   list is ArmProviderActionSync<
     Response = ManagedRuleSetDefinitionList,
     Scope = SubscriptionActionScope,
@@ -36,10 +35,9 @@ interface FrontDoorNameAvailabilityOperationGroup {
   /**
    * Check the availability of a Front Door resource name.
    */
-  #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @operationId("FrontDoorNameAvailability_Check")
   @autoRoute
   @action("checkFrontDoorNameAvailability")
+  @tag("CheckFrontDoorNameAvailability")
   check is ArmProviderActionSync<
     Request = CheckNameAvailabilityInput,
     Response = CheckNameAvailabilityOutput,
@@ -52,10 +50,9 @@ interface FrontDoorNameAvailabilityWithSubscriptionOperationGroup {
   /**
    * Check the availability of a Front Door subdomain.
    */
-  #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @operationId("FrontDoorNameAvailabilityWithSubscription_Check")
   @autoRoute
   @action("checkFrontDoorNameAvailability")
+  @tag("CheckFrontDoorNameAvailabilityWithSubscription")
   check is ArmProviderActionSync<
     Request = CheckNameAvailabilityInput,
     Response = CheckNameAvailabilityOutput,
