@@ -47,9 +47,13 @@ using TypeSpec.Rest;
 @@clientName(MinimumTLSVersion.`1.2`, "One2", "go");
 
 /**
- * override for Profiles.createOrUpdate
+ * added for override of Profiles.createOrUpdate
  */
+@armResourceOperations
 interface ProfilesOverrides {
+  /**
+   * override for Profiles.createOrUpdate
+   */
   #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   #suppress "@azure-tools/typespec-azure-resource-manager/arm-put-operation-response-codes" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   #suppress "@azure-tools/typespec-azure-resource-manager/no-response-body" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
