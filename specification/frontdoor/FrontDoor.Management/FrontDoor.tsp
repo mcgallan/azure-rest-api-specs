@@ -97,9 +97,7 @@ interface FrontDoors {
   /**
    * Removes a content from Front Door.
    */
-  #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   #suppress "@azure-tools/typespec-azure-resource-manager/lro-location-header" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @operationId("Endpoints_PurgeContent")
   @action("purge")
   purgeContent is ArmResourceActionAsync<
     FrontDoor,

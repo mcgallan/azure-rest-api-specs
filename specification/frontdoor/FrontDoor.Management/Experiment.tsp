@@ -103,8 +103,6 @@ interface Experiments {
   /**
    * Gets a Latency Scorecard for a given Experiment
    */
-  #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @operationId("Reports_GetLatencyScorecards")
   @get
   @action("LatencyScorecard")
   @summary("Gets a Latency Scorecard for a given Experiment")
@@ -120,9 +118,7 @@ interface Experiments {
   /**
    * Gets a Timeseries for a given Experiment
    */
-  #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   @summary("Gets a Timeseries for a given Experiment")
-  @operationId("Reports_GetTimeseries")
   @get
   @action("Timeseries")
   @tag("Reports")

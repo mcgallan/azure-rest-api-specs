@@ -18,8 +18,6 @@ interface ManagedRuleSetsOperationGroup {
   /**
    * Lists all available managed rule sets.
    */
-  #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @operationId("ManagedRuleSets_List")
   @autoRoute
   @list
   @get
@@ -37,8 +35,6 @@ interface FrontDoorNameAvailabilityOperationGroup {
   /**
    * Check the availability of a Front Door resource name.
    */
-  #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @operationId("FrontDoorNameAvailability_Check")
   @autoRoute
   @action("checkFrontDoorNameAvailability")
   @tag("CheckFrontDoorNameAvailability")
@@ -54,8 +50,6 @@ interface FrontDoorNameAvailabilityWithSubscriptionOperationGroup {
   /**
    * Check the availability of a Front Door subdomain.
    */
-  #suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-  @operationId("FrontDoorNameAvailabilityWithSubscription_Check")
   @autoRoute
   @action("checkFrontDoorNameAvailability")
   @tag("CheckFrontDoorNameAvailabilityWithSubscription")
