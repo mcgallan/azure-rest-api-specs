@@ -1,17 +1,15 @@
 {
   "parameters": {
     "api-version": "2025-05-01",
-    "subscriptionId": "subid",
+    "natGatewayName": "test-natGateway",
     "resourceGroupName": "rg1",
-    "natGatewayName": "test-natGateway"
+    "subscriptionId": "subid"
   },
   "responses": {
     "200": {
       "body": {
         "name": "test-natGateway",
-        "sku": {
-          "name": "Standard"
-        },
+        "type": "Microsoft.Network/natGateways",
         "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/natGateways/test-natGateway",
         "location": "westus",
         "properties": {
@@ -31,8 +29,12 @@
             "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/serviceGateways/SG1"
           }
         },
-        "type": "Microsoft.Network/natGateways"
+        "sku": {
+          "name": "Standard"
+        }
       }
     }
-  }
+  },
+  "operationId": "NatGateways_Get",
+  "title": "Get nat gateway with service gateway"
 }

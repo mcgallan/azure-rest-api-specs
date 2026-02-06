@@ -29700,11 +29700,13 @@ model RouteTargetAddressPropertiesFormat {
   /**
    * The private IPv4 or IPv6 address of the service gateway route target address.
    */
+  #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   privateIPAddress?: string;
 
   /**
    * The Private IP allocation method.
    */
+  #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   privateIPAllocationMethod?: IPAllocationMethod;
 }
 
@@ -29950,11 +29952,13 @@ model VirtualNetworkApplianceIpConfigurationProperties {
   /**
    * The private IP address of the IP configuration.
    */
+  #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   privateIPAddress?: string;
 
   /**
    * The private IP address allocation method.
    */
+  #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   privateIPAllocationMethod?: IPAllocationMethod;
 
   /**
@@ -29971,6 +29975,7 @@ model VirtualNetworkApplianceIpConfigurationProperties {
   /**
    * Whether the specific IP configuration is IPv4 or IPv6. Default is IPv4.
    */
+  #suppress "@azure-tools/typespec-azure-core/casing-style" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   privateIPAddressVersion?: IPVersion;
 }
 @@identifiers(GetServiceGatewayAddressLocationsResult.value,

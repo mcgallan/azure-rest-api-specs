@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "WebApplicationFirewallManagement",
-    "version": "2025-03-01",
+    "version": "2025-05-01",
     "description": "APIs to manage web application firewall rules."
   },
   "produces": [
@@ -2999,6 +2999,11 @@
             }
           }
         },
+        "x-ms-examples": {
+          "List all load balancers": {
+            "$ref": "./examples/ServiceGatewayListAll.json"
+          }
+        },
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         }
@@ -3051,6 +3056,11 @@
             "schema": {
               "$ref": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
             }
+          }
+        },
+        "x-ms-examples": {
+          "List all virtual network appliances": {
+            "$ref": "./examples/VirtualNetworkAppliances_ListBySubscription.json"
           }
         },
         "x-ms-pageable": {
@@ -12605,6 +12615,9 @@
           },
           "Get nat gateway with StandardV2 Sku": {
             "$ref": "./examples/NatGatewayGetStandardV2Sku.json"
+          },
+          "Get nat gateway with service gateway": {
+            "$ref": "./examples/NatGatewayWithServiceGatewayGet.json"
           }
         }
       },
@@ -12664,6 +12677,9 @@
           },
           "Create nat gateway with StandardV2 Sku": {
             "$ref": "./examples/NatGatewayCreateOrUpdateStandardV2Sku.json"
+          },
+          "Create nat gateway with service gateway": {
+            "$ref": "./examples/NatGatewayWithServiceGatewayCreateOrUpdate.json"
           }
         },
         "x-ms-long-running-operation-options": {
@@ -26135,6 +26151,11 @@
             }
           }
         },
+        "x-ms-examples": {
+          "List service gateway in resource group": {
+            "$ref": "./examples/ServiceGatewayList.json"
+          }
+        },
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         }
@@ -26167,6 +26188,11 @@
             "schema": {
               "$ref": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
             }
+          }
+        },
+        "x-ms-examples": {
+          "Get load balancer": {
+            "$ref": "./examples/ServiceGatewayGet.json"
           }
         }
       },
@@ -26218,6 +26244,11 @@
             }
           }
         },
+        "x-ms-examples": {
+          "Create service gateway": {
+            "$ref": "./examples/ServiceGatewayCreate.json"
+          }
+        },
         "x-ms-long-running-operation-options": {
           "final-state-via": "azure-async-operation",
           "final-state-schema": "#/definitions/ServiceGateway"
@@ -26259,6 +26290,11 @@
               "$ref": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
             }
           }
+        },
+        "x-ms-examples": {
+          "Update service gateway tags": {
+            "$ref": "./examples/ServiceGatewayUpdateTags.json"
+          }
         }
       },
       "delete": {
@@ -26295,6 +26331,11 @@
             }
           }
         },
+        "x-ms-examples": {
+          "Delete service gateway": {
+            "$ref": "./examples/ServiceGatewayDelete.json"
+          }
+        },
         "x-ms-long-running-operation": true
       }
     },
@@ -26325,6 +26366,11 @@
             "schema": {
               "$ref": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
             }
+          }
+        },
+        "x-ms-examples": {
+          "Get address locations in service gateway": {
+            "$ref": "./examples/ServiceGatewayGetAddressLocationsResponse.json"
           }
         },
         "x-ms-pageable": {
@@ -26359,6 +26405,11 @@
             "schema": {
               "$ref": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
             }
+          }
+        },
+        "x-ms-examples": {
+          "Get services in service gateway": {
+            "$ref": "./examples/ServiceGatewayGetServicesResponse.json"
           }
         },
         "x-ms-pageable": {
@@ -26409,6 +26460,14 @@
             }
           }
         },
+        "x-ms-examples": {
+          "Full Update: Create, update, or delete address locations in the service gateway.": {
+            "$ref": "./examples/ServiceGatewayFullUpdateAddressLocationsRequest.json"
+          },
+          "Partial Update: Create, update, or delete address locations in the service gateway.": {
+            "$ref": "./examples/ServiceGatewayPartialUpdateAddressLocationsRequest.json"
+          }
+        },
         "x-ms-long-running-operation": true
       }
     },
@@ -26453,6 +26512,11 @@
             "schema": {
               "$ref": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
             }
+          }
+        },
+        "x-ms-examples": {
+          "Create or full update services in service gateway": {
+            "$ref": "./examples/ServiceGatewayUpdateServicesRequest.json"
           }
         },
         "x-ms-long-running-operation": true
@@ -28198,6 +28262,11 @@
             }
           }
         },
+        "x-ms-examples": {
+          "List virtual network appliances in resource group": {
+            "$ref": "./examples/VirtualNetworkAppliances_List.json"
+          }
+        },
         "x-ms-pageable": {
           "nextLinkName": "nextLink"
         }
@@ -28230,6 +28299,11 @@
             "schema": {
               "$ref": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
             }
+          }
+        },
+        "x-ms-examples": {
+          "Get virtual network appliance": {
+            "$ref": "./examples/VirtualNetworkAppliances_Get.json"
           }
         }
       },
@@ -28281,6 +28355,11 @@
             }
           }
         },
+        "x-ms-examples": {
+          "Create virtual network appliance": {
+            "$ref": "./examples/VirtualNetworkAppliances_CreateOrUpdate.json"
+          }
+        },
         "x-ms-long-running-operation-options": {
           "final-state-via": "azure-async-operation",
           "final-state-schema": "#/definitions/VirtualNetworkAppliance"
@@ -28322,6 +28401,11 @@
               "$ref": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
             }
           }
+        },
+        "x-ms-examples": {
+          "Update virtual network appliance tags": {
+            "$ref": "./examples/VirtualNetworkAppliances_UpdateTags.json"
+          }
         }
       },
       "delete": {
@@ -28356,6 +28440,11 @@
             "schema": {
               "$ref": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
             }
+          }
+        },
+        "x-ms-examples": {
+          "Delete virtual network appliance": {
+            "$ref": "./examples/VirtualNetworkAppliances_Delete.json"
           }
         },
         "x-ms-long-running-operation": true
@@ -30830,6 +30919,9 @@
           }
         },
         "x-ms-examples": {
+          "Create Subnet with service gateway": {
+            "$ref": "./examples/SubnetCreateWithServiceGateway.json"
+          },
           "Create subnet": {
             "$ref": "./examples/SubnetCreate.json"
           },

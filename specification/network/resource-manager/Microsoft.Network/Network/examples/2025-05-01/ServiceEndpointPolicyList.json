@@ -2,7 +2,7 @@
   "parameters": {
     "api-version": "2025-05-01",
     "resourceGroupName": "rg1",
-    "subscriptionId": "subid"
+    "subscriptionId": "00000000-0000-0000-0000-000000000000"
   },
   "responses": {
     "200": {
@@ -10,7 +10,7 @@
         "value": [
           {
             "name": "testServiceEndpointPolicy",
-            "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/serviceEndpointPolicies/testServiceEndpointPolicy",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg1/providers/Microsoft.Network/serviceEndpointPolicies/testServiceEndpointPolicy",
             "location": "westus",
             "properties": {
               "provisioningState": "Succeeded",
@@ -18,14 +18,14 @@
               "serviceEndpointPolicyDefinitions": [
                 {
                   "name": "StorageServiceEndpointPolicyDefinition",
-                  "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/serviceEndpointPolicies/testServiceEndpointPolicy/serviceEndpointPolicyDefinitions/StorageServiceEndpointPolicyDefinition",
+                  "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg1/providers/Microsoft.Network/serviceEndpointPolicies/testServiceEndpointPolicy/serviceEndpointPolicyDefinitions/StorageServiceEndpointPolicyDefinition",
                   "properties": {
                     "description": "Storage Service EndpointPolicy Definition",
                     "service": "Microsoft.Storage",
                     "serviceResources": [
-                      "/subscriptions/subid1",
-                      "/subscriptions/subid1resourceGroups/storageRg",
-                      "/subscriptions/subid1/resourceGroups/storageRg/providers/Microsoft.Storage/storageAccounts/stAccount"
+                      "/subscriptions/00000000-0000-0000-0000-000000000000",
+                      "/subscriptions/00000000-0000-0000-0000-000000000000resourceGroups/storageRg",
+                      "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/storageRg/providers/Microsoft.Storage/storageAccounts/stAccount"
                     ]
                   }
                 }
@@ -35,7 +35,7 @@
           },
           {
             "name": "testServiceEndpointPolicy1",
-            "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/serviceEndpointPolicies/testServiceEndpointPolicy1",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg1/providers/Microsoft.Network/serviceEndpointPolicies/testServiceEndpointPolicy1",
             "location": "westus",
             "properties": {
               "provisioningState": "Succeeded",
@@ -43,14 +43,14 @@
               "serviceEndpointPolicyDefinitions": [
                 {
                   "name": "StorageServiceEndpointPolicyDefinition1",
-                  "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/serviceEndpointPolicies/testServiceEndpointPolicy1/serviceEndpointPolicyDefinitions/StorageServiceEndpointPolicyDefinition1",
+                  "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg1/providers/Microsoft.Network/serviceEndpointPolicies/testServiceEndpointPolicy1/serviceEndpointPolicyDefinitions/StorageServiceEndpointPolicyDefinition1",
                   "properties": {
                     "description": "Storage Service EndpointPolicy Definition",
                     "service": "Microsoft.Storage",
                     "serviceResources": [
-                      "/subscriptions/subid1",
-                      "/subscriptions/subid1/resourceGroups/storageRg",
-                      "/subscriptions/subid1/resourceGroups/storageRg/providers/Microsoft.Storage/storageAccounts/stAccount"
+                      "/subscriptions/00000000-0000-0000-0000-000000000000",
+                      "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/storageRg",
+                      "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/storageRg/providers/Microsoft.Storage/storageAccounts/stAccount"
                     ]
                   }
                 }

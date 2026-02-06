@@ -3,19 +3,19 @@
     "api-version": "2025-05-01",
     "policyName": "Policy1",
     "resourceGroupName": "rg1",
-    "subscriptionId": "subid"
+    "subscriptionId": "00000000-0000-0000-0000-000000000000"
   },
   "responses": {
     "200": {
       "body": {
         "name": "Policy1",
         "type": "Microsoft.Network/applicationgatewaywebapplicationfirewallpolicies",
-        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/ApplicationGatewayWebApplicationFirewallPolicies/Policy1",
+        "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg1/providers/Microsoft.Network/ApplicationGatewayWebApplicationFirewallPolicies/Policy1",
         "location": "WestUs",
         "properties": {
           "applicationGatewayForContainers": [
             {
-              "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.ServiceNetworking/trafficControllers/agc1"
+              "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg1/providers/Microsoft.ServiceNetworking/trafficControllers/agc1"
             }
           ],
           "customRules": [
@@ -143,41 +143,6 @@
                 }
               ],
               "priority": 4,
-              "ruleType": "MatchRule",
-              "state": "Enabled"
-            },
-            {
-              "name": "Rule5",
-              "action": "CAPTCHA",
-              "matchConditions": [
-                {
-                  "matchValues": [
-                    "192.168.2.0/24"
-                  ],
-                  "matchVariables": [
-                    {
-                      "selector": null,
-                      "variableName": "RemoteAddr"
-                    }
-                  ],
-                  "negationConditon": false,
-                  "operator": "IPMatch"
-                },
-                {
-                  "matchValues": [
-                    "Bot"
-                  ],
-                  "matchVariables": [
-                    {
-                      "selector": "UserAgent",
-                      "variableName": "RequestHeaders"
-                    }
-                  ],
-                  "negationConditon": false,
-                  "operator": "Contains"
-                }
-              ],
-              "priority": 5,
               "ruleType": "MatchRule",
               "state": "Enabled"
             }
@@ -311,8 +276,8 @@
                     "ruleGroupName": "UnknownBots",
                     "rules": [
                       {
-                        "action": "CAPTCHA",
-                        "ruleId": "300600",
+                        "action": "JSChallenge",
+                        "ruleId": "300700",
                         "state": "Enabled"
                       }
                     ]
@@ -403,7 +368,6 @@
             ]
           },
           "policySettings": {
-            "captchaCookieExpirationInMins": 100,
             "customBlockResponseBody": "SGVsbG8=",
             "customBlockResponseStatusCode": 405,
             "fileUploadEnforcement": true,

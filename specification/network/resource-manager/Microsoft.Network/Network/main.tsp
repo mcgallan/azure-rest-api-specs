@@ -155,9 +155,9 @@ namespace Microsoft.Network;
  */
 enum Versions {
   /**
-   * The 2025-03-01 API version.
+   * The 2025-05-01 API version.
    */
-  v2025_03_01: "2025-03-01",
+  v2025_05_01: "2025-05-01",
 }
 
 #suppress "@azure-tools/typespec-azure-core/no-enum" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
@@ -177,7 +177,7 @@ enum Features {
 
 #suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 @Azure.ResourceManager.Legacy.feature(Features.networkingOperations)
-@armResourceOperations(#{omitTags: true})
+@armResourceOperations(#{ omitTags: true })
 interface Operations
   extends Azure.ResourceManager.Legacy.Operations<
       ArmResponse<OperationListResult>,

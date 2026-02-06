@@ -1,23 +1,24 @@
 {
   "parameters": {
     "api-version": "2025-05-01",
-    "subscriptionId": "subid",
-    "resourceGroupName": "rg1",
-    "virtualNetworkApplianceName": "test-vna",
     "parameters": {
+      "location": "eastus",
       "properties": {
         "bandwidthInGbps": "100",
         "subnet": {
           "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/rg1-vnet/subnets/default"
         }
-      },
-      "location": "eastus"
-    }
+      }
+    },
+    "resourceGroupName": "rg1",
+    "subscriptionId": "subid",
+    "virtualNetworkApplianceName": "test-vna"
   },
   "responses": {
     "200": {
       "body": {
         "name": "test-vna",
+        "type": "Microsoft.Network/virtualNetworkAppliances",
         "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworkAppliances/test-vna",
         "location": "eastus",
         "properties": {
@@ -26,26 +27,26 @@
               "name": "ipconfig1",
               "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworkAppliances/test-vna/ipConfigurations/ipconfig1",
               "properties": {
-                "privateIPAddress": "10.0.1.4",
-                "privateIPAllocationMethod": "Dynamic",
-                "privateIPAddressVersion": "IPv4",
                 "primary": true,
+                "privateIPAddress": "10.0.1.4",
+                "privateIPAddressVersion": "IPv4",
+                "privateIPAllocationMethod": "Dynamic",
                 "provisioningState": "Succeeded"
               }
             }
           ],
           "provisioningState": "Succeeded",
+          "resourceGuid": "c9b1f5f4-5d6e-4f0a-89c1-6b3d3e3c3e3c",
           "subnet": {
             "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/rg1-vnet/subnets/default"
-          },
-          "resourceGuid": "c9b1f5f4-5d6e-4f0a-89c1-6b3d3e3c3e3c"
-        },
-        "type": "Microsoft.Network/virtualNetworkAppliances"
+          }
+        }
       }
     },
     "201": {
       "body": {
         "name": "test-vna",
+        "type": "Microsoft.Network/virtualNetworkAppliances",
         "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworkAppliances/test-vna",
         "location": "eastus",
         "properties": {
@@ -54,22 +55,23 @@
               "name": "ipconfig1",
               "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworkAppliances/test-vna/ipConfigurations/ipconfig1",
               "properties": {
-                "privateIPAddress": "10.0.1.4",
-                "privateIPAllocationMethod": "Dynamic",
-                "privateIPAddressVersion": "IPv4",
                 "primary": true,
+                "privateIPAddress": "10.0.1.4",
+                "privateIPAddressVersion": "IPv4",
+                "privateIPAllocationMethod": "Dynamic",
                 "provisioningState": "Succeeded"
               }
             }
           ],
           "provisioningState": "Succeeded",
+          "resourceGuid": "c9b1f5f4-5d6e-4f0a-89c1-6b3d3e3c3e3c",
           "subnet": {
             "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/rg1-vnet/subnets/default"
-          },
-          "resourceGuid": "c9b1f5f4-5d6e-4f0a-89c1-6b3d3e3c3e3c"
-        },
-        "type": "Microsoft.Network/virtualNetworkAppliances"
+          }
+        }
       }
     }
-  }
+  },
+  "operationId": "VirtualNetworkAppliances_CreateOrUpdate",
+  "title": "Create virtual network appliance"
 }

@@ -937,586 +937,6 @@
         "x-ms-long-running-operation": true
       }
     },
-    "/subscriptions/{subscriptionId}/providers/microsoft.Network/serviceGateways__added": {
-      "get": {
-        "operationId": "ServiceGateways_ListAll",
-        "tags": [
-          "ServiceGateways"
-        ],
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "ignore",
-            "schema": {
-              "$ref": "#/definitions/ServiceGatewayListResult"
-            }
-          },
-          "default": {
-            "description": "ignore",
-            "schema": {
-              "$ref": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
-            }
-          }
-        },
-        "x-ms-pageable": {
-          "nextLinkName": "nextLink"
-        }
-      }
-    },
-    "/subscriptions/{subscriptionId}/providers/microsoft.Network/virtualNetworkAppliances__added": {
-      "get": {
-        "operationId": "VirtualNetworkAppliances_ListAll",
-        "tags": [
-          "VirtualNetworkAppliances"
-        ],
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "ignore",
-            "schema": {
-              "$ref": "#/definitions/VirtualNetworkApplianceListResult"
-            }
-          },
-          "default": {
-            "description": "ignore",
-            "schema": {
-              "$ref": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
-            }
-          }
-        },
-        "x-ms-pageable": {
-          "nextLinkName": "nextLink"
-        }
-      }
-    },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/serviceGateways__added": {
-      "get": {
-        "operationId": "ServiceGateways_List",
-        "tags": [
-          "ServiceGateways"
-        ],
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "ignore",
-            "schema": {
-              "$ref": "#/definitions/ServiceGatewayListResult"
-            }
-          },
-          "default": {
-            "description": "ignore",
-            "schema": {
-              "$ref": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
-            }
-          }
-        },
-        "x-ms-pageable": {
-          "nextLinkName": "nextLink"
-        }
-      }
-    },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/serviceGateways/{serviceGatewayName}__added": {
-      "get": {
-        "operationId": "ServiceGateways_Get",
-        "tags": [
-          "ServiceGateways"
-        ],
-        "parameters": [
-          {
-            "name": "serviceGatewayName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^[a-zA-Z0-9-]*$"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "ignore",
-            "schema": {
-              "$ref": "#/definitions/ServiceGateway"
-            }
-          },
-          "default": {
-            "description": "ignore",
-            "schema": {
-              "$ref": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
-            }
-          }
-        }
-      },
-      "put": {
-        "operationId": "ServiceGateways_CreateOrUpdate",
-        "tags": [
-          "ServiceGateways"
-        ],
-        "parameters": [
-          {
-            "name": "serviceGatewayName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^[a-zA-Z0-9-]*$"
-          },
-          {
-            "name": "resource",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/ServiceGateway"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "ignore",
-            "schema": {
-              "$ref": "#/definitions/ServiceGateway"
-            }
-          },
-          "201": {
-            "description": "ignore",
-            "schema": {
-              "$ref": "#/definitions/ServiceGateway"
-            },
-            "headers": {
-              "Azure-AsyncOperation": {
-                "type": "string",
-                "description": "A link to the status monitor"
-              }
-            }
-          },
-          "default": {
-            "description": "ignore",
-            "schema": {
-              "$ref": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
-            }
-          }
-        },
-        "x-ms-long-running-operation-options": {
-          "final-state-via": "azure-async-operation",
-          "final-state-schema": "#/definitions/ServiceGateway"
-        },
-        "x-ms-long-running-operation": true
-      },
-      "patch": {
-        "operationId": "ServiceGateways_UpdateTags",
-        "tags": [
-          "ServiceGateways"
-        ],
-        "parameters": [
-          {
-            "name": "serviceGatewayName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^[a-zA-Z0-9-]*$"
-          },
-          {
-            "name": "properties",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/TagsObject"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "ignore",
-            "schema": {
-              "$ref": "#/definitions/ServiceGateway"
-            }
-          },
-          "default": {
-            "description": "ignore",
-            "schema": {
-              "$ref": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
-            }
-          }
-        }
-      },
-      "delete": {
-        "operationId": "ServiceGateways_Delete",
-        "tags": [
-          "ServiceGateways"
-        ],
-        "parameters": [
-          {
-            "name": "serviceGatewayName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^[a-zA-Z0-9-]*$"
-          }
-        ],
-        "responses": {
-          "202": {
-            "description": "ignore",
-            "headers": {
-              "Location": {
-                "type": "string",
-                "description": "The Location header contains the URL where the status of the long running operation can be checked."
-              }
-            }
-          },
-          "204": {
-            "description": "ignore"
-          },
-          "default": {
-            "description": "ignore",
-            "schema": {
-              "$ref": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
-            }
-          }
-        },
-        "x-ms-long-running-operation": true
-      }
-    },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/serviceGateways/{serviceGatewayName}/addressLocations__added": {
-      "get": {
-        "operationId": "ServiceGateways_GetAddressLocations",
-        "tags": [
-          "ServiceGateways"
-        ],
-        "parameters": [
-          {
-            "name": "serviceGatewayName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^[a-zA-Z0-9-]*$"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "ignore",
-            "schema": {
-              "$ref": "#/definitions/GetServiceGatewayAddressLocationsResult"
-            }
-          },
-          "default": {
-            "description": "ignore",
-            "schema": {
-              "$ref": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
-            }
-          }
-        },
-        "x-ms-pageable": {
-          "nextLinkName": "nextLink"
-        }
-      }
-    },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/serviceGateways/{serviceGatewayName}/services__added": {
-      "get": {
-        "operationId": "ServiceGateways_GetServices",
-        "tags": [
-          "ServiceGateways"
-        ],
-        "parameters": [
-          {
-            "name": "serviceGatewayName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^[a-zA-Z0-9-]*$"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "ignore",
-            "schema": {
-              "$ref": "#/definitions/GetServiceGatewayServicesResult"
-            }
-          },
-          "default": {
-            "description": "ignore",
-            "schema": {
-              "$ref": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
-            }
-          }
-        },
-        "x-ms-pageable": {
-          "nextLinkName": "nextLink"
-        }
-      }
-    },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/serviceGateways/{serviceGatewayName}/updateAddressLocations__added": {
-      "post": {
-        "operationId": "ServiceGateways_UpdateAddressLocations",
-        "tags": [
-          "ServiceGateways"
-        ],
-        "parameters": [
-          {
-            "name": "serviceGatewayName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^[a-zA-Z0-9-]*$"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/ServiceGatewayUpdateAddressLocationsRequest"
-            }
-          }
-        ],
-        "responses": {
-          "202": {
-            "description": "ignore",
-            "headers": {
-              "Location": {
-                "type": "string",
-                "description": "The Location header contains the URL where the status of the long running operation can be checked."
-              }
-            }
-          },
-          "204": {
-            "description": "ignore"
-          },
-          "default": {
-            "description": "ignore",
-            "schema": {
-              "$ref": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
-            }
-          }
-        },
-        "x-ms-long-running-operation": true
-      }
-    },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/serviceGateways/{serviceGatewayName}/updateServices__added": {
-      "post": {
-        "operationId": "ServiceGateways_UpdateServices",
-        "tags": [
-          "ServiceGateways"
-        ],
-        "parameters": [
-          {
-            "name": "serviceGatewayName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^[a-zA-Z0-9-]*$"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/ServiceGatewayUpdateServicesRequest"
-            }
-          }
-        ],
-        "responses": {
-          "202": {
-            "description": "ignore",
-            "headers": {
-              "Location": {
-                "type": "string",
-                "description": "The Location header contains the URL where the status of the long running operation can be checked."
-              }
-            }
-          },
-          "204": {
-            "description": "ignore"
-          },
-          "default": {
-            "description": "ignore",
-            "schema": {
-              "$ref": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
-            }
-          }
-        },
-        "x-ms-long-running-operation": true
-      }
-    },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualNetworkAppliances__added": {
-      "get": {
-        "operationId": "VirtualNetworkAppliances_List",
-        "tags": [
-          "VirtualNetworkAppliances"
-        ],
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "ignore",
-            "schema": {
-              "$ref": "#/definitions/VirtualNetworkApplianceListResult"
-            }
-          },
-          "default": {
-            "description": "ignore",
-            "schema": {
-              "$ref": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
-            }
-          }
-        },
-        "x-ms-pageable": {
-          "nextLinkName": "nextLink"
-        }
-      }
-    },
-    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualNetworkAppliances/{virtualNetworkApplianceName}__added": {
-      "get": {
-        "operationId": "VirtualNetworkAppliances_Get",
-        "tags": [
-          "VirtualNetworkAppliances"
-        ],
-        "parameters": [
-          {
-            "name": "virtualNetworkApplianceName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^[0-9a-zA-Z]([0-9a-zA-Z_.-]{0,62}[0-9a-zA-Z_])?$"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "ignore",
-            "schema": {
-              "$ref": "#/definitions/VirtualNetworkAppliance"
-            }
-          },
-          "default": {
-            "description": "ignore",
-            "schema": {
-              "$ref": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
-            }
-          }
-        }
-      },
-      "put": {
-        "operationId": "VirtualNetworkAppliances_CreateOrUpdate",
-        "tags": [
-          "VirtualNetworkAppliances"
-        ],
-        "parameters": [
-          {
-            "name": "virtualNetworkApplianceName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^[0-9a-zA-Z]([0-9a-zA-Z_.-]{0,62}[0-9a-zA-Z_])?$"
-          },
-          {
-            "name": "resource",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/VirtualNetworkAppliance"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "ignore",
-            "schema": {
-              "$ref": "#/definitions/VirtualNetworkAppliance"
-            }
-          },
-          "201": {
-            "description": "ignore",
-            "schema": {
-              "$ref": "#/definitions/VirtualNetworkAppliance"
-            },
-            "headers": {
-              "Azure-AsyncOperation": {
-                "type": "string",
-                "description": "A link to the status monitor"
-              }
-            }
-          },
-          "default": {
-            "description": "ignore",
-            "schema": {
-              "$ref": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
-            }
-          }
-        },
-        "x-ms-long-running-operation-options": {
-          "final-state-via": "azure-async-operation",
-          "final-state-schema": "#/definitions/VirtualNetworkAppliance"
-        },
-        "x-ms-long-running-operation": true
-      },
-      "patch": {
-        "operationId": "VirtualNetworkAppliances_UpdateTags",
-        "tags": [
-          "VirtualNetworkAppliances"
-        ],
-        "parameters": [
-          {
-            "name": "virtualNetworkApplianceName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^[0-9a-zA-Z]([0-9a-zA-Z_.-]{0,62}[0-9a-zA-Z_])?$"
-          },
-          {
-            "name": "properties",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/TagsObject"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "ignore",
-            "schema": {
-              "$ref": "#/definitions/VirtualNetworkAppliance"
-            }
-          },
-          "default": {
-            "description": "ignore",
-            "schema": {
-              "$ref": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
-            }
-          }
-        }
-      },
-      "delete": {
-        "operationId": "VirtualNetworkAppliances_Delete",
-        "tags": [
-          "VirtualNetworkAppliances"
-        ],
-        "parameters": [
-          {
-            "name": "virtualNetworkApplianceName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^[0-9a-zA-Z]([0-9a-zA-Z_.-]{0,62}[0-9a-zA-Z_])?$"
-          }
-        ],
-        "responses": {
-          "202": {
-            "description": "ignore",
-            "headers": {
-              "Location": {
-                "type": "string",
-                "description": "The Location header contains the URL where the status of the long running operation can be checked."
-              }
-            }
-          },
-          "204": {
-            "description": "ignore"
-          },
-          "default": {
-            "description": "ignore",
-            "schema": {
-              "$ref": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
-            }
-          }
-        },
-        "x-ms-long-running-operation": true
-      }
-    },
     "/providers/microsoft.Management/managementGroups/{managementGroupId}/providers/microsoft.Network/networkManagerConnections": {
       "get": {
         "parameters": [
@@ -2889,6 +2309,20 @@
         }
       }
     },
+    "/subscriptions/{subscriptionId}/providers/microsoft.Network/serviceGateways": {
+      "get": {
+        "responses": {
+          "default": {
+            "schema": {
+              "$ref": {
+                "__old": "./network.json#/definitions/CloudError",
+                "__new": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
+              }
+            }
+          }
+        }
+      }
+    },
     "/subscriptions/{subscriptionId}/providers/microsoft.Network/virtualHubs": {
       "get": {
         "responses": {
@@ -2897,6 +2331,20 @@
               "$ref": {
                 "__old": "./network.json#/definitions/CloudError",
                 "__new": "#/definitions/CloudError"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/providers/microsoft.Network/virtualNetworkAppliances": {
+      "get": {
+        "responses": {
+          "default": {
+            "schema": {
+              "$ref": {
+                "__old": "./network.json#/definitions/CloudError",
+                "__new": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
               }
             }
           }
@@ -15433,6 +14881,229 @@
         }
       }
     },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/serviceGateways": {
+      "get": {
+        "responses": {
+          "default": {
+            "schema": {
+              "$ref": {
+                "__old": "./network.json#/definitions/CloudError",
+                "__new": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/serviceGateways/{serviceGatewayName}": {
+      "get": {
+        "responses": {
+          "default": {
+            "schema": {
+              "$ref": {
+                "__old": "./network.json#/definitions/CloudError",
+                "__new": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "parameters": [
+          [
+            " "
+          ],
+          [
+            "~",
+            {
+              "name": {
+                "__old": "parameters",
+                "__new": "resource"
+              }
+            }
+          ]
+        ],
+        "responses": {
+          "201": {
+            "headers__added": {
+              "Azure-AsyncOperation": {
+                "type": "string",
+                "description": "A link to the status monitor"
+              }
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": {
+                "__old": "./network.json#/definitions/CloudError",
+                "__new": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
+              }
+            }
+          }
+        },
+        "x-ms-long-running-operation-options": {
+          "final-state-schema__added": "#/definitions/ServiceGateway"
+        }
+      },
+      "patch": {
+        "parameters": [
+          [
+            " "
+          ],
+          [
+            "~",
+            {
+              "name": {
+                "__old": "parameters",
+                "__new": "properties"
+              },
+              "schema": {
+                "$ref": {
+                  "__old": "./network.json#/definitions/TagsObject",
+                  "__new": "#/definitions/TagsObject"
+                }
+              }
+            }
+          ]
+        ],
+        "responses": {
+          "default": {
+            "schema": {
+              "$ref": {
+                "__old": "./network.json#/definitions/CloudError",
+                "__new": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "responses": {
+          "202": {
+            "headers": {
+              "Location": {
+                "description": {
+                  "__old": "URL for determining when an operation has completed. Send a GET request to the URL in Location header.",
+                  "__new": "The Location header contains the URL where the status of the long running operation can be checked."
+                }
+              }
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": {
+                "__old": "./network.json#/definitions/CloudError",
+                "__new": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/serviceGateways/{serviceGatewayName}/addressLocations": {
+      "get": {
+        "responses": {
+          "default": {
+            "schema": {
+              "$ref": {
+                "__old": "./network.json#/definitions/CloudError",
+                "__new": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/serviceGateways/{serviceGatewayName}/services": {
+      "get": {
+        "responses": {
+          "default": {
+            "schema": {
+              "$ref": {
+                "__old": "./network.json#/definitions/CloudError",
+                "__new": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/serviceGateways/{serviceGatewayName}/updateAddressLocations": {
+      "post": {
+        "parameters": [
+          [
+            " "
+          ],
+          [
+            "~",
+            {
+              "name": {
+                "__old": "parameters",
+                "__new": "body"
+              }
+            }
+          ]
+        ],
+        "responses": {
+          "202": {
+            "headers": {
+              "Location": {
+                "description": {
+                  "__old": "URL for determining when an operation has completed. Send a GET request to the URL in Location header.",
+                  "__new": "The Location header contains the URL where the status of the long running operation can be checked."
+                }
+              }
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": {
+                "__old": "./network.json#/definitions/CloudError",
+                "__new": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/serviceGateways/{serviceGatewayName}/updateServices": {
+      "post": {
+        "parameters": [
+          [
+            " "
+          ],
+          [
+            "~",
+            {
+              "name": {
+                "__old": "parameters",
+                "__new": "body"
+              }
+            }
+          ]
+        ],
+        "responses": {
+          "202": {
+            "headers": {
+              "Location": {
+                "description": {
+                  "__old": "URL for determining when an operation has completed. Send a GET request to the URL in Location header.",
+                  "__new": "The Location header contains the URL where the status of the long running operation can be checked."
+                }
+              }
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": {
+                "__old": "./network.json#/definitions/CloudError",
+                "__new": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
+              }
+            }
+          }
+        }
+      }
+    },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualHubs": {
       "get": {
         "responses": {
@@ -16157,6 +15828,122 @@
               "$ref": {
                 "__old": "./network.json#/definitions/CloudError",
                 "__new": "#/definitions/CloudError"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualNetworkAppliances": {
+      "get": {
+        "responses": {
+          "default": {
+            "schema": {
+              "$ref": {
+                "__old": "./network.json#/definitions/CloudError",
+                "__new": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Network/virtualNetworkAppliances/{virtualNetworkApplianceName}": {
+      "get": {
+        "responses": {
+          "default": {
+            "schema": {
+              "$ref": {
+                "__old": "./network.json#/definitions/CloudError",
+                "__new": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "parameters": [
+          [
+            " "
+          ],
+          [
+            "~",
+            {
+              "name": {
+                "__old": "parameters",
+                "__new": "resource"
+              }
+            }
+          ]
+        ],
+        "responses": {
+          "201": {
+            "headers__added": {
+              "Azure-AsyncOperation": {
+                "type": "string",
+                "description": "A link to the status monitor"
+              }
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": {
+                "__old": "./network.json#/definitions/CloudError",
+                "__new": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
+              }
+            }
+          }
+        },
+        "x-ms-long-running-operation-options": {
+          "final-state-schema__added": "#/definitions/VirtualNetworkAppliance"
+        }
+      },
+      "patch": {
+        "parameters": [
+          [
+            " "
+          ],
+          [
+            "~",
+            {
+              "name": {
+                "__old": "parameters",
+                "__new": "properties"
+              },
+              "schema": {
+                "$ref": {
+                  "__old": "./network.json#/definitions/TagsObject",
+                  "__new": "#/definitions/TagsObject"
+                }
+              }
+            }
+          ]
+        ],
+        "responses": {
+          "default": {
+            "schema": {
+              "$ref": {
+                "__old": "./network.json#/definitions/CloudError",
+                "__new": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "responses": {
+          "202": {
+            "headers": {
+              "Location": {
+                "description__added": "The Location header contains the URL where the status of the long running operation can be checked."
+              }
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": {
+                "__old": "./network.json#/definitions/CloudError",
+                "__new": "../../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
               }
             }
           }
@@ -19194,54 +18981,6 @@
         }
       }
     },
-    "GetServiceGatewayAddressLocationsResult__added": {
-      "type": "object",
-      "description": "[Placeholder] Discription for page model",
-      "properties": {
-        "value": {
-          "type": "array",
-          "description": "[Placeholder] Discription for value property",
-          "items": {
-            "$ref": "#/definitions/ServiceGatewayAddressLocationResponse"
-          },
-          "x-ms-identifiers": [
-            "addressLocation"
-          ]
-        },
-        "nextLink": {
-          "type": "string",
-          "format": "uri",
-          "description": "[Placeholder] Discription for nextLink property"
-        }
-      },
-      "required": [
-        "value"
-      ]
-    },
-    "GetServiceGatewayServicesResult__added": {
-      "type": "object",
-      "description": "[Placeholder] Discription for page model",
-      "properties": {
-        "value": {
-          "type": "array",
-          "description": "[Placeholder] Discription for value property",
-          "items": {
-            "$ref": "#/definitions/ServiceGatewayService"
-          },
-          "x-ms-identifiers": [
-            "name"
-          ]
-        },
-        "nextLink": {
-          "type": "string",
-          "format": "uri",
-          "description": "[Placeholder] Discription for nextLink property"
-        }
-      },
-      "required": [
-        "value"
-      ]
-    },
     "IpamPoolPrefixAllocationPool__added": {
       "type": "object",
       "properties": {
@@ -19521,294 +19260,6 @@
         }
       }
     },
-    "RouteTargetAddressPropertiesFormat__added": {
-      "type": "object",
-      "properties": {
-        "subnet": {
-          "$ref": "#/definitions/Subnet"
-        },
-        "privateIPAddress": {
-          "type": "string"
-        },
-        "privateIPAllocationMethod": {
-          "type": "string",
-          "enum": [
-            "Static",
-            "Dynamic"
-          ],
-          "x-ms-enum": {
-            "name": "IPAllocationMethod",
-            "modelAsString": true
-          }
-        }
-      }
-    },
-    "ServiceGateway__added": {
-      "type": "object",
-      "properties": {
-        "properties": {
-          "$ref": "#/definitions/ServiceGatewayPropertiesFormat"
-        },
-        "etag": {
-          "type": "string",
-          "readOnly": true
-        },
-        "sku": {
-          "$ref": "#/definitions/ServiceGatewaySku"
-        },
-        "zones": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      },
-      "allOf": [
-        {
-          "$ref": "#/definitions/CommonTrackedResource"
-        }
-      ]
-    },
-    "ServiceGatewayAddress__added": {
-      "type": "object",
-      "properties": {
-        "address": {
-          "type": "string"
-        },
-        "services": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "ServiceGatewayAddressLocation__added": {
-      "type": "object",
-      "properties": {
-        "addressLocation": {
-          "type": "string"
-        },
-        "addressUpdateAction": {
-          "type": "string",
-          "enum": [
-            "FullUpdate",
-            "PartialUpdate"
-          ],
-          "x-ms-enum": {
-            "name": "AddressUpdateAction",
-            "modelAsString": true
-          }
-        },
-        "addresses": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ServiceGatewayAddress"
-          },
-          "x-ms-identifiers": [
-            "address"
-          ]
-        }
-      }
-    },
-    "ServiceGatewayAddressLocationResponse__added": {
-      "type": "object",
-      "properties": {
-        "addressLocation": {
-          "type": "string"
-        },
-        "addresses": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ServiceGatewayAddress"
-          },
-          "x-ms-identifiers": [
-            "address"
-          ]
-        }
-      }
-    },
-    "ServiceGatewayListResult__added": {
-      "type": "object",
-      "description": "[Placeholder] Discription for page model",
-      "properties": {
-        "value": {
-          "type": "array",
-          "description": "[Placeholder] Discription for value property",
-          "items": {
-            "$ref": "#/definitions/ServiceGateway"
-          }
-        },
-        "nextLink": {
-          "type": "string",
-          "format": "uri",
-          "description": "[Placeholder] Discription for nextLink property"
-        }
-      },
-      "required": [
-        "value"
-      ]
-    },
-    "ServiceGatewayPropertiesFormat__added": {
-      "type": "object",
-      "properties": {
-        "virtualNetwork": {
-          "$ref": "#/definitions/VirtualNetwork"
-        },
-        "routeTargetAddress": {
-          "$ref": "#/definitions/RouteTargetAddressPropertiesFormat"
-        },
-        "routeTargetAddressV6": {
-          "$ref": "#/definitions/RouteTargetAddressPropertiesFormat"
-        },
-        "resourceGuid": {
-          "type": "string",
-          "readOnly": true
-        },
-        "provisioningState": {
-          "type": "string",
-          "enum": [
-            "Failed",
-            "Succeeded",
-            "Canceled",
-            "Creating",
-            "Updating",
-            "Deleting"
-          ],
-          "x-ms-enum": {
-            "name": "ProvisioningState",
-            "modelAsString": true
-          },
-          "readOnly": true
-        }
-      }
-    },
-    "ServiceGatewayService__added": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string"
-        },
-        "properties": {
-          "$ref": "#/definitions/ServiceGatewayServicePropertiesFormat"
-        }
-      }
-    },
-    "ServiceGatewayServicePropertiesFormat__added": {
-      "type": "object",
-      "properties": {
-        "serviceType": {
-          "type": "string",
-          "enum": [
-            "Inbound",
-            "Outbound",
-            "InboundOutbound"
-          ],
-          "x-ms-enum": {
-            "name": "ServiceType",
-            "modelAsString": true
-          }
-        },
-        "isDefault": {
-          "type": "boolean"
-        },
-        "loadBalancerBackendPools": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/BackendAddressPool"
-          }
-        },
-        "publicNatGatewayId": {
-          "type": "string"
-        }
-      }
-    },
-    "ServiceGatewayServiceRequest__added": {
-      "type": "object",
-      "properties": {
-        "isDelete": {
-          "type": "boolean"
-        },
-        "service": {
-          "$ref": "#/definitions/ServiceGatewayService"
-        }
-      }
-    },
-    "ServiceGatewaySku__added": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string",
-          "enum": [
-            "Standard"
-          ],
-          "x-ms-enum": {
-            "name": "ServiceGatewaySkuName",
-            "modelAsString": true
-          }
-        },
-        "tier": {
-          "type": "string",
-          "enum": [
-            "Regional"
-          ],
-          "x-ms-enum": {
-            "name": "ServiceGatewaySkuTier",
-            "modelAsString": true
-          }
-        }
-      }
-    },
-    "ServiceGatewayUpdateAddressLocationsRequest__added": {
-      "type": "object",
-      "properties": {
-        "action": {
-          "type": "string",
-          "enum": [
-            "FullUpdate",
-            "PartialUpdate"
-          ],
-          "x-ms-enum": {
-            "name": "UpdateAction",
-            "modelAsString": true
-          }
-        },
-        "addressLocations": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ServiceGatewayAddressLocation"
-          },
-          "x-ms-identifiers": [
-            "addressLocation"
-          ]
-        }
-      }
-    },
-    "ServiceGatewayUpdateServicesRequest__added": {
-      "type": "object",
-      "properties": {
-        "action": {
-          "type": "string",
-          "enum": [
-            "FullUpdate",
-            "PartialUpdate"
-          ],
-          "x-ms-enum": {
-            "name": "ServiceUpdateAction",
-            "modelAsString": true
-          }
-        },
-        "serviceRequests": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ServiceGatewayServiceRequest"
-          },
-          "x-ms-identifiers": [
-            "service/name"
-          ]
-        }
-      }
-    },
     "SignaturesOverridesProperties__added": {
       "type": "object",
       "properties": {
@@ -19867,151 +19318,6 @@
     },
     "TypeSpec.Http.NoContentResponse__added": {
       "type": "object"
-    },
-    "VirtualNetworkAppliance__added": {
-      "type": "object",
-      "properties": {
-        "properties": {
-          "$ref": "#/definitions/VirtualNetworkAppliancePropertiesFormat"
-        },
-        "etag": {
-          "type": "string",
-          "readOnly": true
-        }
-      },
-      "allOf": [
-        {
-          "$ref": "#/definitions/Resource"
-        }
-      ]
-    },
-    "VirtualNetworkApplianceIpConfiguration__added": {
-      "type": "object",
-      "properties": {
-        "properties": {
-          "$ref": "#/definitions/VirtualNetworkApplianceIpConfigurationProperties"
-        },
-        "name": {
-          "type": "string"
-        },
-        "etag": {
-          "type": "string",
-          "readOnly": true
-        },
-        "type": {
-          "type": "string",
-          "readOnly": true
-        }
-      },
-      "allOf": [
-        {
-          "$ref": "#/definitions/SubResource"
-        }
-      ]
-    },
-    "VirtualNetworkApplianceIpConfigurationProperties__added": {
-      "type": "object",
-      "properties": {
-        "privateIPAddress": {
-          "type": "string"
-        },
-        "privateIPAllocationMethod": {
-          "type": "string",
-          "enum": [
-            "Static",
-            "Dynamic"
-          ],
-          "x-ms-enum": {
-            "name": "IPAllocationMethod",
-            "modelAsString": true
-          }
-        },
-        "primary": {
-          "type": "boolean"
-        },
-        "provisioningState": {
-          "type": "string",
-          "enum": [
-            "Succeeded",
-            "Updating",
-            "Deleting",
-            "Failed"
-          ],
-          "x-ms-enum": {
-            "name": "NetworkProvisioningState",
-            "modelAsString": true
-          },
-          "readOnly": true
-        },
-        "privateIPAddressVersion": {
-          "type": "string",
-          "enum": [
-            "IPv4",
-            "IPv6"
-          ],
-          "x-ms-enum": {
-            "name": "IPVersion",
-            "modelAsString": true
-          }
-        }
-      }
-    },
-    "VirtualNetworkApplianceListResult__added": {
-      "type": "object",
-      "description": "[Placeholder] Discription for page model",
-      "properties": {
-        "value": {
-          "type": "array",
-          "description": "[Placeholder] Discription for value property",
-          "items": {
-            "$ref": "#/definitions/VirtualNetworkAppliance"
-          }
-        },
-        "nextLink": {
-          "type": "string",
-          "format": "uri",
-          "description": "[Placeholder] Discription for nextLink property"
-        }
-      },
-      "required": [
-        "value"
-      ]
-    },
-    "VirtualNetworkAppliancePropertiesFormat__added": {
-      "type": "object",
-      "properties": {
-        "bandwidthInGbps": {
-          "type": "string"
-        },
-        "ipConfigurations": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/VirtualNetworkApplianceIpConfiguration"
-          },
-          "readOnly": true
-        },
-        "provisioningState": {
-          "type": "string",
-          "enum": [
-            "Succeeded",
-            "Updating",
-            "Deleting",
-            "Failed"
-          ],
-          "x-ms-enum": {
-            "name": "NetworkProvisioningState",
-            "modelAsString": true
-          },
-          "readOnly": true
-        },
-        "resourceGuid": {
-          "type": "string",
-          "readOnly": true
-        },
-        "subnet": {
-          "$ref": "#/definitions/Subnet"
-        }
-      }
     },
     "WritableResource__added": {
       "type": "object",
@@ -23814,41 +23120,6 @@
         }
       }
     },
-    "FirewallPolicyIntrusionDetection": {
-      "properties": {
-        "profile": {
-          "enum": [
-            [
-              "-",
-              "Basic"
-            ],
-            [
-              "-",
-              "Standard"
-            ],
-            [
-              "-",
-              "Advanced"
-            ],
-            [
-              "+",
-              "Off"
-            ],
-            [
-              "+",
-              "Emerging"
-            ],
-            [
-              "+",
-              "Core"
-            ],
-            [
-              " "
-            ]
-          ]
-        }
-      }
-    },
     "FirewallPolicyListResult": {
       "required__added": [
         "value"
@@ -24204,6 +23475,18 @@
           }
         }
       }
+    },
+    "GetServiceGatewayAddressLocationsResult": {
+      "x-ms-azure-resource__deleted": false,
+      "required__added": [
+        "value"
+      ]
+    },
+    "GetServiceGatewayServicesResult": {
+      "x-ms-azure-resource__deleted": false,
+      "required__added": [
+        "value"
+      ]
     },
     "HubIPConfigurationPropertiesFormat": {
       "properties": {
@@ -25074,33 +24357,6 @@
         }
       }
     },
-    "ManagedRuleOverride": {
-      "properties": {
-        "action": {
-          "enum": [
-            [
-              " "
-            ],
-            [
-              " "
-            ],
-            [
-              " "
-            ],
-            [
-              " "
-            ],
-            [
-              " "
-            ],
-            [
-              "+",
-              "CAPTCHA"
-            ]
-          ]
-        }
-      }
-    },
     "ManagedServiceIdentity": {
       "properties": {
         "userAssignedIdentities": {
@@ -25143,9 +24399,6 @@
     },
     "NatGatewayPropertiesFormat": {
       "properties": {
-        "serviceGateway__added": {
-          "$ref": "#/definitions/SubResource"
-        },
         "publicIpAddresses": {
           "items": {
             "$ref": {
@@ -25187,6 +24440,12 @@
           }
         },
         "sourceVirtualNetwork": {
+          "$ref": {
+            "__old": "./network.json#/definitions/SubResource",
+            "__new": "#/definitions/SubResource"
+          }
+        },
+        "serviceGateway": {
           "$ref": {
             "__old": "./network.json#/definitions/SubResource",
             "__new": "#/definitions/SubResource"
@@ -26604,12 +25863,6 @@
     },
     "PolicySettings": {
       "properties": {
-        "captchaCookieExpirationInMins__added": {
-          "type": "integer",
-          "format": "int32",
-          "minimum": 5,
-          "maximum": 1440
-        },
         "maxRequestBodySizeInKb": {
           "exclusiveMinimum__deleted": false
         },
@@ -27589,6 +26842,28 @@
         }
       }
     },
+    "RouteTargetAddressPropertiesFormat": {
+      "properties": {
+        "subnet": {
+          "$ref": {
+            "__old": "./virtualNetwork.json#/definitions/Subnet",
+            "__new": "#/definitions/Subnet"
+          }
+        },
+        "privateIPAllocationMethod": {
+          "$ref__deleted": "./network.json#/definitions/IPAllocationMethod",
+          "type__added": "string",
+          "enum__added": [
+            "Static",
+            "Dynamic"
+          ],
+          "x-ms-enum__added": {
+            "name": "IPAllocationMethod",
+            "modelAsString": true
+          }
+        }
+      }
+    },
     "RoutingConfiguration": {
       "properties": {
         "associatedRouteTable": {
@@ -28257,6 +27532,74 @@
         }
       }
     },
+    "ServiceGateway": {
+      "properties": {
+        "properties": {
+          "x-ms-client-flatten__deleted": true
+        }
+      },
+      "allOf": [
+        [
+          "~",
+          {
+            "$ref": {
+              "__old": "../../../../../../common-types/resource-management/v6/types.json#/definitions/TrackedResource",
+              "__new": "#/definitions/CommonTrackedResource"
+            }
+          }
+        ]
+      ]
+    },
+    "ServiceGatewayListResult": {
+      "required__added": [
+        "value"
+      ]
+    },
+    "ServiceGatewayPropertiesFormat": {
+      "properties": {
+        "virtualNetwork": {
+          "$ref": {
+            "__old": "./virtualNetwork.json#/definitions/VirtualNetwork",
+            "__new": "#/definitions/VirtualNetwork"
+          }
+        },
+        "provisioningState": {
+          "$ref__deleted": "./network.json#/definitions/ProvisioningState",
+          "type__added": "string",
+          "enum__added": [
+            "Failed",
+            "Succeeded",
+            "Canceled",
+            "Creating",
+            "Updating",
+            "Deleting"
+          ],
+          "x-ms-enum__added": {
+            "name": "ProvisioningState",
+            "modelAsString": true
+          }
+        }
+      }
+    },
+    "ServiceGatewayService": {
+      "properties": {
+        "properties": {
+          "x-ms-client-flatten__deleted": true
+        }
+      }
+    },
+    "ServiceGatewayServicePropertiesFormat": {
+      "properties": {
+        "loadBalancerBackendPools": {
+          "items": {
+            "$ref": {
+              "__old": "./loadBalancer.json#/definitions/BackendAddressPool",
+              "__new": "#/definitions/BackendAddressPool"
+            }
+          }
+        }
+      }
+    },
     "ServiceTagInformationListResult": {
       "required__added": [
         "value"
@@ -28450,9 +27793,6 @@
     },
     "SubnetPropertiesFormat": {
       "properties": {
-        "serviceGateway__added": {
-          "$ref": "#/definitions/SubResource"
-        },
         "networkSecurityGroup": {
           "$ref": {
             "__old": "./networkSecurityGroup.json#/definitions/NetworkSecurityGroup",
@@ -28535,6 +27875,12 @@
         },
         "sharingScope": {
           "default__deleted": null
+        },
+        "serviceGateway": {
+          "$ref": {
+            "__old": "./network.json#/definitions/SubResource",
+            "__new": "#/definitions/SubResource"
+          }
         }
       }
     },
@@ -28871,6 +28217,113 @@
           }
         ]
       ]
+    },
+    "VirtualNetworkAppliance": {
+      "properties": {
+        "properties": {
+          "x-ms-client-flatten__deleted": true
+        }
+      },
+      "allOf": [
+        [
+          "~",
+          {
+            "$ref": {
+              "__old": "./network.json#/definitions/Resource",
+              "__new": "#/definitions/Resource"
+            }
+          }
+        ]
+      ]
+    },
+    "VirtualNetworkApplianceIpConfiguration": {
+      "properties": {
+        "properties": {
+          "x-ms-client-flatten__deleted": true
+        }
+      },
+      "allOf": [
+        [
+          "~",
+          {
+            "$ref": {
+              "__old": "./network.json#/definitions/SubResource",
+              "__new": "#/definitions/SubResource"
+            }
+          }
+        ]
+      ]
+    },
+    "VirtualNetworkApplianceIpConfigurationProperties": {
+      "properties": {
+        "privateIPAllocationMethod": {
+          "$ref__deleted": "./network.json#/definitions/IPAllocationMethod",
+          "type__added": "string",
+          "enum__added": [
+            "Static",
+            "Dynamic"
+          ],
+          "x-ms-enum__added": {
+            "name": "IPAllocationMethod",
+            "modelAsString": true
+          }
+        },
+        "provisioningState": {
+          "$ref__deleted": "./network.json#/definitions/ProvisioningState",
+          "type__added": "string",
+          "enum__added": [
+            "Succeeded",
+            "Updating",
+            "Deleting",
+            "Failed"
+          ],
+          "x-ms-enum__added": {
+            "name": "NetworkProvisioningState",
+            "modelAsString": true
+          }
+        },
+        "privateIPAddressVersion": {
+          "$ref__deleted": "./network.json#/definitions/IPVersion",
+          "type__added": "string",
+          "enum__added": [
+            "IPv4",
+            "IPv6"
+          ],
+          "x-ms-enum__added": {
+            "name": "IPVersion",
+            "modelAsString": true
+          }
+        }
+      }
+    },
+    "VirtualNetworkApplianceListResult": {
+      "required__added": [
+        "value"
+      ]
+    },
+    "VirtualNetworkAppliancePropertiesFormat": {
+      "properties": {
+        "provisioningState": {
+          "$ref__deleted": "./network.json#/definitions/ProvisioningState",
+          "type__added": "string",
+          "enum__added": [
+            "Succeeded",
+            "Updating",
+            "Deleting",
+            "Failed"
+          ],
+          "x-ms-enum__added": {
+            "name": "NetworkProvisioningState",
+            "modelAsString": true
+          }
+        },
+        "subnet": {
+          "$ref": {
+            "__old": "./virtualNetwork.json#/definitions/Subnet",
+            "__new": "#/definitions/Subnet"
+          }
+        }
+      }
     },
     "VirtualNetworkDdosProtectionStatusResult": {
       "required__added": [
@@ -30170,26 +29623,6 @@
       "properties": {
         "priority": {
           "format__added": "int32"
-        },
-        "action": {
-          "enum": [
-            [
-              " "
-            ],
-            [
-              " "
-            ],
-            [
-              " "
-            ],
-            [
-              " "
-            ],
-            [
-              "+",
-              "CAPTCHA"
-            ]
-          ]
         }
       }
     },

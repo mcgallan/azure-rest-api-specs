@@ -11,9 +11,9 @@
               "description": "Storage Service EndpointPolicy Definition",
               "service": "Microsoft.Storage",
               "serviceResources": [
-                "/subscriptions/subid1",
-                "/subscriptions/subid1/resourceGroups/storageRg",
-                "/subscriptions/subid1/resourceGroups/storageRg/providers/Microsoft.Storage/storageAccounts/stAccount"
+                "/subscriptions/00000000-0000-0000-0000-000000000000",
+                "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/storageRg",
+                "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/storageRg/providers/Microsoft.Storage/storageAccounts/stAccount"
               ]
             }
           }
@@ -22,14 +22,14 @@
     },
     "resourceGroupName": "rg1",
     "serviceEndpointPolicyName": "testPolicy",
-    "subscriptionId": "subid"
+    "subscriptionId": "00000000-0000-0000-0000-000000000000"
   },
   "responses": {
     "200": {
       "body": {
         "name": "testnsg",
         "type": "Microsoft.Network/ServiceEndpointPolicies",
-        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/ServiceEndpointPolicies/testpolicy",
+        "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg1/providers/Microsoft.Network/ServiceEndpointPolicies/testpolicy",
         "location": "westus",
         "properties": {
           "provisioningState": "Succeeded",
@@ -37,14 +37,14 @@
           "serviceEndpointPolicyDefinitions": [
             {
               "name": "StorageServiceEndpointPolicyDefinition",
-              "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/serviceEndpointPolicies/testServiceEndpointPolicy/serviceEndpointPolicyDefinitions/StorageServiceEndpointPolicyDefinition",
+              "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg1/providers/Microsoft.Network/serviceEndpointPolicies/testServiceEndpointPolicy/serviceEndpointPolicyDefinitions/StorageServiceEndpointPolicyDefinition",
               "properties": {
                 "description": "Storage Service EndpointPolicy Definition",
                 "service": "Microsoft.Storage",
                 "serviceResources": [
-                  "/subscriptions/subid1",
-                  "/subscriptions/subid1/resourceGroups/storageRg",
-                  "/subscriptions/subid1/resourceGroups/storageRg/providers/Microsoft.Storage/storageAccounts/stAccount"
+                  "/subscriptions/00000000-0000-0000-0000-000000000000",
+                  "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/storageRg",
+                  "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/storageRg/providers/Microsoft.Storage/storageAccounts/stAccount"
                 ]
               }
             }
@@ -57,7 +57,7 @@
       "body": {
         "name": "testnsg",
         "type": "Microsoft.Network/ServiceEndpointPolicies",
-        "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/ServiceEndpointPolicies/testpolicy",
+        "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg1/providers/Microsoft.Network/ServiceEndpointPolicies/testpolicy",
         "location": "westus",
         "properties": {
           "provisioningState": "Succeeded",
@@ -65,14 +65,14 @@
           "serviceEndpointPolicyDefinitions": [
             {
               "name": "StorageServiceEndpointPolicyDefinition",
-              "id": "/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/serviceEndpointPolicies/testServiceEndpointPolicy/serviceEndpointPolicyDefinitions/StorageServiceEndpointPolicyDefinition",
+              "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg1/providers/Microsoft.Network/serviceEndpointPolicies/testServiceEndpointPolicy/serviceEndpointPolicyDefinitions/StorageServiceEndpointPolicyDefinition",
               "properties": {
                 "description": "Storage Service EndpointPolicy Definition",
                 "service": "Microsoft.Storage",
                 "serviceResources": [
-                  "/subscriptions/subid1",
-                  "/subscriptions/subid1/resourceGroups/storageRg",
-                  "/subscriptions/subid1/resourceGroups/storageRg/providers/Microsoft.Storage/storageAccounts/stAccount"
+                  "/subscriptions/00000000-0000-0000-0000-000000000000",
+                  "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/storageRg",
+                  "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/storageRg/providers/Microsoft.Storage/storageAccounts/stAccount"
                 ]
               }
             }
