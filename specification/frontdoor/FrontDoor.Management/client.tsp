@@ -46,15 +46,20 @@ using TypeSpec.Rest;
 @@clientName(MinimumTLSVersion.`1.0`, "One0", "go");
 @@clientName(MinimumTLSVersion.`1.2`, "One2", "go");
 
-#suppress "@azure-tools/typespec-azure-core/no-openapi" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-#suppress "@azure-tools/typespec-azure-resource-manager/arm-put-operation-response-codes" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-#suppress "@azure-tools/typespec-azure-resource-manager/no-response-body" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+/**
+ * override for Profiles.createOrUpdate
+ */
+#suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-operation" "customization"
+#suppress "@azure-tools/typespec-azure-core/documentation-required" "override"
 op replaceCreateOrUpdate(
   ...ApiVersionParameter,
   ...SubscriptionIdParameter,
+  #suppress "@azure-tools/typespec-azure-core/documentation-required" "override"
   profileName: string,
   ...ResourceGroupParameter,
+  #suppress "@azure-tools/typespec-azure-core/documentation-required" "override"
   provider: "Microsoft.Network",
+  #suppress "@azure-tools/typespec-azure-core/documentation-required" "override"
   parameters: Microsoft.Network.Profile,
 ): ArmResourceUpdatedResponse<Profile> | ArmResourceCreatedResponse<
   Profile,
