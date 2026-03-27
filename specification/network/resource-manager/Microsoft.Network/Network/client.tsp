@@ -1994,3 +1994,9 @@ op replaceprivateDnsZoneGroupsList(
   "list",
   "javascript"
 );
+
+// Python: resolve duplicate-client-name for ResourceProvisioningState
+@@clientName(Microsoft.Network.ResourceProvisioningState,
+  "NetworkResourceProvisioningState",
+  "python"
+);
