@@ -40,3 +40,23 @@ union CustomPublicNetworkAccessType {
   "PublicNetworkAccessType",
   "javascript,python"
 );
+
+// Category 1: Naming changes - preserve old enum names without underscores
+@@clientName(VMGuestPatchClassification_Windows,
+  "VMGuestPatchClassificationWindows",
+  "python"
+);
+@@clientName(VMGuestPatchClassification_Linux,
+  "VMGuestPatchClassificationLinux",
+  "python"
+);
+
+// Category 12: Insertion of constant path parameter - hide licenseProfileName from Python users
+#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "To mitigate breaking change for legacy Python SDK"
+@@Legacy.clientDefaultValue(LicenseProfileNameAlias.licenseProfileName,
+  "default",
+  "python"
+);
+@@Azure.ClientGenerator.Core.alternateType(LicenseProfileNameAlias.licenseProfileName,
+  "default"
+);
