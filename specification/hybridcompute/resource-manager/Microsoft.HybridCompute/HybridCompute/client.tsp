@@ -232,7 +232,7 @@ union CustomPublicNetworkAccessType {
 
 // C# API review naming/type fixes for new TypeSpec-generated surface
 @@alternateType(MachineProperties.hardwareResourceId, Azure.Core.armResourceIdentifier, "csharp");
-@@alternateType(Machines.get::parameters.$expand, string, "csharp");
+@@alternateType(Machines.get::parameters.expand, string, "csharp");
 @@clientName(SetupExtensionRequest, "SetupExtensionContent", "csharp");
 
 // MachineRunCommandData backward compatibility with the existing SDK API.
