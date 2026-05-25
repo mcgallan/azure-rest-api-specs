@@ -135,7 +135,7 @@ union CustomPublicNetworkAccessType {
 @@clientName(PatchSettingsStatus, "HybridComputePatchSettingsStatus", "csharp");
 @@clientName(Gateway, "ArcGateway", "csharp");
 @@clientName(GatewayType, "ArcGatewayType", "csharp");
-@@clientName(GatewayUpdate, "ArcGatewayUpdate", "csharp");
+@@clientName(GatewayUpdate, "ArcGatewayPatch", "csharp");
 @@clientName(Settings, "ArcSettings", "csharp");
 @@clientName(VMGuestPatchRebootStatus, "VmGuestPatchRebootStatus", "csharp");
 @@clientName(VMGuestPatchRebootSetting, "VmGuestPatchRebootSetting", "csharp");
